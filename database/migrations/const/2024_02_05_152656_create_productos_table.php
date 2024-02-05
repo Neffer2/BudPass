@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('productos', function (Blueprint $table) {
             $table->id();
-            $table->foreign('canal_id')->references('id')->on('users');
+            $table->foreign('canal_id')->references('id')->on('canales');
             $table->foreignId('canal_id');
             $table->string('sku');
             $table->string('descripcion');

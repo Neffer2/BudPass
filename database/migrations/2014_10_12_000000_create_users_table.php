@@ -26,10 +26,10 @@ return new class extends Migration
             $table->string('password');
             $table->string('puntos')->default(0);
 
+            $table->foreignId('rol_id')->default(1);
             $table->foreign('rol_id')->references('id')->on('roles');
-            $table->foreignId('rol_id');
+            $table->foreignId('estado_id')->default(1);
             $table->foreign('estado_id')->references('id')->on('estados');
-            $table->foreignId('estado_id');
             
             $table->boolean('terminos');
             $table->boolean('politicas');

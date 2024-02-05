@@ -30,9 +30,9 @@
     </div>
  
     <div> 
-        <label for="celular">Celular: </label>
-        <input id="celular" type="text" wire:model.change="celular">
-        @error('celular')
+        <label for="telefono">Celular: </label>
+        <input id="telefono" type="text" wire:model.change="telefono">
+        @error('telefono')
             <div class="text-invalid">
                 {{ $message }}
             </div>
@@ -78,6 +78,21 @@
                 {{ $message }}
             </div>
         @enderror
+    </div>
+
+    <div>
+        <label for="password">Contraseña: </label>
+        <input id="password" type="password" wire:model.change="password">
+        @error('password')
+            <div class="text-invalid">
+                {{ $message }}
+            </div>
+        @enderror
+    </div>
+
+    <div>
+        <label for="confirm">Confirmar contraseña: </label>
+        <input id="confirm" type="password" wire:model.change="confirm">
     </div>
 
     <div>
