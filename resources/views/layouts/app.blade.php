@@ -8,6 +8,11 @@
     <title>@yield('title')</title>
 </head>
 <body>
+    <nav>
+        {{ Auth::user()->name }}
+        {{ Auth::user()->puntos }}
+    </nav>
+    <hr>
     @yield('content')
 </body>
 </html>

@@ -19,7 +19,7 @@ Route::get('/', function () {
 })->middleware('guest')->name('home');
 
 Route::get('/dashboard', function () {
-    return view('dashboard.dashboard');
+    return view('dashboard.registro');
 })->middleware('auth')->name('dashboard');
 
 require __DIR__.'/auth.php';

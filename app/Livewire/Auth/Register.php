@@ -97,8 +97,8 @@ class Register extends Component
     public function updatedCiudad(){
         $this->validate([ 
             'ciudad' => 'required|numeric'
-        ]);
-    }
+        ]); 
+    } 
 
     public function updatedFechaNacimiento(){
         $this->validate([
