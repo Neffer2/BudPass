@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Dashboard;
+namespace App\Livewire\Dashboard; 
 
 use Livewire\Component;
 use App\Models\Canal;
@@ -8,26 +8,33 @@ use App\Models\Canal;
 class RegistroFacturas extends Component
 {
     // Models
-    public $nit;
-
+    public $nit, $num_factura, $producto, $cantidad;
+ 
     // Useful vars
-    public $canal;
+    public $canal, $productos = [];
 
     public function render()
     {
         return view('livewire.dashboard.registro-facturas');
     }
 
-    public function mount(){
-        $this->canal = collect();
+    public function addProduct(){
+        array_push($this->productos, ['id' => $this->producto, 'descripcion' => 'descripcion', 'cantidad' => $this->cantidad]);
+        $this->productos = $this->productos;
     }
     
+    // UPDATES    
     public function updatedNit(){
-        // $this->reset('canal');
         $this->validate([
             'nit' => 'required|numeric'
         ]);
         
-        $this->canal = collect(Canal::where('nit', 'LIKE', "%$this->nit%")->first());
+        $this->canal = Canal::where('nit', 'LIKE', "%$this->nit%")->first();
     }   
+
+    public function updatedNumFactura (){
+        $this->validate([
+            'num_factura' => 'required|numeric|unique:registros_factura|max_digits:15'
+        ]);        
+    }
 } 

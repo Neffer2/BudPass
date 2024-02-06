@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('registros_factura', function (Blueprint $table) {
             $table->id();
-            $table->string('nom_factura');
+            $table->string('num_factura')->unique();
             $table->string('foto_selfie');
             $table->string('foto_factura');
             $table->foreign('user_id')->references('id')->on('users');

@@ -1,19 +1,46 @@
 <div>
     <div>
+        <img @if ($canal) src="{{ asset("assets/canales/$canal->logo") }}" @endif alt="" height="100">
+        <img @if ($canal) src="{{ asset("assets/facturas/$canal->ejemplo_factura") }}" @endif alt="" height="100">                    
+    </div>
+    <div>
         <label for="">NIT</label>
-        <input type="text" wire:model.change="nit">
-        <img src="{{ asset('assets/canales/can_exito.jpg') }}" alt="" height="100">
+        <input type="text" wire:model.live.debounce.150ms="nit">
         @error('nit')
             <div class="text-invalid">
                 {{ $message }}
             </div>
         @enderror
     </div> 
-    <br>
     <div>
         <label for="">FACTURA</label>
-        <input type="text"> 
-        <img x-bind:src="{{ asset('assets/facturas/${$wire.canal.logo}') }}" alt="" height="100">            
+        <input type="text" wire:model.change="num_factura">
+        @error('num_factura')
+            <div class="text-invalid">
+                {{ $message }}
+            </div>
+        @enderror
+    </div>
+    <br>
+    <div>
+        <div>
+            <label for="">Producto</label>
+            <select wire:model.change="producto">
+                <option value="">Seleccionar</option>
+                @if ($canal)
+                    @foreach ($this->canal->productos as $producto)
+                        <option value="{{ $producto->id }}">{{ $producto->descripcion }}</option>                    
+                    @endforeach
+                @endif
+            </select>
+        </div>
+        <div>
+            <label for="">Cantidad</label>
+            <input type="number" wire:model.change='cantidad'>
+        </div>
+        <div>
+            <button x-on:click="$wire.addProduct()">Agregar</button>
+        </div>
     </div>
     <br>
     <div>
@@ -23,15 +50,14 @@
                 <td>Producto</td>
                 <td>Cantidad</td>
             </tr>
-            <tr>
-                <td>Producto 1</td>
-                <td>5</td>
-                <td><button>x</button></td>
-            </tr>
+            @foreach ($productos as $key => $producto)
+                <tr>
+                    <td>{{ $key+=1 }}</td>
+                    <td>{{ $producto['descripcion'] }}</td>
+                    <td><button>x</button></td>
+                </tr>                
+            @endforeach
         </table>
-    </div>
-    <div>
-        <img src="" alt="">
     </div>
     <br>
     <div>

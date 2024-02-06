@@ -9,4 +9,8 @@ class Canal extends Model
 {
     use HasFactory;
     protected $table = 'canales';
+
+    public function productos(){
+        return $this->hasMany(Producto::class, 'canal_id', 'id');
+    }
 }
