@@ -1,7 +1,5 @@
 @extends('layouts.app')
-    @section('content')
-        Holis binevneido
-        
+    @section('content')        
         <livewire:auth.login/> 
         <br>
         <br>
