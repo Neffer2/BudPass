@@ -126,6 +126,6 @@
     </div>
 
     <div>
-        <button wire:click="store">Registrar</button>
+        <button wire:click="store">{{ __('Registrar') }}</button>
     </div>
 </div>

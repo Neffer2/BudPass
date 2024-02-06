@@ -10,7 +10,7 @@
             <input id="password" type="password" wire:model="passwordLive" name="password">
         </div>
         <div>
-            <button type="submit">{{ _('Iniciar') }}</button>
+            <button type="submit">{{ __('Iniciar') }}</button>
         </div>
         @if ($errors->any())
             @foreach ($errors->all() as $error)
