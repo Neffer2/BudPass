@@ -17,7 +17,7 @@
                 {{ $message }}
             </div>
         @enderror
-    </div>
+    </div> 
 
     <div>
         <label for="documento">Documento: </label>
@@ -126,6 +126,6 @@
     </div>
 
     <div>
-        <button wire:click="store">{{ __('Registrar') }}</button>
+        <button wire:click="store">Registrar</button>
     </div>
 </div>

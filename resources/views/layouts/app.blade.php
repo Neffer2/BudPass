@@ -9,8 +9,10 @@
 </head>
 <body>
     <nav>
-        {{ Auth::user()->name }}
-        {{ Auth::user()->puntos }}
+        @auth
+            {{ Auth::user()->name }}
+            {{ Auth::user()->puntos }}        
+        @endauth
     </nav>
     <hr>
     @yield('content')

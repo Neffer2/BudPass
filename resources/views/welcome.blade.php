@@ -1,5 +1,4 @@
-<livewire:auth.login/>
-
-<br>
-<br>
-<livewire:auth.register/>          
+<html>
+    <livewire:auth.login/>
+    <livewire:auth.register/>
+</html>

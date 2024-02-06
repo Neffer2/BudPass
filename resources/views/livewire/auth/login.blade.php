@@ -2,15 +2,15 @@
     <form action="/login" method="POST">
         @csrf
         <div>
-            <label for="email">Nombre: </label>
-            <input id="email" type="email" wire:model="emailLogin" name="email">
+            <label for="email_login">Nombre: </label>
+            <input id="email_login" type="email" name="email">
         </div>
         <div>
-            <label for="password"></label>
-            <input id="password" type="password" wire:model="passwordLive" name="password">
+            <label for="password_login"></label>
+            <input id="password_login" type="password" name="password">
         </div>
         <div>
-            <button type="submit">{{ __('Iniciar') }}</button>
+            <button type="submit">Iniciar</button>
         </div>
         @if ($errors->any())
             @foreach ($errors->all() as $error)
