@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <header>
+    {{-- <header>
         <div class="header-content">
             <div class="header-img">
                 <img src="{{ asset('assets/budweiser/bud-logo.png') }}" alt="Logo Budweiser" class="" srcset="">
@@ -45,9 +45,7 @@
                 <p>Juan Sebastian Camargo Prieto <span class="puntos-header"> Puntaje: 10000 </span></p>
             </div>
         </div>
-    </header>
-
-    <section class="bud-section"></section>
+    </header> --}}
     
     <nav>
         @auth
