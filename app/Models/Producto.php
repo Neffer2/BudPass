@@ -9,4 +9,8 @@ class Producto extends Model
 {
     use HasFactory;
     protected $table = 'productos';
+
+    public function referencia(){
+        return $this->hasOne(Referencia::class, 'id', 'canal_id');
+    }
 }
