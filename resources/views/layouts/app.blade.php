@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    {{-- <header>
+    <header>
         <div class="header-content">
             <div class="header-img">
                 <img src="{{ asset('assets/budweiser/bud-logo.png') }}" alt="Logo Budweiser" class="" srcset="">
@@ -45,7 +45,7 @@
                 <p>Juan Sebastian Camargo Prieto <span class="puntos-header"> Puntaje: 10000 </span></p>
             </div>
         </div>
-    </header> --}}
+    </header>
     
     <nav>
         @auth
@@ -95,12 +95,15 @@
         const toggleMenu = () => {
             let menu = document.querySelector('.ham-menu-list');
             let symbol = document.querySelector('.ham-open-icon');
+            let imgHam = document.querySelector('.header-img');
             if (menu.style.display === 'none' || menu.style.display === '') {
                 menu.style.display = 'block';
                 symbol.innerHTML = 'X';
+                imgHam.style.position = 'relative';
             } else {
                 menu.style.display = 'none';
                 symbol.innerHTML = '☰';
+                imgHam.style.position = 'absolute';
             }
         }
 
