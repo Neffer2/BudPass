@@ -47,7 +47,7 @@
         </div>
     </header>
 
-    {{-- <div class="bud-content"></div> --}}
+    <section class="bud-section"></section>
     
     <nav>
         @auth
