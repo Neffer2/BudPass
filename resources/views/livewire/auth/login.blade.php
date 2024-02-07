@@ -1,4 +1,4 @@
-<div>
+<div class="login-div-container">
     <form action="/login" method="POST">
         @csrf
         <div>
