@@ -105,7 +105,7 @@
                 symbol.innerHTML = '☰';
             }
         }
+
     </script>
 </body>
-
 </html>

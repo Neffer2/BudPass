@@ -19,8 +19,8 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreignId('user_id');
             $table->string('puntos_sumados');
+            $table->foreignId('estado_id')->default(2);
             $table->foreign('estado_id')->references('id')->on('estados');
-            $table->foreignId('estado_id');
             $table->timestamps();
         });
     }

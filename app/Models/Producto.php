@@ -11,6 +11,6 @@ class Producto extends Model
     protected $table = 'productos';
 
     public function referencia(){
-        return $this->hasOne(Referencia::class, 'id', 'canal_id');
+        return $this->hasOne(Referencia::class, 'id', 'referencia_id');
     }
 }

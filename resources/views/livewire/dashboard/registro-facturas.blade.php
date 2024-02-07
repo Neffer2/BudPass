@@ -14,7 +14,7 @@
         @enderror
     </div> 
     <div>
-        <label for="">FACTURA</label>
+        <label for="">NUM FACTURA</label>
         <input type="text" wire:model.change="num_factura">
         @error('num_factura')
             <div class="text-invalid">
@@ -64,10 +64,10 @@
             </tr>
             @foreach ($productos as $key => $producto)
                 <tr>
-                    <td>{{ $key+=1 }}</td>
+                    <td>-</td>
                     <td>{{ $producto['descripcion'] }}</td>
                     <td>{{ $producto['cantidad'] }}</td>
-                    <td><button x-on:click="$wire.subsProduct({{ $key-=1 }})">x</button></td>
+                    <td><button x-on:click="$wire.subsProduct({{ $key }})">x</button></td>
                 </tr>                
             @endforeach
         </table>
@@ -79,14 +79,46 @@
     <hr>
     <div>
         <label for="">Foto factura</label>
-        <input type="text">
+        <input type="file" wire:model.live="foto_factura">
+        @if ($foto_factura) 
+            <img src="{{ $foto_factura->temporaryUrl() }}" height="50">
+        @endif
+        @error('foto_factura')
+            <div class="text-invalid">
+                {{ $message }}
+            </div>
+        @enderror
+        <div wire:loading wire:target="foto_factura">
+            Cargando...
+        </div>
     </div>
     <div>
         <label for="">Selfie con producto</label>
-        <input type="text">
+        <input type="file" wire:model.live="selfie_producto">
+        @if ($selfie_producto) 
+            <img src="{{ $selfie_producto->temporaryUrl() }}" height="50">
+        @endif
+        @error('selfie_producto')
+            <div class="text-invalid">
+                {{ $message }}
+            </div>
+        @enderror        
+        <div wire:loading wire:target="selfie_producto">
+            Cargando...
+        </div>
     </div>
     <br>
     <div>
-        <button>REGISTRAR FACTURA</button>
+        @error('productos')
+            <div class="text-invalid">
+                {{ $message }}
+            </div>
+        @enderror
     </div>
+    <div>
+        <button wire:click="storeFactura">REGISTRAR FACTURA</button>
+    </div>
+    @if (session('success'))
+        <b>{{ session('success') }}</b>
+    @endif
 </div>
