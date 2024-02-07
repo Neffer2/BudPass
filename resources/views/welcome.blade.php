@@ -15,4 +15,5 @@
     <div id="register-component" style="">
         <livewire:auth.register />
     </div>
+    passss
 @endsection
