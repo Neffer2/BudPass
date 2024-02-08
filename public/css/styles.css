@@ -21,7 +21,7 @@ body {
     min-height: 100vh;
 }
 
-/* Header */
+/* Header Movil */
 
 header {
     width: 100%;
@@ -128,7 +128,7 @@ header {
     display: block;
 }
 
-/* Registro - Login */
+/* Registro - Login Movil */
 
 .main-forms-container {
     display: flex;
@@ -146,6 +146,14 @@ header {
     margin-bottom: 30px;
 }
 
+.container-forms-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+}
+
 .forms-container {
     background: #D9D9D9;
     height: 1400px;
@@ -157,8 +165,8 @@ header {
     flex-direction: column;
     width: 90%;
     height: 900px;
-    background: #fff;
 }
+
 
 .form-btn {
     width: 90%;
@@ -183,10 +191,22 @@ header {
 }
 
 
-/* Login Form */
+/* Login Form movil */
+
+.login-div-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+
+}
 
 
-/* Registro Form */
+/* Registro Form movil*/
 
 .registro-div-container {
     display: flex;
@@ -194,7 +214,6 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-top: 1rem;
     width: 100%;
     height: 100%;
     background: #fff;
@@ -204,12 +223,13 @@ header {
     margin: 20px;
 }
 
-.title-registro, .sub-title-registro {
+.title-registro,
+.sub-title-registro {
     color: var(--primary-blue);
     font-weight: 700;
 }
 
-.title-registro{
+.title-registro {
     font-size: 25px;
 }
 
@@ -293,7 +313,7 @@ header {
 .btn-registrar {
     margin-top: 20px;
     margin-bottom: 20px;
-    width: 70vw;
+    width: 80%;
 }
 
 .btn-registrar button {
@@ -419,7 +439,7 @@ footer {
 /* Desktop */
 @media (min-width: 992px) {
 
-    /* Header */
+    /* Header Desktop */
 
 
     .header-content {
@@ -478,10 +498,72 @@ footer {
         color: #fff;
     }
 
+    /* Registro - Login Desktop */
+
+    .main-forms-container {
+        flex-direction: row;
+    }
+
+    .main-forms-img {
+        width: 50%;
+        height: 800px;
+        border: 1px solid #000000;
+        margin-bottom: 0;
+        margin-left: 40px;
+    } 
+
+
+    .forms-container {
+        height: 1050px;
+    }
+
+    .regs-container {
+        width: 50%;
+        margin-right: 5%;
+    }
+
+
+    .container-forms-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 50%;
+    }
+
+    /* Registro Form Desktop */
+
+
+    .checkbox-container {
+        width: 60%;
+        align-items: center;
+    }
+
+    .checkbox-container label {
+        margin-left: 20px;
+    }
+
+    
+
+
+    .btn-registrar {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .btn-registrar button {
+        height: 48px;
+        width: 60%;
+        background: #DC0019;
+        color: #fff;
+        border-radius: 6px;
+        border-style: none;
+    }
 
 
 
-    /* Footer */
+
+    /* Footer desktop */
 
     .top-footer {
         display: flex;
