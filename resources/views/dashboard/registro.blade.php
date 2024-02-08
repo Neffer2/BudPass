@@ -5,6 +5,7 @@
         PUNTAJE PENDIENTE
         {{ Auth::user()->puntos }}
 
-
         <livewire:dashboard.registro-facturas/>          
+        <br><br><br><br>
+        <livewire:dashboard.registro-codigo/>
     @endsection

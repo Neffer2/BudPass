@@ -50,7 +50,7 @@
     <nav>
         @auth
             {{ Auth::user()->name }}
-            {{ Auth::user()->puntos }}
+            {{ number_format(Auth::user()->puntos) }}
         @endauth
     </nav>
     <hr>
