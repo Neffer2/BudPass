@@ -8,11 +8,6 @@
     box-sizing: border-box;
 }
 
-.text-invalid {
-    color: red;
-}
-
-
 body {
     font-family: 'Montserrat';
     display: flex;
@@ -128,13 +123,117 @@ header {
 }
 
 /* Registro - Login */
-.formularios-container{
+.forms-container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     background: #D9D9D9;
-    height: 1200px;
+    height: 1400px; /* Contenedor principal movil */
+}
+
+.regs-container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 900px;
+    background: #9BA5B7;
+}
+
+.form-btn {
+    width: 80%;
+}
+
+.regs-btn {
+    background-color: #9BA5B7;
+    border-style: none;
+    width: 122px;
+    height: 48px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: #fff;
+}
+
+.inactive {
+    background-color: #fff;
+    color: #9BA5B7;
+}
+
+
+/* Login Form */
+
+
+/* Registro Form */
+
+.registro-div-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 1rem;
+    width: 100%;
+    height: 100%;
+    background: #9BA5B7;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 70vw;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.input-container label {
+    align-self: flex-start;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+
+.input-container input,
+.input-container select {
+    width: 70vw;
+    max-width: 500px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.checkbox-container {
+    display: flex;
+    width: 70vw;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.checkbox-container label {
+    color: #fff;
+    margin-left: 5%;
+}
+
+.text-invalid {
+    color: red;
+    width: 70vw;
+    font-size: 13px;
+    margin-top: -5px;
+    margin-bottom: 5px;
+}
+
+.btn-registrar {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.btn-registrar button {
+    height: 48px;
+    width: 137.5px;
+    background: #545F71;
+    color: #fff;
+    border-radius: 6px;
+    border-style: none;
 }
 
 /* Footer */

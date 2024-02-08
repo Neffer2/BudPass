@@ -1,5 +1,5 @@
-<div>
-    <div>
+<div class="registro-div-container">
+    <div class="input-container">
         <label for="nombre">Nombre: </label>
         <input id="nombre" type="text" wire:model.change="nombre">
         @error('nombre')
@@ -8,8 +8,7 @@
             </div>
         @enderror
     </div>
-
-    <div>
+    <div class="input-container">
         <label for="email">Correo: </label>
         <input id="email" type="email" wire:model.change="email">
         @error('email')
@@ -17,9 +16,9 @@
                 {{ $message }}
             </div>
         @enderror
-    </div> 
+    </div>
 
-    <div>
+    <div class="input-container">
         <label for="documento">Documento: </label>
         <input id="documento" type="text" wire:model.change="documento">
         @error('documento')
@@ -28,8 +27,7 @@
             </div>
         @enderror
     </div>
- 
-    <div> 
+    <div class="input-container">
         <label for="telefono">Celular: </label>
         <input id="telefono" type="text" wire:model.change="telefono">
         @error('telefono')
@@ -39,21 +37,21 @@
         @enderror
     </div>
 
-    <div>
+    <div class="input-container">
         <label for="departamento">Departamento: </label>
         <select id="departamento" wire:model.live="departamento">
             <option value="">Seleccionar</option>
             @foreach ($departamentos as $depto)
                 <option value="{{ $depto->id }}">{{ $depto->descripcion }}</option>
             @endforeach
-        </select> 
+        </select>
         @error('departamento')
             <div class="text-invalid">
                 {{ $message }}
             </div>
-        @enderror   
+        @enderror
     </div>
-    <div>
+    <div class="input-container">
         <label for="ciudad">Ciudad</label>
         <select id="ciudad" wire:model.change="ciudad">
             <option value=""></option>
@@ -67,10 +65,10 @@
             <div class="text-invalid">
                 {{ $message }}
             </div>
-        @enderror   
+        @enderror
     </div>
-    
-    <div>
+
+    <div class="input-container">
         <label for="fecha_nacimiento">Fecha de nacimiento</label>
         <input id="fecha_nacimiento" type="date" wire:model.change="fecha_nacimiento">
         @error('fecha_nacimiento')
@@ -80,7 +78,7 @@
         @enderror
     </div>
 
-    <div>
+    <div class="input-container">
         <label for="password">Contraseña: </label>
         <input id="password" type="password" wire:model.change="password">
         @error('password')
@@ -90,42 +88,42 @@
         @enderror
     </div>
 
-    <div>
+    <div class="input-container">
         <label for="confirm">Confirmar contraseña: </label>
         <input id="confirm" type="password" wire:model.change="confirm">
     </div>
 
-    <div>
-        <label for="terminos">T&eacute;rminos</label>
-        <input id="terminos" type="checkbox" wire:model.change="terminos">
-        @error('terminos')
-            <div class="text-invalid">
-                {{ $message }}
-            </div>
-        @enderror
-    </div>
+    <br>
 
-    <div>
-        <label for="politicas">Pol&iacute;ticas</label>
-        <input id="politicas" type="checkbox" wire:model.change="politicas">
-        @error('politicas')
-            <div class="text-invalid">
-                {{ $message }}
-            </div>
-        @enderror
+    <div class="checkbox-container">
+        <input id="terminos" type="checkbox" class="checkbox-item" wire:model.change="terminos">
+        <label for="terminos" class="checkbox-label">T&eacute;rminos</label>
     </div>
-
-    <div>
-        <label for="tratamiento">Tratamiento</label>
-        <input id="tratamiento" type="checkbox" wire:model.change="tratamiento">
-        @error('tratamiento')
-            <div class="text-invalid">
-                {{ $message }}
-            </div>
-        @enderror
+    @error('terminos')
+        <div class="text-invalid">
+            {{ $message }}
+        </div>
+    @enderror
+    <div class="checkbox-container">
+        <input id="politicas" type="checkbox" class="checkbox-item" wire:model.change="politicas">
+        <label for="politicas" class="checkbox-label">Pol&iacute;ticas</label>
     </div>
+    @error('politicas')
+        <div class="text-invalid">
+            {{ $message }}
+        </div>
+    @enderror
 
-    <div>
+    <div class="checkbox-container">
+        <input id="tratamiento" type="checkbox" class="checkbox-item" wire:model.change="tratamiento">
+        <label for="tratamiento" class="checkbox-label">Tratamiento</label>
+    </div>
+    @error('tratamiento')
+        <p class="text-invalid">
+            {{ $message }}
+        </p>
+    @enderror
+    <div class="btn-registrar">
         <button wire:click="store">Registrar</button>
     </div>
 </div>

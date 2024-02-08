@@ -107,6 +107,20 @@
             }
         }
 
+        document.getElementById('show-login-btn').addEventListener('click', function() {
+            document.getElementById('login-component').style.display = 'block';
+            document.getElementById('register-component').style.display = 'none';
+            this.classList.remove('inactive');
+            document.getElementById('show-register-btn').classList.add('inactive');
+        });
+    
+        document.getElementById('show-register-btn').addEventListener('click', function() {
+            document.getElementById('register-component').style.display = 'block';
+            document.getElementById('login-component').style.display = 'none';
+            this.classList.remove('inactive');
+            document.getElementById('show-login-btn').classList.add('inactive');
+        });
+
     </script>
 </body>
 </html>
