@@ -7,5 +7,5 @@
 
         <livewire:dashboard.registro-facturas/>          
         <br><br><br><br>
-        <livewire:dashboard.registro-codigo/>
+        <livewire:dashboard.registro-codigo/> 
     @endsection

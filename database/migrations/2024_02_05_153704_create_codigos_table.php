@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('codigos', function (Blueprint $table) {
             $table->id(); 
-            $table->string('codigo');
+            $table->string('codigo')->unique();
             $table->foreign('referencia_id')->references('id')->on('referencias');
             $table->foreignId('referencia_id');
             $table->foreign('estado_id')->references('id')->on('estados');

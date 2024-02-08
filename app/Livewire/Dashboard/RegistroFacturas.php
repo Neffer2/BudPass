@@ -156,5 +156,4 @@ class RegistroFacturas extends Component
             'selfie_producto.max' => 'El tamaño de la foto no puede ser mayor a 20MB.'
         ];
     }
-
 } 
