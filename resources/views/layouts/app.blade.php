@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <title>@yield('title')</title>
 </head>
 
@@ -46,7 +48,7 @@
             </div>
         </div>
     </header> --}}
-    
+
     <nav>
         @auth
             {{ Auth::user()->name }}
@@ -76,12 +78,14 @@
                 </div>
 
                 <div class="hablemos-container">
-                    <img src="{{ asset('assets/budweiser/hablemos-de-alcohol.png') }}" class="footer-hablemos-img" alt="" srcset="">
+                    <img src="{{ asset('assets/budweiser/hablemos-de-alcohol.png') }}" class="footer-hablemos-img"
+                        alt="" srcset="">
                 </div>
             </div>
             <div class="line"></div>
             <div class="disclaimer-container">
-                <img src="{{ asset('assets/budweiser/disclaimer-bud.png') }}" class="footer-disclaimer-img" alt="Disclaimer" srcset="">
+                <img src="{{ asset('assets/budweiser/disclaimer-bud.png') }}" class="footer-disclaimer-img"
+                    alt="Disclaimer" srcset="">
             </div>
             <div class="footer-info-text">
                 <p>
@@ -107,20 +111,26 @@
             }
         }
 
+        const togglePasswordVisibility = (id) => {
+            var passwordInput = document.getElementById(id);
+            var type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+        }
+
         document.getElementById('show-login-btn').addEventListener('click', function() {
             document.getElementById('login-component').style.display = 'block';
             document.getElementById('register-component').style.display = 'none';
             this.classList.remove('inactive');
             document.getElementById('show-register-btn').classList.add('inactive');
         });
-    
+
         document.getElementById('show-register-btn').addEventListener('click', function() {
             document.getElementById('register-component').style.display = 'block';
             document.getElementById('login-component').style.display = 'none';
             this.classList.remove('inactive');
             document.getElementById('show-login-btn').classList.add('inactive');
         });
-
     </script>
 </body>
+
 </html>

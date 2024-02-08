@@ -80,7 +80,11 @@
 
     <div class="input-container">
         <label for="password">Contraseña: </label>
-        <input id="password" type="password" wire:model.change="password">
+        <div class="input-contrasena">
+            <input id="password" type="password" wire:model.change="password" style="padding-right: 40px;">
+            <i onclick="togglePasswordVisibility('password')" class="fas fa-eye toggle-password"
+                style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;"></i>
+        </div>
         @error('password')
             <div class="text-invalid">
                 {{ $message }}
@@ -90,7 +94,11 @@
 
     <div class="input-container">
         <label for="confirm">Confirmar contraseña: </label>
-        <input id="confirm" type="password" wire:model.change="confirm">
+        <div class="input-contrasena">
+            <input id="confirm" type="password" wire:model.change="confirm" style="padding-right: 40px;">
+            <i onclick="togglePasswordVisibility('confirm')" class="fas fa-eye toggle-password"
+                style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;"></i>
+        </div>
     </div>
 
     <br>

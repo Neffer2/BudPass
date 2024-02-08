@@ -232,6 +232,16 @@ header {
     transform: scale(1.5);
 }
 
+.input-contrasena {
+    position: relative;
+}
+
+.input-contrasena i {
+    position: absolute;
+    margin-top: -4px;
+
+}
+
 .text-invalid {
     color: red;
     width: 70vw;
