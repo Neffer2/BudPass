@@ -96,8 +96,7 @@
         <label for="confirm">Confirmar contraseña: </label>
         <div class="input-contrasena">
             <input id="confirm" type="password" wire:model.change="confirm" style="padding-right: 40px;">
-            <i onclick="togglePasswordVisibility('confirm')" class="fas fa-eye toggle-password"
-                style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;"></i>
+            <i onclick="togglePasswordVisibility('confirm')" class="fas fa-eye toggle-password"></i>
         </div>
     </div>
 

@@ -113,8 +113,18 @@
 
         const togglePasswordVisibility = (id) => {
             var passwordInput = document.getElementById(id);
+            var eyeIcon = document.querySelector(`i[onclick="togglePasswordVisibility('${id}')"]`);
             var type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
             passwordInput.setAttribute('type', type);
+
+            // Cambiar el icono dependiendo del tipo de entrada de la contraseña
+            if (type === 'text') {
+                eyeIcon.classList.remove( "fa-eye");
+                eyeIcon.classList.add( "fa-eye-slash");
+            } else {
+                eyeIcon.classList.remove("fa-eye-slash");
+                eyeIcon.classList.add("fa-eye");
+            }
         }
 
         document.getElementById('show-login-btn').addEventListener('click', function() {
