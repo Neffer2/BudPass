@@ -1,4 +1,8 @@
 <div class="registro-div-container">
+    <div class="title-registo-coontainer">
+        <p class="title-registro">Formulario de Registro</h2>
+        <p class="sub-title-registro">Completa los siguientes datos</h3>
+    </div>
     <div class="input-container">
         <label for="nombre">Nombre: </label>
         <input id="nombre" type="text" wire:model.change="nombre">
@@ -52,7 +56,7 @@
         @enderror
     </div>
     <div class="input-container">
-        <label for="ciudad">Ciudad</label>
+        <label for="ciudad">Ciudad: </label>
         <select id="ciudad" wire:model.change="ciudad">
             <option value=""></option>
             @if ($departamento)
@@ -69,7 +73,7 @@
     </div>
 
     <div class="input-container">
-        <label for="fecha_nacimiento">Fecha de nacimiento</label>
+        <label for="fecha_nacimiento">Fecha de nacimiento: </label>
         <input id="fecha_nacimiento" type="date" wire:model.change="fecha_nacimiento">
         @error('fecha_nacimiento')
             <div class="text-invalid">

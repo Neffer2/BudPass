@@ -140,6 +140,8 @@
             this.classList.remove('inactive');
             document.getElementById('show-login-btn').classList.add('inactive');
         });
+
+        document.getElementById("fecha_nacimiento").max = new Date().toISOString().split("T")[0];
     </script>
 </body>
 

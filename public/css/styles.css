@@ -2,14 +2,20 @@
 
 /* Global */
 
+:root {
+    --primary-red: #DC0019;
+    --primary-blue: #0A0541;
+
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
 body {
-    font-family: 'Montserrat';
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -134,7 +140,7 @@ header {
 }
 
 .main-forms-img {
-    width: 80%;
+    width: 90%;
     height: 203px;
     border: 1px solid #000000;
     margin-bottom: 30px;
@@ -149,28 +155,31 @@ header {
 .regs-container {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 90%;
     height: 900px;
-    background: #9BA5B7;
+    background: #fff;
 }
 
 .form-btn {
-    width: 80%;
+    width: 90%;
 }
 
 .regs-btn {
-    background-color: #9BA5B7;
+    background-color: #fff;
     border-style: none;
     width: 122px;
     height: 48px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    color: #fff;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--primary-blue);
 }
 
 .inactive {
-    background-color: #fff;
-    color: #9BA5B7;
+    background-color: var(--primary-red);
+    color: #fff;
 }
 
 
@@ -188,7 +197,25 @@ header {
     margin-top: 1rem;
     width: 100%;
     height: 100%;
-    background: #9BA5B7;
+    background: #fff;
+}
+
+.title-registo-coontainer {
+    margin: 20px;
+}
+
+.title-registro, .sub-title-registro {
+    color: var(--primary-blue);
+    font-weight: 700;
+}
+
+.title-registro{
+    font-size: 25px;
+}
+
+.sub-title-registro {
+    font-size: 16px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .input-container {
@@ -203,7 +230,10 @@ header {
 .input-container label {
     align-self: flex-start;
     margin-bottom: 5px;
-    color: #fff;
+    color: var(--primary-blue);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
 }
 
 
@@ -214,19 +244,24 @@ header {
     padding: 10px;
     margin-bottom: 10px;
     box-sizing: border-box;
+    border: var(--primary-blue) 1px solid;
+    border-radius: 8px;
 }
 
 .checkbox-container {
     display: flex;
     width: 70vw;
     align-items: flex-start;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     margin-left: 5%;
 }
 
 .checkbox-container label {
-    color: #fff;
-    margin-left: 5%;
+    color: var(--primary-blue);
+    margin-left: 7%;
+    font-family: 'Franklin Gothic Book', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
 }
 
 .checkbox-item {
@@ -258,12 +293,13 @@ header {
 .btn-registrar {
     margin-top: 20px;
     margin-bottom: 20px;
+    width: 70vw;
 }
 
 .btn-registrar button {
     height: 48px;
-    width: 137.5px;
-    background: #545F71;
+    width: 100%;
+    background: #DC0019;
     color: #fff;
     border-radius: 6px;
     border-style: none;

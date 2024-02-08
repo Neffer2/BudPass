@@ -7,7 +7,7 @@
             <div class="main-forms-img">
             </div>
             <div class="form-btn">
-                <button id="show-login-btn" class="regs-btn ">Login</button>
+                <button id="show-login-btn" class="regs-btn ">Iniciar sesión</button>
                 <button id="show-register-btn" class="regs-btn inactive">Registro</button>
             </div>
 
