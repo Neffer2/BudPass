@@ -123,11 +123,24 @@ header {
 }
 
 /* Registro - Login */
-.forms-container {
+
+.main-forms-container {
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
+    width: 100%;
+    margin-top: 40px;
+
+}
+
+.main-forms-img {
+    width: 80%;
+    height: 203px;
+    border: 1px solid #000000;
+    margin-bottom: 30px;
+}
+
+.forms-container {
     background: #D9D9D9;
     height: 1400px; /* Contenedor principal movil */
 }
