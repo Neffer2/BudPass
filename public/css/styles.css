@@ -156,15 +156,17 @@ header {
 
 .forms-container {
     background: #D9D9D9;
-    height: 1400px;
-    /* Contenedor principal movil */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 1600px;
+    /* Contenedor principal de forms movil */
 }
 
 .regs-container {
     display: flex;
     flex-direction: column;
     width: 90%;
-    height: 900px;
 }
 
 
@@ -200,7 +202,7 @@ header {
     align-items: center;
     text-align: center;
     width: 100%;
-    height: 100%;
+    height: 1232px;
     background: #fff;
 
 }
@@ -209,18 +211,20 @@ header {
 /* Registro Form movil*/
 
 .registro-div-container {
+    padding-top: 20px;
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     width: 100%;
-    height: 100%;
+    height: 1232px;
     background: #fff;
 }
 
 .title-registo-coontainer {
-    margin: 20px;
+    margin: 50px;
 }
 
 .title-registro,
@@ -240,6 +244,7 @@ header {
 
 .input-container {
     display: flex;
+    position: relative;
     flex-direction: column;
     align-items: flex-start;
     width: 70vw;
@@ -261,19 +266,22 @@ header {
 .input-container select {
     width: 70vw;
     max-width: 500px;
+    height: 45px;
     padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 25px;
     box-sizing: border-box;
     border: var(--primary-blue) 1px solid;
     border-radius: 8px;
 }
 
 .checkbox-container {
+    position: relative;
     display: flex;
     width: 70vw;
+    max-width: 500px;
     align-items: flex-start;
-    margin-bottom: 15px;
-    margin-left: 5%;
+    margin-bottom: 30px;
+    margin-left: 10px;
 }
 
 .checkbox-container label {
@@ -294,7 +302,7 @@ header {
 
 .input-contrasena i {
     position: absolute;
-    margin-top: -4px;
+    margin-top: -10px;
     right: 10px;
     top: 50%;
     transform: translateY(-50%);
@@ -306,8 +314,18 @@ header {
     color: red;
     width: 100%;
     font-size: 13px;
-    margin-top: -5px;
-    margin-bottom: 10px;
+    position: absolute;
+    text-align: left;
+    margin-top: 69px;
+}
+
+.text-invalid-check {
+    position: absolute;
+    color: red;
+    font-size: 13px;
+    top: 100%;
+    width: 100vw;
+    text-align: left;
 }
 
 .btn-registrar {
@@ -432,10 +450,6 @@ footer {
     margin-bottom: 40px;
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1366px) {
-    /* CSS rules for laptop screens go here */
-}
-
 /* Desktop */
 @media (min-width: 992px) {
 
@@ -506,20 +520,15 @@ footer {
 
     .main-forms-img {
         width: 50%;
-        height: 800px;
+        height: 629px;
         border: 1px solid #000000;
         margin-bottom: 0;
         margin-left: 40px;
-    } 
-
-
-    .forms-container {
-        height: 1050px;
     }
 
     .regs-container {
         width: 50%;
-        margin-right: 5%;
+        margin: 5%;
     }
 
 
@@ -535,15 +544,17 @@ footer {
 
 
     .checkbox-container {
-        width: 60%;
+        position: relative;
+        display: flex;
+        width: 70vw;
+        max-width: 535px;
         align-items: center;
+        margin-bottom: 30px;
     }
 
     .checkbox-container label {
         margin-left: 20px;
     }
-
-    
 
 
     .btn-registrar {
@@ -560,8 +571,13 @@ footer {
         border-style: none;
     }
 
-
-
+    .text-invalid-check {
+        color: red;
+        width: 100%;
+        font-size: 13px;
+        top: 100%;
+        margin-top: 5px;
+    }
 
     /* Footer desktop */
 

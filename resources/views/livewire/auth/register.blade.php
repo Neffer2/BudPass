@@ -109,31 +109,33 @@
     <div class="checkbox-container">
         <input id="terminos" type="checkbox" class="checkbox-item" wire:model.change="terminos">
         <label for="terminos" class="checkbox-label">T&eacute;rminos</label>
+        @error('terminos')
+            <div class="text-invalid-check">
+                {{ $message }}
+            </div>
+        @enderror
     </div>
-    @error('terminos')
-        <div class="text-invalid">
-            {{ $message }}
-        </div>
-    @enderror
+
     <div class="checkbox-container">
         <input id="politicas" type="checkbox" class="checkbox-item" wire:model.change="politicas">
         <label for="politicas" class="checkbox-label">Pol&iacute;ticas</label>
+        @error('politicas')
+            <div class="text-invalid-check">
+                {{ $message }}
+            </div>
+        @enderror
     </div>
-    @error('politicas')
-        <div class="text-invalid">
-            {{ $message }}
-        </div>
-    @enderror
+
 
     <div class="checkbox-container">
         <input id="tratamiento" type="checkbox" class="checkbox-item" wire:model.change="tratamiento">
         <label for="tratamiento" class="checkbox-label">Tratamiento</label>
+        @error('tratamiento')
+            <div class="text-invalid-check">
+                {{ $message }}
+            </div>
+        @enderror
     </div>
-    @error('tratamiento')
-        <p class="text-invalid">
-            {{ $message }}
-        </p>
-    @enderror
     <div class="btn-registrar">
         <button wire:click="store">Registrar</button>
     </div>

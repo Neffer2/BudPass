@@ -3,10 +3,7 @@
     <div class="forms-container">
 
         <div class="main-forms-container">
-
-
-                <div class="main-forms-img"></div>
-                
+                <div class="main-forms-img"></div>    
                 <div class="regs-container">
                     <div class="form-btn">
                         <button id="show-login-btn" class="regs-btn ">Iniciar sesión</button>
