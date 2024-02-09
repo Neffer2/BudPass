@@ -154,13 +154,14 @@ header {
     width: 90%;
 }
 
-.forms-container {
+/* Contenedor principal de forms */
+
+.page-forms-container {
     background: #D9D9D9;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     min-height: 100vh;
-    /* Asegura que el contenedor ocupe al menos la altura de la ventana de visualización */
     padding-bottom: 30px;
 }
 
@@ -579,6 +580,22 @@ footer {
         top: 100%;
         margin-top: 5px;
     }
+
+    .flex-deparamento-ciudad {
+        display: flex;
+        justify-content: space-around;
+        width: 70vw;
+        max-width: 500px;
+    }
+
+    .flex-deparamento-ciudad .select-departamento {
+        width: 95%;
+    }
+    
+    .flex-deparamento-ciudad .select-ciudad{
+        width: 100%;
+    }
+
 
     /* Footer desktop */
 

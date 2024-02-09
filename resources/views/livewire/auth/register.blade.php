@@ -40,38 +40,38 @@
             </div>
         @enderror
     </div>
-
-    <div class="input-container">
-        <label for="departamento">Departamento: </label>
-        <select id="departamento" wire:model.live="departamento">
-            <option value="">Seleccionar</option>
-            @foreach ($departamentos as $depto)
-                <option value="{{ $depto->id }}">{{ $depto->descripcion }}</option>
-            @endforeach
-        </select>
-        @error('departamento')
-            <div class="text-invalid">
-                {{ $message }}
-            </div>
-        @enderror
-    </div>
-    <div class="input-container">
-        <label for="ciudad">Ciudad: </label>
-        <select id="ciudad" wire:model.change="ciudad">
-            <option value=""></option>
-            @if ($departamento)
-                @foreach ($departamentos->where('id', $departamento)->first()->ciudades as $ciudad)
-                    <option value="{{ $ciudad->id }}">{{ $ciudad->descripcion }}</option>
+    <div class="flex-deparamento-ciudad">
+        <div class="input-container">
+            <label for="departamento">Departamento: </label>
+            <select id="departamento" wire:model.live="departamento" class="select-departamento">
+                <option value="">Seleccionar</option>
+                @foreach ($departamentos as $depto)
+                    <option value="{{ $depto->id }}">{{ $depto->descripcion }}</option>
                 @endforeach
-            @endif
-        </select>
-        @error('ciudad')
-            <div class="text-invalid">
-                {{ $message }}
-            </div>
-        @enderror
+            </select>
+            @error('departamento')
+                <div class="text-invalid">
+                    {{ $message }}
+                </div>
+            @enderror
+        </div>
+        <div class="input-container">
+            <label for="ciudad">Ciudad: </label>
+            <select id="ciudad" wire:model.change="ciudad" class="select-ciudad">
+                <option value=""></option>
+                @if ($departamento)
+                    @foreach ($departamentos->where('id', $departamento)->first()->ciudades as $ciudad)
+                        <option value="{{ $ciudad->id }}">{{ $ciudad->descripcion }}</option>
+                    @endforeach
+                @endif
+            </select>
+            @error('ciudad')
+                <div class="text-invalid">
+                    {{ $message }}
+                </div>
+            @enderror
+        </div>
     </div>
-
     <div class="input-container">
         <label for="fecha_nacimiento">Fecha de nacimiento: </label>
         <input id="fecha_nacimiento" type="date" wire:model.change="fecha_nacimiento">

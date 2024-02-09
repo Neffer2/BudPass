@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="forms-container">
+    <div class="page-forms-container">
 
         <div class="main-forms-container">
                 <div class="main-forms-img"></div>    
