@@ -343,6 +343,7 @@ header {
     color: #fff;
     border-radius: 6px;
     border-style: none;
+    margin-bottom: 40px;
 }
 
 /* Footer */
@@ -565,12 +566,7 @@ footer {
     }
 
     .btn-registrar button {
-        height: 48px;
         width: 60%;
-        background: #DC0019;
-        color: #fff;
-        border-radius: 6px;
-        border-style: none;
     }
 
     .text-invalid-check {
