@@ -101,12 +101,11 @@ header {
 .sec-puntos {
     background: var(--primary-red);
     display: flex;
-    height: 100px !important;
+    height: 80px !important;
     align-items: center;
 }
 
 .sec-puntos p {
-    margin-top: 10px;
     color: #fff;
     margin-left: 25px;
     text-transform: uppercase;
@@ -467,6 +466,9 @@ footer {
 
     /* Header Desktop */
 
+    .ham-menu-list, .sec-puntos, .ham-item {
+        display: none;
+    }
 
     .header-content {
         position: absolute;
@@ -486,7 +488,9 @@ footer {
     }
 
     .header-img img {
-        margin-left: 10%;
+        margin-left: 5%;
+        width: 150px;
+        height: 48px;
 
     }
 
@@ -503,13 +507,13 @@ footer {
 
     .menu-desk-item a {
         text-decoration: none;
-        color: #486284;
+        color: #fff;
     }
 
     .menu-desk-item-puntos {
         position: absolute;
         display: flex;
-        background-color: #737373;
+        background-color: #fff;
         text-align: center;
         justify-content: center;
         align-content: center;
@@ -521,7 +525,7 @@ footer {
 
     .menu-desk-item-puntos p {
         margin: 20px;
-        color: #fff;
+        color: var(--primary-blue);
     }
 
     /* Registro - Login Desktop */
