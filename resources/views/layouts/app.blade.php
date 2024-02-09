@@ -15,7 +15,7 @@
     <header>
         <div class="header-content">
             <div class="header-img">
-                <img src="{{ asset('assets/budweiser/bud-logo.png') }}" alt="Logo Budweiser" class=""
+                <img src="{{ asset('assets/budweiser/logo-budweiser.svg') }}" alt="Logo Budweiser" class=""
                     srcset="">
             </div>
             <div class="ham-open-icon" onclick="toggleMenu()">☰</div>
@@ -66,14 +66,11 @@
         <div class="footer-container">
             <div class="top-footer">
                 <div class="img-footer-container">
-                    <img src="{{ asset('assets/budweiser/bud-logo.png') }}" alt="" srcset="">
+                    <img src="{{ asset('assets/budweiser/logo-budweiser.svg') }}" alt="" srcset="">
                     <div class="footer-text">
-                        <div class="blue-text">
+                        <div class="terminos-text">
                             <p>Aviso de Privacidad</p>
                             <p>Politica de protección de datos <span>personales</span></p>
-
-                        </div>
-                        <div class="terminos-text">
                             <p>Términos y condiciones</p>
                             <p>Términos y condiciones de la campaña</p>
                         </div>
@@ -81,21 +78,27 @@
                     </div>
                 </div>
 
-                <div class="hablemos-container">
-                    <img src="{{ asset('assets/budweiser/hablemos-de-alcohol.png') }}" class="footer-hablemos-img"
-                        alt="" srcset="">
+            </div>
+            <div class="line">
+                <p>No compartas este contenido con <span>menores de edad</span></p>
+            </div>
+            <div class="footer-bottom">
+                <div class="exeso-footer">
+                    <img src="{{ asset('assets/budweiser/exceso-footer.svg') }}" class="" alt="Exeso" srcset="">
+                </div>
+                <div class="consumo">
+                    <img src="{{ asset('assets/budweiser/consumo-responsable.svg') }}" alt="Consumo">
+                </div>
+                <div class="vive">
+                    <img src="{{ asset('assets/budweiser/vive-responsable.svg') }}" alt="Vive">
+                </div>
+                <div class="footer-info-text">
+                    <p>
+                        Anheuser-Busch InBev © Todos los derechos Reservados {{ date('Y') }}
+                    </p>
                 </div>
             </div>
-            <div class="line"></div>
-            <div class="disclaimer-container">
-                <img src="{{ asset('assets/budweiser/disclaimer-bud.png') }}" class="footer-disclaimer-img"
-                    alt="Disclaimer" srcset="">
-            </div>
-            <div class="footer-info-text">
-                <p>
-                    © TXT, Inc. 2024.
-                </p>
-            </div>
+
         </div>
     </footer>
 
@@ -148,7 +151,6 @@
         document.getElementById('fecha_nacimiento').addEventListener('click', function() {
             this.max = new Date().toISOString().split("T")[0];
         });
-
     </script>
 </body>
 
