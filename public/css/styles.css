@@ -32,7 +32,7 @@ header {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 80.5px;
+    height: 56px;
     z-index: 100;
     background: var(--primary-blue);
 }
@@ -61,7 +61,7 @@ header {
 
 .ham-menu-list {
     position: fixed;
-    top: 80.5px;
+    top: 56px;
     left: 0;
     width: 100%;
     background: #fff;
@@ -90,18 +90,19 @@ header {
     justify-content: center;
     flex-direction: column;
     width: 100%;
-    height: 70px;
+    height: 50px;
     margin-left: 25px;
 }
 
 .ham-item a {
     text-decoration: none;
+    font-size: 16px;
 }
 
 .sec-puntos {
     background: var(--primary-red);
     display: flex;
-    height: 80px !important;
+    height: 68px !important;
     align-items: center;
 }
 
@@ -193,7 +194,7 @@ header {
     border-top-right-radius: 10px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 16px;
     color: var(--primary-blue);
 }
 
@@ -466,6 +467,10 @@ footer {
 
     /* Header Desktop */
 
+    header {
+        height: 64px;
+    }
+
     .ham-menu-list, .sec-puntos, .ham-item {
         display: none;
     }
@@ -502,12 +507,15 @@ footer {
         flex-direction: row;
         justify-content: center;
         width: 33%;
-        margin-right: 22rem;
+        margin-right: 20.5rem;
     }
 
     .menu-desk-item a {
         text-decoration: none;
         color: #fff;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: 400;
+        font-size: 16px;
     }
 
     .menu-desk-item-puntos {
@@ -524,8 +532,14 @@ footer {
     }
 
     .menu-desk-item-puntos p {
-        margin: 20px;
+        align-self: center;
         color: var(--primary-blue);
+    }
+
+    .menu-desk-item-puntos p, .menu-desk-item-puntos span {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: 400;
+        font-size: 16px;
     }
 
     /* Registro - Login Desktop */
