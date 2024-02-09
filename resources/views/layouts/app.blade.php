@@ -15,7 +15,8 @@
     <header>
         <div class="header-content">
             <div class="header-img">
-                <img src="{{ asset('assets/budweiser/bud-logo.png') }}" alt="Logo Budweiser" class="" srcset="">
+                <img src="{{ asset('assets/budweiser/bud-logo.png') }}" alt="Logo Budweiser" class=""
+                    srcset="">
             </div>
             <div class="ham-open-icon" onclick="toggleMenu()">☰</div>
             <div class="menu-desk">
@@ -112,15 +113,14 @@
         }
 
         const togglePasswordVisibility = (id) => {
-            var passwordInput = document.getElementById(id);
-            var eyeIcon = document.querySelector(`i[onclick="togglePasswordVisibility('${id}')"]`);
-            var type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            const passwordInput = document.getElementById(id);
+            let eyeIcon = document.querySelector(`i[onclick="togglePasswordVisibility('${id}')"]`);
+            let type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
             passwordInput.setAttribute('type', type);
 
-            // Cambiar el icono dependiendo del tipo de entrada de la contraseña
             if (type === 'text') {
-                eyeIcon.classList.remove( "fa-eye");
-                eyeIcon.classList.add( "fa-eye-slash");
+                eyeIcon.classList.remove("fa-eye");
+                eyeIcon.classList.add("fa-eye-slash");
             } else {
                 eyeIcon.classList.remove("fa-eye-slash");
                 eyeIcon.classList.add("fa-eye");
@@ -141,7 +141,14 @@
             document.getElementById('show-login-btn').classList.add('inactive');
         });
 
-        document.getElementById("fecha_nacimiento").max = new Date().toISOString().split("T")[0];
+        window.onload = function() {
+            document.getElementById("fecha_nacimiento").max = new Date().toISOString().split("T")[0];
+        }
+
+        document.getElementById('fecha_nacimiento').addEventListener('click', function() {
+            this.max = new Date().toISOString().split("T")[0];
+        });
+
     </script>
 </body>
 
