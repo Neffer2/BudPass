@@ -84,13 +84,19 @@
             </div>
             <div class="footer-bottom">
                 <div class="exeso-footer">
-                    <img src="{{ asset('assets/budweiser/exceso-footer.svg') }}" class="" alt="Exeso" srcset="">
+                    <img src="{{ asset('assets/budweiser/exceso-footer.svg') }}" alt="Exeso" srcset="">
                 </div>
-                <div class="consumo">
-                    <img src="{{ asset('assets/budweiser/consumo-responsable.svg') }}" alt="Consumo">
+                <div class="exeso-desk">
+                    <img src="{{ asset('assets/budweiser/logo-bavaria.svg') }}" alt="Logo Bavaria">
+                    <img src="{{ asset('assets/budweiser/exceso-text.svg') }}" alt="Exeso" srcset="">
                 </div>
-                <div class="vive">
-                    <img src="{{ asset('assets/budweiser/vive-responsable.svg') }}" alt="Vive">
+                <div class="consumo-vive-container">
+                    <div class="consumo">
+                        <img src="{{ asset('assets/budweiser/consumo-responsable.svg') }}" alt="Consumo">
+                    </div>
+                    <div class="vive">
+                        <img src="{{ asset('assets/budweiser/vive-responsable.svg') }}" alt="Vive">
+                    </div>
                 </div>
                 <div class="footer-info-text">
                     <p>
