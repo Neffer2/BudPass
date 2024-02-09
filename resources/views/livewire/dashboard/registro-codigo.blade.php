@@ -9,9 +9,14 @@
         @enderror
     </div> 
     <div>
-        <button wire:click="storePuntos" wire:loading.attr="disabled" wire:target="storePuntos">Canjear</button>
+        <button wire:click="storePuntos" @error('codigo-bloqueado') disabled @enderror wire:loading.attr="disabled" wire:target="storePuntos">Canjear</button>
     </div>
-    @if (session('success'))
-        <b>{{ session('success') }}</b>
+    @error('codigo-bloqueado')
+        <div class="text-invalid">
+            {{ $message }}
+        </div>
+    @enderror
+    @if (session('success-registro-codigo'))
+        <b>{{ session('success-registro-codigo') }}</b>
     @endif
 </div>

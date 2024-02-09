@@ -7,6 +7,7 @@ use App\Models\Codigo;
 use App\Models\RegistrosCodigo;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\RateLimiter;
 
 class RegistroCodigo extends Component
 {
@@ -18,11 +19,16 @@ class RegistroCodigo extends Component
         return view('livewire.dashboard.registro-codigo');
     }
 
-    public function storePuntos(){
+    public function storePuntos(){        
         $this->validate([
-            'codigo' => 'required|alpha_num:ascii' 
+            'codigo' => 'required|alpha_num:ascii'
         ]);
 
+        if (RateLimiter::tooManyAttempts('send-message:'.Auth::user()->id, $perMinute = 5)) {
+            return $this->addError('codigo-bloqueado', 'Opps, demasiados intentos.');
+        }
+        RateLimiter::hit('send-message:'.Auth::user()->id);
+        
         $codigo = Codigo::where('codigo', 'LIKE', "%$this->codigo%")->first();
         if ($codigo && $codigo->estado_id){
             $registroCodigo = new RegistrosCodigo;
@@ -38,8 +44,9 @@ class RegistroCodigo extends Component
             $user->puntos += $registroCodigo->puntos_sumados;
             $user->update();
 
-            return redirect()->route('dashboard')->with('success', "Código canjeado con éxito, ganaste $registroCodigo->puntos_sumados puntos.");
-        }        
+            return redirect()->route('dashboard')->with('success-registro-codigo', "Código canjeado con éxito, ganaste $registroCodigo->puntos_sumados puntos.");
+        }
+        
         return $this->addError('codigo', 'Opps, este código ya fué canjeado.');
     }
 

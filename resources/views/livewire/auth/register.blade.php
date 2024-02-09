@@ -12,15 +12,6 @@
             </div>
         @enderror
     </div>
-    <div class="input-container">
-        <label for="email">Correo: </label>
-        <input id="email" type="email" wire:model.change="email">
-        @error('email')
-            <div class="text-invalid">
-                {{ $message }}
-            </div>
-        @enderror
-    </div>
 
     <div class="input-container">
         <label for="documento">Documento: </label>
@@ -31,15 +22,17 @@
             </div>
         @enderror
     </div>
+
     <div class="input-container">
-        <label for="telefono">Celular: </label>
-        <input id="telefono" type="text" wire:model.change="telefono">
-        @error('telefono')
+        <label for="fecha_nacimiento">Fecha de nacimiento: </label>
+        <input id="fecha_nacimiento" type="date" wire:model.change="fecha_nacimiento">
+        @error('fecha_nacimiento')
             <div class="text-invalid">
                 {{ $message }}
             </div>
         @enderror
     </div>
+
     <div class="flex-deparamento-ciudad">
         <div class="input-container">
             <label for="departamento">Departamento: </label>
@@ -72,10 +65,22 @@
             @enderror
         </div>
     </div>
+
     <div class="input-container">
-        <label for="fecha_nacimiento">Fecha de nacimiento: </label>
-        <input id="fecha_nacimiento" type="date" wire:model.change="fecha_nacimiento">
-        @error('fecha_nacimiento')
+        <label for="telefono">Celular: </label>
+        <input id="telefono" type="text" wire:model.change="telefono">
+        @error('telefono')
+            <div class="text-invalid">
+                {{ $message }}
+            </div>
+        @enderror
+    </div>
+    
+
+    <div class="input-container">
+        <label for="email">Correo: </label>
+        <input id="email" type="email" wire:model.change="email">
+        @error('email')
             <div class="text-invalid">
                 {{ $message }}
             </div>

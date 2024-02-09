@@ -30,7 +30,9 @@
                 <option value="">Seleccionar</option>
                 @if ($canal)
                     @foreach ($this->canal->productos as $producto)
-                        <option value="{{ $producto->id }}">{{ $producto->descripcion }}</option>                    
+                        @if (!$productos->where('id', $producto)->first())
+                            <option value="{{ $producto->id }}">{{ $producto->descripcion }}</option>                                            
+                        @endif
                     @endforeach
                 @endif
             </select>

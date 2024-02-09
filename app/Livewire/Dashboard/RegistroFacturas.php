@@ -31,7 +31,7 @@ class RegistroFacturas extends Component
 
     /*
         |---------------------------------------
-        | Store products on $this->productos
+        | adds products on $this->productos
         |---------------------------------------
     */
     public function addProduct(){
@@ -42,6 +42,7 @@ class RegistroFacturas extends Component
 
         $producto = $this->canal->productos->find($this->producto);
         $this->productos->push(['id' => $producto->id, 'descripcion' => $producto->descripcion, 'cantidad' => $this->cantidad]);
+        
     }
 
     /*
@@ -68,13 +69,19 @@ class RegistroFacturas extends Component
         }
     }
 
+    /*
+        |---------------------------------------
+        | Store factura and Productos factura.
+        |---------------------------------------
+    */
     public function storeFactura(){
         $this->validate([
-            'num_factura' => 'required|numeric|unique:registros_factura|max_digits:20', 
+            'num_factura' => 'required|alpha_num|unique:registros_factura|max:20',
             'foto_factura' => 'required|max:20000',
             'selfie_producto' => 'required|max:20000'
         ]);
-
+        
+        $this->num_factura = str_replace("-", "", $this->num_factura);
         if (!(count($this->productos) > 0)){
             $this->addError('productos', 'No puedes registrar una factura sin productos.');
         }
@@ -110,9 +117,13 @@ class RegistroFacturas extends Component
     }   
 
     public function updatedNumFactura(){
+        if (strpos($this->num_factura, '-')){
+            $this->num_factura = str_replace("-", "", $this->num_factura);
+        }
+
         $this->validate([
-            'num_factura' => 'required|numeric|unique:registros_factura|max_digits:20'
-        ]);
+            'num_factura' => 'required|alpha_num|unique:registros_factura|max:20'
+        ]);        
     }
 
     public function updatedFotoFactura(){
