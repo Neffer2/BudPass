@@ -326,7 +326,7 @@ header {
     color: red;
     font-size: 13px;
     top: 100%;
-    width: 100vw;
+    width: 70vw;
     text-align: left;
 }
 
@@ -549,7 +549,7 @@ footer {
         position: relative;
         display: flex;
         width: 70vw;
-        max-width: 535px;
+        max-width: 500px;
         align-items: center;
         margin-bottom: 30px;
     }
