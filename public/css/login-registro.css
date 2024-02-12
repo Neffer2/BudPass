@@ -33,7 +33,6 @@
 }
 
 /* Contenedor principal de forms */
-
 .page-forms-cont {
     background: #D9D9D9;
     display: flex;
@@ -43,7 +42,7 @@
     padding-bottom: 30px;
 }
 
-.regs-cont {
+.regs-form-cont {
     display: flex;
     flex-direction: column;
     width: 90%;
@@ -68,7 +67,7 @@
     cursor: pointer;
 }
 
-.inactive {
+.secundario-btn {
     background-color: var(--primary-red);
     color: #fff;
 }
@@ -259,7 +258,7 @@
         border-radius: 10px;
     }
 
-    .regs-cont {
+    .regs-form-cont {
         align-items: center;
         width: 100%;
     }
