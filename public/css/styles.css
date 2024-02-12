@@ -149,7 +149,10 @@ header {
 
 }
 
-.main-forms-img {
+.main-forms-logo {
+    display: flex;
+    justify-content: center;
+    align-content: center;
     width: 90%;
 }
 
@@ -604,7 +607,7 @@ footer {
         flex-direction: row;
     }
 
-    .main-forms-img {
+    .main-forms-logo {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -624,7 +627,6 @@ footer {
     .regs-container {
         align-items: center;
         width: 100%;
-        margin: 2%;
     }
 
     .form-btn {
@@ -643,7 +645,9 @@ footer {
 
     .login-div-container {
 
+        padding-top: 20px;
         width: 100%;
+        height: 1333px; /* TODO: Temporal *
 
     }
 
@@ -661,6 +665,7 @@ footer {
 
     .registro-div-container {
         padding-top: 20px;
+        width: 100%;
         height: 100%;
     }
 

@@ -3,7 +3,7 @@
     <div class="page-forms-container">
 
         <div class="main-forms-container">
-                <div class="main-forms-img">
+                <div class="main-forms-logo">
                     <div class="big-logo-container"></div>
                 </div>    
                 <div class="regs-container">
