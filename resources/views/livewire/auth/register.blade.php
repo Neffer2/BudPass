@@ -91,7 +91,7 @@
         <label for="password">Contraseña: </label>
         <div class="input-contrasena">
             <input id="password" type="password" wire:model.change="password" style="padding-right: 40px;">
-            <i onclick="togglePasswordVisibility('password')" class="fas fa-eye toggle-password"
+            <i onclick="togglePasswordVisibility('password')" class="fas fa-eye-slash toggle-password"
                 style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer;"></i>
         </div>
         @error('password')
@@ -105,7 +105,7 @@
         <label for="confirm">Confirmar contraseña: </label>
         <div class="input-contrasena">
             <input id="confirm" type="password" wire:model.change="confirm" style="padding-right: 40px;">
-            <i onclick="togglePasswordVisibility('confirm')" class="fas fa-eye toggle-password"></i>
+            <i onclick="togglePasswordVisibility('confirm')" class="fas fa-eye-slash toggle-password"></i>
         </div>
     </div>
 

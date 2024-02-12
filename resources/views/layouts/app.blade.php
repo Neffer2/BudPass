@@ -132,11 +132,11 @@
             passwordInput.setAttribute('type', type);
 
             if (type === 'text') {
-                eyeIcon.classList.remove("fa-eye");
-                eyeIcon.classList.add("fa-eye-slash");
-            } else {
                 eyeIcon.classList.remove("fa-eye-slash");
                 eyeIcon.classList.add("fa-eye");
+            } else {
+                eyeIcon.classList.remove("fa-eye");
+                eyeIcon.classList.add("fa-eye-slash");
             }
         }
 
@@ -154,12 +154,19 @@
             document.getElementById('show-login-btn').classList.add('inactive');
         });
 
+        // Validación de fecha de nacimiento mayor de 18 años
         window.onload = function() {
-            document.getElementById("fecha_nacimiento").max = new Date().toISOString().split("T")[0];
+            let today = new Date();
+            let pastYear = today.getFullYear() - 18;
+            today.setFullYear(pastYear);
+            document.getElementById("fecha_nacimiento").max = today.toISOString().split("T")[0];
         }
 
         document.getElementById('fecha_nacimiento').addEventListener('click', function() {
-            this.max = new Date().toISOString().split("T")[0];
+            let today = new Date();
+            let pastYear = today.getFullYear() - 18;
+            today.setFullYear(pastYear);
+            this.max = today.toISOString().split("T")[0];
         });
     </script>
 </body>
