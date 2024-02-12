@@ -631,7 +631,7 @@ footer {
     }
 
     .form-btn {
-        width: 60%;
+        width: 80%;
     }
 
     .container-forms-btn {
@@ -659,7 +659,7 @@ footer {
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        width: 60%;
+        width: 80%;
         height: 100%;
         background: #fff;
     }
@@ -695,8 +695,8 @@ footer {
     .checkbox-container {
         position: relative;
         display: flex;
-        width: 70vw;
-        max-width: 500px;
+        width: 90%;
+        max-width: none;
         align-items: center;
         margin-bottom: 30px;
     }
