@@ -69,10 +69,14 @@
                     <img src="{{ asset('assets/budweiser/logo-budweiser.svg') }}" alt="" srcset="">
                     <div class="footer-text">
                         <div class="terminos-text">
-                            <p>Aviso de Privacidad</p>
-                            <p>Politica de protección de datos <span>personales</span></p>
-                            <p>Términos y condiciones</p>
-                            <p>Términos y condiciones de la campaña</p>
+                            <div class="politicas-p">
+                                <p>Aviso de Privacidad</p>
+                                <p>Politica de protección de datos <span>personales</span></p>
+                            </div>
+                            <div class="terminos-p">
+                                <p>Términos y condiciones</p>
+                                <p>Términos y condiciones de la campaña</p>
+                            </div>
                         </div>
 
                     </div>
