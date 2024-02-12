@@ -1,8 +1,9 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ShopperController; 
 use Illuminate\Support\Facades\Route;
- 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function () { 
     return view('welcome');
 })->middleware('guest')->name('home');
 
@@ -22,4 +23,5 @@ Route::get('/dashboard', function () {
     return view('dashboard.registro');
 })->middleware('auth')->name('dashboard');
 
+Route::get('/ranking', [ShopperController::class, 'showRanking'])->middleware('auth')->name('ranking');
 require __DIR__.'/auth.php';

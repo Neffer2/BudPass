@@ -27,7 +27,7 @@ class RegistroFacturas extends Component
 
     public function mount(){
         $this->productos = collect();
-    }
+    } 
 
     /*
         |---------------------------------------
@@ -41,8 +41,12 @@ class RegistroFacturas extends Component
         ]);
 
         $producto = $this->canal->productos->find($this->producto);
-        $this->productos->push(['id' => $producto->id, 'descripcion' => $producto->descripcion, 'cantidad' => $this->cantidad]);
-        
+        if (!$this->productos->where('id', $this->producto)->first()){
+            $this->productos->push(['id' => $producto->id, 'descripcion' => $producto->descripcion, 'cantidad' => $this->cantidad]);            
+            $this->reset('producto', 'cantidad');
+        }else {
+            return $this->addError('producto', 'Opps, ya añadiste este producto.');
+        }
     }
 
     /*
@@ -77,8 +81,8 @@ class RegistroFacturas extends Component
     public function storeFactura(){
         $this->validate([
             'num_factura' => 'required|alpha_num|unique:registros_factura|max:20',
-            'foto_factura' => 'required|max:20000',
-            'selfie_producto' => 'required|max:20000'
+            'foto_factura' => 'required|mimes:jpg,jpeg,png,bmp,tiff|max:20000',
+            'selfie_producto' => 'required|mimes:jpg,jpeg,png,bmp,tiff|max:20000'
         ]);
         
         $this->num_factura = str_replace("-", "", $this->num_factura);
@@ -128,13 +132,13 @@ class RegistroFacturas extends Component
 
     public function updatedFotoFactura(){
         $this->validate([
-            'foto_factura' => 'required|max:20000'
+            'foto_factura' => 'required|mimes:jpg,jpeg,png,bmp,tiff|max:20000'
         ]);
     }
 
     public function updatedSelfieProducto(){
         $this->validate([
-            'selfie_producto' => 'required|max:20000'
+            'selfie_producto' => 'required|mimes:jpg,jpeg,png,bmp,tiff|max:20000'
         ]);
     }
 
@@ -160,11 +164,21 @@ class RegistroFacturas extends Component
             'num_factura.required' => 'El número de factura es obligatorio.',
             'num_factura.numeric' => 'No puedes utilizar letras ni carácteres especiales en el número de factura.',
             'num_factura.unique' => 'Este número de factura ya fué registrado.',
-
+            
+            
             'foto_factura.required' => 'La foto de factura es obligatoria.',
-            'foto_factura.max' => 'El tamaño de la foto no puede ser mayor a 20MB.',
+            'foto_factura.max' => 'Opps, exediste el tamaño límite de fotos.',
+            'foto_factura.mimes' => 'Formato de foto inválido.',
             'selfie_producto.required' => 'La selfie de producto es obligatoria.',
-            'selfie_producto.max' => 'El tamaño de la foto no puede ser mayor a 20MB.'
+            'selfie_producto.max' => 'Opps, exediste el tamaño límite de fotos.',
+            'selfie_producto.mimes' => 'Formato de foto inválido.',
+
+            'producto.required' => 'Selecciona un producto.',
+            'producto.numeric' => 'Producto inválido',
+
+            'cantidad.required' => 'Indica la cantidad de producto que compraste.',
+            'cantidad.numeric' => 'Cantidad de producto inválida',
+            'cantidad.max' => 'Opps, exediste la cantidad máxima de producto por factura.',
         ];
     }
 } 

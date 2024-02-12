@@ -30,9 +30,7 @@
                 <option value="">Seleccionar</option>
                 @if ($canal)
                     @foreach ($this->canal->productos as $producto)
-                        @if (!$productos->where('id', $producto)->first())
-                            <option value="{{ $producto->id }}">{{ $producto->descripcion }}</option>                                            
-                        @endif
+                        <option value="{{ $producto->id }}">{{ $producto->descripcion }}</option>
                     @endforeach
                 @endif
             </select>
@@ -81,30 +79,30 @@
     <hr>
     <div>
         <label for="">Foto factura</label>
-        <input type="file" wire:model.live="foto_factura">
-        @if ($foto_factura) 
-            <img src="{{ $foto_factura->temporaryUrl() }}" height="50">
-        @endif
+        <input type="file" wire:model.live="foto_factura" accept="image/*">
         @error('foto_factura')
             <div class="text-invalid">
                 {{ $message }}
             </div>
-        @enderror
+        @enderror 
+        @if ($foto_factura && (!$errors->first('foto_factura'))) 
+            <img src="{{ $foto_factura->temporaryUrl() }}" height="50">
+        @endif
         <div wire:loading wire:target="foto_factura">
             Cargando...
         </div>
     </div>
     <div>
         <label for="">Selfie con producto</label>
-        <input type="file" wire:model.live="selfie_producto">
-        @if ($selfie_producto) 
+        <input type="file" wire:model.live="selfie_producto" accept="image/*">
+        @error('selfie_producto')
+        <div class="text-invalid">
+            {{ $message }}
+        </div>
+        @enderror        
+        @if ($selfie_producto && (!$errors->first('selfie_producto'))) 
             <img src="{{ $selfie_producto->temporaryUrl() }}" height="50">
         @endif
-        @error('selfie_producto')
-            <div class="text-invalid">
-                {{ $message }}
-            </div>
-        @enderror        
         <div wire:loading wire:target="selfie_producto">
             Cargando...
         </div>

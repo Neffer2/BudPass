@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,13 +14,15 @@
     <header>
         <div class="header-content">
             <div class="header-img">
-                <img src="{{ asset('assets/budweiser/logo-budweiser.svg') }}" alt="Logo Budweiser" class=""
-                    srcset="">
+                <a href="{{ route('dashboard') }}">
+                    <img src="{{ asset('assets/budweiser/logo-budweiser.svg') }}" alt="Logo Budweiser" class=""
+                        srcset="">
+                </a>
             </div>
             <div class="ham-open-icon" onclick="toggleMenu()">☰</div>
             <div class="menu-desk">
                 <div class="menu-desk-item">
-                    <a class="" href="#">Ranking</a>
+                    <a class="" href="{{ route('ranking') }}">Ranking</a>
                 </div>
                 <div class="menu-desk-item">
                     <a class="" href="#">Marketplace</a>
