@@ -1,12 +1,12 @@
 @extends('layouts.app')
 @section('content')
-    <div class="page-forms-container">
+    <div class="page-forms-cont">
 
-        <div class="main-forms-container">
+        <div class="main-forms-cont">
                 <div class="main-forms-logo">
-                    <div class="big-logo-container"></div>
+                    <div class="big-logo-cont"></div>
                 </div>    
-                <div class="regs-container">
+                <div class="regs-cont">
                     <div class="form-btn">
                         <button id="show-login-btn" class="regs-btn ">Iniciar sesión</button>
                         <button id="show-register-btn" class="regs-btn inactive">Registro</button>

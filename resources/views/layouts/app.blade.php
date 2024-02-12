@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <link rel="stylesheet" href="{{ asset('css/login-registro.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/registro-facturas-codigos.css') }}">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <title>@yield('title')</title>
@@ -70,9 +71,9 @@
     @yield('content')
 
     <footer>
-        <div class="footer-container">
+        <div class="footer-cont">
             <div class="top-footer">
-                <div class="img-footer-container">
+                <div class="img-footer-cont">
                     <img src="{{ asset('assets/budweiser/logo-budweiser.svg') }}" alt="" srcset="">
                     <div class="footer-text">
                         <div class="terminos-text">
@@ -101,7 +102,7 @@
                     <img src="{{ asset('assets/budweiser/logo-bavaria.svg') }}" alt="Logo Bavaria">
                     <img src="{{ asset('assets/budweiser/exceso-text.svg') }}" alt="Exeso" srcset="">
                 </div>
-                <div class="consumo-vive-container">
+                <div class="consumo-vive-cont">
                     <div class="consumo">
                         <img src="{{ asset('assets/budweiser/consumo-responsable.svg') }}" alt="Consumo">
                     </div>

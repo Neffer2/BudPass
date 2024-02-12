@@ -1,6 +1,6 @@
 /* Registro - Login Movil */
 
-.main-forms-container {
+.main-forms-cont {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -16,7 +16,7 @@
     width: 90%;
 }
 
-.big-logo-container {
+.big-logo-cont {
     width: 100%;
     height: 203px;
     border: 5px solid var(--primary-blue);
@@ -24,7 +24,7 @@
     border-radius: 10px;
 }
 
-.container-forms-btn {
+.cont-forms-btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,7 +34,7 @@
 
 /* Contenedor principal de forms */
 
-.page-forms-container {
+.page-forms-cont {
     background: #D9D9D9;
     display: flex;
     flex-direction: column;
@@ -43,7 +43,7 @@
     padding-bottom: 30px;
 }
 
-.regs-container {
+.regs-cont {
     display: flex;
     flex-direction: column;
     width: 90%;
@@ -76,7 +76,7 @@
 
 /* Login Form movil */
 
-.login-div-container {
+.login-div-cont {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -91,7 +91,7 @@
 
 /* Registro Form movil*/
 
-.registro-div-container {
+.registro-div-cont {
     padding-top: 20px;
     display: flex;
     position: relative;
@@ -104,7 +104,7 @@
     background: #fff;
 }
 
-.title-registo-container {
+.title-registo-cont {
     margin-top: 50px;
     margin-bottom: 50px;
     width: 100%;
@@ -126,7 +126,7 @@
     font-weight: 400;
 }
 
-.input-container {
+.input-cont {
     display: flex;
     position: relative;
     flex-direction: column;
@@ -136,7 +136,7 @@
     margin: 0 auto;
 }
 
-.input-container label {
+.input-cont label {
     align-self: flex-start;
     margin-bottom: 5px;
     color: var(--primary-blue);
@@ -146,8 +146,8 @@
 }
 
 
-.input-container input,
-.input-container select {
+.input-cont input,
+.input-cont select {
     width: 70vw;
     max-width: 500px;
     height: 45px;
@@ -158,7 +158,7 @@
     border-radius: 8px;
 }
 
-.checkbox-container {
+.checkbox-cont {
     position: relative;
     display: flex;
     width: 70vw;
@@ -168,7 +168,7 @@
     margin-left: 10px;
 }
 
-.checkbox-container label {
+.checkbox-cont label {
     color: var(--primary-blue);
     margin-left: 7%;
     font-family: 'Franklin Gothic Book', 'Arial Narrow', Arial, sans-serif;
@@ -238,7 +238,7 @@
 
     /* Registro - Login Desktop */
 
-    .main-forms-container {
+    .main-forms-cont {
         flex-direction: row;
     }
 
@@ -250,7 +250,7 @@
         margin-bottom: 0;
     }
 
-    .big-logo-container {
+    .big-logo-cont {
         width: 577px;
         height: 629px;
         border: 10px solid var(--primary-blue);
@@ -259,7 +259,7 @@
         border-radius: 10px;
     }
 
-    .regs-container {
+    .regs-cont {
         align-items: center;
         width: 100%;
     }
@@ -268,7 +268,7 @@
         width: 80%;
     }
 
-    .container-forms-btn {
+    .cont-forms-btn {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -278,7 +278,7 @@
 
     /* Login Form Desktop */
 
-    .login-div-container {
+    .login-div-cont {
 
         padding-top: 20px;
         width: 100%;
@@ -300,13 +300,13 @@
         background: #fff;
     }
 
-    .registro-div-container {
+    .registro-div-cont {
         padding-top: 20px;
         width: 100%;
         height: 100%;
     }
 
-    .input-container {
+    .input-cont {
         width: 90%;
         max-width: none;
         justify-content: center;
@@ -314,8 +314,8 @@
     }
 
 
-    .input-container input,
-    .input-container select {
+    .input-cont input,
+    .input-cont select {
         width: 100%;
         max-width: none;
         height: 64px;
@@ -328,7 +328,7 @@
 
 
 
-    .checkbox-container {
+    .checkbox-cont {
         position: relative;
         display: flex;
         width: 90%;
@@ -337,7 +337,7 @@
         margin-bottom: 30px;
     }
 
-    .checkbox-container label {
+    .checkbox-cont label {
         margin-left: 20px;
     }
 

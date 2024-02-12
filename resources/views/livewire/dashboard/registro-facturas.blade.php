@@ -8,7 +8,7 @@
         <label for="">NIT</label>
         <input type="text" wire:model.live.debounce.500ms="nit">
         @error('nit')
-            <div class="text-invalid">
+            <div class="text-invalid-factura">
                 {{ $message }}
             </div>
         @enderror
@@ -17,7 +17,7 @@
         <label for="">NUM FACTURA</label>
         <input type="text" wire:model.change="num_factura">
         @error('num_factura')
-            <div class="text-invalid">
+            <div class="text-invalid-factura">
                 {{ $message }}
             </div>
         @enderror
@@ -35,7 +35,7 @@
                 @endif
             </select>
             @error('producto')
-                <div class="text-invalid">
+                <div class="text-invalid-factura">
                     {{ $message }}
                 </div>
             @enderror
@@ -44,7 +44,7 @@
             <label for="">Cantidad</label>
             <input type="number" wire:model.change='cantidad'>
             @error('cantidad')
-                <div class="text-invalid">
+                <div class="text-invalid-factura">
                     {{ $message }}
                 </div>
             @enderror
@@ -81,7 +81,7 @@
         <label for="">Foto factura</label>
         <input type="file" wire:model.live="foto_factura" accept="image/*">
         @error('foto_factura')
-            <div class="text-invalid">
+            <div class="text-invalid-factura">
                 {{ $message }}
             </div>
         @enderror 
@@ -96,7 +96,7 @@
         <label for="">Selfie con producto</label>
         <input type="file" wire:model.live="selfie_producto" accept="image/*">
         @error('selfie_producto')
-        <div class="text-invalid">
+        <div class="text-invalid-factura">
             {{ $message }}
         </div>
         @enderror        
@@ -110,7 +110,7 @@
     <br>
     <div>
         @error('productos')
-            <div class="text-invalid">
+            <div class="text-invalid-factura">
                 {{ $message }}
             </div>
         @enderror
