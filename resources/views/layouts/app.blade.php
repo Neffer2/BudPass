@@ -14,51 +14,55 @@
 
 <body>
     @auth
-    <header>
-        <div class="header-content">
-            <div class="header-img">
-                <a href="{{ route('dashboard') }}">
-                    <img src="{{ asset('assets/budweiser/logo-budweiser.svg') }}" alt="Logo Budweiser" class=""
-                        srcset="">
-                </a>
-            </div>
-            <div class="ham-open-icon" onclick="toggleMenu()">☰</div>
-            <div class="menu-desk-info">
-                <div class="menu-desk">
-                    <div class="menu-desk-item">
-                        <a class="" href="{{ route('ranking') }}">Ranking</a>
+        <header>
+            <div class="header-content">
+                <div class="header-img">
+                    <a href="{{ route('dashboard') }}">
+                        <img src="{{ asset('assets/budweiser/logo-budweiser.svg') }}" alt="Logo Budweiser" class=""
+                            srcset="">
+                    </a>
+                </div>
+                <div class="ham-open-icon" onclick="toggleMenu()">☰</div>
+                <div class="menu-desk-info">
+                    <div class="menu-desk">
+                        <div class="menu-desk-item">
+                            <a class="" href="{{ route('ranking') }}">Ranking</a>
+                        </div>
+                        <div class="menu-desk-item">
+                            <a class="" href="#">Marketplace</a>
+                        </div>
+                        <div class="menu-desk-item">
+                            <a class="" href="#">Registro</a>
+                        </div>
                     </div>
-                    <div class="menu-desk-item">
-                        <a class="" href="#">Marketplace</a>
-                    </div>
-                    <div class="menu-desk-item">
-                        <a class="" href="#">Registro</a>
+                    <div class="menu-desk-item-puntos">
+                        <p>Nombre <span class="puntos-header">Pts: 10000</span></p>
                     </div>
                 </div>
-                <div class="menu-desk-item-puntos">
-                    <p>Nombre <span class="puntos-header">Pts: 10000</span></p>
-                </div>
-            </div>
 
-        </div>
-        <div class="ham-menu-list">
-            <div class="sec-puntos">
-                <p> Nombre <span class="puntos-header"> Pts: 10000 </span></p>
             </div>
-            <div class="ham-item">
-                <a class="" href="{{ route('ranking') }}">Ranking</a>
+            <div class="ham-menu-list">
+                <div class="sec-puntos">
+                    <p> Nombre <span class="puntos-header"> Pts: 10000 </span></p>
+                </div>
+                <div class="ham-item">
+                    <a class="" href="{{ route('ranking') }}">Ranking</a>
+                </div>
+                <div class="ham-item">
+                    <a class="" href="#">Marketplace</a>
+                </div>
+                <div class="ham-item">
+                    <a class="" href="#">Registro</a>
+                </div>
+                <div class="ham-item">
+                    <a href="#"
+                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar sesión</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                </div>
             </div>
-            <div class="ham-item">
-                <a class="" href="#">Marketplace</a>
-            </div>
-            <div class="ham-item">
-                <a class="" href="#">Registro</a>
-            </div>
-            <div class="ham-item">
-                <a class="" href="#">Cerrar sesión</a>
-            </div>
-        </div>
-    </header>
+        </header>
     @endauth
 
     <nav>
