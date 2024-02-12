@@ -1,4 +1,4 @@
-<div class="login-div-container">
+<div class="login-div-cont">
     <form action="/login" method="POST">
         @csrf
         <div>
@@ -16,9 +16,8 @@
             @foreach ($errors->all() as $error)
                 <div class="text-invalid">
                     {{ $error }}
-                </div>                
+                </div>
             @endforeach
         @endif
     </form>
 </div>
- 

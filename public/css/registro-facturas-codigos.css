@@ -1,0 +1,81 @@
+.main-facturas-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background: #e4e3e3;
+}
+
+.text-invalid-factura {
+    color: red;
+}
+
+.big-logo-facturas-cont {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 90%;
+}
+
+.big-logo-facturas {
+    width: 100%;
+    height: 203px;
+    border: 5px solid var(--primary-red);
+    margin-bottom: 30px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.facturas-codigos-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 90%;
+    height: 100%;
+    margin-bottom: 30px;
+}
+
+
+.form-facturas-btn{
+    width: 100%;
+}
+
+.facturas-codigos-btn {
+    border-style: none;
+    width: 140px;
+    height: 48px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--primary-blue);
+    cursor: pointer;
+}
+
+.secundario-btn {
+    background-color: var(--primary-red);
+    color: #fff;
+}
+
+/* Registro facturas Movil */
+.registro-factura-form {
+    background: #fff;
+    width: 100%;
+}
+
+
+/* Registro codigos Movil */
+.registro-codigo-form {
+    background: #fff;
+    width: 100%;
+}
+
+
+@media (min-width: 992px) { 
+
+
+}
+

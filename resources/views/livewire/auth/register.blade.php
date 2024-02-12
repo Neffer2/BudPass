@@ -1,9 +1,9 @@
-<div class="registro-div-container">
-    <div class="title-registo-container">
+<div class="registro-div-cont">
+    <div class="title-registo-cont">
         <p class="title-registro">Formulario de Registro</h2>
         <p class="sub-title-registro">Completa los siguientes datos</h3>
     </div>
-    <div class="input-container">
+    <div class="input-cont">
         <label for="nombre">Nombre: </label>
         <input id="nombre" type="text" wire:model.change="nombre">
         @error('nombre')
@@ -13,7 +13,7 @@
         @enderror
     </div>
 
-    <div class="input-container">
+    <div class="input-cont">
         <label for="documento">Documento: </label>
         <input id="documento" type="text" wire:model.change="documento">
         @error('documento')
@@ -23,7 +23,7 @@
         @enderror
     </div>
 
-    <div class="input-container">
+    <div class="input-cont">
         <label for="fecha_nacimiento">Fecha de nacimiento: </label>
         <input id="fecha_nacimiento" type="date" wire:model.change="fecha_nacimiento">
         @error('fecha_nacimiento')
@@ -34,7 +34,7 @@
     </div>
 
     <div class="flex-deparamento-ciudad">
-        <div class="input-container">
+        <div class="input-cont">
             <label for="departamento">Departamento: </label>
             <select id="departamento" wire:model.live="departamento" class="select-departamento">
                 <option value="">Seleccionar</option>
@@ -48,7 +48,7 @@
                 </div>
             @enderror
         </div>
-        <div class="input-container">
+        <div class="input-cont">
             <label for="ciudad">Ciudad: </label>
             <select id="ciudad" wire:model.change="ciudad" class="select-ciudad">
                 <option value=""></option>
@@ -66,7 +66,7 @@
         </div>
     </div>
 
-    <div class="input-container">
+    <div class="input-cont">
         <label for="telefono">Celular: </label>
         <input id="telefono" type="text" wire:model.change="telefono">
         @error('telefono')
@@ -77,7 +77,7 @@
     </div>
     
 
-    <div class="input-container">
+    <div class="input-cont">
         <label for="email">Correo: </label>
         <input id="email" type="email" wire:model.change="email">
         @error('email')
@@ -87,7 +87,7 @@
         @enderror
     </div>
 
-    <div class="input-container">
+    <div class="input-cont">
         <label for="password">Contraseña: </label>
         <div class="input-contrasena">
             <input id="password" type="password" wire:model.change="password" style="padding-right: 40px;">
@@ -101,7 +101,7 @@
         @enderror
     </div>
 
-    <div class="input-container">
+    <div class="input-cont">
         <label for="confirm">Confirmar contraseña: </label>
         <div class="input-contrasena">
             <input id="confirm" type="password" wire:model.change="confirm" style="padding-right: 40px;">
@@ -111,7 +111,7 @@
 
     <br>
 
-    <div class="checkbox-container">
+    <div class="checkbox-cont">
         <input id="terminos" type="checkbox" class="checkbox-item" wire:model.change="terminos">
         <label for="terminos" class="checkbox-label">T&eacute;rminos</label>
         @error('terminos')
@@ -121,7 +121,7 @@
         @enderror
     </div>
 
-    <div class="checkbox-container">
+    <div class="checkbox-cont">
         <input id="politicas" type="checkbox" class="checkbox-item" wire:model.change="politicas">
         <label for="politicas" class="checkbox-label">Pol&iacute;ticas</label>
         @error('politicas')
@@ -132,7 +132,7 @@
     </div>
 
 
-    <div class="checkbox-container">
+    <div class="checkbox-cont">
         <input id="tratamiento" type="checkbox" class="checkbox-item" wire:model.change="tratamiento">
         <label for="tratamiento" class="checkbox-label">Tratamiento</label>
         @error('tratamiento')

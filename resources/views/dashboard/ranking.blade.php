@@ -1,7 +1,7 @@
 @extends('layouts.app')
     @section('content')
 
-        <h2>RANKGIN</h2>
+        <h2>RANKING</h2>
         @foreach ($ranking as $key => $participante)
             {{ $key+=1 }}
             {{ $participante->name }}

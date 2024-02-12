@@ -1,28 +1,28 @@
 <div>
     <div>
-        <img @if ($canal) src="{{ asset("assets/canales/$canal->logo") }}" @endif alt="" height="100">
-        <img @if ($canal) src="{{ asset("assets/facturas/$canal->ejemplo_factura") }}" @endif alt="" height="100">                    
+        <img @if ($canal) src="{{ asset("assets/canales/$canal->logo") }}" @endif alt=""
+            height="100">
+        <img @if ($canal) src="{{ asset("assets/facturas/$canal->ejemplo_factura") }}" @endif
+            alt="" height="100">
     </div>
-    <hr>
     <div>
         <label for="">NIT</label>
         <input type="text" wire:model.live.debounce.500ms="nit">
         @error('nit')
-            <div class="text-invalid">
-                {{ $message }}
-            </div>
-        @enderror
-    </div> 
-    <div>
-        <label for="">NUM FACTURA</label>
-        <input type="text" wire:model.change="num_factura">
-        @error('num_factura')
-            <div class="text-invalid">
+            <div class="text-invalid-factura">
                 {{ $message }}
             </div>
         @enderror
     </div>
-    <hr>
+    <div>
+        <label for="">NUM FACTURA</label>
+        <input type="text" wire:model.change="num_factura">
+        @error('num_factura')
+            <div class="text-invalid-factura">
+                {{ $message }}
+            </div>
+        @enderror
+    </div>
     <div>
         <div>
             <label for="">Producto</label>
@@ -35,7 +35,7 @@
                 @endif
             </select>
             @error('producto')
-                <div class="text-invalid">
+                <div class="text-invalid-factura">
                     {{ $message }}
                 </div>
             @enderror
@@ -44,7 +44,7 @@
             <label for="">Cantidad</label>
             <input type="number" wire:model.change='cantidad'>
             @error('cantidad')
-                <div class="text-invalid">
+                <div class="text-invalid-factura">
                     {{ $message }}
                 </div>
             @enderror
@@ -53,7 +53,6 @@
             <button x-on:click="$wire.addProduct()">Agregar</button>
         </div>
     </div>
-    <hr>
     <div>
         <label for="">Listado de productos</label>
         <table>
@@ -68,24 +67,22 @@
                     <td>{{ $producto['descripcion'] }}</td>
                     <td>{{ $producto['cantidad'] }}</td>
                     <td><button x-on:click="$wire.subsProduct({{ $key }})">x</button></td>
-                </tr>                
+                </tr>
             @endforeach
         </table>
     </div>
-    <hr>
     <div>
         Puntos sumados: {{ $puntos }}
     </div>
-    <hr>
     <div>
         <label for="">Foto factura</label>
         <input type="file" wire:model.live="foto_factura" accept="image/*">
         @error('foto_factura')
-            <div class="text-invalid">
+            <div class="text-invalid-factura">
                 {{ $message }}
             </div>
-        @enderror 
-        @if ($foto_factura && (!$errors->first('foto_factura'))) 
+        @enderror
+        @if ($foto_factura && !$errors->first('foto_factura'))
             <img src="{{ $foto_factura->temporaryUrl() }}" height="50">
         @endif
         <div wire:loading wire:target="foto_factura">
@@ -96,21 +93,20 @@
         <label for="">Selfie con producto</label>
         <input type="file" wire:model.live="selfie_producto" accept="image/*">
         @error('selfie_producto')
-        <div class="text-invalid">
-            {{ $message }}
-        </div>
-        @enderror        
-        @if ($selfie_producto && (!$errors->first('selfie_producto'))) 
+            <div class="text-invalid-factura">
+                {{ $message }}
+            </div>
+        @enderror
+        @if ($selfie_producto && !$errors->first('selfie_producto'))
             <img src="{{ $selfie_producto->temporaryUrl() }}" height="50">
         @endif
         <div wire:loading wire:target="selfie_producto">
             Cargando...
         </div>
     </div>
-    <br>
     <div>
         @error('productos')
-            <div class="text-invalid">
+            <div class="text-invalid-factura">
                 {{ $message }}
             </div>
         @enderror

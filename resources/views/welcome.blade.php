@@ -1,15 +1,15 @@
 @extends('layouts.app')
 @section('content')
-    <div class="page-forms-container">
+    <div class="page-forms-cont">
 
-        <div class="main-forms-container">
+        <div class="main-forms-cont">
                 <div class="main-forms-logo">
-                    <div class="big-logo-container"></div>
+                    <div class="big-logo-cont"></div>
                 </div>    
-                <div class="regs-container">
+                <div class="regs-form-cont">
                     <div class="form-btn">
                         <button id="show-login-btn" class="regs-btn ">Iniciar sesión</button>
-                        <button id="show-register-btn" class="regs-btn inactive">Registro</button>
+                        <button id="show-register-btn" class="regs-btn secundario-btn">Registro</button>
                     </div>
                     <div id="login-component">
                         <livewire:auth.login />
@@ -22,6 +22,8 @@
     </div>
 
     <script>
+
+        // TODO: Hacer una sección en el layout para poner todos los scripts
         const togglePasswordVisibility = (id) => {
             const passwordInput = document.getElementById(id);
             let eyeIcon = document.querySelector(`i[onclick="togglePasswordVisibility('${id}')"]`);
@@ -40,15 +42,15 @@
         document.getElementById('show-login-btn').addEventListener('click', function() {
             document.getElementById('login-component').style.display = 'block';
             document.getElementById('register-component').style.display = 'none';
-            this.classList.remove('inactive');
-            document.getElementById('show-register-btn').classList.add('inactive');
+            this.classList.remove('secundario-btn');
+            document.getElementById('show-register-btn').classList.add('secundario-btn');
         });
 
         document.getElementById('show-register-btn').addEventListener('click', function() {
             document.getElementById('register-component').style.display = 'block';
             document.getElementById('login-component').style.display = 'none';
-            this.classList.remove('inactive');
-            document.getElementById('show-login-btn').classList.add('inactive');
+            this.classList.remove('secundario-btn');
+            document.getElementById('show-login-btn').classList.add('secundario-btn');
         });
 
         // Validación de fecha de nacimiento mayor de 18 años
