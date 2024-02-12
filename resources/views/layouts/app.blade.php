@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,27 +21,30 @@
                 </a>
             </div>
             <div class="ham-open-icon" onclick="toggleMenu()">☰</div>
-            <div class="menu-desk">
-                <div class="menu-desk-item">
-                    <a class="" href="{{ route('ranking') }}">Ranking</a>
+            <div class="menu-desk-info">
+                <div class="menu-desk">
+                    <div class="menu-desk-item">
+                        <a class="" href="{{ route('ranking') }}">Ranking</a>
+                    </div>
+                    <div class="menu-desk-item">
+                        <a class="" href="#">Marketplace</a>
+                    </div>
+                    <div class="menu-desk-item">
+                        <a class="" href="#">Registro</a>
+                    </div>
                 </div>
-                <div class="menu-desk-item">
-                    <a class="" href="#">Marketplace</a>
-                </div>
-                <div class="menu-desk-item">
-                    <a class="" href="#">Registro</a>
+                <div class="menu-desk-item-puntos">
+                    <p>Nombre <span class="puntos-header">Pts: 10000</span></p>
                 </div>
             </div>
-            <div class="menu-desk-item-puntos">
-                <p>Nombre <span class="puntos-header">Pts: 10000</span></p>
-            </div>
+
         </div>
         <div class="ham-menu-list">
             <div class="sec-puntos">
                 <p> Nombre <span class="puntos-header"> Pts: 10000 </span></p>
             </div>
             <div class="ham-item">
-                <a class="" href="#">Ranking</a>
+                <a class="" href="{{ route('ranking') }}">Ranking</a>
             </div>
             <div class="ham-item">
                 <a class="" href="#">Marketplace</a>
@@ -125,50 +129,6 @@
                 symbol.innerHTML = '☰';
             }
         }
-
-        const togglePasswordVisibility = (id) => {
-            const passwordInput = document.getElementById(id);
-            let eyeIcon = document.querySelector(`i[onclick="togglePasswordVisibility('${id}')"]`);
-            let type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-            passwordInput.setAttribute('type', type);
-
-            if (type === 'text') {
-                eyeIcon.classList.remove("fa-eye-slash");
-                eyeIcon.classList.add("fa-eye");
-            } else {
-                eyeIcon.classList.remove("fa-eye");
-                eyeIcon.classList.add("fa-eye-slash");
-            }
-        }
-
-        document.getElementById('show-login-btn').addEventListener('click', function() {
-            document.getElementById('login-component').style.display = 'block';
-            document.getElementById('register-component').style.display = 'none';
-            this.classList.remove('inactive');
-            document.getElementById('show-register-btn').classList.add('inactive');
-        });
-
-        document.getElementById('show-register-btn').addEventListener('click', function() {
-            document.getElementById('register-component').style.display = 'block';
-            document.getElementById('login-component').style.display = 'none';
-            this.classList.remove('inactive');
-            document.getElementById('show-login-btn').classList.add('inactive');
-        });
-
-        // Validación de fecha de nacimiento mayor de 18 años
-        window.onload = function() {
-            let today = new Date();
-            let pastYear = today.getFullYear() - 18;
-            today.setFullYear(pastYear);
-            document.getElementById("fecha_nacimiento").max = today.toISOString().split("T")[0];
-        }
-
-        document.getElementById('fecha_nacimiento').addEventListener('click', function() {
-            let today = new Date();
-            let pastYear = today.getFullYear() - 18;
-            today.setFullYear(pastYear);
-            this.max = today.toISOString().split("T")[0];
-        });
     </script>
 </body>
 

@@ -52,7 +52,7 @@ body {
 /* Header Movil */
 
 header {
-    width: 100%;
+    width: auto;
     background: #ffffff;
     position: sticky;
     top: 0;
@@ -106,6 +106,10 @@ header {
 }
 
 .menu-desk {
+    display: none;
+}
+
+.menu-desk-info {
     display: none;
 }
 
@@ -233,6 +237,7 @@ header {
     font-weight: 400;
     font-size: 16px;
     color: var(--primary-blue);
+    cursor: pointer;
 }
 
 .inactive {
@@ -394,6 +399,10 @@ header {
     border-radius: 6px;
     border-style: none;
     margin-bottom: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    text-transform: uppercase;
 }
 
 /* Footer movil */
@@ -589,15 +598,26 @@ footer {
 
     }
 
-    .menu-desk {
-        width: 100%;
+    .menu-desk-info {
         display: flex;
-        gap: 50px;
-        align-items: center;
+        width: 100%;
+        height: 100%;
+        justify-content: right;
+    }
+
+    .menu-desk {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: space-around;
         flex-direction: row;
         justify-content: center;
-        width: 33%;
-        margin-right: 20.5rem;
+    }
+    .menu-desk-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
     }
 
     .menu-desk-item a {
@@ -609,15 +629,12 @@ footer {
     }
 
     .menu-desk-item-puntos {
-        position: absolute;
         display: flex;
         background-color: #fff;
         text-align: center;
         justify-content: center;
         align-content: center;
-        top: 0;
-        right: 0;
-        width: 306px;
+        width: 308px;
         height: 100%;
     }
 
@@ -740,10 +757,12 @@ footer {
     .btn-registrar {
         margin-top: 20px;
         margin-bottom: 20px;
+        
     }
     
     .btn-registrar button {
         width: 60%;
+        cursor: pointer;
     }
     
     .text-invalid {
