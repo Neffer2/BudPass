@@ -15,7 +15,7 @@
 <body>
     @auth
         <header>
-            <div class="header-content">
+            <div class="bud-header-content">
                 <div class="header-img">
                     <a href="{{ route('dashboard') }}">
                         <img src="{{ asset('assets/budweiser/logo-budweiser.svg') }}" alt="Logo Budweiser" class=""
@@ -36,14 +36,16 @@
                         </div>
                     </div>
                     <div class="menu-desk-item-puntos">
-                        <p>Nombre <span class="puntos-header">Pts: 10000</span></p>
+                        <p>{{ Auth::user()->name }} <span class="puntos-header">Pts:
+                                {{ number_format(Auth::user()->puntos) }}</span></p>
                     </div>
                 </div>
 
             </div>
             <div class="ham-menu-list">
                 <div class="sec-puntos">
-                    <p> Nombre <span class="puntos-header"> Pts: 10000 </span></p>
+                    <p> {{ Auth::user()->name }} <span class="puntos-header"> Pts: {{ number_format(Auth::user()->puntos) }}
+                        </span></p>
                 </div>
                 <div class="ham-item">
                     <a class="" href="{{ route('ranking') }}">Ranking</a>
@@ -64,13 +66,6 @@
             </div>
         </header>
     @endauth
-
-    <nav>
-        @auth
-            {{ Auth::user()->name }}
-            {{ number_format(Auth::user()->puntos) }}
-        @endauth
-    </nav>
     <hr>
     @yield('content')
 
@@ -95,7 +90,7 @@
                 </div>
 
             </div>
-            <div class="line">
+            <div class="line-compartas">
                 <p>No compartas este contenido con <span>menores de edad</span></p>
             </div>
             <div class="footer-bottom">
