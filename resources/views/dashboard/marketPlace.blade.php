@@ -1,4 +1,6 @@
 @extends('layouts.app')
     @section('content')
-        SOY UN MARKET
+        @foreach ($premios as $key => $premio)
+            {{ $premio->nombre }} <br>
+        @endforeach
     @endsection

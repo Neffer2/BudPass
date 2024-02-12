@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Premio;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -17,6 +18,11 @@ class ShopperController extends Controller
     }
 
     public function showMarketPlace(){
-        return view('dashboard.marketPlace');
+        $premios = Premio::select()->where([
+            ['stock', '>', 0],
+            ['tipo', 1]
+        ])->get();
+
+        return view('dashboard.marketPlace', ['premios' => $premios]);
     }
 }

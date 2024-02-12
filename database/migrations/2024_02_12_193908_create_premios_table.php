@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('registros_codigo', function (Blueprint $table) {
+        Schema::create('premios', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('codigo_id');
-            $table->foreign('codigo_id')->references('id')->on('codigos');
-            $table->string('puntos_sumados');
-            $table->foreignId('user_id');
+            $table->string('nombre');
+            $table->string('descripcion');
+            $table->string('stock');
+            $table->string('puntos');
+            $table->string('foto');
+            $table->boolean('tipo'); //semanal: 0, ranking :1
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('registros_codigo');
+        Schema::dropIfExists('premios');
     }
 };

@@ -161,6 +161,8 @@ class RegistroFacturas extends Component
     public function messages() 
     {
         return [
+            'nit.required' => 'El número NIT es obligatorio.',
+
             'num_factura.required' => 'El número de factura es obligatorio.',
             'num_factura.numeric' => 'No puedes utilizar letras ni carácteres especiales en el número de factura.',
             'num_factura.unique' => 'Este número de factura ya fué registrado.',
