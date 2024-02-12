@@ -23,7 +23,10 @@ Route::get('/dashboard', function () {
     return view('dashboard.registro');
 })->middleware('auth')->name('dashboard');
 
+Route::get('/marketplace', function () {
+    return view('dashboard.marketPlace');
+})->middleware('auth')->name('market');
+
 Route::get('/ranking', [ShopperController::class, 'showRanking'])->middleware('auth')->name('ranking');
-Route::get('/marketplace', [ShopperController::class, 'showMarketPlace'])->middleware('auth')->name('market');
 
 require __DIR__.'/auth.php';

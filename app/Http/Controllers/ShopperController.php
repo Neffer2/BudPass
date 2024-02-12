@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use App\Models\Premio;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -15,14 +14,5 @@ class ShopperController extends Controller
         $user_rank = User::select('id', 'name', 'email', 'puntos')->where('puntos', '>', Auth::user()->puntos)->count();
 
         return view('dashboard.ranking', ['ranking' => $ranking, 'user_rank' => $user_rank+=1]);
-    }
-
-    public function showMarketPlace(){
-        $premios = Premio::select()->where([
-            ['stock', '>', 0],
-            ['tipo', 1]
-        ])->get();
-
-        return view('dashboard.marketPlace', ['premios' => $premios]);
     }
 }

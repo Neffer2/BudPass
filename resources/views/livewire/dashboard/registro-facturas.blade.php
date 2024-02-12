@@ -116,7 +116,7 @@
         @enderror
     </div>
     <div>
-        <button wire:click="storeFactura">REGISTRAR FACTURA</button>
+        <button x-on:click="$wire.storeFactura">REGISTRAR FACTURA</button>
     </div>
     @if (session('success'))
         <b>{{ session('success') }}</b>
