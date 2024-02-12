@@ -17,6 +17,6 @@ class ShopperController extends Controller
     }
 
     public function showMarketPlace(){
-        
+        return view('dashboard.marketPlace');
     }
 }
