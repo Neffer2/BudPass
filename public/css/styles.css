@@ -116,7 +116,8 @@ header {
     text-transform: capitalize;
 }
 
-.sec-puntos p, .sec-puntos span {
+.sec-puntos p,
+.sec-puntos span {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 400;
     font-size: 16px;
@@ -150,9 +151,14 @@ header {
 
 .main-forms-img {
     width: 90%;
+}
+
+.big-logo-container {
+    width: 100%;
     height: 203px;
-    border: 1px solid #000000;
+    border: 5px solid var(--primary-blue);
     margin-bottom: 30px;
+    border-radius: 10px;
 }
 
 .container-forms-btn {
@@ -412,15 +418,17 @@ footer {
     margin-top: 30px;
 }
 
-.politicas-p p, .terminos-p p {
+.politicas-p p,
+.terminos-p p {
     color: #fff;
     font-size: 12px;
     text-decoration: underline;
     text-transform: uppercase;
-     /* Bud Bold / 700 */
+    /* Bud Bold / 700 */
 }
 
-.politicas-p, .terminos-p {
+.politicas-p,
+.terminos-p {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -439,7 +447,8 @@ footer {
     margin-bottom: 20px;
 }
 
-.line p, .line span {
+.line p,
+.line span {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 14px;
@@ -475,17 +484,19 @@ footer {
     height: 100%;
 }
 
-.consumo, .vive{
+.consumo,
+.vive {
     display: flex;
     width: 100%;
     margin-bottom: 15px;
 }
 
-.exeso-desk{
+.exeso-desk {
     display: none;
 }
 
-.consumo, .vive{
+.consumo,
+.vive {
     display: flex;
     width: auto;
     justify-content: center;
@@ -513,7 +524,9 @@ footer {
         height: 64px;
     }
 
-    .ham-menu-list, .sec-puntos, .ham-item {
+    .ham-menu-list,
+    .sec-puntos,
+    .ham-item {
         display: none;
     }
 
@@ -578,7 +591,8 @@ footer {
         color: var(--primary-blue);
     }
 
-    .menu-desk-item-puntos p, .menu-desk-item-puntos span {
+    .menu-desk-item-puntos p,
+    .menu-desk-item-puntos span {
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         font-weight: 400;
         font-size: 16px;
@@ -591,18 +605,31 @@ footer {
     }
 
     .main-forms-img {
-        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    .big-logo-container {
+        width: 577px;
         height: 629px;
-        border: 1px solid #000000;
+        border: 10px solid var(--primary-blue);
         margin-bottom: 0;
         margin-left: 40px;
+        border-radius: 10px;
     }
 
     .regs-container {
-        width: 50%;
+        align-items: center;
+        width: 100%;
         margin: 2%;
     }
 
+    .form-btn {
+        width: 60%;
+    }
 
     .container-forms-btn {
         display: flex;
@@ -612,9 +639,39 @@ footer {
         width: 50%;
     }
 
+    /* Login Form Desktop */
+
+    .login-div-container {
+
+        width: 100%;
+
+    }
+
     /* Registro Form Desktop */
 
+    #register-component, #login-component {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 60%;
+        height: 100%;
+        background: #fff;
+    }
 
+    .registro-div-container {
+        padding-top: 20px;
+        height: 100%;
+    }
+
+
+    .input-container input,
+    .input-container select {
+        height: 64px;
+    }
+
+    
+    
     .checkbox-container {
         position: relative;
         display: flex;
@@ -623,21 +680,24 @@ footer {
         align-items: center;
         margin-bottom: 30px;
     }
-
+    
     .checkbox-container label {
         margin-left: 20px;
     }
-
+    
 
     .btn-registrar {
         margin-top: 20px;
         margin-bottom: 20px;
     }
-
+    
     .btn-registrar button {
         width: 60%;
     }
-
+    
+    .text-invalid {
+        margin-top: 86px;
+    }
     .text-invalid-check {
         color: red;
         width: 100%;
@@ -656,8 +716,8 @@ footer {
     .flex-deparamento-ciudad .select-departamento {
         width: 95%;
     }
-    
-    .flex-deparamento-ciudad .select-ciudad{
+
+    .flex-deparamento-ciudad .select-ciudad {
         width: 100%;
     }
 
@@ -677,7 +737,7 @@ footer {
         align-self: center;
         flex-direction: row;
         height: 100%;
-        margin-bottom: 30px;
+        margin: 50px;
     }
 
     .img-footer-container img {
@@ -693,6 +753,7 @@ footer {
         width: 100%;
         height: 100%;
     }
+
     .terminos-text {
         display: flex;
         flex-direction: row;
@@ -702,12 +763,13 @@ footer {
         margin-left: 50px;
     }
 
-    .politicas-p, .terminos-p {
+    .politicas-p,
+    .terminos-p {
         align-items: flex-start;
         gap: 30px;
     }
 
- 
+
 
 
     .line {
@@ -722,7 +784,7 @@ footer {
         display: none;
     }
 
-    .exeso-desk{
+    .exeso-desk {
         display: flex;
         justify-content: center;
         width: 100%;
@@ -740,7 +802,7 @@ footer {
         align-items: center;
         width: 480px;
         height: 100%;
-    
+
     }
 
 
