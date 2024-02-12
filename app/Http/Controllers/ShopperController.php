@@ -15,4 +15,8 @@ class ShopperController extends Controller
 
         return view('dashboard.ranking', ['ranking' => $ranking, 'user_rank' => $user_rank+=1]);
     }
+
+    public function showMarketPlace(){
+        
+    }
 }

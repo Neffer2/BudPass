@@ -24,4 +24,6 @@ Route::get('/dashboard', function () {
 })->middleware('auth')->name('dashboard');
 
 Route::get('/ranking', [ShopperController::class, 'showRanking'])->middleware('auth')->name('ranking');
+Route::get('/marketplace', [ShopperController::class, 'showMarketPlace'])->middleware('auth')->name('marketplace');
+
 require __DIR__.'/auth.php';
