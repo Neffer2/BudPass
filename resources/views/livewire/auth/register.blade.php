@@ -1,5 +1,5 @@
 <div class="registro-div-container">
-    <div class="title-registo-coontainer">
+    <div class="title-registo-container">
         <p class="title-registro">Formulario de Registro</h2>
         <p class="sub-title-registro">Completa los siguientes datos</h3>
     </div>

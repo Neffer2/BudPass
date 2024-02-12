@@ -1,5 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+@font-face {
+    font-family: 'BudweiserSerifDisplay';
+    src: url('../fonts/BudweiserSerif-Display.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BudweiserSerifDisplayItalic';
+    src: url('../fonts/BudweiserSerif-DisplayItalic.otf') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'BudweiserSerifRegular';
+    src: url('../fonts/BudweiserSerif-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BudweiserSerifRegularItalic';
+    src: url('../fonts/BudweiserSerif-RegularItalic.otf') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+}
+
 /* Global */
 
 :root {
@@ -243,23 +271,26 @@ header {
     background: #fff;
 }
 
-.title-registo-coontainer {
-    margin: 50px;
+.title-registo-container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 100%;
 }
 
 .title-registro,
 .sub-title-registro {
     color: var(--primary-blue);
-    font-weight: 700;
 }
 
 .title-registro {
-    font-size: 25px;
+    font-size: 32px;
+    font-family: 'BudweiserSerifDisplay', sans-serif;
 }
 
 .sub-title-registro {
     font-size: 16px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
 }
 
 .input-container {
