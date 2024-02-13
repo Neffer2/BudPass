@@ -396,12 +396,14 @@ footer {
 
     .menu-desk-item-puntos {
         display: flex;
+        position: relative;
         background-color: #fff;
         text-align: center;
         justify-content: center;
         align-content: center;
         width: 308px;
         height: 100%;
+        cursor: pointer;
     }
 
     .menu-desk-item-puntos p {
@@ -410,10 +412,26 @@ footer {
     }
 
     .menu-desk-item-puntos p,
-    .menu-desk-item-puntos span {
+    .menu-desk-item-puntos span,
+    #dropdown-menu a {
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         font-weight: 400;
         font-size: 16px;
+        text-decoration: none;
+        color: #000;
+    }
+
+    #dropdown-menu {
+        display: flex;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #fff;
+        justify-content: center;
+        align-content: center;
+        width: 308px;
+        height: 100%;
+        /* Agrega otros estilos como fondo, bordes, etc. según sea necesario */
     }
 
     /* Footer desktop */

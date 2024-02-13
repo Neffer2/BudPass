@@ -36,16 +36,25 @@
                             <a class="" href="#">Registro</a>
                         </div>
                     </div>
-                    <div class="menu-desk-item-puntos">
+                    <div class="menu-desk-item-puntos" id="menu-toggle">
                         <p>{{ Auth::user()->name }} <span class="puntos-header">Pts:
                                 {{ number_format(Auth::user()->puntos) }}</span></p>
+                        <div id="dropdown-menu" style="display: none;">
+                            <p><a href="#"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar
+                                sesión</a></p>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
                     </div>
                 </div>
 
             </div>
             <div class="ham-menu-list">
                 <div class="sec-puntos">
-                    <p> {{ Auth::user()->name }} <span class="puntos-header"> Pts: {{ number_format(Auth::user()->puntos) }}
+                    <p> {{ Auth::user()->name }} <span class="puntos-header"> Pts:
+                            {{ number_format(Auth::user()->puntos) }}
                         </span></p>
                 </div>
                 <div class="ham-item">
@@ -132,6 +141,16 @@
                 symbol.innerHTML = '☰';
             }
         }
+
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            var dropdownMenu = document.getElementById('dropdown-menu');
+            if (dropdownMenu.style.display === 'none') {
+                dropdownMenu.style.display = 'flex';
+            } else {
+                dropdownMenu.style.display = 'none';
+            }
+        });
+
     </script>
 </body>
 
