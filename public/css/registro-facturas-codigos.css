@@ -323,6 +323,7 @@
     display: flex;
     justify-content: center;
     width: 90%;
+    margin-bottom: 20px;
 }
 
 .registrar-factura-btn button {
@@ -335,7 +336,7 @@
     font-size: 16px;
     cursor: pointer;
     background: var(--primary-red);
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 20px;
     border-radius: 8px;
     text-transform: uppercase;
