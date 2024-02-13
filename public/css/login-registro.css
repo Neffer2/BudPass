@@ -17,11 +17,18 @@
 }
 
 .big-logo-cont {
+    display: flex;
+    justify-content: center;
+    align-content: center;
     width: 100%;
     height: 203px;
     border: 5px solid var(--primary-blue);
     margin-bottom: 30px;
     border-radius: 10px;
+}
+
+.big-logo-cont img {
+    width: 80%;
 }
 
 .cont-forms-btn {
