@@ -91,7 +91,8 @@
 .login-title-text {
     font-size: 32px;
     font-family: 'BudweiserSerifDisplay', sans-serif;
-    margin-bottom: 20px;
+    margin-top: 40px;
+    margin-bottom: 25px;
 }
 
 .login-form {
@@ -134,7 +135,7 @@
 .login-form-btn button {
     width: 50%;
     height: 48px;
-    background: #DC0019;
+    background: var(--primary-red);
     color: #fff;
     border-radius: 6px;
     border-style: none;
@@ -143,6 +144,12 @@
     font-weight: 400;
     font-size: 15px;
     text-transform: uppercase;
+    cursor: pointer;
+}
+
+.login-form-btn button:hover {
+    background: #D9D9D9;
+    color: var(--primary-red);
 }
 
 
@@ -283,7 +290,7 @@
 .btn-registrar button {
     height: 48px;
     width: 100%;
-    background: #DC0019;
+    background: var(--primary-red);
     color: #fff;
     border-radius: 6px;
     border-style: none;
@@ -293,6 +300,12 @@
     font-size: 15px;
     text-transform: uppercase;
 }
+
+.btn-registrar button:hover {
+    background: #D9D9D9;
+    color: var(--primary-red);
+}
+
 
 /* Desktop */
 @media (min-width: 992px) {
