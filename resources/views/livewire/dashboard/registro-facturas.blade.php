@@ -55,13 +55,13 @@
             <button x-on:click="$wire.addProduct()">Agregar productos</button>
         </div>
     </div>
-    
+
     @error('cantidad')
         <div class="text-invalid-factura">
             {{ $message }}
         </div>
     @enderror
-    
+
     <div class="lista-productos-cont">
         <label for="">Listado de productos</label>
         <table>
@@ -73,52 +73,62 @@
                 <tr>
                     <td class="productos-text">{{ $producto['descripcion'] }}</td>
                     <td class="productos-text">{{ $producto['cantidad'] }}</td>
-                    <td><button x-on:click="$wire.subsProduct({{ $key }})" class="btn-eliminar-producto">x</button></td>
+                    <td><button x-on:click="$wire.subsProduct({{ $key }})"
+                            class="btn-eliminar-producto">x</button></td>
                 </tr>
             @endforeach
         </table>
     </div>
-    <div>
-        Puntos sumados: {{ $puntos }}
-    </div>
-    <div>
-        <label for="">Foto factura</label>
-        <input type="file" wire:model.live="foto_factura" accept="image/*">
-        @error('foto_factura')
-            <div class="text-invalid-factura">
-                {{ $message }}
+
+    <div class="facturas-selfie-foto-cont">
+
+        <div class="foto-factura-cont">
+            <label for="foto_factura">Foto factura</label>
+            <input type="file" id="foto_factura" wire:model.live="foto_factura" accept="image/*"
+                style="display: none;">
+            <label for="foto_factura" class="custom-file-upload" id="imagePreview">
+            </label>
+            @error('foto_factura')
+                <div class="text-invalid-factura">
+                    {{ $message }}
+                </div>
+            @enderror
+            @if ($foto_factura && !$errors->first('foto_factura'))
+                <img src="{{ $foto_factura->temporaryUrl() }}" height="50">
+            @endif
+            <div wire:loading wire:target="foto_factura">
+                Cargando...
             </div>
-        @enderror
-        @if ($foto_factura && !$errors->first('foto_factura'))
-            <img src="{{ $foto_factura->temporaryUrl() }}" height="50">
-        @endif
-        <div wire:loading wire:target="foto_factura">
-            Cargando...
         </div>
-    </div>
-    <div>
-        <label for="">Selfie con producto</label>
-        <input type="file" wire:model.live="selfie_producto" accept="image/*">
-        @error('selfie_producto')
-            <div class="text-invalid-factura">
-                {{ $message }}
+        <div class="foto-selfie-cont">
+            <label for="foto_selfie">Selfie con producto</label>
+            <input type="file" id="foto_selfie" wire:model.live="selfie_producto" accept="image/*"
+                style="display: none;">
+            <label for="foto_selfie" class="custom-file-upload" id="imagePreview">
+            </label>
+            @error('selfie_producto')
+                <div class="text-invalid-factura">
+                    {{ $message }}
+                </div>
+            @enderror
+            @if ($selfie_producto && !$errors->first('selfie_producto'))
+                <img src="{{ $selfie_producto->temporaryUrl() }}" height="50">
+            @endif
+            <div wire:loading wire:target="selfie_producto">
+                Cargando...
             </div>
-        @enderror
-        @if ($selfie_producto && !$errors->first('selfie_producto'))
-            <img src="{{ $selfie_producto->temporaryUrl() }}" height="50">
-        @endif
-        <div wire:loading wire:target="selfie_producto">
-            Cargando...
         </div>
-    </div>
-    <div>
         @error('productos')
             <div class="text-invalid-factura">
                 {{ $message }}
             </div>
         @enderror
+
     </div>
     <div>
+        Puntos sumados: {{ $puntos }}
+    </div>
+    <div class="registrar-factura-btn">
         <button x-on:click="$wire.storeFactura">REGISTRAR FACTURA</button>
     </div>
     @if (session('success'))

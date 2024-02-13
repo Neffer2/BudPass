@@ -106,7 +106,9 @@
 .nit-label-cont label,
 .num-factura-cont label,
 .sel-producto-cont label,
-.cantidad-agregar-cont label {
+.cantidad-agregar-cont label,
+.foto-factura-cont label,
+.foto-selfie-cont label {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 400;
     font-size: 14px;
@@ -228,7 +230,7 @@
 .lista-productos-cont .lista-productos-subtitle {
     font-family: 'BudweiserSerifDisplay', 'Arial Narrow', Arial, sans-serif;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 18px;
     color: #fff;
     margin-bottom: 5px;
 }
@@ -259,6 +261,69 @@
     border-style: none;
     border-radius: 50%;
     padding: 5px 10px;
+}
+
+.facturas-selfie-foto-cont {
+    display: flex;
+    width: 90%;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.foto-factura-cont {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.foto-factura-cont .custom-file-upload {
+    display: inline-block;
+    width: 100%;
+    height: 180px;
+    border: 2px solid var(--primary-blue);
+    border-radius: 8px;
+    background: url("../assets/budweiser/subir-archivo-logo.svg") no-repeat center;
+    background-size: 25%;
+}
+
+.foto-selfie-cont {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.foto-selfie-cont .custom-file-upload {
+    display: inline-block;
+    width: 100%;
+    height: 180px;
+    border: 2px solid var(--primary-blue);
+    border-radius: 8px;
+    background: url("../assets/budweiser/subir-archivo-logo.svg") no-repeat center;
+    background-size: 25%;
+}
+
+.registrar-factura-btn {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+}
+
+.registrar-factura-btn button {
+    width: 100%;
+    height: 48px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-style: none;
+    color: #fff;
+    font-weight: 400;
+    font-size: 16px;
+    cursor: pointer;
+    background: var(--primary-red);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
 }
 
 
