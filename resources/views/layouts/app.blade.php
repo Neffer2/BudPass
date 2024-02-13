@@ -30,7 +30,7 @@
                             <a class="" href="{{ route('ranking') }}">Ranking</a>
                         </div>
                         <div class="menu-desk-item">
-                            <a class="" href="#">Marketplace</a>
+                            <a class="" href="{{ route('market') }}">Marketplace</a>
                         </div>
                         <div class="menu-desk-item">
                             <a class="" href="#">Registro</a>
