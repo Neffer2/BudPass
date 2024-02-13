@@ -18,13 +18,16 @@
         <label for="">Número de factura:</label>
         <input type="text" wire:model.change="num_factura">
     </div>
+    
+    <div class="factura-img-cont">
+        <img @if ($canal) src="{{ asset("assets/facturas/$canal->ejemplo_factura") }}" @endif
+        alt="">
+    </div>
     @error('num_factura')
         <div class="text-invalid-factura">
             {{ $message }}
         </div>
     @enderror
-    <img @if ($canal) src="{{ asset("assets/facturas/$canal->ejemplo_factura") }}" @endif
-        alt="" height="100">
     <div>
         <div>
             <label for="">Producto</label>
