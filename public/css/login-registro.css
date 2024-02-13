@@ -124,6 +124,27 @@
     border-radius: 8px;
 }
 
+.login-form-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form-btn button {
+    width: 50%;
+    height: 48px;
+    background: #DC0019;
+    color: #fff;
+    border-radius: 6px;
+    border-style: none;
+    margin-bottom: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
 
 /* Registro Form movil*/
 

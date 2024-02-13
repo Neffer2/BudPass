@@ -17,7 +17,7 @@
                 </div>
             @endforeach
         @endif
-        <div>
+        <div class="login-form-btn">
             <button type="submit">Iniciar</button>
         </div>
         <div>
