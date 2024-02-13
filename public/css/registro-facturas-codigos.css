@@ -188,13 +188,19 @@
 }
 
 .agregar-producto-btn-cont button {
-    height: 40px;
     width: 90%;
+    height: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     border-style: none;
-    background-color: var(--primary-red);
     color: #fff;
-    border-radius: 5px;
+    font-weight: 400;
+    font-size: 14px;
     cursor: pointer;
+    background: var(--primary-red);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    text-transform: uppercase;
     /* Bud Bold */
 }
 
@@ -324,6 +330,7 @@
     margin-top: 20px;
     margin-bottom: 20px;
     border-radius: 8px;
+    text-transform: uppercase;
 }
 
 
