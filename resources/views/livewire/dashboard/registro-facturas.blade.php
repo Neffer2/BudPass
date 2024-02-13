@@ -1,28 +1,30 @@
-<div>
-    <div>
-        <img @if ($canal) src="{{ asset("assets/canales/$canal->logo") }}" @endif alt=""
-            height="100">
-        <img @if ($canal) src="{{ asset("assets/facturas/$canal->ejemplo_factura") }}" @endif
-            alt="" height="100">
+<div class="registro-facturas-cont">
+    <div class="nit-cont">
+        <div class="nit-label-input">
+            <label for="">NIT:</label>
+            <input type="text" wire:model.live.debounce.500ms="nit">
+        </div>
+        <div class="nit-img"><img
+                @if ($canal) src="{{ asset("assets/canales/$canal->logo") }}" @endif alt="">
+        </div>
     </div>
-    <div>
-        <label for="">NIT</label>
-        <input type="text" wire:model.live.debounce.500ms="nit">
-        @error('nit')
-            <div class="text-invalid-factura">
-                {{ $message }}
-            </div>
-        @enderror
-    </div>
-    <div>
-        <label for="">NUM FACTURA</label>
+
+    @error('nit')
+        <div class="text-invalid-factura">
+            {{ $message }}
+        </div>
+    @enderror
+    <div class="num-factura-cont">
+        <label for="">Número de factura:</label>
         <input type="text" wire:model.change="num_factura">
-        @error('num_factura')
-            <div class="text-invalid-factura">
-                {{ $message }}
-            </div>
-        @enderror
     </div>
+    @error('num_factura')
+        <div class="text-invalid-factura">
+            {{ $message }}
+        </div>
+    @enderror
+    <img @if ($canal) src="{{ asset("assets/facturas/$canal->ejemplo_factura") }}" @endif
+        alt="" height="100">
     <div>
         <div>
             <label for="">Producto</label>
