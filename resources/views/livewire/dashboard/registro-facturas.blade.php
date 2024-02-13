@@ -80,8 +80,10 @@
         </table>
     </div>
 
+    <div class="puntos-sumados-cont">
+        Puntos sumados: {{ $puntos }}
+    </div>
     <div class="facturas-selfie-foto-cont">
-
         <div class="foto-factura-cont">
             <label for="foto_factura">Foto factura:</label>
             <input type="file" id="foto_factura" wire:model.live="foto_factura" accept="image/*"
@@ -121,9 +123,7 @@
         @enderror
 
     </div>
-    <div>
-        Puntos sumados: {{ $puntos }}
-    </div>
+
     <div class="registrar-factura-btn">
         <button x-on:click="$wire.storeFactura">REGISTRAR FACTURA</button>
     </div>
