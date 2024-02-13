@@ -13,11 +13,9 @@
             <div class="registro-factura-form">
                 <livewire:dashboard.registro-facturas />
             </div>
-            <br><br>
             <div class="registro-codigo-form" style="display: none;">
                 <livewire:dashboard.registro-codigo />
             </div>
-            <br><br>
             <div class="puntaje-ac">
                 PUNTAJE ACUMULADO
                 {{ Auth::user()->puntos }} PTS <br>
