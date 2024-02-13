@@ -143,7 +143,7 @@
         }
 
         document.getElementById('menu-toggle').addEventListener('click', function() {
-            var dropdownMenu = document.getElementById('dropdown-menu');
+            let dropdownMenu = document.getElementById('dropdown-menu');
             if (dropdownMenu.style.display === 'none') {
                 dropdownMenu.style.display = 'flex';
             } else {
