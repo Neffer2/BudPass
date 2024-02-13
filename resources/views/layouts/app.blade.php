@@ -33,7 +33,7 @@
                             <a class="" href="{{ route('market') }}">Marketplace</a>
                         </div>
                         <div class="menu-desk-item">
-                            <a class="" href="{{ route('dashboard')}}">Registro</a>
+                            <a class="" href="{{ route('dashboard') }}">Registro</a>
                         </div>
                     </div>
                     <div class="menu-desk-item-puntos" id="menu-toggle">
@@ -41,8 +41,8 @@
                                 {{ number_format(Auth::user()->puntos) }}</span></p>
                         <div id="dropdown-menu" style="display: none;">
                             <p><a href="#"
-                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar
-                                sesión</a></p>
+                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar
+                                    sesión</a></p>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf
                             </form>
@@ -142,15 +142,73 @@
             }
         }
 
-        document.getElementById('menu-toggle').addEventListener('click', function() {
-            let dropdownMenu = document.getElementById('dropdown-menu');
-            if (dropdownMenu.style.display === 'none') {
-                dropdownMenu.style.display = 'flex';
-            } else {
-                dropdownMenu.style.display = 'none';
-            }
-        });
+        let menuToggle = document.getElementById('menu-toggle');
+        if (menuToggle) {
+            menuToggle.addEventListener('click', function() {
+                let dropdownMenu = document.getElementById('dropdown-menu');
+                if (dropdownMenu.style.display === 'none') {
+                    dropdownMenu.style.display = 'flex';
+                } else {
+                    dropdownMenu.style.display = 'none';
+                }
+            });
+        }
 
+        const togglePasswordVisibility = (id) => {
+            const passwordInput = document.getElementById(id);
+            let eyeIcon = document.querySelector(`i[onclick="togglePasswordVisibility('${id}')"]`);
+            let type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+
+            if (type === 'text') {
+                eyeIcon.classList.remove("fa-eye-slash");
+                eyeIcon.classList.add("fa-eye");
+            } else {
+                eyeIcon.classList.remove("fa-eye");
+                eyeIcon.classList.add("fa-eye-slash");
+            }
+        }
+
+        let showLoginBtn = document.getElementById('show-login-btn');
+        if (showLoginBtn) {
+            showLoginBtn.addEventListener('click', function() {
+                document.getElementById('login-component').style.display = 'block';
+                document.getElementById('register-component').style.display = 'none';
+                this.classList.remove('secundario-btn');
+                document.getElementById('show-register-btn').classList.add('secundario-btn');
+            });
+        }
+
+        let showRegisterBtn = document.getElementById('show-register-btn');
+        if (showRegisterBtn) {
+            showRegisterBtn.addEventListener('click', function() {
+                document.getElementById('register-component').style.display = 'block';
+                document.getElementById('login-component').style.display = 'none';
+                this.classList.remove('secundario-btn');
+                document.getElementById('show-login-btn').classList.add('secundario-btn');
+            });
+        }
+
+        // Validación de fecha de nacimiento mayor de 18 años
+        window.onload = function() {
+            let fechaNacimiento = document.getElementById('fecha_nacimiento');
+            if (fechaNacimiento) {
+                let today = new Date();
+                let pastYear = today.getFullYear() - 18;
+                today.setFullYear(pastYear);
+                fechaNacimiento.max = today.toISOString().split("T")[0];
+            }
+        }
+
+        let fechaNacimiento = document.getElementById('fecha_nacimiento');
+        if (fechaNacimiento) {
+            fechaNacimiento.addEventListener('click', function() {
+                let today = new Date();
+                let pastYear = today.getFullYear() - 18;
+                today.setFullYear(pastYear);
+                this.max = today.toISOString().split("T")[0];
+            });
+        }
     </script>
 </body>
 
