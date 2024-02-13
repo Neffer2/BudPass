@@ -130,6 +130,7 @@
     </footer>
 
     <script>
+        //Menu hamburguesa
         const toggleMenu = () => {
             let menu = document.querySelector('.ham-menu-list');
             let symbol = document.querySelector('.ham-open-icon');
@@ -142,6 +143,7 @@
             }
         }
 
+        // Dropdown menu desktop 
         let menuToggle = document.getElementById('menu-toggle');
         if (menuToggle) {
             menuToggle.addEventListener('click', function() {
@@ -154,6 +156,7 @@
             });
         }
 
+        // Mostrar y ocultar contraseña
         const togglePasswordVisibility = (id) => {
             const passwordInput = document.getElementById(id);
             let eyeIcon = document.querySelector(`i[onclick="togglePasswordVisibility('${id}')"]`);
@@ -169,6 +172,7 @@
             }
         }
 
+        // Registro y login
         let showLoginBtn = document.getElementById('show-login-btn');
         if (showLoginBtn) {
             showLoginBtn.addEventListener('click', function() {
@@ -186,6 +190,28 @@
                 document.getElementById('login-component').style.display = 'none';
                 this.classList.remove('secundario-btn');
                 document.getElementById('show-login-btn').classList.add('secundario-btn');
+            });
+        }
+
+        // Registro de códigos y facturas
+        let showFacturasBtn = document.getElementById('show-facturas-btn');
+        let showCodigoBtn = document.getElementById('show-codigo-btn');
+        let registroFacturaForm = document.querySelector('.registro-factura-form');
+        let registroCodigoForm = document.querySelector('.registro-codigo-form');
+
+        if (showFacturasBtn && showCodigoBtn && registroFacturaForm && registroCodigoForm) {
+            showFacturasBtn.addEventListener('click', function() {
+                registroFacturaForm.style.display = 'flex';
+                registroCodigoForm.style.display = 'none';
+                this.classList.remove('secundario-btn');
+                showCodigoBtn.classList.add('secundario-btn');
+            });
+
+            showCodigoBtn.addEventListener('click', function() {
+                registroFacturaForm.style.display = 'none';
+                registroCodigoForm.style.display = 'flex';
+                this.classList.remove('secundario-btn');
+                showFacturasBtn.classList.add('secundario-btn');
             });
         }
 

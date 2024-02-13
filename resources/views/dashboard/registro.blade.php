@@ -14,7 +14,7 @@
                 <livewire:dashboard.registro-facturas />
             </div>
             <br><br>
-            <div class="registro-codigo-form">
+            <div class="registro-codigo-form" style="display: none;">
                 <livewire:dashboard.registro-codigo />
             </div>
             <br><br>
@@ -26,4 +26,5 @@
             </div>
         </div>
     </div>
+
 @endsection
