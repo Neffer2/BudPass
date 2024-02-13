@@ -9,4 +9,8 @@ class Redencion extends Model
 {
     use HasFactory;
     protected $table = 'redenciones';
+
+    public function premio(){
+        return $this->hasOne(Premio::class, 'id', 'premio_id');
+    }
 }

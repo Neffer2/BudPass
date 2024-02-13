@@ -10,6 +10,8 @@
         @endforeach
         <br>
         <div style="background-color: red">
-            {{ $user_rank }} {{ Auth::user()->name }} {{ Auth::user()->puntos }}
+            @if(Auth::user()->estado_id == 1)
+                {{ $user_rank }} {{ Auth::user()->name }} {{ Auth::user()->puntos }}
+            @endif
         </div>
     @endsection

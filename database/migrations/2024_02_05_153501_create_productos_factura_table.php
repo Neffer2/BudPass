@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('productos_factura', function (Blueprint $table) {
             $table->id();
-            $table->foreign('factura_id')->references('id')->on('estados');
             $table->foreignId('factura_id');
-            $table->foreign('producto_id')->references('id')->on('estados');
+            $table->foreign('factura_id')->references('id')->on('registros_factura');            
+            $table->integer('cantidad');        
             $table->foreignId('producto_id');
-            $table->integer('cantidad');
+            $table->foreign('producto_id')->references('id')->on('productos');
             $table->timestamps();
         });
     }

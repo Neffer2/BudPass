@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreign('premio_id')->references('id')->on('premios');
             $table->foreignId('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->foreignId('estado_id')->default(2);
+            $table->foreignId('estado_id')->default(1);
             $table->foreign('estado_id')->references('id')->on('estados');
             $table->timestamps();
         });

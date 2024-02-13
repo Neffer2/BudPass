@@ -49,5 +49,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
-    ];
+    ]; 
+
+    public function redenciones(){
+        return $this->hasMany(Redencion::class, 'user_id', 'id');
+    } 
 }

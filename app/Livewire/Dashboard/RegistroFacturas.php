@@ -84,6 +84,8 @@ class RegistroFacturas extends Component
             'foto_factura' => 'required|mimes:jpg,jpeg,png,bmp,tiff|max:20000',
             'selfie_producto' => 'required|mimes:jpg,jpeg,png,bmp,tiff|max:20000'
         ]);
+
+        if (!($this->canal)){$this->addError('nit', 'Este NIT no coincide con ningún canal');}
         
         $this->num_factura = str_replace("-", "", $this->num_factura);
         if (!(count($this->productos) > 0)){
@@ -92,21 +94,22 @@ class RegistroFacturas extends Component
 
         $registroFactura = new RegistroFactura;
         $registroFactura->num_factura = $this->num_factura;
-        $registroFactura->foto_selfie = $this->selfie_producto->store(path: 'selfies');;
-        $registroFactura->foto_factura = $this->foto_factura->store(path: 'facturas');;
+        $registroFactura->canal_id = $this->canal->id;
+        $registroFactura->foto_selfie = $this->selfie_producto->store(path: '/public/selfies');;
+        $registroFactura->foto_factura = $this->foto_factura->store(path: '/public/facturas');;
         $registroFactura->user_id = Auth::user()->id;
         $registroFactura->puntos_sumados = $this->puntos;
         $registroFactura->save();
-        $this->resetFields();
-
+        
         foreach ($this->productos as $producto) {
             $registroProductos = new ProductoFactura;
-            $registroProductos->factura_id = $registroFactura;
-            $registroProductos->producto_id = $producto->id;
-            $registroProductos->cantidad = $producto->cantidad;
+            $registroProductos->factura_id = $registroFactura->id;
+            $registroProductos->producto_id = $producto['id'];
+            $registroProductos->cantidad = $producto['cantidad'];
             $registroProductos->save();
         }
-
+        
+        $this->resetFields();
         return redirect()->back()->with('success', 'Registro de factura exitoso.');
     }
     

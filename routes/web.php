@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ShopperController; 
+use App\Http\Controllers\AdminController; 
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,18 +15,31 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/*
+|--------------------------------------------------------------------------
+| Shopper routes
+|--------------------------------------------------------------------------
+*/
 Route::get('/', function () { 
     return view('welcome');
 })->middleware('guest')->name('home');
 
 Route::get('/dashboard', function () {
     return view('dashboard.registro');
-})->middleware('auth')->name('dashboard');
+})->middleware('shopper')->middleware('auth')->name('dashboard');
 
 Route::get('/marketplace', function () {
     return view('dashboard.marketPlace');
-})->middleware('auth')->name('market');
+})->middleware('shopper')->middleware('auth')->name('market');
 
 Route::get('/ranking', [ShopperController::class, 'showRanking'])->middleware('auth')->name('ranking');
+
+/*
+|--------------------------------------------------------------------------
+| Admin routes
+|--------------------------------------------------------------------------
+*/
+Route::get('/facturas', [AdminController::class, 'index'])->middleware('admin')->middleware('auth')->name('facturas');
+Route::get('/factura/{id}', [AdminController::class, 'factura'])->middleware('admin')->middleware('auth')->name('factura'); 
 
 require __DIR__.'/auth.php';

@@ -10,7 +10,28 @@
         </div>
         <br>
     @endforeach
+
+    <div style="background-color: aqua">
+        <h2>Tus redenciones</h2>    
+        <table>
+            <tr>
+                <td>Premio</td>
+                <td>Puntos</td>
+                <td>Fecha</td>
+                <td>Estado</td>
+            </tr>
+            @foreach ($user->redenciones as $redencion)
+                <tr>
+                    <td>{{ $redencion->premio->nombre }}</td>
+                    <td>{{ $redencion->premio->puntos }}</td>
+                    <td>{{ $redencion->created_at }}</td>
+                    <td>@if ($redencion->estado_id) Aprobado @else Rechazado @endif</td>
+                </tr>
+            @endforeach
+        </table>
+    </div>
     @if (session('success'))
         {{ session('success') }}
     @endif
 </div>
+ 

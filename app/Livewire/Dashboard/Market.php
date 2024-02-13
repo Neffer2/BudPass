@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use App\Models\Premio;
 use App\Models\Redencion;
-
+ 
 class Market extends Component
 {
     // Useful vars 
@@ -19,7 +19,7 @@ class Market extends Component
 
     public function mount(){
         $this->user = Auth::user();
-        $this->puntosUser = $this->user->puntos;
+        $this->puntosUser = $this->user->puntos; 
         $this->premios = Premio::select('id', 'nombre', 'descripcion', 'stock', 'puntos', 'foto')->where([
             ['stock', '>', 0],
             ['tipo', 1]
