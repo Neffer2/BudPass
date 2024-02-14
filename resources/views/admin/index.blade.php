@@ -16,7 +16,9 @@
                     @endforeach
                 </div>
             @endif
-            <div class="card mt-5">
+
+            @livewire('admin.buscar')
+            <div class="card">
                 <div class="card-header">
                     <h4>Facturas</h4>
                 </div>
@@ -53,7 +55,8 @@
                             </tbody>
                         </table>
                     </div>
+                    {{ $registrosFactura->links() }}
                 </div>
             </div>
         </div>
-    @endsection
+    @endsection 

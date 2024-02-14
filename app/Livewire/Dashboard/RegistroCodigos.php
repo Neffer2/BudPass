@@ -4,19 +4,19 @@ namespace App\Livewire\Dashboard;
 
 use Livewire\Component;
 use App\Models\Codigo;
-use App\Models\RegistrosCodigo;
+use App\Models\RegistroCodigo;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\RateLimiter;
 
-class RegistroCodigo extends Component
+class RegistroCodigos extends Component
 {
     // Models
     public $codigo;
 
     public function render()
     {
-        return view('livewire.dashboard.registro-codigo');
+        return view('livewire.dashboard.registro-codigos');
     }
 
     public function storePuntos(){        
@@ -31,7 +31,7 @@ class RegistroCodigo extends Component
         
         $codigo = Codigo::where('codigo', 'LIKE', "%$this->codigo%")->first();
         if ($codigo && $codigo->estado_id){
-            $registroCodigo = new RegistrosCodigo;
+            $registroCodigo = new RegistroCodigo;
             $registroCodigo->codigo_id = $codigo->id;
             $registroCodigo->puntos_sumados = $codigo->referencia->puntos;
             $registroCodigo->user_id = Auth::user()->id;

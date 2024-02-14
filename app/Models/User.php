@@ -50,8 +50,20 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ]; 
+ 
+    public function registrosFactura(){
+        return $this->hasMany(RegistroFactura::class, 'user_id', 'id');
+    }
+
+    public function registrosCodigo(){
+        return $this->hasMany(RegistroCodigo::class, 'user_id', 'id');
+    }
 
     public function redenciones(){
         return $this->hasMany(Redencion::class, 'user_id', 'id');
-    } 
+    }
+
+    public function ciudad(){
+        return $this->hasOne(Ciudad::class, 'id', 'ciudad_id');
+    }
 }
