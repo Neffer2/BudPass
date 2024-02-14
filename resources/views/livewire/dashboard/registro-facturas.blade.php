@@ -19,12 +19,12 @@
                 <label for="">Número de factura:</label>
                 <input type="text" wire:model.change="num_factura">
                 @error('num_factura')
-                <div class="text-invalid-factura">
-                    {{ $message }}
-                </div>
-            @enderror
+                    <div class="text-invalid-factura">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
-            
+
             <div class="factura-img-cont">
                 <img @if ($canal) src="{{ asset("assets/facturas/$canal->ejemplo_factura") }}" @endif
                     alt="">
@@ -42,12 +42,12 @@
                     @endif
                 </select>
                 @error('producto')
-                <div class="text-invalid-factura">
-                    {{ $message }}
-                </div>
-            @enderror
+                    <div class="text-invalid-factura">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
-            
+
             <div class="cantidad-agregar-cont">
                 <div class="cantidad-productos-cont">
                     <label for="">Cantidad: </label>
@@ -80,6 +80,11 @@
                         </tr>
                     @endforeach
                 </table>
+                @error('productos')
+                    <div class="text-invalid-factura">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
         </div>
         <div class="desk-right-cont">
@@ -125,11 +130,7 @@
                 Cargando...
             </div>
         </div>
-        @error('productos')
-            <div class="text-invalid-factura">
-                {{ $message }}
-            </div>
-        @enderror
+
 
     </div>
 
