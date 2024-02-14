@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +13,15 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <title>@yield('title')</title>
 </head>
+
 <body>
+    <div class="age-confirmation-cont">
+        <div class="age-confirmation-info">
+            <h2>¿Eres mayor de 18 años?</h2>
+            <button id="age-yes">Sí</button>
+            <button id="age-no">No</button>
+        </div>
+    </div>
     @auth
         <header class="bud-main-header">
             <div class="bud-header-content">
@@ -128,6 +137,27 @@
     </footer>
 
     <script>
+        //Prueba confirmación de edad
+        document.addEventListener('DOMContentLoaded', (event) => {
+            if (localStorage.getItem('ageConfirmed') !== 'true') {
+                document.querySelector('.age-confirmation-cont').style.display = 'flex';
+            } 
+            else {
+                document.querySelector('.age-confirmation-cont').style.display = 'none';
+            }
+        });
+
+        //Prueba confirmación de edad
+        document.getElementById('age-yes').addEventListener('click', function() {
+            document.querySelector('.age-confirmation-cont').style.display = 'none';
+            // Guardar la confirmación en el almacenamiento local
+            localStorage.setItem('ageConfirmed', 'true');
+        });
+
+        document.getElementById('age-no').addEventListener('click', function() {
+            window.location.href = 'https://www.google.com'; // reemplace esto con la URL a la que desea redirigir
+        });
+
         //Menu hamburguesa
         const toggleMenu = () => {
             let menu = document.querySelector('.ham-menu-list');
