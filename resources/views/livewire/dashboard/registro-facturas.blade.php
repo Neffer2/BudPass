@@ -57,18 +57,17 @@
                             {{ $message }}
                         </div>
                     @enderror
+                    @error('cantidad')
+                    <div class="text-invalid-factura">
+                        {{ $message }}
+                    </div>
+                @enderror
                 </div>
                 <div class="agregar-producto-btn-cont">
                     <button x-on:click="$wire.addProduct()">Agregar productos</button>
                 </div>
 
             </div>
-
-            @error('cantidad')
-                <div class="text-invalid-factura">
-                    {{ $message }}
-                </div>
-            @enderror
 
             <div class="lista-productos-cont">
                 <label for="">Listado de productos</label>
