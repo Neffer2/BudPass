@@ -60,7 +60,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 56px;
+    height: 64px;
     z-index: 100;
     background: var(--primary-blue);
 }
