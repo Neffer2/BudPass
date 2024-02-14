@@ -311,6 +311,10 @@ footer {
     /* Bud Bold / 700 */
 }
 
+.terminos-cookies {
+    display: none;
+}
+
 .politicas-p,
 .terminos-p {
     display: flex;
@@ -562,7 +566,18 @@ footer {
     .politicas-p,
     .terminos-p {
         align-items: flex-start;
-        gap: 20px;
+        justify-content: flex-end;
+        gap: 10px;
+
+    }
+
+    .terminos-p{
+        margin-left: 20px;
+    }
+
+    .terminos-cookies {
+        display: inline;
+        visibility: hidden;
     }
 
     .bud-line-compartas {

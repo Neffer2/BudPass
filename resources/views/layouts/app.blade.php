@@ -111,12 +111,31 @@
                     <div class="footer-text">
                         <div class="terminos-text">
                             <div class="politicas-p">
-                                <p>Aviso de Privacidad</p>
-                                <p>Politica de protección de datos <span>personales</span></p>
+                                <a href="https://www.bavaria.co/sites/g/files/seuoyk1666/files/2024-02/Aviso%20de%20Privacidad%20%28V.5%29.pdf"
+                                    target="_blank" rel="noopener noreferrer">
+                                    <p>Aviso de Privacidad</p>
+                                </a>
+                                <a href="https://www.sic.gov.co/" target="_blank" rel="noopener noreferrer">
+                                    <p>Superintendencia de industria y comercio</p>
+                                </a>
+                                <a href="https://www.bavaria.co/abilegal/politica-deproteccion-de-datos-personales"
+                                    target="_blank" rel="noopener noreferrer">
+                                    <p>Politica de protección de datos <span>personales</span></p>
+                                </a>
+
                             </div>
                             <div class="terminos-p">
-                                <p>Términos y condiciones</p>
-                                <p>Términos y condiciones de la campaña</p>
+                                <a href="">
+                                    <p class="terminos-cookies">Políticas de cookies</p>
+                                </a>
+                                <a href="https://www.bavaria.co/t%C3%A9rminos-y-condiciones" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <p>Términos y condiciones</p>
+                                </a>
+                                <a href="https://www.budweiser.co/terminos-generales" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <p>Términos y condiciones de la campaña</p>
+                                </a>
                             </div>
                         </div>
 
