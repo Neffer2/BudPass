@@ -131,16 +131,6 @@
         @enderror
     </div>
 
-
-    <div class="checkbox-cont">
-        <input id="tratamiento" type="checkbox" class="checkbox-item" wire:model.change="tratamiento">
-        <label for="tratamiento" class="checkbox-label">Tratamiento</label>
-        @error('tratamiento')
-            <div class="text-invalid-check">
-                {{ $message }}
-            </div>
-        @enderror
-    </div>
     <div class="btn-registrar">
         <button wire:click="store">Registrar</button>
     </div>

@@ -33,7 +33,6 @@ return new class extends Migration
             
             $table->boolean('terminos');
             $table->boolean('politicas');
-            $table->boolean('tratamiento');
             $table->rememberToken();
             $table->timestamps();
         });

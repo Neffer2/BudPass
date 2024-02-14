@@ -10,5 +10,7 @@ class RegistroCodigo extends Model
     use HasFactory;
     protected $table = 'registros_codigo';
 
-    
+    public function codigo(){
+        return $this->hasOne(Codigo::class, 'id', 'codigo_id');
+    }
 }

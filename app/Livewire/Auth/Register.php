@@ -15,7 +15,7 @@ class Register extends Component
 {
     // Models 
     public $nombre, $email, $documento, $telefono, $ciudad,
-            $fecha_nacimiento, $terminos, $politicas, $tratamiento,
+            $fecha_nacimiento, $terminos, $politicas,
             $departamento, $password, $confirm;
 
     // Useful vars
@@ -44,7 +44,6 @@ class Register extends Component
             'fecha_nacimiento' => 'required|date',
             'terminos' => 'required|accepted',
             'politicas' => 'required|accepted',
-            'tratamiento' => 'required|accepted',
             'password' => ['required', 'same:confirm', Rules\Password::defaults()]
         ]);
 
@@ -57,11 +56,10 @@ class Register extends Component
             'email' => $this->email,
             'terminos' => $this->terminos,
             'politicas' => $this->politicas,
-            'tratamiento' => $this->tratamiento,
             'password' => Hash::make($this->password),
         ]);
 
-        event(new Registered($user));
+        event(new Registered($user)); 
         Auth::login($user);
         return redirect(RouteServiceProvider::HOME);
     }
@@ -112,12 +110,6 @@ class Register extends Component
     public function updatedPoliticas(){
         $this->validate([
             'politicas' => 'required|accepted'
-        ]);
-    }
-
-    public function updatedTratamiento(){
-        $this->validate([
-            'tratamiento' => 'required|accepted'
         ]);
     }
 

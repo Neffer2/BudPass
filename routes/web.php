@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+ 
 /*
 |--------------------------------------------------------------------------
 | Shopper routes
@@ -26,13 +26,14 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard.registro');
-})->middleware('shopper')->middleware('auth')->name('dashboard');
+})->middleware('shopper')->middleware('auth')->middleware('descalificado')->name('dashboard');
 
 Route::get('/marketplace', function () {
     return view('dashboard.marketPlace');
-})->middleware('shopper')->middleware('auth')->name('market');
+})->middleware('shopper')->middleware('auth')->middleware('descalificado')->name('market');
 
-Route::get('/ranking', [ShopperController::class, 'showRanking'])->middleware('auth')->name('ranking');
+Route::get('/ranking', [ShopperController::class, 'showRanking'])->middleware('auth')->middleware('descalificado')->name('ranking');
+Route::get('/trial', [ShopperController::class, 'mail']);
 
 /*
 |--------------------------------------------------------------------------
