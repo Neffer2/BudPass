@@ -426,12 +426,16 @@ footer {
         position: absolute;
         top: 100%;
         left: 0;
-        background-color: #fff;
+        background-color: var(--primary-blue);
         justify-content: center;
         align-content: center;
         width: 308px;
         height: 100%;
         /* Agrega otros estilos como fondo, bordes, etc. según sea necesario */
+    }
+
+    #dropdown-menu a {
+        color: #fff;
     }
 
     /* Footer desktop */
