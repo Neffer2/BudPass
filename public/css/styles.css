@@ -62,10 +62,15 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    backdrop-filter: blur(10px);
+    color: #fff;
 }
 
 .age-confirmation-info {
-    background: white; padding: 20px; text-align: center;
+    background: linear-gradient(180deg, #080061, #0A0541);
+    padding: 20px; 
+    text-align: center;
+    width: 90%;
 }
 
 .age-confirmation-info button {

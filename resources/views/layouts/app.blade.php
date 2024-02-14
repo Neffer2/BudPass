@@ -17,9 +17,17 @@
 <body>
     <div class="age-confirmation-cont">
         <div class="age-confirmation-info">
-            <h2>¿Eres mayor de 18 años?</h2>
-            <button id="age-yes">Sí</button>
-            <button id="age-no">No</button>
+            <h2>¿Eres mayor de edad?</h2>
+            <h3>Para entrar acá debes ser mayor de edad</h3>
+            <div class="age-btn">
+                <button id="age-yes">Sí</button>
+                <button id="age-no">No</button>
+            </div>
+            <input type="checkbox">
+            <label for="">Recordar mis datos</label>
+            <p>*No selecciones está opción si compartes este computador con menores de edad</p>
+            
+
         </div>
     </div>
     @auth
@@ -141,8 +149,7 @@
         document.addEventListener('DOMContentLoaded', (event) => {
             if (localStorage.getItem('ageConfirmed') !== 'true') {
                 document.querySelector('.age-confirmation-cont').style.display = 'flex';
-            } 
-            else {
+            } else {
                 document.querySelector('.age-confirmation-cont').style.display = 'none';
             }
         });
