@@ -400,6 +400,8 @@
     height: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .codigo-cont {
@@ -408,13 +410,13 @@
     align-items: center;
     flex-direction: column;
     width: 90%;
-    height: 300px;
+    margin-top: 50px;
 }
 
 .codigo-text {
     width: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     flex-direction: column;
     position: relative;
     margin-bottom: 20px;
@@ -589,7 +591,7 @@
     }
 
     .codigo-cont {
-        margin-top: 30%;
+        margin-top: 0;
     }
 
     .codigo-text {
