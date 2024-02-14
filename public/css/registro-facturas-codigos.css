@@ -91,6 +91,26 @@
     height: 100%;
 }
 
+.desk-factura-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.desk-left-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%
+}
+
+.desk-right-cont {
+    display: none;
+}
+
 .nit-cont {
     display: flex;
     justify-content: space-between;
@@ -207,7 +227,7 @@
     border-style: none;
     color: #fff;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 13px;
     cursor: pointer;
     background: var(--primary-red);
     margin-top: 20px;
@@ -390,6 +410,61 @@
         margin-top: 20px;
     }
 
+    .nit-label-cont {
+        width: 50%;
+    }
+
+    .nit-label-cont input {
+        width: 95%;
+    }
+
+    .nit-img {
+        width: 47%;
+        border-radius: 8px;
+    }
+
+    .desk-factura-cont {
+        flex-direction: row;
+        width: 95%;
+    }
+
+    .factura-img-cont {
+        display: none;
+    }
+
+    .desk-left-cont {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 50%
+    }
+    
+    .desk-right-cont {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 50%
+    }
+
+    .factura-img-cont-desk {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        width: 90%;
+        height: 100%;
+        margin-bottom: 20px;
+        border: 3px solid var(--primary-red);
+        background: #D9D9D9;
+        border-radius: 10px;
+    }
+    
+    .factura-img-cont-desk img {
+        height: 460px;
+    }
+
+
     .facturas-selfie-foto-cont {
         flex-direction: row;
         justify-content: space-between;
@@ -413,7 +488,7 @@
         width: 45%;
     }
 
-    .registrar-factura-btn button:hover {
+    .registrar-factura-btn button:hover, .agregar-producto-btn-cont button:hover {
         background: #fff;
         color: var(--primary-red);
         border: 1px solid var(--primary-red);

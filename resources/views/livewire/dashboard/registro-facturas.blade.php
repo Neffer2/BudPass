@@ -14,72 +14,81 @@
             {{ $message }}
         </div>
     @enderror
-    <div class="num-factura-cont">
-        <label for="">Número de factura:</label>
-        <input type="text" wire:model.change="num_factura">
-    </div>
-    @error('num_factura')
-        <div class="text-invalid-factura">
-            {{ $message }}
+    <div class="desk-factura-cont">
+        <div class="desk-left-cont">
+            <div class="num-factura-cont">
+                <label for="">Número de factura:</label>
+                <input type="text" wire:model.change="num_factura">
+            </div>
+            @error('num_factura')
+                <div class="text-invalid-factura">
+                    {{ $message }}
+                </div>
+            @enderror
+            <div class="factura-img-cont">
+                <img @if ($canal) src="{{ asset("assets/facturas/$canal->ejemplo_factura") }}" @endif
+                    alt="">
+            </div>
+
+
+            <div class="sel-producto-cont">
+                <label for="">Producto:</label>
+                <select wire:model.change="producto">
+                    <option value="">Seleccionar</option>
+                    @if ($canal)
+                        @foreach ($this->canal->productos as $producto)
+                            <option value="{{ $producto->id }}">{{ $producto->descripcion }}</option>
+                        @endforeach
+                    @endif
+                </select>
+            </div>
+            @error('producto')
+                <div class="text-invalid-factura">
+                    {{ $message }}
+                </div>
+            @enderror
+
+            <div class="cantidad-agregar-cont">
+                <div class="cantidad-productos-cont">
+                    <label for="">Cantidad: </label>
+                    <input type="number" wire:model.change='cantidad'>
+                </div>
+                <div class="agregar-producto-btn-cont">
+                    <button x-on:click="$wire.addProduct()">Agregar productos</button>
+                </div>
+            </div>
+
+            @error('cantidad')
+                <div class="text-invalid-factura">
+                    {{ $message }}
+                </div>
+            @enderror
+
+            <div class="lista-productos-cont">
+                <label for="">Listado de productos</label>
+                <table>
+                    <tr>
+                        <td class="lista-productos-subtitle">Producto</td>
+                        <td class="lista-productos-subtitle">Cantidad</td>
+                    </tr>
+                    @foreach ($productos as $key => $producto)
+                        <tr>
+                            <td class="productos-text">{{ $producto['descripcion'] }}</td>
+                            <td class="productos-text">{{ $producto['cantidad'] }}</td>
+                            <td><button x-on:click="$wire.subsProduct({{ $key }})"
+                                    class="btn-eliminar-producto">x</button></td>
+                        </tr>
+                    @endforeach
+                </table>
+            </div>
         </div>
-    @enderror
-    <div class="factura-img-cont">
-        <img @if ($canal) src="{{ asset("assets/facturas/$canal->ejemplo_factura") }}" @endif
-            alt="">
-    </div>
-
-
-    <div class="sel-producto-cont">
-        <label for="">Producto:</label>
-        <select wire:model.change="producto">
-            <option value="">Seleccionar</option>
-            @if ($canal)
-                @foreach ($this->canal->productos as $producto)
-                    <option value="{{ $producto->id }}">{{ $producto->descripcion }}</option>
-                @endforeach
-            @endif
-        </select>
-    </div>
-    @error('producto')
-        <div class="text-invalid-factura">
-            {{ $message }}
-        </div>
-    @enderror
-
-    <div class="cantidad-agregar-cont">
-        <div class="cantidad-productos-cont">
-            <label for="">Cantidad: </label>
-            <input type="number" wire:model.change='cantidad'>
-        </div>
-        <div class="agregar-producto-btn-cont">
-            <button x-on:click="$wire.addProduct()">Agregar productos</button>
+        <div class="desk-right-cont">
+            <div class="factura-img-cont-desk">
+                <img @if ($canal) src="{{ asset("assets/facturas/$canal->ejemplo_factura") }}" @endif
+                    alt="">
+            </div>
         </div>
     </div>
-
-    @error('cantidad')
-        <div class="text-invalid-factura">
-            {{ $message }}
-        </div>
-    @enderror
-
-    <div class="lista-productos-cont">
-        <label for="">Listado de productos</label>
-        <table>
-            <tr>
-                <td class="lista-productos-subtitle">Producto</td>
-                <td class="lista-productos-subtitle">Cantidad</td>
-            </tr>
-            @foreach ($productos as $key => $producto)
-                <tr>
-                    <td class="productos-text">{{ $producto['descripcion'] }}</td>
-                    <td class="productos-text">{{ $producto['cantidad'] }}</td>
-                    <td><button x-on:click="$wire.subsProduct({{ $key }})"
-                            class="btn-eliminar-producto">x</button></td>
-                </tr>
-            @endforeach
-        </table>
-    </div>
-
     <div class="puntos-sumados-cont">
         Puntos sumados: {{ $puntos }}
     </div>
