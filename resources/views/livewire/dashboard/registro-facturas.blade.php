@@ -7,24 +7,24 @@
         <div class="nit-img"><img
                 @if ($canal) src="{{ asset("assets/canales/$canal->logo") }}" @endif alt="">
         </div>
+        @error('nit')
+            <div class="text-invalid-factura">
+                {{ $message }}
+            </div>
+        @enderror
     </div>
-
-    @error('nit')
-        <div class="text-invalid-factura">
-            {{ $message }}
-        </div>
-    @enderror
     <div class="desk-factura-cont">
         <div class="desk-left-cont">
             <div class="num-factura-cont">
                 <label for="">Número de factura:</label>
                 <input type="text" wire:model.change="num_factura">
+                @error('num_factura')
+                    <div class="text-invalid-factura">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
-            @error('num_factura')
-                <div class="text-invalid-factura">
-                    {{ $message }}
-                </div>
-            @enderror
+
             <div class="factura-img-cont">
                 <img @if ($canal) src="{{ asset("assets/facturas/$canal->ejemplo_factura") }}" @endif
                     alt="">
@@ -41,12 +41,12 @@
                         @endforeach
                     @endif
                 </select>
+                @error('producto')
+                    <div class="text-invalid-factura">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
-            @error('producto')
-                <div class="text-invalid-factura">
-                    {{ $message }}
-                </div>
-            @enderror
 
             <div class="cantidad-agregar-cont">
                 <div class="cantidad-productos-cont">
@@ -80,6 +80,11 @@
                         </tr>
                     @endforeach
                 </table>
+                @error('productos')
+                    <div class="text-invalid-factura">
+                        {{ $message }}
+                    </div>
+                @enderror
             </div>
         </div>
         <div class="desk-right-cont">
@@ -125,11 +130,7 @@
                 Cargando...
             </div>
         </div>
-        @error('productos')
-            <div class="text-invalid-factura">
-                {{ $message }}
-            </div>
-        @enderror
+
 
     </div>
 

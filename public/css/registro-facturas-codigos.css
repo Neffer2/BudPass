@@ -18,7 +18,12 @@
 }
 
 .text-invalid-factura {
+    position: absolute;
+    /* Ajusta estas propiedades según necesites */
+    top: 100%;
+    left: 0;
     color: red;
+    font-size: 12px;
 }
 
 .big-logo-facturas-cont {
@@ -109,6 +114,15 @@
 
 .desk-right-cont {
     display: none;
+}
+
+.nit-cont,
+.num-factura-cont,
+.sel-producto-cont,
+.cantidad-productos-cont,
+.foto-factura-cont,
+.foto-selfie-cont {
+    position: relative;
 }
 
 .nit-cont {
@@ -274,7 +288,8 @@
     margin-bottom: 5px;
 }
 
-.lista-productos-subtitle, .productos-text {
+.lista-productos-subtitle,
+.productos-text {
     padding-right: 30px;
 }
 
@@ -384,7 +399,7 @@
 
 
 @media (min-width: 992px) {
-    
+
 
     .main-facturas-cont {
         width: 60%;
@@ -439,7 +454,7 @@
         flex-direction: column;
         width: 50%
     }
-    
+
     .desk-right-cont {
         display: flex;
         justify-content: center;
@@ -459,7 +474,7 @@
         background: #D9D9D9;
         border-radius: 10px;
     }
-    
+
     .factura-img-cont-desk img {
         height: 460px;
     }
@@ -470,13 +485,14 @@
         justify-content: space-between;
     }
 
-    .foto-factura-cont, .foto-selfie-cont {
+    .foto-factura-cont,
+    .foto-selfie-cont {
         width: 48%;
-        margin-right: 10px; 
+        margin-right: 10px;
     }
 
     .foto-selfie-cont {
-        margin-right: 0; 
+        margin-right: 0;
     }
 
     .registrar-factura-btn {
@@ -488,7 +504,8 @@
         width: 45%;
     }
 
-    .registrar-factura-btn button:hover, .agregar-producto-btn-cont button:hover {
+    .registrar-factura-btn button:hover,
+    .agregar-producto-btn-cont button:hover {
         background: #fff;
         color: var(--primary-red);
         border: 1px solid var(--primary-red);
@@ -508,7 +525,7 @@
         align-items: center;
         margin-top: 200px;
         margin-bottom: 50px;
-        
+
     }
 
     .puntaje-ac-text {
@@ -523,7 +540,8 @@
         height: 230px;
     }
 
-    .text-puntaje-ac, .text-puntaje-ac span {
+    .text-puntaje-ac,
+    .text-puntaje-ac span {
         font-family: 'BudweiserSerifDisplay', 'Arial Narrow', Arial, sans-serif;
         font-weight: 700;
         color: var(--primary-blue);
@@ -540,7 +558,8 @@
         text-align: center;
     }
 
-    .text-puntaje-pen, .text-puntaje-pen span {
+    .text-puntaje-pen,
+    .text-puntaje-pen span {
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         font-weight: 700;
         color: var(--primary-blue);
