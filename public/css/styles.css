@@ -51,7 +51,7 @@ body {
 
 /* Header Movil */
 
-header {
+.bud-main-header {
     width: auto;
     background: #ffffff;
     position: sticky;
@@ -245,7 +245,7 @@ footer {
     gap: 20px;
 }
 
-.line-compartas {
+.bud-line-compartas {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -256,8 +256,12 @@ footer {
     margin-bottom: 20px;
 }
 
-.line-compartas p,
-.line-compartas span {
+.bud-line-compartas p {
+    margin-top: 15px;
+}
+
+.bud-line-compartas p,
+.bud-line-compartas span {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 14px;
@@ -265,7 +269,7 @@ footer {
     color: #fff;
 }
 
-.line-compartas span {
+.bud-line-compartas span {
     display: block;
 }
 
@@ -409,6 +413,7 @@ footer {
     .menu-desk-item-puntos p {
         align-self: center;
         color: var(--primary-blue);
+        margin-top: 15px;
     }
 
     .menu-desk-item-puntos p,
@@ -482,15 +487,20 @@ footer {
     .politicas-p,
     .terminos-p {
         align-items: flex-start;
-        gap: 30px;
+        gap: 20px;
     }
 
-    .line-compartas {
+    .bud-line-compartas {
         height: 40px;
     }
 
-    .line-compartas span {
+    .bud-line-compartas span {
         display: inline;
+    }
+
+    .bud-line-compartas p,
+    .bud-line-compartas span {
+        margin-top: 15px;
     }
 
     .exeso-footer {

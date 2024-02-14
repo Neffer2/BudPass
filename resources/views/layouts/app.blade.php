@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,12 +9,12 @@
     <link rel="stylesheet" href="{{ asset('css/registro-facturas-codigos.css') }}">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <title>@yield('title')</title>
 </head>
-
 <body>
     @auth
-        <header>
+        <header class="bud-main-header">
             <div class="bud-header-content">
                 <div class="header-img">
                     <a href="{{ route('dashboard') }}">
@@ -76,7 +75,6 @@
             </div>
         </header>
     @endauth
-    <hr>
     @yield('content')
 
     <footer>
@@ -100,7 +98,7 @@
                 </div>
 
             </div>
-            <div class="line-compartas">
+            <div class="bud-line-compartas">
                 <p>No compartas este contenido con <span>menores de edad</span></p>
             </div>
             <div class="footer-bottom">
@@ -236,6 +234,8 @@
             });
         }
     </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
