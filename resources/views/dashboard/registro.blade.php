@@ -17,7 +17,7 @@
                     <livewire:dashboard.registro-facturas />
                 </div>
                 <div class="registro-codigo-form" style="display: none;">
-                    <livewire:dashboard.registro-codigo />
+                    <livewire:dashboard.registro-codigos />
                 </div>
 
             </div>

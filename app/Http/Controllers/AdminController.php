@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class AdminController extends Controller
 {
     public function index(){
-        $registrosFactura = RegistroFactura::select('id', 'num_factura', 'puntos_sumados', 'canal_id', 'user_id', 'created_at')->where('estado_id', 2)->orderby('id','desc')->get();
+        $registrosFactura = RegistroFactura::select('id', 'num_factura', 'puntos_sumados', 'canal_id', 'user_id', 'created_at')->where('estado_id', 2)->orderby('id','desc')->paginate(15);
         $user = Auth::user();
         return view('admin.index', ['registrosFactura' => $registrosFactura, 'user' => $user]);
     }
@@ -19,6 +19,6 @@ class AdminController extends Controller
         $registroFactura = RegistroFactura::find($id);
         $user = Auth::user();
         return view('admin.factura', ['registroFactura' => $registroFactura, 'user' => $user]);
-    }
+    } 
 }
 
