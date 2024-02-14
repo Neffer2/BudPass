@@ -118,10 +118,11 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 400;
     font-size: 16px;
-    width: 90%; 
+    width: 90%;
     text-align: left;
     margin-bottom: 10px;
 }
+
 .input-login-form input {
     width: 90%;
     height: 45px;
@@ -286,6 +287,11 @@
 
 .text-invalid-login {
     color: red;
+    left: 0;
+    width: 100%;
+    margin-top: 5px;
+    font-size: 13px;
+    margin-bottom: 10px;
 }
 
 .btn-registrar {
