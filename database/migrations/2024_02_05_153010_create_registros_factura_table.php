@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('registros_factura', function (Blueprint $table) {
             $table->id();
-            $table->string('num_factura')->unique();
+            $table->string('num_factura');
             $table->foreignId('canal_id');
             $table->foreign('canal_id')->references('id')->on('canales');
             $table->string('foto_selfie');

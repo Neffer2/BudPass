@@ -7,6 +7,7 @@ use App\Models\Canal;
 use App\Models\RegistroFactura;
 use App\Models\ProductoFactura;
 use Livewire\WithFileUploads;
+use App\Rules\num_factura;
 use Illuminate\Support\Facades\Auth;
 
 class RegistroFacturas extends Component
@@ -80,7 +81,7 @@ class RegistroFacturas extends Component
     */
     public function storeFactura(){
         $this->validate([
-            'num_factura' => 'required|alpha_num|unique:registros_factura|max:20',
+            'num_factura' => ['required', 'alpha_num', 'max:20', new num_factura],
             'foto_factura' => 'required|mimes:jpg,jpeg,png,bmp,tiff|max:20000',
             'selfie_producto' => 'required|mimes:jpg,jpeg,png,bmp,tiff|max:20000'
         ]);
@@ -88,10 +89,11 @@ class RegistroFacturas extends Component
         if (!($this->canal)){$this->addError('nit', 'Este NIT no coincide con ningún canal');}
         
         $this->num_factura = str_replace("-", "", $this->num_factura);
-        if (!(count($this->productos) > 0)){
+        if (!(count($this->productos) > 0)){    
             $this->addError('productos', 'No puedes registrar una factura sin productos.');
+            return redirect()->back();
         }
-
+ 
         $registroFactura = new RegistroFactura;
         $registroFactura->num_factura = $this->num_factura;
         $registroFactura->canal_id = $this->canal->id;
@@ -117,7 +119,7 @@ class RegistroFacturas extends Component
     public function updatedNit(){
         $this->resetFields();
         $this->validate([
-            'nit' => 'required|alpha_dash'
+            'nit' => 'required|alpha_dash' 
         ]);
         $this->canal = Canal::where('nit', 'LIKE', "%$this->nit%")->first();
         (!($this->canal)) ? $this->addError('nit', 'Este NIT no coincide con ningún canal.'): null;
@@ -129,7 +131,7 @@ class RegistroFacturas extends Component
         }
 
         $this->validate([
-            'num_factura' => 'required|alpha_num|unique:registros_factura|max:20'
+            'num_factura' => ['required', 'alpha_num', 'max:20', new num_factura]
         ]);        
     }
 
@@ -167,9 +169,7 @@ class RegistroFacturas extends Component
             'nit.required' => 'El número NIT es obligatorio.',
 
             'num_factura.required' => 'El número de factura es obligatorio.',
-            'num_factura.numeric' => 'No puedes utilizar letras ni carácteres especiales en el número de factura.',
-            'num_factura.unique' => 'Este número de factura ya fué registrado.',
-            
+            'num_factura.numeric' => 'No puedes utilizar letras ni carácteres especiales en el número de factura.',        
             
             'foto_factura.required' => 'La foto de factura es obligatoria.',
             'foto_factura.max' => 'Opps, exediste el tamaño límite de fotos.',
