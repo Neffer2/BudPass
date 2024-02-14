@@ -246,6 +246,8 @@
     font-family: 'Franklin Gothic Book', 'Arial Narrow', Arial, sans-serif;
     font-weight: 400;
     font-size: 14px;
+    margin-top: 10px;
+    text-decoration: underline;
 }
 
 .checkbox-item {
