@@ -46,7 +46,7 @@ class RegistroFacturas extends Component
             $this->productos->push(['id' => $producto->id, 'descripcion' => $producto->descripcion, 'cantidad' => $this->cantidad]);            
             $this->reset('producto', 'cantidad');
         }else {
-            return $this->addError('producto', 'Opps, ya añadiste este producto.');
+            return $this->addError('producto', 'Oops, ya añadiste este producto.');
         }
     }
 
@@ -172,10 +172,10 @@ class RegistroFacturas extends Component
             'num_factura.numeric' => 'No puedes utilizar letras ni carácteres especiales en el número de factura.',        
             
             'foto_factura.required' => 'La foto de factura es obligatoria.',
-            'foto_factura.max' => 'Opps, exediste el tamaño límite de fotos.',
+            'foto_factura.max' => 'Oops, exediste el tamaño límite de fotos.',
             'foto_factura.mimes' => 'Formato de foto inválido.',
             'selfie_producto.required' => 'La selfie de producto es obligatoria.',
-            'selfie_producto.max' => 'Opps, exediste el tamaño límite de fotos.',
+            'selfie_producto.max' => 'Oops, exediste el tamaño límite de fotos.',
             'selfie_producto.mimes' => 'Formato de foto inválido.',
 
             'producto.required' => 'Selecciona un producto.',
@@ -183,7 +183,7 @@ class RegistroFacturas extends Component
 
             'cantidad.required' => 'Indica la cantidad de producto que compraste.',
             'cantidad.numeric' => 'Cantidad de producto inválida',
-            'cantidad.max' => 'Opps, exediste la cantidad máxima de producto por factura.',
+            'cantidad.max' => 'Oops, exediste la cantidad máxima de producto por factura.',
         ];
     }
 } 

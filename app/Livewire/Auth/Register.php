@@ -124,5 +124,45 @@ class Register extends Component
             'password' => ['required', 'same:confirm', Rules\Password::defaults()]
         ]);
     }
-} 
+
+    // VALIDATIONS
+    public function messages() 
+    {
+        return [
+            'nombre.required' => "Oops, tu nombre es obligatorio.",
+            'nombre.string' => "Formato no valido.",
+            'nombre.max' => "Oops, excediste el límite máximo de caracteres.",
+
+            'email.required' => "Oops, tu correo es obligatorio.",
+            'email.email' => "Escribe un correo electrónico valido.",
+            'email.max' => "Oops, excediste el límite máximo de caracteres.",
+            'email.unique' => "Oops, este correo ya fué registrado.",
+
+            'documento.required' => "Oops, tu documento es obligatorio.",
+            'documento.numeric' => "Oops, tu documento no puede tener letras.",
+            'documento.max_digits' => "Oops, excediste el límite máximo de caracteres.",
+            'documento.unique' => "Oops, este documento ya fué registrado.",
+
+            'telefono.required' => "Oops, tu teléfono es obligatorio.",
+            'telefono.numeric' => "Oops, tu teléfono no puede tener letras.",
+            'telefono.max_digits' => "Oops, excediste el límite máximo de caracteres.",
+            'telefono.unique' => "Oops, este teléfono ya fué registrado.",
+
+            'ciudad.required' => "Oops, tu ciudad es obligatoria.",
+            'ciudad.numeric' => "Formato no valido.",
+
+            'fecha_nacimiento.required' => "Oops, tu fecha de nacimiento es obligatoria.",
+            'fecha_nacimiento.date' => "Formato no valido.",
+
+            'terminos.required' => "Debes aceptar los términos y condiciones.",
+            'terminos.accepted' => "Debes aceptar los términos y condiciones.",
+
+            'politicas.required' => "Debes aceptar las políticas de privacidad.",
+            'politicas.accepted' => "Debes aceptar las políticas de privacidad.",
+
+            'password.required' => "Oops, no olvides tu contraseña.",
+            'password.same' => "Las contraseñas no coinciden.",
+        ];
+    }
+}
 
