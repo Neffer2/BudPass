@@ -22,6 +22,6 @@ class Factura extends Component
             return redirect()->route('facturas')->with('success', $messaje);
         }
 
-        return redirect()->route('facturas')->withErrors('Opps, algo salió mal.');
+        return redirect()->route('facturas')->withErrors('Oops, algo salió mal.');
     }
 }

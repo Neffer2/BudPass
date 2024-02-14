@@ -23,6 +23,6 @@ class Descalificado
         Auth::guard('web')->logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect('/')->withErrors('Opps, ya no puedes seguir en esta promo.');
+        return redirect('/')->withErrors('Oops, ya no puedes seguir en esta promo.');
     }
 } 

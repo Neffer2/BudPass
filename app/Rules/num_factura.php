@@ -20,7 +20,7 @@ class num_factura implements ValidationRule
         ])->first();
 
         if ($regstroFactura){
-            $fail('Opps, este número de factura ya fué registrado.'); 
+            $fail('Oops, este número de factura ya fué registrado.'); 
         }
     }
 }

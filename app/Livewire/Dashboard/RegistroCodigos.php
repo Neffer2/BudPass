@@ -25,7 +25,7 @@ class RegistroCodigos extends Component
         ]);
 
         if (RateLimiter::tooManyAttempts('send-message:'.Auth::user()->id, $perMinute = 5)) {
-            return $this->addError('codigo-bloqueado', 'Opps, demasiados intentos.');
+            return $this->addError('codigo-bloqueado', 'Oops, demasiados intentos.');
         }
         RateLimiter::hit('send-message:'.Auth::user()->id);
         
@@ -47,14 +47,14 @@ class RegistroCodigos extends Component
             return redirect()->route('dashboard')->with('success-registro-codigo', "Código canjeado con éxito, ganaste $registroCodigo->puntos_sumados puntos.");
         }
         
-        return $this->addError('codigo', 'Opps, este código ya fué canjeado.');
+        return $this->addError('codigo', 'Oops, este código ya fué canjeado.');
     }
 
     public function messages() 
     {
         return [
-            'codigo.required' => 'Opps, este código no existe.',
-            'codigo.alpha_num' => 'Opps, este código no existe.',
+            'codigo.required' => 'Oops, este código no existe.',
+            'codigo.alpha_num' => 'Oops, este código no existe.',
         ]; 
     }
 }
