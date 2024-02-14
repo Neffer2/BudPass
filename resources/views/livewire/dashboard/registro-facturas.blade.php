@@ -58,10 +58,10 @@
                         </div>
                     @enderror
                     @error('cantidad')
-                    <div class="text-invalid-factura">
-                        {{ $message }}
-                    </div>
-                @enderror
+                        <div class="text-invalid-factura">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
                 <div class="agregar-producto-btn-cont">
                     <button x-on:click="$wire.addProduct()">Agregar productos</button>
@@ -75,13 +75,13 @@
                     <tr>
                         <td class="lista-productos-subtitle">Producto</td>
                         <td class="lista-productos-subtitle">Cantidad</td>
+                        <td class="lista-productos-subtitle" style="visibility: hidden">Borrar</td>
                     </tr>
                     @foreach ($productos as $key => $producto)
                         <tr>
                             <td class="productos-text">{{ $producto['descripcion'] }}</td>
                             <td class="productos-text">{{ $producto['cantidad'] }}</td>
-                            <td><button x-on:click="$wire.subsProduct({{ $key }})"
-                                    class="btn-eliminar-producto">x</button></td>
+                            <td><i class="fas fa-times-circle btn-eliminar-producto" x-on:click="$wire.subsProduct({{ $key }})"></i></td>
                         </tr>
                     @endforeach
                 </table>

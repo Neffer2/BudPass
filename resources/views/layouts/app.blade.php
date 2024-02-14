@@ -17,16 +17,25 @@
 <body>
     <div class="age-confirmation-cont">
         <div class="age-confirmation-info">
-            <h2>¿Eres mayor de edad?</h2>
-            <h3>Para entrar acá debes ser mayor de edad</h3>
-            <div class="age-btn">
+            <div class="age-bud-logo">
+                <img src="{{ asset('assets/budweiser/logo-budweiser-blanco.svg') }}" alt="Logo Blanco Bud"
+                    srcset="">
+            </div>
+            <div class="age-bud-text">
+                <p>¿Eres mayor de edad? <span>Para entrar acá debes ser mayor de edad</span></p>
+            </div>
+
+            <div class="age-bud-btn">
                 <button id="age-yes">Sí</button>
                 <button id="age-no">No</button>
             </div>
-            <input type="checkbox">
-            <label for="">Recordar mis datos</label>
+            <div class="check-recordar">
+                <input type="checkbox">
+                <label for="">Recordar mis datos</label>
+            </div>
+            <div class="age-text-nosel"></div>
             <p>*No selecciones está opción si compartes este computador con menores de edad</p>
-            
+
 
         </div>
     </div>

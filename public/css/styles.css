@@ -33,6 +33,8 @@
 :root {
     --primary-red: #DC0019;
     --primary-blue: #0A0541;
+    --primary-blue-gradient: linear-gradient(180deg, #080061, #0A0541);
+    --primary-red-gradient: linear-gradient(180deg, #DC0019 0%, #A50005 100%);
 
 }
 
@@ -67,15 +69,59 @@ body {
 }
 
 .age-confirmation-info {
-    background: linear-gradient(180deg, #080061, #0A0541);
+    background: var(--primary-blue-gradient);
     padding: 20px; 
     text-align: center;
     width: 90%;
+    border-radius: 8px;
 }
 
-.age-confirmation-info button {
-    margin-left: 10px;
+.age-bud-logo {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
+
+.age-bud-text {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+}
+
+.age-bud-text p {
+    font-family: 'BudweiserSerifDisplay', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.age-bud-text span {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+}
+
+.age-bud-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.age-bud-btn button {
+    width: 70px;
+    height: 90px;
+    border: none;
+    border-radius: 8px;
+    background: var(--primary-red);
+    color: #fff;
+    font-family: 'BudweiserSerifDisplay', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
 
 /* Header Movil */
 
