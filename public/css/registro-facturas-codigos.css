@@ -26,6 +26,10 @@
     font-size: 12px;
 }
 
+.cantidad-productos-cont .text-invalid-factura {
+    top: 80%;
+}
+
 .big-logo-facturas-cont {
     display: flex;
     align-content: center;

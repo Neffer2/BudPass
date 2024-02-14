@@ -52,10 +52,16 @@
                 <div class="cantidad-productos-cont">
                     <label for="">Cantidad: </label>
                     <input type="number" wire:model.change='cantidad'>
+                    @error('productos')
+                        <div class="text-invalid-factura">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
                 <div class="agregar-producto-btn-cont">
                     <button x-on:click="$wire.addProduct()">Agregar productos</button>
                 </div>
+
             </div>
 
             @error('cantidad')
@@ -80,11 +86,7 @@
                         </tr>
                     @endforeach
                 </table>
-                @error('productos')
-                    <div class="text-invalid-factura">
-                        {{ $message }}
-                    </div>
-                @enderror
+
             </div>
         </div>
         <div class="desk-right-cont">
