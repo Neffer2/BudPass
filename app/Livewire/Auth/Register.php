@@ -10,9 +10,12 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use App\Traits\Mail;
 
 class Register extends Component
 {
+    use Mail;
+
     // Models 
     public $nombre, $email, $documento, $telefono, $ciudad,
             $fecha_nacimiento, $terminos, $politicas,
@@ -35,6 +38,7 @@ class Register extends Component
     }
 
     public function store(){
+        $this->welcome();
         $this->validate([
             'nombre' => 'required|string|max:250',
             'documento' => 'required|numeric|max_digits:10|unique:users',
@@ -59,7 +63,7 @@ class Register extends Component
             'password' => Hash::make($this->password),
         ]);
 
-        event(new Registered($user)); 
+        event(new Registered($user));
         Auth::login($user);
         return redirect(RouteServiceProvider::HOME);
     }

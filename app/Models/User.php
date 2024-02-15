@@ -66,4 +66,13 @@ class User extends Authenticatable
     public function ciudad(){
         return $this->hasOne(Ciudad::class, 'id', 'ciudad_id');
     }
+
+    public function pendientes($user_id){
+        $pendientes = RegistroFactura::select('puntos_sumados')->where([
+            ['estado_id', 2],
+            ['user_id', $user_id]
+        ])->get();
+
+        return $pendientes->sum('puntos_sumados');
+    }
 }
