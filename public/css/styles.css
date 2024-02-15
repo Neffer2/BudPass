@@ -122,6 +122,10 @@ body {
     cursor: pointer;
 }
 
+.check-recordar {
+    font-size: 14px;
+}
+
 .age-text-nosel{
     font-size: 12px;
 }
