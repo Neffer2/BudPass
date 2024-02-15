@@ -25,11 +25,27 @@
                 @enderror
             </div>
 
-            <div class="factura-img-cont">
-                <img @if ($canal) src="{{ asset("assets/facturas/$canal->ejemplo_factura") }}" @endif
-                    alt="">
+            <div class="modal fade" id="myModal"> <!-- Agrega el estilo aquí -->
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content">
+                        <!-- The Close Button -->
+                        <div class="text-right">
+                            <button type="button" class="close" data-dismiss="modal"
+                                style="font-size: 50px; color: red;">&times;</button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="modal-body d-flex justify-content-center">
+                            <img class="img-fluid" id="img01" style="max-width: 70%; height: auto;">
+                        </div>
+                    </div>
+                </div>
             </div>
 
+            <div class="factura-img-cont">
+                <img id="myImg"
+                    @if ($canal) src="{{ asset("assets/facturas/$canal->ejemplo_factura") }}" @endif
+                    alt="">
+            </div>
 
             <div class="sel-producto-cont">
                 <label for="">Producto:</label>
@@ -81,17 +97,32 @@
                         <tr>
                             <td class="productos-text">{{ $producto['descripcion'] }}</td>
                             <td class="productos-text">{{ $producto['cantidad'] }}</td>
-                            <td><i class="fas fa-times-circle btn-eliminar-producto" x-on:click="$wire.subsProduct({{ $key }})"></i></td>
+                            <td><i class="fas fa-times-circle btn-eliminar-producto"
+                                    x-on:click="$wire.subsProduct({{ $key }})"></i></td>
                         </tr>
                     @endforeach
                 </table>
 
             </div>
         </div>
+        <div class="modal fade" id="myModalDesk" style="background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(5px);">
+            <div class="modal-dialog modal-dialog-centered modal-md"> <!-- Cambia modal-lg a modal-md o modal-sm aquí -->
+                <div class="modal-content">
+                    <!-- The Close Button -->
+                    <div class="text-right">
+                        <button type="button" class="close" data-dismiss="modal" style="font-size: 50px; color: red;">&times;</button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="modal-body d-flex justify-content-center">
+                        <img class="img-fluid" id="img01Desk" style="max-width: 65%; height: auto;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <div class="desk-right-cont">
             <div class="factura-img-cont-desk">
-                <img @if ($canal) src="{{ asset("assets/facturas/$canal->ejemplo_factura") }}" @endif
-                    alt="">
+                <img id="myImgDesk" @if ($canal) src="{{ asset("assets/facturas/$canal->ejemplo_factura") }}" @endif alt="">
             </div>
         </div>
     </div>

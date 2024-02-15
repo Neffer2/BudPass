@@ -197,7 +197,10 @@
 
 .factura-img-cont img {
     height: 200px;
+}
 
+#myImg {
+    cursor: pointer;
 }
 
 .sel-producto-cont {
@@ -248,7 +251,7 @@
     margin-top: 20px;
     border-radius: 8px;
     text-transform: uppercase;
-    /* Bud Bold */
+    /* Bud Bold Agregar */
 }
 
 .lista-productos-cont {

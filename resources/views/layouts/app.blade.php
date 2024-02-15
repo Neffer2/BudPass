@@ -53,7 +53,7 @@
                     <p>Configurar</p>
                 </div>
             </div>
-            
+
         </div>
     </div>
     @auth
@@ -189,7 +189,27 @@
         </div>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
     <script>
+        //JQuery para modal de factura
+        $(document).ready(function() {
+            $('#myImg').click(function() {
+                $('#img01').attr('src', $(this).attr('src'));
+                $('#myModal').modal('show'); // trigger the modal
+            });
+        });
+
+        $(document).ready(function() {
+            $('#myImg, #myImgDesk').click(function() {
+                var modalId = $(this).attr('id') === 'myImg' ? '#myModal' : '#myModalDesk';
+                var imgId = $(this).attr('id') === 'myImg' ? '#img01' : '#img01Desk';
+                $(imgId).attr('src', $(this).attr('src'));
+                $(modalId).modal('show'); // trigger the modal
+            });
+        });
+
         //Prueba confirmación de edad
         document.addEventListener('DOMContentLoaded', (event) => {
             if (localStorage.getItem('ageConfirmed') !== 'true') {
@@ -325,8 +345,7 @@
             });
         }
     </script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>
