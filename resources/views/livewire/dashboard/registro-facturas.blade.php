@@ -31,7 +31,7 @@
                         <!-- The Close Button -->
                         <div class="text-right">
                             <button type="button" class="close" data-dismiss="modal"
-                                style="font-size: 50px; color: red;">&times;</button>
+                                style="font-size: 50px; color: red; padding-right:5px">&times;</button>
                         </div>
                         <!-- Modal body -->
                         <div class="modal-body d-flex justify-content-center">
@@ -106,11 +106,13 @@
             </div>
         </div>
         <div class="modal fade" id="myModalDesk" style="background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(5px);">
-            <div class="modal-dialog modal-dialog-centered modal-md"> <!-- Cambia modal-lg a modal-md o modal-sm aquí -->
+            <div class="modal-dialog modal-dialog-centered modal-md">
+                <!-- Cambia modal-lg a modal-md o modal-sm aquí -->
                 <div class="modal-content">
                     <!-- The Close Button -->
                     <div class="text-right">
-                        <button type="button" class="close" data-dismiss="modal" style="font-size: 50px; color: red;">&times;</button>
+                        <button type="button" class="close" data-dismiss="modal"
+                            style="font-size: 50px; color: red; padding-right:5px;">&times;</button>
                     </div>
                     <!-- Modal body -->
                     <div class="modal-body d-flex justify-content-center">
@@ -119,10 +121,12 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="desk-right-cont">
             <div class="factura-img-cont-desk">
-                <img id="myImgDesk" @if ($canal) src="{{ asset("assets/facturas/$canal->ejemplo_factura") }}" @endif alt="">
+                <img id="myImgDesk"
+                    @if ($canal) src="{{ asset("assets/facturas/$canal->ejemplo_factura") }}" @endif
+                    alt="">
             </div>
         </div>
     </div>
