@@ -1,7 +1,7 @@
 <div class="registro-div-cont">
-    <div class="title-registo-cont">
-        <p class="title-registro">Formulario de Registro</h2>
-        <p class="sub-title-registro">Completa los siguientes datos</h3>
+    <div class="title-registro-cont">
+        <p class="title-registro">Formulario de Registro</p>
+        <p class="sub-title-registro">Completa los siguientes datos</p>
     </div>
     <div class="input-cont">
         <label for="nombre">Nombre: </label>

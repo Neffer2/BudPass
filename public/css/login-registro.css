@@ -176,10 +176,11 @@
     background: #fff;
 }
 
-.title-registo-cont {
+.title-registro-cont {
     margin-top: 50px;
     margin-bottom: 50px;
     width: 100%;
+    padding: 0;
 }
 
 .title-registro,
@@ -196,6 +197,7 @@
     font-size: 16px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 400;
+    margin-top: -15px;
 }
 
 .input-cont {
