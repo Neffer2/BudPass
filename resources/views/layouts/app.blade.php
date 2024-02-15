@@ -33,8 +33,9 @@
                 <input type="checkbox">
                 <label for="">Recordar mis datos</label>
             </div>
-            <div class="age-text-nosel"></div>
-            <p>*No selecciones está opción si compartes este computador con menores de edad</p>
+            <div class="age-text-nosel">
+                <p>*No selecciones esta opción si compartes este computador con menores de edad</p>
+            </div>
 
 
         </div>

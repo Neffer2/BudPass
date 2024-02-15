@@ -122,6 +122,10 @@ body {
     cursor: pointer;
 }
 
+.age-text-nosel{
+    font-size: 12px;
+}
+
 
 /* Header Movil */
 
