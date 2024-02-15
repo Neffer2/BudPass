@@ -44,11 +44,16 @@
                     less fine granularity, and this can give the designer a much closer degree of control over the
                     chosen weight.</p>
             </div>
-            <div class="cookie-info-btn">
-                <button class="cookies-aceptar-btn">Aceptar cookies</button>
-                <button class="cookies-rechazar-btn">Rechazar cookies</button>
+            <div class="cookie-info-config">
+                <div class="cookie-btns">
+                    <button class="cookies-aceptar-btn">Aceptar cookies</button>
+                    <button class="cookies-rechazar-btn">Rechazar cookies</button>
+                </div>
+                <div class="cookie-configurar">
+                    <p>Configurar</p>
+                </div>
             </div>
-            <div class="cookie-configurar"><p>Configurar</p></div>
+            
         </div>
     </div>
     @auth
@@ -203,6 +208,15 @@
 
         document.getElementById('age-no').addEventListener('click', function() {
             window.location.href = 'https://www.google.com'; // reemplace esto con la URL a la que desea redirigir
+        });
+
+        //Aceptar-rechazar cookies
+        document.querySelector('.cookies-aceptar-btn').addEventListener('click', function() {
+            document.querySelector('.cookies-info-cont').style.visibility = 'hidden';
+        });
+
+        document.querySelector('.cookies-rechazar-btn').addEventListener('click', function() {
+            document.querySelector('.cookies-info-cont').style.visibility = 'hidden';
         });
 
         //Menu hamburguesa
