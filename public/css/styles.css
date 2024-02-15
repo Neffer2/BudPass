@@ -155,7 +155,18 @@ body {
 }
 
 #check_datos_recordados:checked + label:before {
+    background: #fff;
+}
+
+#check_datos_recordados:checked + label:after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 16px;
+    height: 16px;
     background: var(--primary-red);
+    border-radius: 50%;
 }
 
 .age-text-nosel{
