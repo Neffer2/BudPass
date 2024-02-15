@@ -23,16 +23,18 @@
                         </tr>
                     @endforeach
                     @if (Auth::user()->estado_id == 1)
-                    <tr class="ranking-usuario-table">
-                        <td>{{ $user_rank }}</td>
-                        <td>{{ Auth::user()->name }}</td>
-                        <td>{{ Auth::user()->puntos }}</td>
-                    </tr>
-                @endif
+                        <tr class="ranking-usuario-table">
+                            <td>{{ $user_rank }}</td>
+                            <td>{{ Auth::user()->name }}</td>
+                            <td>{{ Auth::user()->puntos }}</td>
+                        </tr>
+                    @endif
                 </tbody>
             </table>
         </div>
+        <div class="ranking-puntaje-acum">
+            @include('puntaje')
+        </div>
 
-        @include('puntaje')
     </div>
 @endsection
