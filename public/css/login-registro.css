@@ -235,19 +235,20 @@
 .checkbox-cont {
     position: relative;
     display: flex;
+    flex-direction: row;
     width: 70vw;
     max-width: 500px;
-    align-items: flex-start;
+    align-items: center;
     margin-bottom: 30px;
-    margin-left: 10px;
+    margin-left: 15px;
 }
 
 .checkbox-cont label {
     color: var(--primary-blue);
-    margin-left: 7%;
     font-family: 'Franklin Gothic Book', 'Arial Narrow', Arial, sans-serif;
     font-weight: 400;
     font-size: 14px;
+    margin-left: 10px;
     margin-top: 10px;
     text-decoration: underline;
 }
