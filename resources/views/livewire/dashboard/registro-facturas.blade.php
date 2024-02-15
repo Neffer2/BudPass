@@ -98,7 +98,7 @@
                             <td class="productos-text">{{ $producto['descripcion'] }}</td>
                             <td class="productos-text">{{ $producto['cantidad'] }}</td>
                             <td><i class="fas fa-times-circle btn-eliminar-producto"
-                                    x-on:click="$wire.subsProduct({{ $key }})"></i></td>
+                                    x-on:click="$wire.subsProduct({{ $key }})" style="cursor: pointer;"></i></td>
                         </tr>
                     @endforeach
                 </table>
