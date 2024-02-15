@@ -406,10 +406,6 @@ footer {
     /* Bud Bold / 700 */
 }
 
-.terminos-cookies {
-    display: none;
-}
-
 .politicas-p,
 .terminos-p {
     display: flex;
@@ -719,11 +715,6 @@ footer {
 
     .terminos-p{
         margin-left: 20px;
-    }
-
-    .terminos-cookies {
-        display: inline;
-        visibility: hidden;
     }
 
     .bud-line-compartas {

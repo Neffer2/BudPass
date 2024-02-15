@@ -1,17 +1,37 @@
 @extends('layouts.app')
-    @section('content')
+@section('content')
+    <div class="ranking-main-cont">
 
-        <h2>RANKING</h2>
-        @foreach ($ranking as $key => $participante)
-            {{ $key+=1 }}
-            {{ $participante->name }}
-            {{ $participante->puntos }}
-            <br>
-        @endforeach
-        <br>
-        <div style="background-color: red">
-            @if(Auth::user()->estado_id == 1)
-                {{ $user_rank }} {{ Auth::user()->name }} {{ Auth::user()->puntos }}
-            @endif
+        <div class="ranking-table-cont">
+            <div class="ranking-title">
+                <h1>Ranking</h1>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Puesto</th>
+                        <th>Nombre</th>
+                        <th>Puntuación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($ranking as $key => $participante)
+                        <tr>
+                            <td>{{ $key += 1 }}</td>
+                            <td>{{ $participante->name }}</td>
+                            <td>{{ $participante->puntos }}</td>
+                        </tr>
+                    @endforeach
+                    @if (Auth::user()->estado_id == 1)
+                    <tr class="ranking-usuario-table">
+                        <td>{{ $user_rank }}</td>
+                        <td>{{ Auth::user()->name }}</td>
+                        <td>{{ Auth::user()->puntos }}</td>
+                    </tr>
+                @endif
+                </tbody>
+            </table>
         </div>
-    @endsection
+
+    </div>
+@endsection

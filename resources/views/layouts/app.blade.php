@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <link rel="stylesheet" href="{{ asset('css/login-registro.css') }}">
     <link rel="stylesheet" href="{{ asset('css/registro-facturas-codigos.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/ranking.css') }}">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -139,12 +140,8 @@
                                     target="_blank" rel="noopener noreferrer">
                                     <p>Politica de protección de datos <span>personales</span></p>
                                 </a>
-
                             </div>
                             <div class="terminos-p">
-                                <a href="">
-                                    <p class="terminos-cookies">Políticas de cookies</p>
-                                </a>
                                 <a href="https://www.bavaria.co/t%C3%A9rminos-y-condiciones" target="_blank"
                                     rel="noopener noreferrer">
                                     <p>Términos y condiciones</p>
