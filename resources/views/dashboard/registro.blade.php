@@ -23,12 +23,7 @@
             </div>
         </div>
         <div class="info-puntaje-cont">
-            <div class="puntaje-ac">
-                <div class="puntaje-ac-text">
-                    <p class="text-puntaje-ac">PUNTAJE ACUMULADO <span>{{ Auth::user()->puntos }} PTS</span></p>
-                    <p class="text-puntaje-pen">PUNTAJE PENDIENTE <span>{{ Auth::user()->pendientes(Auth::user()->id) }} PTS</span></p>
-                </div> 
-            </div>
+            @include('puntaje')
             <div class="items-factura-contaner"><!-- Nombre puede cambiar -->
                 <div class="items-img-factura-cont">
                     @for ($i = 0; $i < 9; $i++)

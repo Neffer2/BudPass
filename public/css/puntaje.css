@@ -1,0 +1,70 @@
+.puntaje-ac {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    margin-bottom: 30px;
+}
+
+.puntaje-ac-text-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    border: 2px solid var(--primary-blue);
+    border-radius: 8px;
+    width: 100%;
+    height: 230px;
+}
+
+.text-puntaje-ac,
+.text-puntaje-ac span {
+    font-family: 'BudweiserSerifDisplay', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+}
+
+.text-puntaje-ac {
+    font-size: 38px;
+}
+
+.text-puntaje-ac span {
+    font-size: 40px;
+    display: block;
+    text-align: center;
+}
+
+.text-puntaje-pen,
+.text-puntaje-pen span {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    color: var(--primary-blue);
+    font-size: 20px;
+}
+
+.text-puntaje-pen span {
+    display: block;
+    text-align: center;
+}
+
+@media (min-width: 992px) {
+
+    .puntaje-ac {
+        width: 100%;
+    }
+
+    .puntaje-ac-text-cont {
+        width: 50%;
+    }
+
+    .text-puntaje-ac {
+        font-size: 28px;
+    }
+
+    .text-puntaje-ac span {
+        font-size: 35px;
+    }
+}

@@ -33,5 +33,6 @@
             </table>
         </div>
 
+        @include('puntaje')
     </div>
 @endsection
