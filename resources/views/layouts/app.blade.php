@@ -36,8 +36,19 @@
             <div class="age-text-nosel">
                 <p>*No selecciones esta opción si compartes este computador con menores de edad</p>
             </div>
-
-
+        </div>
+        <div class="cookies-info-cont">
+            <div class="cookies-info-text">
+                <p>Most fonts have a particular weight which corresponds to one of the numbers in Common weight name
+                    mapping. However some fonts, called variable fonts, can support a range of weights with a more or
+                    less fine granularity, and this can give the designer a much closer degree of control over the
+                    chosen weight.</p>
+            </div>
+            <div class="cookie-info-btn">
+                <button class="cookies-aceptar-btn">Aceptar cookies</button>
+                <button class="cookies-rechazar-btn">Rechazar cookies</button>
+            </div>
+            <div class="cookie-configurar"><p>Configurar</p></div>
         </div>
     </div>
     @auth
