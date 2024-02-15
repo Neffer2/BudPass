@@ -47,7 +47,7 @@ class Register extends Component
             'password' => ['required', 'same:confirm', Rules\Password::defaults()]
         ]);
 
-        $user = User::create([
+        $user = User::create([ 
             'name' => $this->nombre,
             'documento' => $this->documento,
             'telefono' => $this->telefono,
@@ -162,6 +162,7 @@ class Register extends Component
 
             'password.required' => "Oops, no olvides tu contraseña.",
             'password.same' => "Las contraseñas no coinciden.",
+            'password.min' => "Oops, tu contraseña debe tener al menos 8 caracteres."
         ];
     }
 }

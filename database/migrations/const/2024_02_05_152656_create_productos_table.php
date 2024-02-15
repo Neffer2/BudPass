@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('canal_id');
             $table->string('sku');
             $table->string('descripcion');
+            $table->string('descripcion_back');
             $table->foreign('referencia_id')->references('id')->on('referencias');
             $table->foreignId('referencia_id');
             $table->timestamps();

@@ -32,6 +32,18 @@ class LoginRequest extends FormRequest
         ];
     }
 
+    public function messages() 
+    {
+        return [
+            'email.required' => "Oops, tu correo es obligatorio.",
+            'email.string' => "Formato no valido.",
+            'email.email' => "Escribe un correo electrónico valido.",
+
+            'password.required' => "Oops, no olvides tu contraseña.",
+            'email.string' => "Formato no valido."
+        ]; 
+    }
+
     /**
      * Attempt to authenticate the request's credentials.
      *
@@ -63,7 +75,7 @@ class LoginRequest extends FormRequest
             return;
         }
 
-        event(new Lockout($this));
+        event(new Lockout($this)); 
 
         $seconds = RateLimiter::availableIn($this->throttleKey());
 

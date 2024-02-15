@@ -4,11 +4,11 @@
         @csrf
         <div class="input-login-form">
             <label for="email_login">Email: </label>
-            <input id="email_login" type="email" name="email">
+            <input id="email_login" type="email" name="email" required>
         </div>
         <div class="input-login-form">
             <label for="password_login">Contraseña: </label>
-            <input id="password_login" type="password" name="password">
+            <input id="password_login" type="password" name="password" required>
         </div>
         @if ($errors->any())
             @foreach ($errors->all() as $error)
@@ -16,13 +16,12 @@
                     {{ $error }}
                 </div>
             @endforeach
-        @endif
+        @endif 
         <div class="login-form-btn">
             <button type="submit">Iniciar</button>
         </div>
-        <div>
+        <div> 
             <a href="">Recuperar Contraseña</a>
         </div>
-
     </form>
 </div>

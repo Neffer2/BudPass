@@ -4,6 +4,7 @@
             <h3>{{ $premio->nombre }}</h3>
             <p>{{ $premio->descripcion }} - Puntos: {{ $premio->puntos }}</p>
             
+            <img src='{{ asset("assets/premios/$premio->foto") }}' height="50" alt="">
             <button @if ($puntosUser >= $premio->puntos) class="disabled" x-on:click="$wire.redimir({{ $premio->id }})" @endif>
                 @if ($puntosUser >= $premio->puntos) Redimir @else No disponible @endif
             </button>                
@@ -15,7 +16,7 @@
         <h2>Tus redenciones</h2>    
         <table>
             <tr>
-                <td>Premio</td>
+                <td>Premio</td> 
                 <td>Puntos</td>
                 <td>Fecha</td>
                 <td>Estado</td>
