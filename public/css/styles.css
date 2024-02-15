@@ -123,7 +123,39 @@ body {
 }
 
 .check-recordar {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
     font-size: 14px;
+    
+}
+
+
+#check_datos_recordados {
+    display: none;
+}
+
+#check_datos_recordados + label {
+    position: relative;
+    padding-left: 35px;
+    line-height: 25px
+}
+
+#check_datos_recordados + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 25px;
+    height: 25px;
+    border: 2px solid var(--primary-red);
+    border-radius: 50%;
+    background: white;
+}
+
+#check_datos_recordados:checked + label:before {
+    background: var(--primary-red);
 }
 
 .age-text-nosel{

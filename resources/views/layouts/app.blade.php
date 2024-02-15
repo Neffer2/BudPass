@@ -31,8 +31,8 @@
                 <button id="age-no">No</button>
             </div>
             <div class="check-recordar">
-                <input type="checkbox">
-                <label for="">Recordar mis datos</label>
+                <input type="checkbox" id="check_datos_recordados">
+                <label for="check_datos_recordados">Recordar mis datos</label>
             </div>
             <div class="age-text-nosel">
                 <p>*No selecciones esta opción si compartes este computador con menores de edad</p>
@@ -217,10 +217,14 @@
         });
 
         //Prueba confirmación de edad
-        document.getElementById('age-yes').addEventListener('click', function() {
+        let ageYesButton = document.getElementById('age-yes');
+        let checkRecordar = document.getElementById('check_datos_recordados');
+        ageYesButton.addEventListener('click', function() {
             document.querySelector('.age-confirmation-cont').style.display = 'none';
-            // Guardar la confirmación en el almacenamiento local
-            localStorage.setItem('ageConfirmed', 'true');
+            // Guardar la confirmación en el local storage
+            if (checkRecordar.checked) {
+                localStorage.setItem('ageConfirmed', 'true');
+            }
         });
 
         document.getElementById('age-no').addEventListener('click', function() {
