@@ -61,10 +61,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 20px;
     width: 100%;
 }
 
-.premios-img-cont {
+.premios-img-cont-movil {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -93,6 +94,14 @@
     color: var(--primary-blue);
     font-size: 30px;
     background: #fff;
+}
+
+#premioModalImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+
 }
 
 

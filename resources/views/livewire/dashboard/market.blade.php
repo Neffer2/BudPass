@@ -8,30 +8,45 @@
         </div>
 
         <div class="premios-cont">
-            <br>
             <div class="carousel-movil">
                 @foreach ($premios->chunk(2) as $chunk)
                     <div class="carousel-page-movil">
                         @foreach ($chunk as $premio)
                             <div @class([
-                                'premios-img-cont' => true,
+                                'premios-img-cont-movil' => true,
                                 'disabled-premio' => $puntosUser < $premio->puntos,
-                            ])>
-                                {{-- <h3>{{ $premio->nombre }}</h3> --}}
-                                {{-- <p>{{ $premio->descripcion }} - Puntos: {{ $premio->puntos }}</p> --}}
+                            ]) data-id="{{ $premio->id }}"
+                                x-on:click="openModal({{ $premio->id }})">
                                 <img src='{{ asset("assets/premios/$premio->foto") }}' height="50" alt="">
-                                {{-- <button
-                                    @if ($puntosUser >= $premio->puntos) class="disabled" x-on:click="$wire.redimir({{ $premio->id }})" @endif>
-                                    @if ($puntosUser >= $premio->puntos)
-                                        Redimir
-                                    @else
-                                        No disponible
-                                    @endif
-                                </button> --}}
                             </div>
                         @endforeach
                     </div>
                 @endforeach
+
+                <div class="modal fade" id="premioModal" tabindex="-1" aria-labelledby="premioModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title" id="premioModalLabel"></h2>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <img id="premioModalImg" src="" alt="">
+                                <p id="premioModalDesc"></p>
+                                <p id="premioModalPuntos"></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" id="premioModalBtn">Redimir</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
                 <div class="carusel-btn-movil">
                     <button id="prev-carusel-movil"><i class="fas fa-arrow-left"></i></button>
                     <button id="next-carusel-movil"><i class="fas fa-arrow-right"></i></button>
@@ -71,8 +86,6 @@
         @include('puntaje')
     </div>
 
-
-
     {{-- Alerta redimido --}}
     @if (session('success'))
         {{ session('success') }}
@@ -100,4 +113,25 @@
     });
 
     showPage(index);
+
+
+    function openModal(id) {
+        const premio = @json($premios).find(p => p.id === id);
+        document.getElementById('premioModalLabel').textContent = premio.nombre;
+        document.getElementById('premioModalImg').src = '{{ asset('assets/premios/') }}/' + premio.foto;
+        document.getElementById('premioModalDesc').textContent = premio.descripcion;
+        document.getElementById('premioModalPuntos').textContent = `Puntos requeridos: ${premio.puntos}`;
+
+        const premioModalBtn = document.getElementById('premioModalBtn');
+        if ({{ $puntosUser }} < premio.puntos) {
+            premioModalBtn.textContent = 'No disponible';
+            premioModalBtn.disabled = true;
+        } else {
+            premioModalBtn.textContent = 'Redimir';
+            premioModalBtn.disabled = false;
+            premioModalBtn.setAttribute('wire:click', `redimir(${premio.id})`);
+        }
+
+        $('#premioModal').modal('show');
+    }
 </script>
