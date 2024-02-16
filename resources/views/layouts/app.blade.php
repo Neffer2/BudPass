@@ -208,26 +208,6 @@
                 }
             });
 
-            const premiosBtn = document.getElementById('show-premios-btn');
-            const redencionesBtn = document.getElementById('show-redenciones-btn');
-            const premiosCont = document.querySelector('.premios-cont');
-            const redencionesCont = document.querySelector('.redenciones-premios-cont');
-
-            if (premiosBtn && redencionesBtn && premiosCont && redencionesCont) {
-                premiosBtn.addEventListener('click', function() {
-                    premiosCont.style.display = 'flex';
-                    redencionesCont.style.display = 'none';
-                    premiosBtn.classList.add('secundario-btn');
-                    redencionesBtn.classList.remove('secundario-btn');
-                });
-
-                redencionesBtn.addEventListener('click', function() {
-                    premiosCont.style.display = 'none';
-                    redencionesCont.style.display = 'flex';
-                    redencionesBtn.classList.add('secundario-btn');
-                    premiosBtn.classList.remove('secundario-btn');
-                });
-            }
 
         });
         //Prueba confirmación de edad
@@ -240,8 +220,8 @@
         });
 
         //Prueba confirmación de edad
-        let ageYesButton = document.getElementById('age-yes');
-        let checkRecordar = document.getElementById('check_datos_recordados');
+        const ageYesButton = document.getElementById('age-yes');
+        const checkRecordar = document.getElementById('check_datos_recordados');
         ageYesButton.addEventListener('click', function() {
             document.querySelector('.age-confirmation-cont').style.display = 'none';
             localStorage.setItem('ageConfirmed', 'true'); // TODO: Cambiar la manera de validación
@@ -278,7 +258,7 @@
         }
 
         // Dropdown menu desktop 
-        let menuToggle = document.getElementById('menu-toggle');
+        const menuToggle = document.getElementById('menu-toggle');
         if (menuToggle) {
             menuToggle.addEventListener('click', function() {
                 let dropdownMenu = document.getElementById('dropdown-menu');
@@ -307,7 +287,7 @@
         }
 
         // Registro y login
-        let showLoginBtn = document.getElementById('show-login-btn');
+        const showLoginBtn = document.getElementById('show-login-btn');
         if (showLoginBtn) {
             showLoginBtn.addEventListener('click', function() {
                 document.getElementById('login-component').style.display = 'block';
@@ -317,7 +297,7 @@
             });
         }
 
-        let showRegisterBtn = document.getElementById('show-register-btn');
+        const showRegisterBtn = document.getElementById('show-register-btn');
         if (showRegisterBtn) {
             showRegisterBtn.addEventListener('click', function() {
                 document.getElementById('register-component').style.display = 'block';
@@ -328,10 +308,10 @@
         }
 
         // Registro de códigos y facturas
-        let showFacturasBtn = document.getElementById('show-facturas-btn');
-        let showCodigoBtn = document.getElementById('show-codigo-btn');
-        let registroFacturaForm = document.querySelector('.registro-factura-form');
-        let registroCodigoForm = document.querySelector('.registro-codigo-form');
+        const showFacturasBtn = document.getElementById('show-facturas-btn');
+        const showCodigoBtn = document.getElementById('show-codigo-btn');
+        const registroFacturaForm = document.querySelector('.registro-factura-form');
+        const registroCodigoForm = document.querySelector('.registro-codigo-form');
 
         if (showFacturasBtn && showCodigoBtn && registroFacturaForm && registroCodigoForm) {
             showFacturasBtn.addEventListener('click', function() {
@@ -346,6 +326,27 @@
                 registroCodigoForm.style.display = 'flex';
                 this.classList.remove('secundario-btn');
                 showFacturasBtn.classList.add('secundario-btn');
+            });
+        }
+
+        const premiosBtn = document.getElementById('show-premios-btn');
+        const redencionesBtn = document.getElementById('show-redenciones-btn');
+        const premiosCont = document.querySelector('.premios-cont');
+        const redencionesCont = document.querySelector('.redenciones-premios-cont');
+
+        if (premiosBtn && redencionesBtn && premiosCont && redencionesCont) {
+            premiosBtn.addEventListener('click', function() {
+                premiosCont.style.display = 'flex';
+                redencionesCont.style.display = 'none';
+                this.classList.remove('secundario-btn');
+                redencionesBtn.classList.add('secundario-btn');
+            });
+
+            redencionesBtn.addEventListener('click', function() {
+                premiosCont.style.display = 'none';
+                redencionesCont.style.display = 'flex';
+                this.classList.remove('secundario-btn');
+                premiosBtn.classList.add('secundario-btn');
             });
         }
 
