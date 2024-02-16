@@ -23,26 +23,29 @@
                     </div>
                 @endforeach
 
-                <div class="modal fade" id="premioModal" tabindex="-1" aria-labelledby="premioModalLabel"
+                <div class="modal fade custom-modal" id="premioModal" tabindex="-1" aria-labelledby="premioModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                            <div class="modal-header">
-                                <h2 class="modal-title" id="premioModalLabel"></h2>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <div class="modal-body custom-modal-body">
+                                <h2 class="modal-title custom-modal-title" id="premioModalLabel"></h2>
+                                <button type="button" class="close custom-close" data-dismiss="modal"
+                                    aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
-                            </div>
-                            <div class="modal-body">
-                                <img id="premioModalImg" src="" alt="">
-                                <p id="premioModalDesc"></p>
-                                <p id="premioModalPuntos"></p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                <button type="button" class="btn btn-primary" id="premioModalBtn">Redimir</button>
-                            </div>
+                                <div class="modal-img-custom">
+                                    <img id="premioModalImg" src="" alt="" class="custom-modal-img">
+                                </div>
+                                <p id="premioModalDesc" class="custom-modal-desc"></p>
+                                <p id="premioModalPuntos" class="custom-modal-puntos"></p>
+                                <div class="btn-modal-premios">
+                                    <button type="button" class="btn-modal-premios-redimir"
+                                        id="premioModalBtn">Redimir</button>
+                                    <button type="button" class="btn-modal-premios-close"
+                                        data-dismiss="modal">Cerrar</button>
+                                </div>
 
+                            </div>
                         </div>
                     </div>
                 </div>

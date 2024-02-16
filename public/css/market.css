@@ -76,6 +76,10 @@
     width: 90%;
 }
 
+.premios-img-cont-movil img {
+    cursor: pointer;
+}
+
 .disabled-premio img {
     filter: grayscale(100%);
 
@@ -96,12 +100,83 @@
     background: #fff;
 }
 
-#premioModalImg {
+/* Modal Premio */
+
+.custom-modal-body {
+    background: var(--primary-red-gradient);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.modal-title.custom-modal-title {
+    /* Estilos para el título del modal */
+    font-family: 'BudweiserSerifDisplayItalic', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.close.custom-close {
+    /* Estilos para el botón de cierre */
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.custom-modal-img {
+    /* Estilos para la imagen del modal */
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 8px;
+    background: #fff;
+    padding: 40px;
+    margin-bottom: 20px;
+}
 
+.custom-modal-desc, .custom-modal-puntos {
+    /* Estilos para la descripción del modal */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #fff;
+}
+
+.custom-modal-puntos {
+    margin-top: -15px;
+    margin-bottom: 20px;
+}
+
+.btn-modal-premios {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.btn-modal-premios-redimir, .btn-modal-premios-close{
+    /* Estilos para el botón principal */
+    border-style: none;
+    width: 140px;
+    height: 48px;
+    font-family: 'BudBold', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 8px;
+    font-weight: 400;
+    text-transform: uppercase;
+    background: #fff;
+    color: var(--primary-blue);
+    
+}
+
+.btn-modal-premios-redimir[disabled] {
+    background: #D5D5D5;
+    color: #fff;
+    cursor: not-allowed;
 }
 
 

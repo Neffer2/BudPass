@@ -28,6 +28,13 @@
     font-style: italic;
 }
 
+@font-face {
+    font-family: 'BudBold';
+    src: url('../fonts/BudBold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Global */
 
 :root {
