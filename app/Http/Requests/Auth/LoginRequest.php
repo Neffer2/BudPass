@@ -40,7 +40,9 @@ class LoginRequest extends FormRequest
             'email.email' => "Escribe un correo electrónico valido.",
 
             'password.required' => "Oops, no olvides tu contraseña.",
-            'email.string' => "Formato no valido."
+            'email.string' => "Formato no valido.",
+
+            'auth.failed' => "Oops, no reconocemos estas credenciales."
         ]; 
     }
 
@@ -57,7 +59,7 @@ class LoginRequest extends FormRequest
             RateLimiter::hit($this->throttleKey());
 
             throw ValidationException::withMessages([
-                'email' => trans('auth.failed'),
+                'email' => "Oops, no reconocemos estas credenciales.",
             ]);
         }
 

@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('puntos')->default(0);
+            $table->integer('puntos')->default(0);
 
             $table->foreignId('rol_id')->default(1);
             $table->foreign('rol_id')->references('id')->on('roles');

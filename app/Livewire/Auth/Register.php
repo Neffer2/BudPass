@@ -38,7 +38,7 @@ class Register extends Component
     }
 
     public function store(){
-        $this->welcome();
+        // $this->welcome();
         $this->validate([
             'nombre' => 'required|string|max:250',
             'documento' => 'required|numeric|max_digits:10|unique:users',
