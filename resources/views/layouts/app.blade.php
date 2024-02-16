@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{ asset('css/registro-facturas-codigos.css') }}">
     <link rel="stylesheet" href="{{ asset('css/ranking.css') }}">
     <link rel="stylesheet" href="{{ asset('css/puntaje.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/market.css') }}">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -206,6 +207,28 @@
                     });
                 }
             });
+
+            const premiosBtn = document.getElementById('show-premios-btn');
+            const redencionesBtn = document.getElementById('show-redenciones-btn');
+            const premiosCont = document.querySelector('.premios-cont');
+            const redencionesCont = document.querySelector('.redenciones-premios-cont');
+
+            if (premiosBtn && redencionesBtn && premiosCont && redencionesCont) {
+                premiosBtn.addEventListener('click', function() {
+                    premiosCont.style.display = 'flex';
+                    redencionesCont.style.display = 'none';
+                    premiosBtn.classList.add('secundario-btn');
+                    redencionesBtn.classList.remove('secundario-btn');
+                });
+
+                redencionesBtn.addEventListener('click', function() {
+                    premiosCont.style.display = 'none';
+                    redencionesCont.style.display = 'flex';
+                    redencionesBtn.classList.add('secundario-btn');
+                    premiosBtn.classList.remove('secundario-btn');
+                });
+            }
+
         });
         //Prueba confirmación de edad
         document.addEventListener('DOMContentLoaded', (event) => {
