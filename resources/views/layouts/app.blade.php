@@ -196,13 +196,15 @@
             // Para #myImg y #myImgDesk
             ['myImg', 'myImgDesk'].forEach(function(id) {
                 let imgElement = document.getElementById(id);
-                imgElement.addEventListener('click', function() {
-                    let modalId = id === 'myImg' ? 'myModal' : 'myModalDesk';
-                    let imgId = id === 'myImg' ? 'img01' : 'img01Desk';
-                    document.getElementById(imgId).src = imgElement.src;
-                    let modal = new bootstrap.Modal(document.getElementById(modalId));
-                    modal.show();
-                });
+                if (imgElement) { // Verificar si el elemento existe
+                    imgElement.addEventListener('click', function() {
+                        let modalId = id === 'myImg' ? 'myModal' : 'myModalDesk';
+                        let imgId = id === 'myImg' ? 'img01' : 'img01Desk';
+                        document.getElementById(imgId).src = imgElement.src;
+                        let modal = new bootstrap.Modal(document.getElementById(modalId));
+                        modal.show();
+                    });
+                }
             });
         });
         //Prueba confirmación de edad

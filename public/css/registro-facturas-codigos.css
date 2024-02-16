@@ -412,7 +412,7 @@
     align-items: center;
     flex-direction: column;
     width: 90%;
-    margin-top: 50px;
+    margin-top: 200px;
 }
 
 .codigo-text {
@@ -470,7 +470,7 @@
     text-transform: uppercase;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1081px) {
 
 
     .main-facturas-cont {
