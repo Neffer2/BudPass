@@ -191,23 +191,20 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        //JQuery para modal de factura
-        $(document).ready(function() {
-            $('#myImg').click(function() {
-                $('#img01').attr('src', $(this).attr('src'));
-                $('#myModal').modal('show'); // trigger the modal
+        //Modal boostrap para factura
+        document.addEventListener('DOMContentLoaded', function() {
+            // Para #myImg y #myImgDesk
+            ['myImg', 'myImgDesk'].forEach(function(id) {
+                let imgElement = document.getElementById(id);
+                imgElement.addEventListener('click', function() {
+                    let modalId = id === 'myImg' ? 'myModal' : 'myModalDesk';
+                    let imgId = id === 'myImg' ? 'img01' : 'img01Desk';
+                    document.getElementById(imgId).src = imgElement.src;
+                    let modal = new bootstrap.Modal(document.getElementById(modalId));
+                    modal.show();
+                });
             });
         });
-
-        $(document).ready(function() {
-            $('#myImg, #myImgDesk').click(function() {
-                var modalId = $(this).attr('id') === 'myImg' ? '#myModal' : '#myModalDesk';
-                var imgId = $(this).attr('id') === 'myImg' ? '#img01' : '#img01Desk';
-                $(imgId).attr('src', $(this).attr('src'));
-                $(modalId).modal('show'); // trigger the modal
-            });
-        });
-
         //Prueba confirmación de edad
         document.addEventListener('DOMContentLoaded', (event) => {
             if (localStorage.getItem('ageConfirmed') !== 'true') {
@@ -222,6 +219,7 @@
         let checkRecordar = document.getElementById('check_datos_recordados');
         ageYesButton.addEventListener('click', function() {
             document.querySelector('.age-confirmation-cont').style.display = 'none';
+            localStorage.setItem('ageConfirmed', 'true'); // TODO: Cambiar la manera de validación
             // Guardar la confirmación en el local storage
             if (checkRecordar.checked) {
                 localStorage.setItem('ageConfirmed', 'true');
