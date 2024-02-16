@@ -33,8 +33,8 @@
                     </div>
                 @endforeach
                 <div class="carusel-btn-movil">
-                    <button id="prev-carusel-movil">Prev</button>
-                    <button id="next-carusel-movil">Next</button>
+                    <button id="prev-carusel-movil"><i class="fas fa-arrow-left"></i></button>
+                    <button id="next-carusel-movil"><i class="fas fa-arrow-right"></i></button>
                 </div>
 
             </div>
