@@ -8,7 +8,6 @@
                 <div class="big-logo-facturas-desk"></div>
             </div>
             <div class="facturas-codigos-cont">
-
                 <div class="form-facturas-btn">
                     <button id="show-facturas-btn" class="facturas-codigos-btn">Registrar facturas</button>
                     <button id="show-codigo-btn" class="facturas-codigos-btn secundario-btn">Registrar códigos</button>
@@ -19,8 +18,8 @@
                 <div class="registro-codigo-form" style="display: none;">
                     <livewire:dashboard.registro-codigos />
                 </div>
-
-            </div>
+ 
+            </div> 
         </div>
         <div class="info-puntaje-cont">
             @include('puntaje')

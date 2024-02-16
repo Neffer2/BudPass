@@ -47,7 +47,7 @@ class RegistroCodigos extends Component
             return redirect()->route('dashboard')->with('success-registro-codigo', "Código canjeado con éxito, ganaste $registroCodigo->puntos_sumados puntos.");
         }
         
-        return $this->addError('codigo', 'Oops, este código ya fué canjeado.');
+        return $this->addError('codigo', 'Oops, este código no es válido.');
     }
 
     public function messages() 

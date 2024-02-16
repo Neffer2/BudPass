@@ -21,7 +21,7 @@
                 @error('num_factura')
                     <div class="text-invalid-factura">
                         {{ $message }}
-                    </div>
+                    </div> 
                 @enderror
             </div>
 
@@ -166,14 +166,10 @@
                 Cargando...
             </div>
         </div>
-
-
     </div>
 
     <div class="registrar-factura-btn">
         <button x-on:click="$wire.storeFactura">REGISTRAR FACTURA</button>
-    </div>
-    @if (session('success'))
-        <b>{{ session('success') }}</b>
-    @endif
+    </div>    
 </div>
+ 

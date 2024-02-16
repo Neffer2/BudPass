@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
     <title>@yield('title')</title>
 </head>
 
@@ -188,6 +189,7 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 
@@ -370,8 +372,23 @@
                 this.max = today.toISOString().split("T")[0];
             });
         }
-    </script>
 
+        @if (session('success-registro-codigo')) 
+            Swal.fire({
+                title: "Good job!",
+                text: "{{ session('success-registro-codigo') }}",
+                icon: "success"
+            });
+        @endif
+
+        @if (session('success'))
+            Swal.fire({
+                title: "Good job!",
+                text: "{{ session('success') }}",
+                icon: "success"
+            });
+        @endif
+        </script>
 </body>
 
 </html>
