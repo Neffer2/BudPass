@@ -139,7 +139,8 @@ body {
 #check_datos_recordados + label {
     position: relative;
     padding-left: 35px;
-    line-height: 25px
+    line-height: 25px;
+    cursor: pointer;
 }
 
 #check_datos_recordados + label:before {
@@ -155,18 +156,7 @@ body {
 }
 
 #check_datos_recordados:checked + label:before {
-    background: #fff;
-}
-
-#check_datos_recordados:checked + label:after {
-    content: '';
-    position: absolute;
-    left: 5px;
-    top: 5px;
-    width: 16px;
-    height: 16px;
-    background: var(--primary-red);
-    border-radius: 50%;
+    background: var(--primary-red-gradient);
 }
 
 .age-text-nosel{
