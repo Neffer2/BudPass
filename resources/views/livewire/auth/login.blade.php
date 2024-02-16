@@ -1,5 +1,5 @@
 <div class="login-div-cont">
-    <div class="login-title-text">Iniciar sesión</div>
+    <h1 class="login-title-text">Iniciar sesión</h1>
     <form action="/login" class="login-form" method="POST">
         @csrf
         <div class="input-login-form">
