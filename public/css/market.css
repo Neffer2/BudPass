@@ -103,6 +103,11 @@
 
 /* Modal Premio */
 
+.modal-dialog {
+    position: absolute;
+    top: 20%;
+}
+
 .custom-modal-body {
     background: var(--primary-red-gradient);
     display: flex;
@@ -214,8 +219,27 @@
         background: #D5D5D5;
     }
 
+    .premios-redenciones-cont {
+        width: 60%;
+        margin-bottom: 40px;
+    }
+
+    .market-btn-cont {
+        width: 90%;
+    }
+
+    /* Premios escritorio */
+    .premios-cont {
+        width: 90%;
+
+    }
+
+    .redenciones-premios-cont {
+        width: 90%;
+    }
+
     .market-destacados {
-        width: 45%;
+        width: 40%;
     }
 }
 
