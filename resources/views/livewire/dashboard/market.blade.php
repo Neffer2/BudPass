@@ -99,22 +99,6 @@
 </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const carousel = document.getElementById('myCarousel');
-        const currentPage = document.getElementById('currentPage');
-        const totalItems = carousel.getElementsByClassName('carousel-page-movil').length;
-
-        carousel.addEventListener('slid.bs.carousel', function() {
-            var currentIndex = Array.prototype.indexOf.call(carousel.getElementsByClassName(
-                'carousel-page-movil active'), carousel.getElementsByClassName(
-                'carousel-page-movil active')[0]) + 1;
-            currentPage.textContent = currentIndex;
-        });
-
-        // Inicializar la página actual en 1
-        currentPage.textContent = '1';
-    });
-
     let index = 0;
     const pages = document.querySelectorAll('.carousel-page-movil');
 

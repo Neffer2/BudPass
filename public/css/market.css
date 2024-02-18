@@ -205,5 +205,17 @@
 
 @media (min-width: 1081px) { 
 
+    .market-main-cont {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        background: #D5D5D5;
+    }
+
+    .market-destacados {
+        width: 45%;
+    }
 }
 
