@@ -51,10 +51,6 @@
                     </div>
                 </div>
                 <div class="pagination-dots-movil"></div>
-                <div class="carusel-btn-movil">
-                    <button id="prev-carusel-movil"><i class="fas fa-arrow-left"></i></button>
-                    <button id="next-carusel-movil"><i class="fas fa-arrow-right"></i></button>
-                </div>
 
             </div>
 
@@ -107,11 +103,11 @@
                     </div>
                 </div>
 
-                <div class="carusel-btn-desktop">
+                <div class="carousel-btn-desktop">
                     <div class="pagination-dots"></div>
-                    <div class="carusel-btn-desk-cont">
-                        <button id="prev-carusel-desktop"><i class="fas fa-arrow-left"></i></button>
-                        <button id="next-carusel-desktop"><i class="fas fa-arrow-right"></i></button>
+                    <div class="carousel-btn-desk-cont">
+                        <button id="prev-carousel-desktop"><i class="fas fa-arrow-left"></i></button>
+                        <button id="next-carousel-desktop"><i class="fas fa-arrow-right"></i></button>
                     </div>
                 </div>
 
@@ -148,10 +144,14 @@
 <script>
     let index = 0;
     let indexDesktop = 0;
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const carouselMovil = document.querySelector('.carousel-movil');
     const pages = document.querySelectorAll('.carousel-page-movil');
     const pagesDesktop = document.querySelectorAll('.carousel-page-desktop');
     const paginationDotsContainer = document.querySelector('.pagination-dots');
     const paginationDotsContainerMovil = document.querySelector('.pagination-dots-movil');
+
 
     function showPage(index) {
         pages.forEach((page, i) => {
@@ -159,19 +159,38 @@
         });
     }
 
-    document.getElementById('prev-carusel-movil').addEventListener('click', () => {
-        index = Math.max(0, index - 1);
-        showPage(index);
-        updatePaginationDotsMovil();
-    });
-
-    document.getElementById('next-carusel-movil').addEventListener('click', () => {
-        index = Math.min(pages.length - 1, index + 1);
-        showPage(index);
-        updatePaginationDotsMovil();
-    });
-
     showPage(index);
+
+
+    // Eventos touch para market movil
+    carouselMovil.addEventListener('touchstart', (event) => {
+        touchStartX = event.changedTouches[0].screenX;
+    });
+
+    carouselMovil.addEventListener('touchend', (event) => {
+        touchEndX = event.changedTouches[0].screenX;
+        handleSwipeGesture();
+    });
+
+    function handleSwipeGesture() {
+        if (touchEndX < touchStartX) {
+            // Swipe izquierda
+            if (index + 1 < pages.length) {
+                index++;
+                showPage(index);
+                updatePaginationDotsMovil();
+            }
+        }
+        if (touchEndX > touchStartX) {
+            // Swipe derecha
+            if (index - 1 >= 0) {
+                index--;
+                showPage(index);
+                updatePaginationDotsMovil();
+            }
+        }
+    }
+
 
 
     function openModal(id) {
@@ -223,13 +242,13 @@
 
     showPageDesktop(indexDesktop);
 
-    document.getElementById('prev-carusel-desktop').addEventListener('click', () => {
+    document.getElementById('prev-carousel-desktop').addEventListener('click', () => {
         indexDesktop = Math.max(0, indexDesktop - 1);
         showPageDesktop(indexDesktop);
         updatePaginationDots();
     });
 
-    document.getElementById('next-carusel-desktop').addEventListener('click', () => {
+    document.getElementById('next-carousel-desktop').addEventListener('click', () => {
         indexDesktop = Math.min(pagesDesktop.length - 1, indexDesktop + 1);
         showPageDesktop(indexDesktop);
         updatePaginationDots();
