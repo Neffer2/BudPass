@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+    min-height: 60vh;
     background: #D5D5D5;
 }
 
@@ -47,6 +48,10 @@
     justify-content: center;
     width: 100%;
     background: #fff;
+}
+
+.carousel-desktop {
+    display: none;
 }
 
 .carousel-movil {
@@ -236,6 +241,78 @@
 
     .redenciones-premios-cont {
         width: 90%;
+    }
+
+    .carousel-desktop {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .carousel-movil {
+        display: none;
+    }
+
+    .carousel-page-desktop {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        width: 100%;
+        gap: 20px;
+        padding: 30px;
+    }
+
+    .premios-img-cont-desktop {
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+        border: 4px solid var(--primary-blue);
+        border-radius: 8px;
+        margin-bottom: 20px;
+        width: 23%;
+    }
+
+    .premios-img-cont-desktop .product-description {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: var(--primary-red-gradient);
+        backdrop-filter: blur(5px);
+        color: white;
+        padding: 5px;
+        display: none;
+        text-align: center;
+        font-family: 'BudBold', 'Arial Narrow', Arial, sans-serif;
+        font-size: 20px;
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
+    }
+    
+    .premios-img-cont-desktop img {
+        cursor: pointer;
+        width: fit-content;
+    }
+
+    .carusel-btn-desktop {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    #prev-carusel-desktop, #next-carusel-desktop {
+        border-style: none;
+        color: var(--primary-blue);
+        font-size: 30px;
+        background: #fff;
     }
 
     .market-destacados {

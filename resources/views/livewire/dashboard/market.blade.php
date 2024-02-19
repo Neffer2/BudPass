@@ -8,7 +8,7 @@
         </div>
 
         <div class="premios-cont">
-            @php $pages = $premios->chunk(2); @endphp
+            @php $pagesMovil = $premios->chunk(2); @endphp
             <div class="carousel-movil">
                 @foreach ($premios->chunk(2) as $chunk)
                     <div class="carousel-page-movil">
@@ -56,7 +56,65 @@
                     <button id="next-carusel-movil"><i class="fas fa-arrow-right"></i></button>
                 </div>
 
-                <p>Número de páginas: {{ count($pages) }}</p>
+                <p>Número de páginas: {{ count($pagesMovil) }}</p>
+
+            </div>
+
+            <div class="carousel-desktop">
+                @php $pagesDesk = $premios->chunk(4); @endphp
+                @foreach ($premios->chunk(4) as $chunk)
+                    <div class="carousel-page-desktop">
+                        @foreach ($chunk as $premio)
+                            <div @class([
+                                'premios-img-cont-desktop' => true,
+                                'disabled-premio' => $puntosUser < $premio->puntos,
+                            ]) data-id="{{ $premio->id }}"
+                                x-on:click="openModalDesktop({{ $premio->id }})"
+                                x-on:mouseover="showDescription({{ $premio->id }})"
+                                x-on:mouseout="hideDescription({{ $premio->id }})">
+                                <img src='{{ asset("assets/premios/$premio->foto") }}' height="50" alt="">
+                                <div class="product-description" id="description-{{ $premio->id }}">
+                                    {{ $premio->descripcion }}
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                @endforeach
+
+                <div class="modal fade custom-modal" id="premioModalDesktop" tabindex="-1"
+                    aria-labelledby="premioModalLabelDesktop" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body custom-modal-body">
+                                <h2 class="modal-title custom-modal-title" id="premioModalLabelDesktop"></h2>
+                                <button type="button" class="close custom-close" data-dismiss="modal"
+                                    aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <div class="modal-img-custom">
+                                    <img id="premioModalImgDesktop" src="" alt=""
+                                        class="custom-modal-img">
+                                </div>
+                                <p id="premioModalDescDesktop" class="custom-modal-desc"></p>
+                                <p id="premioModalPuntosDesktop" class="custom-modal-puntos"></p>
+                                <div class="btn-modal-premios">
+                                    <button type="button" class="btn-modal-premios-redimir"
+                                        id="premioModalBtnDesktop">Redimir</button>
+                                    <button type="button" class="btn-modal-premios-close"
+                                        data-dismiss="modal">Cerrar</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carusel-btn-desktop">
+                    <button id="prev-carusel-desktop"><i class="fas fa-arrow-left"></i></button>
+                    <button id="next-carusel-desktop"><i class="fas fa-arrow-right"></i></button>
+                </div>
+
+                <p>Número de páginas: {{ count($pagesDesk) }}</p>
 
             </div>
 
@@ -92,10 +150,6 @@
         @include('puntaje')
     </div>
 
-    {{-- Alerta redimido --}}
-    @if (session('success'))
-        {{ session('success') }}
-    @endif
 </div>
 
 <script>
@@ -139,5 +193,54 @@
         }
 
         $('#premioModal').modal('show');
+    }
+
+    function openModalDesktop(id) {
+        const premio = @json($premios).find(p => p.id === id);
+        document.getElementById('premioModalLabelDesktop').textContent = premio.nombre;
+        document.getElementById('premioModalImgDesktop').src = '{{ asset('assets/premios/') }}/' + premio.foto;
+        document.getElementById('premioModalDescDesktop').textContent = premio.descripcion;
+        document.getElementById('premioModalPuntosDesktop').textContent = `Puntos requeridos: ${premio.puntos}`;
+
+        const premioModalBtnDesktop = document.getElementById('premioModalBtnDesktop');
+        if ({{ $puntosUser }} < premio.puntos) {
+            premioModalBtnDesktop.textContent = 'No disponible';
+            premioModalBtnDesktop.disabled = true;
+        } else {
+            premioModalBtnDesktop.textContent = 'Redimir';
+            premioModalBtnDesktop.disabled = false;
+            premioModalBtnDesktop.setAttribute('wire:click', `redimir(${premio.id})`);
+        }
+
+        $('#premioModalDesktop').modal('show');
+    }
+
+    let indexDesktop = 0;
+    const pagesDesktop = document.querySelectorAll('.carousel-page-desktop');
+
+    function showPageDesktop(indexDesktop) {
+        pagesDesktop.forEach((page, i) => {
+            page.style.display = i === indexDesktop ? 'flex' : 'none';
+        });
+    }
+
+    document.getElementById('prev-carusel-desktop').addEventListener('click', () => {
+        indexDesktop = Math.max(0, indexDesktop - 1);
+        showPageDesktop(indexDesktop);
+    });
+
+    document.getElementById('next-carusel-desktop').addEventListener('click', () => {
+        indexDesktop = Math.min(pagesDesktop.length - 1, indexDesktop + 1);
+        showPageDesktop(indexDesktop);
+    });
+
+    showPageDesktop(indexDesktop);
+
+    function showDescription(id) {
+        document.getElementById('description-' + id).style.display = 'block';
+    }
+
+    function hideDescription(id) {
+        document.getElementById('description-' + id).style.display = 'none';
     }
 </script>

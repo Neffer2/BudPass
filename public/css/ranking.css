@@ -5,7 +5,7 @@
     flex-direction: column;
     width: 100%;
     height: 100%;
-    /* background: #D5D5D5; */
+    background: #D5D5D5;
 }
 
 .ranking-title {
@@ -105,6 +105,7 @@
         flex-direction: column;
         margin-top: 0;
         margin-bottom: 20px;
+        margin-left: 5%;
     }
 
     .ranking-puntaje-acum {
