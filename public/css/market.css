@@ -344,11 +344,45 @@
 
     .carusel-btn-desktop {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         gap: 40px;
-        width: 100%;
+        width: 90%;
         margin-bottom: 20px;
     }
+
+    .num-paginas-desk {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .pagination-dots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .pagination-dot {
+        height: 10px;
+        width: 10px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        margin: 0 2px;
+    }
+    
+    .pagination-dot.active {
+        background-color: var(--primary-red);
+    }
+
+    .carusel-btn-desk-cont {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+    }
+
 
     #prev-carusel-desktop, #next-carusel-desktop {
         border-style: none;

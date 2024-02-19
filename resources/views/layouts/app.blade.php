@@ -176,7 +176,7 @@
                         <img src="{{ asset('assets/budweiser/consumo-responsable.svg') }}" alt="Consumo">
                     </div>
                     <div class="vive">
-                        <img src="{{ asset('assets/budweiser/vive-responsable.svg') }}" alt="Vive">
+                        <a href="https://www.bavaria.co/viveresponsable" target="_blank" rel="noopener noreferrer"><img src="{{ asset('assets/budweiser/vive-responsable.svg') }}" alt="Vive"></a>
                     </div>
                 </div>
                 <div class="footer-info-text">
