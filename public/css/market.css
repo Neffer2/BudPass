@@ -112,12 +112,12 @@
     background-color: var(--primary-red);
 }
 
-#prev-carousel-movil, #next-carousel-movil {
+/* #prev-carousel-movil, #next-carousel-movil {
     border-style: none;
     color: var(--primary-blue);
     font-size: 30px;
     background: #fff;
-}
+} */
 
 /* Modal Premio */
 
@@ -203,6 +203,15 @@
     cursor: not-allowed;
 }
 
+.carusel-btn-movil {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    margin-bottom: 20px;
+
+}
+
 
 
 /* Redenciones movil */
@@ -284,6 +293,28 @@
         width: 90%;
     }
 
+    /* Destacados escritorio */
+
+    .carousel-destacados-desk {
+        width: 100%;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .destacado-left, .destacado-right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 400px;
+        width: 45%;
+        border: 3px solid var(--primary-blue);
+        border-radius: 8px;
+        background-color: #D5D5D5;
+    }
+
     /* Premios escritorio */
     .premios-cont {
         width: 90%;
@@ -311,7 +342,6 @@
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        margin-top: 20px;
         width: 100%;
         gap: 20px;
         padding: 30px;
@@ -360,7 +390,7 @@
         justify-content: space-between;
         gap: 40px;
         width: 90%;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
     }
 
     .pagination-dots {

@@ -51,10 +51,21 @@
                     </div>
                 </div>
                 <div class="pagination-dots-movil"></div>
+                {{-- <div class="carusel-btn-movil">
+                    <button id="prev-carusel-movil"><i class="fas fa-arrow-left"></i></button>
+                    <button id="next-carusel-movil"><i class="fas fa-arrow-right"></i></button>
+                </div> --}}
 
             </div>
 
             <div class="carousel-desktop">
+
+                <div class="carousel-destacados-desk">
+                    <div class="destacado-left">
+                    </div>
+                    <div class="destacado-right"></div>
+                </div>
+
                 @foreach ($premios->chunk(4) as $chunk)
                     <div class="carousel-page-desktop">
                         @foreach ($chunk as $premio)
@@ -200,6 +211,18 @@
             }
         }
     }
+
+    // document.getElementById('prev-carusel-movil').addEventListener('click', () => {
+    //     index = Math.max(0, index - 1);
+    //     showPage(index);
+    //     updatePaginationDotsMovil();
+    // });
+
+    // document.getElementById('next-carusel-movil').addEventListener('click', () => {
+    //     index = Math.min(pages.length - 1, index + 1);
+    //     showPage(index);
+    //     updatePaginationDotsMovil();
+    // });
 
 
 
