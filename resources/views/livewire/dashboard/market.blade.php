@@ -146,6 +146,8 @@
     let indexDesktop = 0;
     let touchStartX = 0;
     let touchEndX = 0;
+    let touchStartY = 0;
+    let touchEndY = 0;
     const carouselMovil = document.querySelector('.carousel-movil');
     const pages = document.querySelectorAll('.carousel-page-movil');
     const pagesDesktop = document.querySelectorAll('.carousel-page-desktop');
@@ -165,28 +167,36 @@
     // Eventos touch para market movil
     carouselMovil.addEventListener('touchstart', (event) => {
         touchStartX = event.changedTouches[0].screenX;
+        touchStartY = event.changedTouches[0].screenY;
     });
 
     carouselMovil.addEventListener('touchend', (event) => {
         touchEndX = event.changedTouches[0].screenX;
+        touchEndY = event.changedTouches[0].screenY;
         handleSwipeGesture();
     });
 
     function handleSwipeGesture() {
-        if (touchEndX < touchStartX) {
-            // Swipe izquierda
-            if (index + 1 < pages.length) {
-                index++;
-                showPage(index);
-                updatePaginationDotsMovil();
+        let diffX = Math.abs(touchEndX - touchStartX);
+        let diffY = Math.abs(touchEndY - touchStartY);
+
+        // Solo se registra el gesto si es más horizontal que vertical
+        if (diffX > diffY) {
+            if (touchEndX < touchStartX) {
+                // Swipe izquierda
+                if (index + 1 < pages.length) {
+                    index++;
+                    showPage(index);
+                    updatePaginationDotsMovil();
+                }
             }
-        }
-        if (touchEndX > touchStartX) {
-            // Swipe derecha
-            if (index - 1 >= 0) {
-                index--;
-                showPage(index);
-                updatePaginationDotsMovil();
+            if (touchEndX > touchStartX) {
+                // Swipe derecha
+                if (index - 1 >= 0) {
+                    index--;
+                    showPage(index);
+                    updatePaginationDotsMovil();
+                }
             }
         }
     }
