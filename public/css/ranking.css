@@ -17,7 +17,8 @@
 }
 
 .ranking-title h1 {
-    font-family: 'BudweiserSerifDisplay', 'Arial', sans-serif;
+    font-family: 'BudweiserSerifDisplayItalic', 'Arial', sans-serif;
+    color: var(--primary-blue);
     font-size: 32px;
 }
 
@@ -47,8 +48,9 @@
 }
 
 .ranking-table-cont th {
-    font-family: 'BudweiserSerifDisplay', 'Arial', sans-serif;
-    font-size: 20px;
+    font-family: 'BudweiserSerifDisplayItalic', 'Arial', sans-serif;
+    color: var(--primary-blue);
+    font-size: 24px;
     padding: 10px;
     width: 33.33%;
     overflow: hidden;

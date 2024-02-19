@@ -1,6 +1,6 @@
 <div class="market-main-cont">
 
-    <div class="premios-redenciones-cont">
+    <div class="main-premios-redenciones-cont">
 
         <div class="market-btn-cont">
             <button id="show-premios-btn" class="market-btn">Market</button>
@@ -32,7 +32,8 @@
                                 <h2 class="modal-title custom-modal-title" id="premioModalLabel"></h2>
                                 <button type="button" class="close custom-close" data-dismiss="modal"
                                     aria-label="Close">
-                                    <img src="{{ asset('assets/budweiser/icono-cerrar-popup.svg') }}" aria-hidden="true">
+                                    <img src="{{ asset('assets/budweiser/icono-cerrar-popup.svg') }}"
+                                        aria-hidden="true">
                                 </button>
                                 <div class="modal-img-custom">
                                     <img id="premioModalImg" src="" alt="" class="custom-modal-img">
@@ -61,7 +62,7 @@
             </div>
 
             <div class="carousel-desktop">
-                @php $pagesDesk = $premios->chunk(4); @endphp
+                {{-- @php $pagesDesk = $premios->chunk(4); @endphp --}}
                 @foreach ($premios->chunk(4) as $chunk)
                     <div class="carousel-page-desktop">
                         @foreach ($chunk as $premio)
@@ -89,7 +90,8 @@
                                 <h2 class="modal-title custom-modal-title" id="premioModalLabelDesktop"></h2>
                                 <button type="button" class="close custom-close" data-dismiss="modal"
                                     aria-label="Close">
-                                    <img src="{{ asset('assets/budweiser/icono-cerrar-popup.svg') }}" aria-hidden="true">
+                                    <img src="{{ asset('assets/budweiser/icono-cerrar-popup.svg') }}"
+                                        aria-hidden="true">
                                 </button>
                                 <div class="modal-img-custom">
                                     <img id="premioModalImgDesktop" src="" alt=""
@@ -110,36 +112,31 @@
                 </div>
 
                 <div class="carusel-btn-desktop">
-                    <button id="prev-carusel-desktop"><i class="fas fa-arrow-left"></i></button>
-                    <button id="next-carusel-desktop"><i class="fas fa-arrow-right"></i></button>
+                    <div class="pagination-dots"></div>
+                    <div class="carusel-btn-desk-cont">
+                        <button id="prev-carusel-desktop"><i class="fas fa-arrow-left"></i></button>
+                        <button id="next-carusel-desktop"><i class="fas fa-arrow-right"></i></button>
+                    </div>
                 </div>
 
-                <p>Número de páginas: {{ count($pagesDesk) }}</p>
+
 
             </div>
 
         </div>
-        <div class="redenciones-premios-cont" style="background-color: aqua;">
+        <div class="redenciones-premios-cont">
             <h2>Tus redenciones</h2>
             <table>
                 <tr>
-                    <td>Premio</td>
-                    <td>Puntos</td>
-                    <td>Fecha</td>
-                    <td>Estado</td>
+                    <th>Premio</td>
+                    <th>Puntos</th>
+                    <th>Fecha</th>
                 </tr>
                 @foreach ($user->redenciones as $redencion)
                     <tr>
                         <td>{{ $redencion->premio->nombre }}</td>
                         <td>{{ $redencion->premio->puntos }}</td>
                         <td>{{ $redencion->created_at }}</td>
-                        <td>
-                            @if ($redencion->estado_id)
-                                Aprobado
-                            @else
-                                Rechazado
-                            @endif
-                        </td>
                     </tr>
                 @endforeach
             </table>
@@ -224,17 +221,21 @@
         });
     }
 
+    showPageDesktop(indexDesktop);
+
     document.getElementById('prev-carusel-desktop').addEventListener('click', () => {
         indexDesktop = Math.max(0, indexDesktop - 1);
         showPageDesktop(indexDesktop);
+        updatePaginationDots();
     });
 
     document.getElementById('next-carusel-desktop').addEventListener('click', () => {
         indexDesktop = Math.min(pagesDesktop.length - 1, indexDesktop + 1);
         showPageDesktop(indexDesktop);
+        updatePaginationDots();
     });
 
-    showPageDesktop(indexDesktop);
+
 
     function showDescription(id) {
         document.getElementById('description-' + id).style.display = 'block';
@@ -242,5 +243,34 @@
 
     function hideDescription(id) {
         document.getElementById('description-' + id).style.display = 'none';
+    }
+
+    // Obtén el contenedor de los puntos de paginación
+    const paginationDotsContainer = document.querySelector('.pagination-dots');
+
+    // Genera los puntos de paginación
+    pagesDesktop.forEach((page, i) => {
+        const dot = document.createElement('div');
+        dot.classList.add('pagination-dot');
+        if (i === indexDesktop) {
+            dot.classList.add('active');
+        }
+        dot.addEventListener('click', () => {
+            indexDesktop = i;
+            showPageDesktop(indexDesktop);
+            updatePaginationDots();
+        });
+        paginationDotsContainer.appendChild(dot);
+    });
+
+    // Función para actualizar los puntos de paginación
+    function updatePaginationDots() {
+        const dots = Array.from(paginationDotsContainer.children);
+        dots.forEach((dot, i) => {
+            dot.classList.remove('active');
+            if (i === indexDesktop) {
+                dot.classList.add('active');
+            }
+        });
     }
 </script>

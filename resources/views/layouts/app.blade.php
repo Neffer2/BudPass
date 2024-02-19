@@ -176,7 +176,7 @@
                         <img src="{{ asset('assets/budweiser/consumo-responsable.svg') }}" alt="Consumo">
                     </div>
                     <div class="vive">
-                        <img src="{{ asset('assets/budweiser/vive-responsable.svg') }}" alt="Vive">
+                        <a href="https://www.bavaria.co/viveresponsable" target="_blank" rel="noopener noreferrer"><img src="{{ asset('assets/budweiser/vive-responsable.svg') }}" alt="Vive"></a>
                     </div>
                 </div>
                 <div class="footer-info-text">
@@ -373,21 +373,29 @@
             });
         }
 
+        // Sweetalert
+
         @if (session('success-registro-codigo')) 
             Swal.fire({
-                title: "Good job!",
+                title: "¡Código redimido!",
                 text: "{{ session('success-registro-codigo') }}",
-                icon: "success"
+                confirmButtonText: 'ACEPTAR'
             });
         @endif
 
         @if (session('success'))
             Swal.fire({
-                title: "Good job!",
+                title: "{{ session('title') }}",
                 text: "{{ session('success') }}",
-                icon: "success"
+                confirmButtonText: 'ACEPTAR'
             });
         @endif
+        
+        //TODO: 1.) Modificar el mensaje de error de sweetalert 
+        // 2.) Terminar la lista de redenciones en marketplace y publicidad 
+        // 3.) Revisar popups de cookies y funcionamiento de cookies y verificación de mayor de edad
+        // 4.) Branding con assets de Budweiser
+
         </script>
 </body>
 

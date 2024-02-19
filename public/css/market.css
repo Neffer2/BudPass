@@ -8,7 +8,7 @@
     background: #D5D5D5;
 }
 
-.premios-redenciones-cont {
+.main-premios-redenciones-cont {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -201,8 +201,46 @@
     justify-content: center;
     width: 100%;
     background: #fff;
-
 }
+
+.redenciones-premios-cont h2{
+    font-family: 'BudweiserSerifDisplayItalic', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    color: var(--primary-blue);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.redenciones-premios-cont th {
+    font-family: 'BudweiserSerifDisplayItalic', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--primary-blue);
+    padding: 10px;
+}
+
+.redenciones-premios-cont table {
+    width: 90%;
+    text-align: center;
+    border-collapse: collapse;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.redenciones-premios-cont th, .redenciones-premios-cont td {
+    width: 33%;
+    border-right: 1px solid var(--primary-red);
+}
+
+.redenciones-premios-cont td {
+    font-family: 'Franklin Gothic Medium', 'Arial', sans-serif;
+    font-size: 14px;
+    padding: 10px;
+}
+
+
+/* Sección de destacados */
 
 .market-destacados {
     display: flex;
@@ -224,7 +262,7 @@
         background: #D5D5D5;
     }
 
-    .premios-redenciones-cont {
+    .main-premios-redenciones-cont {
         width: 60%;
         margin-bottom: 40px;
     }
@@ -306,11 +344,45 @@
 
     .carusel-btn-desktop {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         gap: 40px;
-        width: 100%;
+        width: 90%;
         margin-bottom: 20px;
     }
+
+    .num-paginas-desk {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .pagination-dots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .pagination-dot {
+        height: 10px;
+        width: 10px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        margin: 0 2px;
+    }
+    
+    .pagination-dot.active {
+        background-color: var(--primary-red);
+    }
+
+    .carusel-btn-desk-cont {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+    }
+
 
     #prev-carusel-desktop, #next-carusel-desktop {
         border-style: none;
