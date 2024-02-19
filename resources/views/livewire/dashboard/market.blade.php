@@ -55,6 +55,13 @@
             </div>
 
             <div class="carousel-desktop">
+
+                <div class="carousel-destacados-desk">
+                    <div class="destacado-left">
+                    </div>
+                    <div class="destacado-right"></div>
+                </div>
+
                 @foreach ($premios->chunk(4) as $chunk)
                     <div class="carousel-page-desktop">
                         @foreach ($chunk as $premio)
