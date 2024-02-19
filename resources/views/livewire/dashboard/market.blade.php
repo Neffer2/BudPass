@@ -8,7 +8,6 @@
         </div>
 
         <div class="premios-cont">
-            @php $pagesMovil = $premios->chunk(2); @endphp
             <div class="carousel-movil">
                 @foreach ($premios->chunk(2) as $chunk)
                     <div class="carousel-page-movil">
@@ -51,18 +50,15 @@
                         </div>
                     </div>
                 </div>
-
+                <div class="pagination-dots-movil"></div>
                 <div class="carusel-btn-movil">
                     <button id="prev-carusel-movil"><i class="fas fa-arrow-left"></i></button>
                     <button id="next-carusel-movil"><i class="fas fa-arrow-right"></i></button>
                 </div>
 
-                <p>Número de páginas: {{ count($pagesMovil) }}</p>
-
             </div>
 
             <div class="carousel-desktop">
-                {{-- @php $pagesDesk = $premios->chunk(4); @endphp --}}
                 @foreach ($premios->chunk(4) as $chunk)
                     <div class="carousel-page-desktop">
                         @foreach ($chunk as $premio)
@@ -151,7 +147,11 @@
 
 <script>
     let index = 0;
+    let indexDesktop = 0;
     const pages = document.querySelectorAll('.carousel-page-movil');
+    const pagesDesktop = document.querySelectorAll('.carousel-page-desktop');
+    const paginationDotsContainer = document.querySelector('.pagination-dots');
+    const paginationDotsContainerMovil = document.querySelector('.pagination-dots-movil');
 
     function showPage(index) {
         pages.forEach((page, i) => {
@@ -162,11 +162,13 @@
     document.getElementById('prev-carusel-movil').addEventListener('click', () => {
         index = Math.max(0, index - 1);
         showPage(index);
+        updatePaginationDotsMovil();
     });
 
     document.getElementById('next-carusel-movil').addEventListener('click', () => {
         index = Math.min(pages.length - 1, index + 1);
         showPage(index);
+        updatePaginationDotsMovil();
     });
 
     showPage(index);
@@ -212,8 +214,6 @@
         $('#premioModalDesktop').modal('show');
     }
 
-    let indexDesktop = 0;
-    const pagesDesktop = document.querySelectorAll('.carousel-page-desktop');
 
     function showPageDesktop(indexDesktop) {
         pagesDesktop.forEach((page, i) => {
@@ -245,10 +245,33 @@
         document.getElementById('description-' + id).style.display = 'none';
     }
 
-    // Obtén el contenedor de los puntos de paginación
-    const paginationDotsContainer = document.querySelector('.pagination-dots');
+    // Genera los puntos de paginación movil
+    pages.forEach((page, i) => {
+        const dot = document.createElement('div');
+        dot.classList.add('pagination-dot-movil');
+        if (i === index) {
+            dot.classList.add('active');
+        }
+        dot.addEventListener('click', () => {
+            index = i;
+            showPage(index);
+            updatePaginationDotsMovil();
+        });
+        paginationDotsContainerMovil.appendChild(dot);
+    });
 
-    // Genera los puntos de paginación
+    // Función para actualizar los puntos de paginación Movil
+    function updatePaginationDotsMovil() {
+        const dots = Array.from(paginationDotsContainerMovil.children);
+        dots.forEach((dot, i) => {
+            dot.classList.remove('active');
+            if (i === index) {
+                dot.classList.add('active');
+            }
+        });
+    }
+
+    // Genera los puntos de paginación desktop
     pagesDesktop.forEach((page, i) => {
         const dot = document.createElement('div');
         dot.classList.add('pagination-dot');
@@ -263,7 +286,7 @@
         paginationDotsContainer.appendChild(dot);
     });
 
-    // Función para actualizar los puntos de paginación
+    // Función para actualizar los puntos de paginación desktop
     function updatePaginationDots() {
         const dots = Array.from(paginationDotsContainer.children);
         dots.forEach((dot, i) => {

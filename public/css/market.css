@@ -99,6 +99,27 @@
 
 }
 
+.pagination-dots-movil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin: 10px;
+}
+
+.pagination-dot-movil {
+    height: 10px;
+    width: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 2px;
+}
+
+.pagination-dot-movil.active {
+    background-color: var(--primary-red);
+}
+
 #prev-carusel-movil, #next-carusel-movil {
     border-style: none;
     color: var(--primary-blue);
@@ -348,13 +369,6 @@
         gap: 40px;
         width: 90%;
         margin-bottom: 20px;
-    }
-
-    .num-paginas-desk {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 10px;
     }
 
     .pagination-dots {
