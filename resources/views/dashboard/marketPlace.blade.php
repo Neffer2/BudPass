@@ -2,3 +2,4 @@
     @section('content')
         <livewire:dashboard.market/>     
     @endsection
+    

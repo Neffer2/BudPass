@@ -112,7 +112,10 @@ class RegistroFacturas extends Component
         }
         
         $this->resetFields();
-        return redirect()->route('dashboard')->with('success', 'Registro de factura exitoso.');
+        return redirect()->route('dashboard')->with([
+            'title' => 'Registro exitoso.',
+            'success' => 'Registro de factura exitoso.'
+        ]);
     }
     
     // UPDATES    

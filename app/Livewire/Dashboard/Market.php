@@ -43,6 +43,9 @@ class Market extends Component
         $modelPremio->stock -= 1;
         $modelPremio->update();
 
-        return redirect()->route('market')->with('success', '!Felicidades, haz redimido el premio: '.$this->premios->where('id', $premio)->first()->nombre.' pronto nos contactaremos contigo.');
-    }
+        // Redención en proceso
+        return redirect()->route('market')->with([
+            'success' => '!Felicidades, haz redimido el premio: '.$this->premios->where('id', $premio)->first()->nombre.' pronto nos contactaremos contigo.',
+            'success' => '!Felicidades, haz redimido el premio: '.$this->premios->where('id', $premio)->first()->nombre.' pronto nos contactaremos contigo.'
+        ]);    }
 }
