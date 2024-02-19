@@ -385,10 +385,6 @@ body {
     font-size: 16px;
 }
 
-.ham-item.active a {
-    text-decoration: underline;
-}
-
 .sec-puntos {
     background: var(--primary-red);
     display: flex;
