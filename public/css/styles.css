@@ -58,9 +58,55 @@ body {
     min-height: 100vh;
 }
 
+/* Sweet Alert 2 */
+
+.swal2-popup {
+    background: var(--primary-red-gradient) !important;
+    padding: 30px !important;
+}
+
+/* Cambiar el color del título */
+.swal2-title {
+    color: #fff !important;
+    font-family: 'BudweiserSerifDisplayItalic', sans-serif;
+    font-size: 48px !important;
+    margin-top: 20px !important;
+}
+
+/* Cambiar el color del texto */
+.swal2-html-container {
+    color: #fff !important;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px !important;
+    text-align: center !important;
+    margin: 30px;
+}
+
+.swal2-confirm {
+    background-color: #fff !important;
+    width: 130px !important;
+    color: var(--primary-blue) !important;
+    font-family: 'BudBold', sans-serif;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 10px 20px !important;
+    cursor: pointer !important;
+    margin-bottom: 20px !important;
+}
+
+
+/* Cambiar el color de fondo del botón */
+.swal2-confirm {
+    background-color: #fff;
+}
+
+
+
 /* Confirmación de edad - cookies movil */
 
-.age-confirmation-cont{
+.age-confirmation-cont {
     display: none;
     position: fixed;
     width: 100%;
@@ -76,7 +122,7 @@ body {
 
 .age-confirmation-info {
     background: var(--primary-blue-gradient);
-    padding: 20px; 
+    padding: 20px;
     text-align: center;
     width: 90%;
     border-radius: 8px;
@@ -135,7 +181,7 @@ body {
     align-items: center;
     display: flex;
     font-size: 14px;
-    
+
 }
 
 
@@ -143,14 +189,14 @@ body {
     display: none;
 }
 
-#check_datos_recordados + label {
+#check_datos_recordados+label {
     position: relative;
     padding-left: 35px;
     line-height: 25px;
     cursor: pointer;
 }
 
-#check_datos_recordados + label:before {
+#check_datos_recordados+label:before {
     content: '';
     position: absolute;
     left: 0;
@@ -162,11 +208,11 @@ body {
     background: white;
 }
 
-#check_datos_recordados:checked + label:before {
+#check_datos_recordados:checked+label:before {
     background: var(--primary-red-gradient);
 }
 
-.age-text-nosel{
+.age-text-nosel {
     font-size: 12px;
 }
 
@@ -565,7 +611,7 @@ footer {
         font-size: 16px;
     }
 
-    .age-text-nosel{
+    .age-text-nosel {
         font-size: 14px;
     }
 
@@ -753,7 +799,7 @@ footer {
 
     }
 
-    .terminos-p{
+    .terminos-p {
         margin-left: 20px;
     }
 

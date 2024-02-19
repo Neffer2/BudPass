@@ -377,17 +377,17 @@
 
         @if (session('success-registro-codigo')) 
             Swal.fire({
-                title: "Good job!",
+                title: "¡Redención de código exitosa!",
                 text: "{{ session('success-registro-codigo') }}",
-                icon: "success"
+                confirmButtonText: 'ACEPTAR'
             });
         @endif
 
         @if (session('success'))
             Swal.fire({
-                title: "Good job!",
+                title: "¡Redención en proceso!",
                 text: "{{ session('success') }}",
-                icon: "success"
+                confirmButtonText: 'ACEPTAR'
             });
         @endif
         
