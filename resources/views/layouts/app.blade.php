@@ -373,6 +373,8 @@
             });
         }
 
+        // Sweetalert
+
         @if (session('success-registro-codigo')) 
             Swal.fire({
                 title: "Good job!",
@@ -388,6 +390,12 @@
                 icon: "success"
             });
         @endif
+        
+        //TODO: 1.) Modificar el mensaje de error de sweetalert 
+        // 2.) Terminar la lista de redenciones en marketplace y publicidad 
+        // 3.) Revisar popups de cookies y funcionamiento de cookies y verificación de mayor de edad
+        // 4.) Branding con assets de Budweiser
+
         </script>
 </body>
 
