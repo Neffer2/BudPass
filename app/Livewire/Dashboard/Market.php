@@ -45,7 +45,8 @@ class Market extends Component
 
         // Redención en proceso
         return redirect()->route('market')->with([
-            'success' => '!Felicidades, haz redimido el premio: '.$this->premios->where('id', $premio)->first()->nombre.' pronto nos contactaremos contigo.',
+            'title' => '!Felicidades, haz redimido el premio: '.$this->premios->where('id', $premio)->first()->nombre.' pronto nos contactaremos contigo.',
             'success' => '!Felicidades, haz redimido el premio: '.$this->premios->where('id', $premio)->first()->nombre.' pronto nos contactaremos contigo.'
-        ]);    }
+        ]);
+    }
 }
