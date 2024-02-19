@@ -347,14 +347,14 @@
     margin-bottom: 20px;
 }
 
-.foto-factura-cont .custom-file-upload {
+.foto-factura-cont .custom-file-upload, .foto-selfie-cont .custom-file-upload {
     display: inline-block;
     width: 100%;
     height: 180px;
     border: 2px solid var(--primary-blue);
     border-radius: 8px;
     background: url("../assets/budweiser/subir-archivo-logo.svg") no-repeat center;
-    background-size: 25%;
+    background-size: 130px;
 }
 
 .foto-selfie-cont {
@@ -362,16 +362,6 @@
     flex-direction: column;
     width: 100%;
     margin-bottom: 20px;
-}
-
-.foto-selfie-cont .custom-file-upload {
-    display: inline-block;
-    width: 100%;
-    height: 180px;
-    border: 2px solid var(--primary-blue);
-    border-radius: 8px;
-    background: url("../assets/budweiser/subir-archivo-logo.svg") no-repeat center;
-    background-size: 25%;
 }
 
 .registrar-factura-btn {
@@ -563,6 +553,10 @@
     .foto-selfie-cont {
         width: 48%;
         margin-right: 10px;
+    }
+
+    .foto-factura-cont .custom-file-upload, .foto-selfie-cont .custom-file-upload {
+        background-size: 120px;
     }
 
     .foto-selfie-cont {
