@@ -9,7 +9,7 @@
         <div class="input-login-form">
             <label for="password_login">Contraseña: </label>
             <input id="password_login" type="password" name="password" required>
-        </div>
+        </div>        
         @if ($errors->any())
             @foreach ($errors->all() as $error)
                 <div class="text-invalid-login">
@@ -21,7 +21,7 @@
             <button type="submit">Iniciar</button>
         </div>
         <div> 
-            <a href="">Recuperar Contraseña</a>
+            <a href="{{ route('password.request') }}">Recuperar Contraseña</a>
         </div>
     </form>
-</div>
+</div> 
