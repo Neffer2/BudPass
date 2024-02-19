@@ -1,6 +1,6 @@
 <div class="market-main-cont">
 
-    <div class="premios-redenciones-cont">
+    <div class="main-premios-redenciones-cont">
 
         <div class="market-btn-cont">
             <button id="show-premios-btn" class="market-btn">Market</button>
@@ -119,27 +119,19 @@
             </div>
 
         </div>
-        <div class="redenciones-premios-cont" style="background-color: aqua;">
+        <div class="redenciones-premios-cont">
             <h2>Tus redenciones</h2>
             <table>
                 <tr>
-                    <td>Premio</td>
-                    <td>Puntos</td>
-                    <td>Fecha</td>
-                    <td>Estado</td>
+                    <th>Premio</td>
+                    <th>Puntos</th>
+                    <th>Fecha</th>
                 </tr>
                 @foreach ($user->redenciones as $redencion)
                     <tr>
                         <td>{{ $redencion->premio->nombre }}</td>
                         <td>{{ $redencion->premio->puntos }}</td>
                         <td>{{ $redencion->created_at }}</td>
-                        <td>
-                            @if ($redencion->estado_id)
-                                Aprobado
-                            @else
-                                Rechazado
-                            @endif
-                        </td>
                     </tr>
                 @endforeach
             </table>

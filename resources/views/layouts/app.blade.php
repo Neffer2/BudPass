@@ -377,7 +377,7 @@
 
         @if (session('success-registro-codigo')) 
             Swal.fire({
-                title: "¡Redención de código exitosa!",
+                title: "¡Código redimido!",
                 text: "{{ session('success-registro-codigo') }}",
                 confirmButtonText: 'ACEPTAR'
             });
@@ -385,7 +385,7 @@
 
         @if (session('success'))
             Swal.fire({
-                title: "¡Redención en proceso!",
+                title: "{{ session('title') }}",
                 text: "{{ session('success') }}",
                 confirmButtonText: 'ACEPTAR'
             });

@@ -8,7 +8,7 @@
     background: #D5D5D5;
 }
 
-.premios-redenciones-cont {
+.main-premios-redenciones-cont {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -201,8 +201,46 @@
     justify-content: center;
     width: 100%;
     background: #fff;
-
 }
+
+.redenciones-premios-cont h2{
+    font-family: 'BudweiserSerifDisplayItalic', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    color: var(--primary-blue);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.redenciones-premios-cont th {
+    font-family: 'BudweiserSerifDisplayItalic', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--primary-blue);
+    padding: 10px;
+}
+
+.redenciones-premios-cont table {
+    width: 90%;
+    text-align: center;
+    border-collapse: collapse;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.redenciones-premios-cont th, .redenciones-premios-cont td {
+    width: 33%;
+    border-right: 1px solid var(--primary-red);
+}
+
+.redenciones-premios-cont td {
+    font-family: 'Franklin Gothic Medium', 'Arial', sans-serif;
+    font-size: 14px;
+    padding: 10px;
+}
+
+
+/* Sección de destacados */
 
 .market-destacados {
     display: flex;
@@ -224,7 +262,7 @@
         background: #D5D5D5;
     }
 
-    .premios-redenciones-cont {
+    .main-premios-redenciones-cont {
         width: 60%;
         margin-bottom: 40px;
     }
