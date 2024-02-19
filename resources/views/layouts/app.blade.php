@@ -72,13 +72,13 @@
                 <div class="ham-open-icon" onclick="toggleMenu()">☰</div>
                 <div class="menu-desk-info">
                     <div class="menu-desk">
-                        <div class="menu-desk-item">
+                        <div class="menu-desk-item {{ Route::currentRouteName() == 'ranking' ? 'active' : '' }}">
                             <a class="" href="{{ route('ranking') }}">Ranking</a>
                         </div>
-                        <div class="menu-desk-item">
+                        <div class="menu-desk-item {{ Route::currentRouteName() == 'market' ? 'active' : '' }}">
                             <a class="" href="{{ route('market') }}">Marketplace</a>
                         </div>
-                        <div class="menu-desk-item">
+                        <div class="menu-desk-item {{ Route::currentRouteName() == 'dashboard' ? 'active' : '' }}">
                             <a class="" href="{{ route('dashboard') }}">Registro</a>
                         </div>
                     </div>
@@ -103,13 +103,13 @@
                             {{ number_format(Auth::user()->puntos) }}
                         </span></p>
                 </div>
-                <div class="ham-item">
+                <div class="ham-item {{ Route::currentRouteName() == 'ranking' ? 'active' : '' }}">
                     <a class="" href="{{ route('ranking') }}">Ranking</a>
                 </div>
-                <div class="ham-item">
+                <div class="ham-item {{ Route::currentRouteName() == 'market' ? 'active' : '' }}">
                     <a class="" href="{{ route('market') }}">Marketplace</a>
                 </div>
-                <div class="ham-item">
+                <div class="ham-item {{ Route::currentRouteName() == 'dashboard' ? 'active' : '' }}">
                     <a class="" href="{{ route('dashboard') }}">Registro</a>
                 </div>
                 <div class="ham-item">
@@ -391,10 +391,10 @@
             });
         @endif
         
-        //TODO: 1.) Modificar el mensaje de error de sweetalert 
-        // 2.) Terminar la lista de redenciones en marketplace y publicidad 
-        // 3.) Revisar popups de cookies y funcionamiento de cookies y verificación de mayor de edad
-        // 4.) Branding con assets de Budweiser
+        //TODO: 1.) Terminar la lista de redenciones en marketplace y publicidad 
+        // 2.) Revisar popups de cookies y funcionamiento de cookies y verificación de mayor de edad
+        // 3.) Branding con assets de Budweiser
+        // 4) Funcionalidad de Camara para subir facturas y selfies
 
         </script>
 </body>
