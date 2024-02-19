@@ -29,8 +29,8 @@ class Market extends Component
     public function redimir($premio){
         $modelPremio = $this->premios->where('id', $premio)->first();
         
-        if ($this->user->puntos < $modelPremio->puntos){
-            return $this->addError('codigo-bloqueado', 'Oops, no tienes suficientes puntos para realizar esta redención.');
+        if ($this->user->puntos >= $modelPremio->puntos){
+            return $this->addError('redencion', 'Oops, no tienes suficientes puntos para realizar esta redención.');
         }
 
         // Redencion
