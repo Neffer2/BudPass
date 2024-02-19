@@ -51,6 +51,10 @@
                     </div>
                 </div>
                 <div class="pagination-dots-movil"></div>
+                {{-- <div class="carusel-btn-movil">
+                    <button id="prev-carusel-movil"><i class="fas fa-arrow-left"></i></button>
+                    <button id="next-carusel-movil"><i class="fas fa-arrow-right"></i></button>
+                </div> --}}
 
             </div>
 
@@ -207,6 +211,18 @@
             }
         }
     }
+
+    // document.getElementById('prev-carusel-movil').addEventListener('click', () => {
+    //     index = Math.max(0, index - 1);
+    //     showPage(index);
+    //     updatePaginationDotsMovil();
+    // });
+
+    // document.getElementById('next-carusel-movil').addEventListener('click', () => {
+    //     index = Math.min(pages.length - 1, index + 1);
+    //     showPage(index);
+    //     updatePaginationDotsMovil();
+    // });
 
 
 

@@ -112,12 +112,12 @@
     background-color: var(--primary-red);
 }
 
-#prev-carousel-movil, #next-carousel-movil {
+/* #prev-carousel-movil, #next-carousel-movil {
     border-style: none;
     color: var(--primary-blue);
     font-size: 30px;
     background: #fff;
-}
+} */
 
 /* Modal Premio */
 
@@ -201,6 +201,15 @@
     background: #D5D5D5;
     color: #fff;
     cursor: not-allowed;
+}
+
+.carusel-btn-movil {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    margin-bottom: 20px;
+
 }
 
 
