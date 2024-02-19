@@ -32,7 +32,7 @@
                                 <h2 class="modal-title custom-modal-title" id="premioModalLabel"></h2>
                                 <button type="button" class="close custom-close" data-dismiss="modal"
                                     aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
+                                    <img src="{{ asset('assets/budweiser/icono-cerrar-popup.svg') }}" aria-hidden="true">
                                 </button>
                                 <div class="modal-img-custom">
                                     <img id="premioModalImg" src="" alt="" class="custom-modal-img">
@@ -89,7 +89,7 @@
                                 <h2 class="modal-title custom-modal-title" id="premioModalLabelDesktop"></h2>
                                 <button type="button" class="close custom-close" data-dismiss="modal"
                                     aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
+                                    <img src="{{ asset('assets/budweiser/icono-cerrar-popup.svg') }}" aria-hidden="true">
                                 </button>
                                 <div class="modal-img-custom">
                                     <img id="premioModalImgDesktop" src="" alt=""
