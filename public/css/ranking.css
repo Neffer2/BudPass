@@ -100,7 +100,7 @@
 
 
     .ranking-table-cont {
-        width: 65%;
+        width: 60%;
         display: flex;
         flex-direction: column;
         margin-top: 0;
@@ -109,6 +109,6 @@
     }
 
     .ranking-puntaje-acum {
-        width: 35%;
+        width: 40%;
     }
 }
