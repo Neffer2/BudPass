@@ -467,8 +467,8 @@
     
 
     .cont-main-registro-facturas-codigos {
-        background-position: 100% 30%;
-        background-size: 60%;
+        background-position: fixed;
+        background-size: 50%;
     }
 
     .main-facturas-cont {

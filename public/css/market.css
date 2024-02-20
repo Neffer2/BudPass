@@ -301,8 +301,8 @@
     .market-main-cont {
         flex-direction: row;
         width: 100%;
-        background-position: 100% 20%;
-        background-size: 60%;
+        background-position: fixed;
+        background-size: 50%;
     }
 
     .main-premios-redenciones-cont {
