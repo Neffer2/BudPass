@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    background: var(--primary-red);
+    background-color: var(--primary-red);
 }
 
 .main-facturas-cont {
@@ -21,7 +21,6 @@
 
 .text-invalid-factura {
     position: absolute;
-    /* Ajusta estas propiedades según necesites */
     top: 100%;
     left: 0;
     color: red;
@@ -169,7 +168,7 @@
     height: 50px;
     display: flex;
     justify-content: center;
-    background: #f2f0f0;
+    background: #D9D9D9;
     align-items: center;
     border-radius: 2px;
 }
@@ -321,7 +320,7 @@
 .btn-eliminar-producto {
     color: #fff;
     font-size: 20px;
-} 
+}
 
 .puntos-sumados-cont {
     display: flex;
