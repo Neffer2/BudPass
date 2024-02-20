@@ -35,6 +35,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'FranklinGothicBook';
+    src: url('../fonts/FranklinGothicBook-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Global */
 
 :root {
@@ -56,6 +63,12 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+}
+
+.secundario-btn {
+    background-color: var(--primary-red);
+    color: #fff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 1);
 }
 
 /* Sweet Alert 2 */

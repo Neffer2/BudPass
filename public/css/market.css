@@ -5,7 +5,7 @@
     justify-content: center;
     width: 100%;
     min-height: 60vh;
-    background: #D5D5D5;
+    background: var(--primary-red);
 }
 
 .main-premios-redenciones-cont {
@@ -34,9 +34,11 @@
     cursor: pointer;
     background: #fff;
 }
+
 .secundario-btn {
     background-color: var(--primary-red);
     color: #fff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 1);
 }
 
 /* Premios movil */
@@ -276,12 +278,8 @@
 @media (min-width: 1081px) { 
 
     .market-main-cont {
-        display: flex;
         flex-direction: row;
-        align-items: center;
-        justify-content: center;
         width: 100%;
-        background: #D5D5D5;
     }
 
     .main-premios-redenciones-cont {
