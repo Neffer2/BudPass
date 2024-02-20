@@ -145,6 +145,10 @@
                                 </a>
                             </div>
                             <div class="terminos-p">
+                                <a href="https://www.bavaria.co/viveresponsable" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <p>Vive responsable</p>
+                                </a>
                                 <a href="https://www.bavaria.co/t%C3%A9rminos-y-condiciones" target="_blank"
                                     rel="noopener noreferrer">
                                     <p>Términos y condiciones</p>
