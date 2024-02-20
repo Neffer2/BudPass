@@ -3,6 +3,11 @@
     justify-content: center;
     width: 100%;
     background-color: var(--primary-red);
+    background: url('/assets/budweiser/budpass.registro-bg.jpg');
+    background-color: var(--primary-red);
+    background-position: 100% 10%;
+    background-repeat: no-repeat;
+    background-size: 150%;
 }
 
 .main-facturas-cont {
@@ -398,6 +403,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background: #fff;
 }
 
 .codigo-cont {
@@ -458,7 +464,12 @@
 }
 
 @media (min-width: 1081px) {
+    
 
+    .cont-main-registro-facturas-codigos {
+        background-position: 100% 30%;
+        background-size: 60%;
+    }
 
     .main-facturas-cont {
         width: 60%;
@@ -579,7 +590,6 @@
 
     /* Registro codigos Desktop */
     .registro-codigo-form {
-        background: #fff;
         width: 100%;
         height: 80vh;
         justify-content: center;

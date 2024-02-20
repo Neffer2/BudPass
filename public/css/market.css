@@ -5,7 +5,11 @@
     justify-content: center;
     width: 100%;
     min-height: 60vh;
-    background: var(--primary-red);
+    background: url('/assets/budweiser/budpass.registro-bg.jpg');
+    background-color: var(--primary-red);
+    background-position: 100% 10%;
+    background-repeat: no-repeat;
+    background-size: 150%;
 }
 
 .main-premios-redenciones-cont {
@@ -297,6 +301,8 @@
     .market-main-cont {
         flex-direction: row;
         width: 100%;
+        background-position: 100% 20%;
+        background-size: 60%;
     }
 
     .main-premios-redenciones-cont {
