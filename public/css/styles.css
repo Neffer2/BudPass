@@ -241,7 +241,7 @@ body {
 
 .cookies-info-text p {
     font-family: 'inter', sans-serif;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .cookie-info-config {
@@ -632,6 +632,7 @@ footer {
 
     .cookies-info-text {
         margin-top: 20px;
+        width: 100%;
     }
 
     .cookie-configurar p {

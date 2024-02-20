@@ -43,10 +43,10 @@
         </div>
         <div class="cookies-info-cont">
             <div class="cookies-info-text">
-                <p>Most fonts have a particular weight which corresponds to one of the numbers in Common weight name
-                    mapping. However some fonts, called variable fonts, can support a range of weights with a more or
-                    less fine granularity, and this can give the designer a much closer degree of control over the
-                    chosen weight.</p>
+                <p>En este sitio web se utilizan cookies y otras tecnologías de rastreo que se guardan en tu
+                    dispositivo, nos ayudan a mejorar la navegación del sitio web, analizar el uso del mismo y colaborar
+                    con nuestros estudios de marketing. Al hacer clic en Aceptar estas aceptando el uso de éstas. Conoce
+                    más en nuestro Aviso de Privacidad</p>
             </div>
             <div class="cookie-info-config">
                 <div class="cookie-btns">
@@ -176,7 +176,9 @@
                         <img src="{{ asset('assets/budweiser/consumo-responsable.svg') }}" alt="Consumo">
                     </div>
                     <div class="vive">
-                        <a href="https://www.bavaria.co/viveresponsable" target="_blank" rel="noopener noreferrer"><img src="{{ asset('assets/budweiser/vive-responsable.svg') }}" alt="Vive"></a>
+                        <a href="https://www.bavaria.co/viveresponsable" target="_blank"
+                            rel="noopener noreferrer"><img src="{{ asset('assets/budweiser/vive-responsable.svg') }}"
+                                alt="Vive"></a>
                     </div>
                 </div>
                 <div class="footer-info-text">
@@ -375,7 +377,7 @@
 
         // Sweetalert
 
-        @if (session('success-registro-codigo')) 
+        @if (session('success-registro-codigo'))
             Swal.fire({
                 title: "¡Código redimido!",
                 text: "{{ session('success-registro-codigo') }}",
@@ -390,13 +392,12 @@
                 confirmButtonText: 'ACEPTAR'
             });
         @endif
-        
+
         //TODO: 1.) Terminar la lista de redenciones en marketplace y publicidad 
         // 2.) Revisar popups de cookies y funcionamiento de cookies y verificación de mayor de edad
         // 3.) Branding con assets de Budweiser
         // 4) Funcionalidad de Camara para subir facturas y selfies
-
-        </script>
+    </script>
 </body>
 
 </html>
