@@ -11,14 +11,14 @@
             </div>
             <div class="regs-form-cont">
                 <div class="form-btn">
-                    <button id="show-login-btn" class="regs-btn ">Iniciar sesión</button>
-                    <button id="show-register-btn" class="regs-btn secundario-btn">Registro</button>
+                    <button id="show-register-btn" class="regs-btn">Registro</button>
+                    <button id="show-login-btn" class="regs-btn secundario-btn">Iniciar sesión</button>
                 </div>
-                <div id="login-component">
-                    <livewire:auth.login />
-                </div>
-                <div id="register-component" style="display: none;">
+                <div id="register-component" >
                     <livewire:auth.register />
+                </div>
+                <div id="login-component" style="display: none;">
+                    <livewire:auth.login />
                 </div>
             </div>
         </div>
