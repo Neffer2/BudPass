@@ -275,6 +275,23 @@
     margin-top: 20px;
 }
 
+/* Paginación */
+
+.page-link {
+    color: var(--primary-blue) !important;
+}
+
+.page-item.active .page-link {
+    background-color: var(--primary-red) !important;
+    color: #fff !important;
+    border: #fff;
+}
+
+.pagination {
+    justify-content: center;
+}
+
+
 @media (min-width: 1081px) { 
 
     .market-main-cont {
@@ -427,6 +444,10 @@
 
     .market-destacados {
         width: 40%;
+    }
+
+    .page-item.active .page-link {
+        background-color: var(--primary-red) !important;
     }
 }
 
