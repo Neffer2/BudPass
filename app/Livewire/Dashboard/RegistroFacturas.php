@@ -149,7 +149,7 @@ class RegistroFacturas extends Component
             'selfie_producto' => 'required|mimes:jpg,jpeg,png,bmp,tiff|max:20000'
         ]);
     }
-
+ 
     // RESET
     public function resetFields(){
         if ($this->canal){

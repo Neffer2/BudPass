@@ -62,7 +62,7 @@
                         {{ $message }}
                     </div>
                 @enderror
-            </div>
+            </div> 
 
             <div class="cantidad-agregar-cont">
                 <div class="cantidad-productos-cont">
@@ -124,7 +124,7 @@
 
         <div class="desk-right-cont">
             <div class="factura-img-cont-desk">
-                <img id="myImgDesk"
+                <img id="myImgDesk" wire:loading.class="disabled"
                     @if ($canal) src="{{ asset("assets/facturas/$canal->ejemplo_factura") }}" @endif
                     alt="">
             </div>
