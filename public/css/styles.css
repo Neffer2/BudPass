@@ -468,6 +468,7 @@ footer {
     display: flex;
     justify-content: center;
     align-content: center;
+    flex-direction: column;
     width: 100%;
     background: var(--primary-blue);
 }
@@ -484,6 +485,22 @@ footer {
     width: 235px;
 }
 
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: row;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.footer-socials a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 25px;
+}
+
 .footer-text {
     display: flex;
     justify-content: center;
@@ -496,27 +513,28 @@ footer {
 .terminos-text {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    width: 100%;
     margin-bottom: 30px;
     margin-top: 30px;
+    gap: 10px;
 }
 
-.politicas-p p,
-.terminos-p p {
+.terminos-right, .terminos-center, .terminos-left {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+.terminos-right p,
+.terminos-center p,
+.terminos-left p {
     color: #fff;
     font-size: 12px;
     text-decoration: underline;
     text-transform: uppercase;
     /* Bud Bold / 700 */
-}
-
-.politicas-p,
-.terminos-p {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 20px;
 }
 
 .bud-line-compartas {
@@ -788,20 +806,27 @@ footer {
         display: flex;
         justify-content: center;
         align-self: center;
-        flex-direction: row;
+        flex-direction: column;
         height: 100%;
-        margin: 50px;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .img-bud-footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
     }
 
     .img-footer-cont img {
         width: 235px;
-        margin-left: 150px;
     }
 
     .footer-text {
         flex-direction: row;
         font-size: 15px;
-        justify-content: space-around;
+        justify-content: center;
         font-weight: 700;
         width: 100%;
         height: 100%;
@@ -809,24 +834,26 @@ footer {
 
     .terminos-text {
         display: flex;
+        width: 100%;
         flex-direction: row;
-        font-size: 15px;
-        margin-top: 0;
-        margin-bottom: 0;
-        margin-left: 50px;
+        justify-content: space-around;
     }
 
-    .politicas-p,
-    .terminos-p {
-        align-items: flex-start;
-        justify-content: flex-end;
-        gap: 10px;
-
+    .terminos-right, .terminos-center, .terminos-left {
+        width: 33%;
+        gap: 0;
     }
 
-    .terminos-p {
-        margin-left: 20px;
+    .terminos-right {
+        order: 1;
     }
+    .terminos-left {
+        order: 2;
+    }
+    .terminos-center {
+        order: 3;
+    }
+    
 
     .bud-line-compartas {
         height: 40px;

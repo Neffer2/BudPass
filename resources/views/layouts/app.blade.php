@@ -11,8 +11,7 @@
     <link rel="stylesheet" href="{{ asset('css/ranking.css') }}">
     <link rel="stylesheet" href="{{ asset('css/puntaje.css') }}">
     <link rel="stylesheet" href="{{ asset('css/market.css') }}">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
     <title>@yield('title')</title>
@@ -128,39 +127,58 @@
         <div class="footer-cont">
             <div class="top-footer">
                 <div class="img-footer-cont">
-                    <img src="{{ asset('assets/budweiser/logo-budweiser.svg') }}" alt="" srcset="">
-                    <div class="footer-text">
-                        <div class="terminos-text">
-                            <div class="politicas-p">
-                                <a href="https://www.bavaria.co/sites/g/files/seuoyk1666/files/2024-02/Aviso%20de%20Privacidad%20%28V.5%29.pdf"
-                                    target="_blank" rel="noopener noreferrer">
-                                    <p>Aviso de Privacidad</p>
-                                </a>
-                                <a href="https://www.sic.gov.co/" target="_blank" rel="noopener noreferrer">
-                                    <p>Superintendencia de industria y comercio</p>
-                                </a>
-                                <a href="https://www.bavaria.co/abilegal/politica-deproteccion-de-datos-personales"
-                                    target="_blank" rel="noopener noreferrer">
-                                    <p>Politica de protección de datos <span>personales</span></p>
-                                </a>
-                            </div>
-                            <div class="terminos-p">
-                                <a href="https://www.bavaria.co/viveresponsable" target="_blank"
-                                    rel="noopener noreferrer">
-                                    <p>Vive responsable</p>
-                                </a>
-                                <a href="https://www.bavaria.co/t%C3%A9rminos-y-condiciones" target="_blank"
-                                    rel="noopener noreferrer">
-                                    <p>Términos y condiciones</p>
-                                </a>
-                                <a href="https://www.budweiser.co/terminos-generales" target="_blank"
-                                    rel="noopener noreferrer">
-                                    <p>Términos y condiciones de la campaña</p>
-                                </a>
-                            </div>
-                        </div>
-
+                    <div class="img-bud-footer">
+                        <img src="{{ asset('assets/budweiser/logo-budweiser.svg') }}" alt="" srcset="">
                     </div>
+
+                    <div class="footer-socials">
+                        <a href="#" target="_blank" aria-label="Facebook link"><i class="fab fa-facebook-f"
+                                alt="Logo Facebook"></i></a>
+                        <a href="#" target="_blank" aria-label="Twitter link"><i class="fab fa-twitter"
+                                alt="Logo Twitter"></i></a>
+                        <a href="#" target="_blank" aria-label="Instagram link"><i class="fab fa-instagram"
+                                alt="Logo Instagram"></i></a>
+                        <a href="#" target="_blank" aria-label="YouTube link"><i class="fab fa-youtube"
+                                alt="Logo YouTube"></i></a>
+                        <a href="#" target="_blank" aria-label="Pinterest link"><i class="fab fa-pinterest"
+                                alt="Logo Pinterest"></i></a>
+                        <a href="#" target="_blank" aria-label="TikTok link"><i class="fab fa-tiktok"
+                                alt="Logo TikTok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-text">
+                    <div class="terminos-text">
+                        <div class="terminos-right">
+                            <a href="https://www.bavaria.co/sites/g/files/seuoyk1666/files/2024-02/Aviso%20de%20Privacidad%20%28V.5%29.pdf"
+                                target="_blank" rel="noopener noreferrer">
+                                <p>Aviso de Privacidad</p>
+                            </a>
+                            <a href="https://www.bavaria.co/viveresponsable" target="_blank"
+                                rel="noopener noreferrer">
+                                <p>Vive responsable</p>
+                            </a>
+                        </div>
+                        <div class="terminos-center">
+                            <a href="https://www.bavaria.co/t%C3%A9rminos-y-condiciones" target="_blank"
+                                rel="noopener noreferrer">
+                                <p>Términos y condiciones</p>
+                            </a>
+                            <a href="https://www.budweiser.co/terminos-generales" target="_blank"
+                                rel="noopener noreferrer">
+                                <p>Términos y condiciones de la campaña</p>
+                            </a>
+                        </div>
+                        <div class="terminos-left">
+                            <a href="https://www.sic.gov.co/" target="_blank" rel="noopener noreferrer">
+                                <p>Superintendencia de industria y comercio</p>
+                            </a>
+                            <a href="https://www.bavaria.co/abilegal/politica-deproteccion-de-datos-personales"
+                                target="_blank" rel="noopener noreferrer">
+                                <p>Politica de protección de datos <span>personales</span></p>
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>

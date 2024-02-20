@@ -5,8 +5,8 @@
     flex-direction: column;
     width: 100%;
     min-height: 57vh;
-    background: var(--primary-red);
     background: url('/assets/budweiser/budpass-ranking-bg.jpg');
+    background-color: var(--primary-red);
     background-repeat: no-repeat;
     background-position: center 5%;
 }
