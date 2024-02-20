@@ -20,7 +20,7 @@
                                 <img src='{{ asset("assets/premios/$premio->foto") }}' height="50" alt="">
                             </div>
                         @endforeach
-                    </div> 
+                    </div>
                 @endforeach
 
                 <div class="modal fade custom-modal" id="premioModal" tabindex="-1" aria-labelledby="premioModalLabel"
@@ -55,7 +55,7 @@
             </div>
 
             <div class="carousel-desktop">
-                
+
                 <div class="carousel-destacados-desk">
                     <div class="destacado-left"></div>
                     <div class="destacado-right"></div>
@@ -123,12 +123,17 @@
 
         </div>
         <div class="redenciones-premios-cont">
-            <livewire:dashboard.market.redenciones :user_id="$user->id" :key="$user->id"/>
+            <livewire:dashboard.market.redenciones :user_id="$user->id" :key="$user->id" />
         </div>
     </div>
 
     <div class="market-destacados">
         @include('puntaje')
+
+        <div id="publicidad-cont">
+            <img id="carousel-image-publicidad-current" src="{{ asset('assets/budweiser/destacado-jueves.jpg') }}">
+            <img id="carousel-image-publicidad-next" class="hidden">
+        </div>
     </div>
 
 </div>
@@ -317,4 +322,34 @@
             }
         });
     }
+
+    // Carrusel dinámico
+
+    let carruselImg = [
+        "{{ asset('assets/budweiser/destacado-jueves.jpg') }}",
+        "{{ asset('assets/budweiser/destacado-viernes.jpg') }}",
+        "{{ asset('assets/budweiser/destacado-sabado.jpg') }}",
+        "{{ asset('assets/budweiser/destacado-domingo.jpg') }}"
+    ];
+    let currentCarruselIndex = -1;
+
+    function changeCarruselImage() {
+        currentCarruselIndex = (currentCarruselIndex + 1) % carruselImg.length;
+
+        const imgElementCurrent = document.getElementById("carousel-image-publicidad-current");
+        const imgElementNext = document.getElementById("carousel-image-publicidad-next");
+
+        imgElementNext.src = carruselImg[currentCarruselIndex];
+        imgElementNext.classList.remove("hidden");
+
+        setTimeout(() => {
+            imgElementCurrent.classList.add("fade-out");
+            imgElementCurrent.src = imgElementNext.src;
+            imgElementCurrent.classList.remove("fade-out");
+            imgElementNext.classList.add("hidden");
+        }, 3000);
+    }
+
+    changeCarruselImage();
+    setInterval(changeCarruselImage, 8000);
 </script>

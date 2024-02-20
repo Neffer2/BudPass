@@ -295,6 +295,34 @@
     justify-content: center;
 }
 
+#publicidad-cont{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+    height: 330px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+#publicidad-cont img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    position: absolute;
+    transition: opacity 3s;
+}
+
+#publicidad-cont .fade-out {
+    opacity: 0;
+}
+
+#publicidad-cont .hidden {
+    opacity: 0;
+}
 
 @media (min-width: 1081px) { 
 
@@ -455,5 +483,10 @@
     .page-item.active .page-link {
         background-color: var(--primary-red) !important;
     }
+
+    #publicidad-cont{
+        width: 75%;
+    }
+    
 }
 
