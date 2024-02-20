@@ -26,7 +26,7 @@ class Market extends Component
         ])->get();
     }
 
-    public function redimir($premio){
+    public function redimir($premio){ 
         $modelPremio = $this->premios->where('id', $premio)->first();
         
         if ($this->user->puntos < $modelPremio->puntos){

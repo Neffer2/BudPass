@@ -20,7 +20,7 @@
                                 <img src='{{ asset("assets/premios/$premio->foto") }}' height="50" alt="">
                             </div>
                         @endforeach
-                    </div>
+                    </div> 
                 @endforeach
 
                 <div class="modal fade custom-modal" id="premioModal" tabindex="-1" aria-labelledby="premioModalLabel"
@@ -123,21 +123,7 @@
 
         </div>
         <div class="redenciones-premios-cont">
-            <h2>Tus redenciones</h2>
-            <table>
-                <tr>
-                    <th>Premio</td>
-                    <th>Puntos</th>
-                    <th>Fecha</th>
-                </tr>
-                @foreach ($user->redenciones as $redencion)
-                    <tr>
-                        <td>{{ $redencion->premio->nombre }}</td>
-                        <td>{{ $redencion->premio->puntos }}</td>
-                        <td>{{ $redencion->created_at }}</td>
-                    </tr>
-                @endforeach
-            </table>
+            <livewire:dashboard.market.redenciones :user_id="$user->id" :key="$user->id"/>
         </div>
     </div>
 
