@@ -321,13 +321,17 @@
 .btn-eliminar-producto {
     color: #fff;
     font-size: 20px;
-}
+} 
 
 .puntos-sumados-cont {
     display: flex;
     justify-content: flex-start;
     width: 90%;
     margin-bottom: 20px;
+    font-family: 'FranklinGothicBook';
+    font-weight: bold;
+    font-size: 14px;
+    color: var(--primary-blue);
 
 }
 
