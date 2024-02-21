@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -79,5 +80,10 @@ class User extends Authenticatable
     public function rank($id){
         $user_rank = User::select('id', 'name', 'email', 'puntos')->where('puntos', '>', $id)->count();
         return $user_rank;
+    }
+
+    public function limite(){
+        $registros = Auth::user()->registrosFactura;
+        return $registros->where('created_at', '>=', '2024-02-21 00:00:00')->where('created_at', '<=', '2024-02-21 23:59:59')->sum('puntos_sumados');
     }
 }
