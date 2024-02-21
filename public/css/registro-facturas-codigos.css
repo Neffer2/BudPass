@@ -30,10 +30,32 @@
 
 .text-invalid-factura {
     position: absolute;
+    width: 200%;
     top: 100%;
     left: 0;
     color: red;
     font-size: 12px;
+}
+
+#cantidad_producto {
+    top: 130%;
+}
+
+.texto-consumo-cont {
+    position: absolute;
+    display: flex;
+    width: 200%;
+    top: 100%;
+    left: 0;
+    color: var(--primary-blue);
+}
+
+.texto-consumo-cont p {
+    font-family: 'FranklinGothicBook';
+    font-size: 14px;
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+
 }
 
 .text-danger {
@@ -167,6 +189,13 @@
     padding: 10px;
 }
 
+.cantidad-agregar-cont input {
+    height: 40px;
+    border: 1px solid var(--primary-blue);
+    border-radius: 5px;
+    /* padding: 5px; */
+}
+
 /* Labels */
 .nit-label-cont label,
 .num-factura-cont label,
@@ -246,10 +275,11 @@
     margin-bottom: 40px;
 }
 
+
+
 .cantidad-productos-cont {
     display: flex;
     width: 50%;
-
     flex-direction: column;
 }
 
