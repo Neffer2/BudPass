@@ -3,6 +3,7 @@
 namespace App\Livewire\Dashboard; 
 
 use Livewire\Component;
+use App\Models\User;
 use App\Models\Canal;
 use App\Models\RegistroFactura;
 use App\Models\ProductoFactura;
@@ -19,7 +20,7 @@ class RegistroFacturas extends Component
     public $nit, $num_factura, $producto, $cantidad, $puntos = 0, $foto_factura, $selfie_producto;
  
     // Useful vars
-    public $canal, $productos;
+    public $canal, $productos, $user;
 
     public function render()
     {
@@ -81,6 +82,11 @@ class RegistroFacturas extends Component
         |---------------------------------------
     */
     public function storeFactura(){
+        // $user = Auth::user();
+        // dd($user->limite());
+
+        // return $this->limiteDiario(Auth::user()->id);
+
         $this->validate([
             'num_factura' => ['required', 'alpha_num', 'max:20', new num_factura],
             'foto_factura' => 'required|mimes:jpg,jpeg,png,bmp,tiff|max:20000',
@@ -129,10 +135,6 @@ class RegistroFacturas extends Component
             'title' => 'Registro exitoso.',
             'success' => 'Registro de factura exitoso.'
         ]);          
-    }
-
-    public function limiteDiario(){
-        dd("HOla");
     }
 
     // UPDATES    
@@ -281,7 +283,7 @@ class RegistroFacturas extends Component
 
             'cantidad.required' => 'Indica la cantidad de producto que compraste.',
             'cantidad.numeric' => 'Cantidad de producto inválida',
-            // 'cantidad.max' => 'Oops, exediste la cantidad máxima de producto por factura.',
+            'cantidad.max' => 'Oops, exediste la cantidad máxima de producto por factura.',
         ];
     }
 } 
