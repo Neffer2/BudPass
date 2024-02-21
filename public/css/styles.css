@@ -234,94 +234,6 @@ body {
     font-size: 12px;
 }
 
-.cookies-info-cont {
-    position: absolute;
-    display: flex;
-    margin-top: auto;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    align-self: flex-end;
-    bottom: 0;
-    width: 100%;
-    height: 280px;
-    background: rgba(84, 95, 113, 0.7);
-    margin-top: 40px;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-}
-
-.cookies-info-text {
-    display: flex;
-    width: 90%;
-    justify-content: center;
-    align-content: center;
-}
-
-.cookies-info-text p {
-    font-family: 'inter', sans-serif;
-    font-size: 14px;
-}
-
-.cookie-info-config {
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin-bottom: 20px;
-    margin-top: 10px;
-}
-
-.cookie-btns {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-
-}
-
-.cookies-aceptar-btn {
-    width: 122px;
-    height: 42px;
-    border: none;
-    border-radius: 2px;
-    background: var(--primary-red);
-    color: #fff;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    cursor: pointer;
-}
-
-.cookies-rechazar-btn {
-    width: 122px;
-    height: 42px;
-    border: none;
-    border-radius: 2px;
-    background: #B1B1B1;
-    color: #fff;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    cursor: pointer;
-}
-
-.cookie-configurar {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-top: 10px;
-}
-
-.cookie-configurar p {
-    font-family: 'inter', sans-serif;
-    font-size: 16px;
-    text-decoration: underline;
-    text-transform: uppercase;
-}
-
-
 /* Header Movil */
 
 .bud-main-header {
@@ -650,30 +562,6 @@ footer {
 
     .age-text-nosel {
         font-size: 14px;
-    }
-
-    .cookies-info-cont {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: row;
-        bottom: 0;
-        width: 100%;
-        height: 150px;
-        padding: 40px;
-    }
-
-    .cookie-info-config {
-        margin-bottom: 10px;
-    }
-
-    .cookies-info-text {
-        margin-top: 20px;
-        width: 100%;
-    }
-
-    .cookie-configurar p {
-        margin-right: 158px;
     }
 
     /* Header Desktop */
