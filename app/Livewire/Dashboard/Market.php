@@ -11,7 +11,7 @@ use App\Models\bbdd_marketplace_general;
 class Market extends Component
 {
     // Useful vars 
-    public $premios, $puntosUser, $user;
+    public $premios, $puntosUser, $user, $destacados;
 
     public function render()
     {
@@ -21,9 +21,15 @@ class Market extends Component
     public function mount(){
         $this->user = Auth::user(); 
         $this->puntosUser = $this->user->puntos; 
+
         $this->premios = Premio::select('id', 'nombre', 'descripcion', 'stock', 'puntos', 'foto')->where([
             ['stock', '>', 0],
             ['tipo', 1]
+        ])->get();
+
+        $this->destacados = Premio::select('id', 'nombre', 'descripcion', 'stock', 'puntos', 'foto')->where([
+            ['stock', '>', 0],
+            ['tipo', 0]
         ])->get();
     }
 
@@ -59,5 +65,5 @@ class Market extends Component
             'title' => 'Redención exitosa.',
             'success-redencion' => '¡Felicidades! haz redimido el premio: '.$this->premios->where('id', $premio)->first()->nombre.', pronto nos contactaremos contigo.'
         ]);
-    }
+    } 
 }

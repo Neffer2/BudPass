@@ -61,6 +61,9 @@
                     <div class="destacado-right"></div>
                 </div>
 
+                @if ($destacados)
+                    
+                @endif
                 @foreach ($premios->chunk(4) as $chunk)
                     <div class="carousel-page-desktop">
                         @foreach ($chunk as $premio)
