@@ -85,7 +85,7 @@ class RegistroFacturas extends Component
         // $user = Auth::user();
         // dd($user->limite());
 
-        return $this->limiteDiario(Auth::user()->id);
+        // return $this->limiteDiario(Auth::user()->id);
 
         $this->validate([
             'num_factura' => ['required', 'alpha_num', 'max:20', new num_factura],
