@@ -43,21 +43,17 @@
 }
 
 .texto-consumo-cont {
-    position: absolute;
     display: flex;
-    width: 200%;
-    top: 100%;
-    left: 0;
-    color: var(--primary-blue);
+    width: 90%;
 }
 
 .texto-consumo-cont p {
     font-family: 'FranklinGothicBook';
-    font-size: 10px;
+    font-size: 16px;
     color: var(--primary-blue);
-    margin-bottom: 10px;
-
 }
+
+
 
 .text-danger {
     color: red !important;
@@ -182,8 +178,7 @@
 
 /* Inputs */
 .nit-label-cont input,
-.num-factura-cont input,
-.cantidad-agregar-cont input {
+.num-factura-cont input{
     height: 40px;
     border: 1px solid var(--primary-blue);
     border-radius: 5px;
@@ -273,7 +268,7 @@
 .cantidad-agregar-cont {
     display: flex;
     width: 90%;
-    margin-bottom: 40px;
+    margin-bottom: 25px;
 }
 
 
@@ -697,15 +692,6 @@
         width: 100%; /* Asegura que la imagen cubra todo el ancho del contenedor */
         height: 100%; /* Asegura que la imagen cubra todo el alto del contenedor */
         object-fit: cover; /* Asegura que la imagen se ajuste al contenedor manteniendo su aspecto */
-    }
-
-    .texto-consumo-cont p {
-        font-family: 'FranklinGothicBook';
-        font-size: 0.6vw;
-        color: var(--primary-blue);
-        margin-bottom: 10px;
-        white-space: nowrap;
-    
     }
 
 }

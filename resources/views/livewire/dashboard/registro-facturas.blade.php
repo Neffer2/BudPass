@@ -68,16 +68,13 @@
                 <div class="cantidad-productos-cont">
                     <label for="">Cantidad: </label>
                     <input type="number" wire:model.change='cantidad'>
-                    <div class="texto-consumo-cont">
-                        <p>*Te invitamos a registrar la compra de productos de manera responsable</p>
-                    </div>
                     @error('productos')
                         <div class="text-invalid-factura">
                             {{ $message }}
                         </div>
                     @enderror
                     @error('cantidad')
-                        <div class="text-invalid-factura" id="cantidad_producto">
+                        <div class="text-invalid-factura">
                             {{ $message }}
                         </div>
                     @enderror
@@ -85,12 +82,14 @@
                 <div class="agregar-producto-btn-cont">
                     <button x-on:click="$wire.addProduct()">Agregar productos</button>
                 </div>
-
+                
             </div>
 
-
-
-
+            <div class="texto-consumo-cont">
+                <p>*Te invitamos a registrar la compra de productos de manera responsable</p>
+            </div>
+            
+            
 
             <div class="lista-productos-cont">
                 <label for="">Listado de productos</label>
@@ -128,7 +127,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> 
 
         <div class="desk-right-cont">
             <div class="factura-img-cont-desk">
