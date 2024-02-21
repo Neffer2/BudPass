@@ -2,10 +2,13 @@
 @section('content')
     <div class="cont-main-registro-facturas-codigos">
         <div class="main-facturas-cont">
-            <div class="big-logo-facturas-cont">
-                <div class="big-logo-facturas"></div>
-                <div class="big-logo-facturas-desk"></div>
-                <div class="big-logo-facturas-desk"></div>
+            <div class="paso-cont">
+                <div class="paso-facturas-movil">
+                    <img src="{{ asset('assets/budweiser/paso-a-paso-movil.svg') }}" alt="" srcset="">
+                </div>
+                <div class="paso-facturas-desk"></div>
+                <div class="paso-facturas-desk"></div>
+                <dibv class="paso-facturas-desk"></dibv>
             </div>
             <div class="facturas-codigos-cont">
                 <div class="form-facturas-btn">

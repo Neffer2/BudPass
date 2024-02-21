@@ -310,7 +310,7 @@
 #publicidad-cont img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 8px;
     position: absolute;
     transition: opacity 3s;
@@ -486,6 +486,14 @@
 
     #publicidad-cont{
         width: 75%;
+    }
+
+    #publicidad-cont img {
+        width: 100%;
+        object-fit: contain;
+        border-radius: 8px;
+        position: absolute;
+        transition: opacity 3s;
     }
     
 }

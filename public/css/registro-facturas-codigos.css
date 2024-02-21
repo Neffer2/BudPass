@@ -36,24 +36,27 @@
     font-size: 12px;
 }
 
-.big-logo-facturas-cont {
+.paso-cont {
     display: flex;
     align-content: center;
     justify-content: center;
     width: 90%;
 }
 
-.big-logo-facturas {
+.paso-facturas-movil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 203px;
     border: 3px solid var(--primary-red);
     margin-bottom: 30px;
     border-radius: 10px;
     margin-top: 20px;
-    background: #D9D9D9;
+    background: #fff;
 }
 
-.big-logo-facturas-desk {
+.paso-facturas-desk {
     display: none;
 }
 
@@ -479,17 +482,16 @@
         width: 60%;
     }
 
-    .big-logo-facturas-cont {
+    .paso-cont {
         margin-top: 50px;
         justify-content: space-between;
     }
 
-    .big-logo-facturas {
-        width: 30%;
-        height: 200px;
+    .paso-facturas-movil {
+        display: none;
     }
 
-    .big-logo-facturas-desk {
+    .paso-facturas-desk {
         display: block;
         width: 30%;
         height: 200px;
