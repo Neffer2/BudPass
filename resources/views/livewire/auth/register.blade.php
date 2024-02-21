@@ -146,7 +146,7 @@
             'event': 'GAEvent',
             'event_category': 'Form',
             'event_action': 'Error',
-            'event_label': $errors->all(), // descripción del error
+            'event_label': {!! json_encode($errors->all()) !!}, // descripción del error
             'interaction': 'true',
             'component_name': 'btn_error_form',
             'campaign_description': 'Budpass',
@@ -154,16 +154,6 @@
     </script>
     @endscript
 @endif 
-
-{{-- dataLayer.push({
-    'event': 'GAEvent',
-    'event_category': 'Form',
-    'event_action': 'Success',
-    'event_label': 'Registro_exitoso',
-    'interaction': 'true',
-    'component_name': 'btn_success_form',
-    'campaign_description': 'Budpass',
-}); --}}
 <script>
     document.getElementById('registrar_usuario').addEventListener('click', function() {
         dataLayer.push({
