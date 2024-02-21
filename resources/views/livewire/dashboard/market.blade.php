@@ -17,7 +17,7 @@
                                 'disabled-premio' => $puntosUser < $premio->puntos,
                             ]) data-id="{{ $premio->id }}"
                                 x-on:click="openModal({{ $premio->id }})">
-                                <img src='{{ asset("assets/premios/$premio->foto") }}' height="50" alt="">
+                                <img src='{{ asset("assets/premios/$premio->foto") }}' height="200" alt="">
                             </div>
                         @endforeach
                     </div>
@@ -71,7 +71,7 @@
                                 x-on:click="openModalDesktop({{ $premio->id }})"
                                 x-on:mouseover="showDescription({{ $premio->id }})"
                                 x-on:mouseout="hideDescription({{ $premio->id }})">
-                                <img src='{{ asset("assets/premios/$premio->foto") }}' height="50" alt="">
+                                <img src='{{ asset("assets/premios/$premio->foto") }}' height="200" alt="">
                                 <div class="product-description" id="description-{{ $premio->id }}">
                                     {{ $premio->descripcion }}
                                 </div>
