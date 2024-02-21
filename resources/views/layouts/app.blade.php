@@ -432,6 +432,22 @@
             });
         @endif
 
+        @if (session('session-success'))
+            // Swal.fire({
+            //     title: "{{ session('title') }}",
+            //     text: "{{ session('session-success') }}",
+            //     confirmButtonText: 'ACEPTAR'
+            // });
+        @endif
+
+        // @if (session('register-success'))
+        //     Swal.fire({
+        //         title: "{{ session('title') }}",
+        //         text: "{{ session('register-success') }}",
+        //         confirmButtonText: 'ACEPTAR'
+        //     });
+        // @endif
+
         //TODO: 1.) Terminar la lista de redenciones en marketplace y publicidad 
         // 2.) Revisar popups de cookies y funcionamiento de cookies y verificación de mayor de edad
         // 3.) Branding con assets de Budweiser
