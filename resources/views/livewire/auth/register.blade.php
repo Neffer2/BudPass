@@ -139,9 +139,9 @@
     </div>
 </div>
 @if ($errors->any())
+    @script
     <script>
-        
-        // console.log('Hola');
+        console.log('Hola');
         dataLayer.push({
             'event': 'GAEvent',
             'event_category': 'Form',
@@ -152,6 +152,7 @@
             'campaign_description': 'Budpass',
         });
     </script>
+    @endscript
 @endif 
 <script>
     document.getElementById('registrar_usuario').addEventListener('click', function() {
