@@ -64,14 +64,15 @@
                 @foreach ($premios->chunk(4) as $chunk)
                     <div class="carousel-page-desktop">
                         @foreach ($chunk as $premio)
-                            <div @class([
+                            <div id="premios_img_cont" @class([
                                 'premios-img-cont-desktop' => true,
                                 'disabled-premio' => $puntosUser < $premio->puntos,
                             ]) data-id="{{ $premio->id }}"
-                                x-on:click="openModalDesktop({{ $premio->id }})"
+                                x-on:click="openModalDesktop({{ $premio->id }}); enviarDesktop('{{ $premio->descripcion }}')"
                                 x-on:mouseover="showDescription({{ $premio->id }})"
                                 x-on:mouseout="hideDescription({{ $premio->id }})">
-                                <img src='{{ asset("assets/premios/$premio->foto") }}' height="200" alt="">
+                                <img class="img-premio" src='{{ asset("assets/premios/$premio->foto") }}' height="200"
+                                    alt="">
                                 <div class="product-description" id="description-{{ $premio->id }}">
                                     {{ $premio->descripcion }}
                                 </div>
@@ -358,6 +359,7 @@
     const tituloProductoDesk = document.getElementById('premioModalLabelDesktop');
 
     document.getElementById('premioModalBtnDesktop').addEventListener('click', function() {
+        console.log('Antes de btn_redimir_producto');
         dataLayer.push({
             'event': 'GAEvent',
             'event_category': 'Content',
@@ -368,10 +370,12 @@
             'element_text': tituloProductoMovil.innerHTML,
             'campaign_description': 'Budpass',
         });
+        console.log('Después de btn_redimir_producto');
     });
 
 
     document.getElementById('premio_cerrar_desktop').addEventListener('click', function() {
+        console.log('Antes de btn_cancelar_producto');
         dataLayer.push({
             'event': 'GAEvent',
             'event_category': 'Content',
@@ -382,11 +386,12 @@
             'element_text': tituloProductoDesk.innerHTML,
             'campaign_description': 'Budpass',
         });
+        console.log('Después de btn_cancelar_producto');
     });
 
-    document.querySelector('.premios-img-cont-desktop img').addEventListener('click', function() {
-        //TODO: Revisar
-        console.log('click desk');
+    function enviarDesktop(descripcion) {
+        this.descripcionPremio = descripcion;
+        console.log('Antes de btn_confirmar_redencion_puntos');
         dataLayer.push({
             'event': 'GAEvent',
             'event_category': 'Content',
@@ -394,14 +399,18 @@
             'event_label': 'confirmar_redencion',
             'interaction': 'true',
             'component_name': 'btn_confirmar_redencion_puntos',
-            'element_text': tituloProductoDesk.innerHTML, // variable dinámica que traiga el nombre del botón
+            'element_text': this.descripcionPremio,
             'campaign_description': 'Budpass',
         });
-    });
+        console.log('Antes de btn_confirmar_redencion_puntos');
+    }
+
+    // otras funciones...
 
     const tituloProductoMovil = document.getElementById('premioModalLabel');
 
     document.getElementById('premioModalBtn').addEventListener('click', function() {
+        console.log('Antes de btn_redimir_producto');
         dataLayer.push({
             'event': 'GAEvent',
             'event_category': 'Content',
@@ -412,9 +421,11 @@
             'element_text': tituloProductoMovil.innerHTML,
             'campaign_description': 'Budpass',
         });
+        console.log('Después de btn_redimir_producto');
     });
 
     document.getElementById('premio_cerrar_movil').addEventListener('click', function() {
+        console.log('Antes de btn_cancelar_producto');
         dataLayer.push({
             'event': 'GAEvent',
             'event_category': 'Content',
@@ -425,10 +436,11 @@
             'element_text': tituloProductoMovil.innerHTML,
             'campaign_description': 'Budpass',
         });
+        console.log('Después de btn_cancelar_producto');
     });
 
     document.querySelector('.premios-img-cont-movil').addEventListener('click', function() {
-        console.log('click movil');
+        console.log('Antes de btn_confirmar_redencion_puntos');
         dataLayer.push({
             'event': 'GAEvent',
             'event_category': 'Content',
@@ -436,10 +448,10 @@
             'event_label': 'confirmar_redencion',
             'interaction': 'true',
             'component_name': 'btn_confirmar_redencion_puntos',
-            'element_text': tituloProductoMovil.innerHTML, // variable dinámica que traiga el nombre del botón
+            'element_text': tituloProductoMovil
+            .innerHTML, // variable dinámica que traiga el nombre del botón
             'campaign_description': 'Budpass',
         });
+        console.log('Antes de btn_confirmar_redencion_puntos');
     });
-
-    
 </script>

@@ -175,6 +175,7 @@
 </div>
 <script>
     document.getElementById('foto_factura').addEventListener('click', function() {
+        console.log('Antes de btn_subir_factura');
         dataLayer.push({
             'event': 'GAEvent',
             'event_category': 'Content',
@@ -185,9 +186,11 @@
             'element_text': 'Subir_factura',
             'campaign_description': 'Budpass',
         });
+        console.log('Despues de btn_subir_factura');
     });
 
     document.getElementById('foto_selfie').addEventListener('click', function() {
+        console.log('Antes de btn_subir_foto');
         dataLayer.push({
             'event': 'GAEvent',
             'event_category': 'Content',
@@ -198,11 +201,13 @@
             'element_text': 'Subir_foto_selfie_producto',
             'campaign_description': 'Budpass',
         });
+        console.log('Despues de btn_subir_foto');
     });
 
     //registrar_factura
 
     document.getElementById('registrar_factura').addEventListener('click', function() {
+        console.log('Antes de btn_registrar_factura');
         dataLayer.push({
             'event': 'GAEvent',
             'event_category': 'Content',
@@ -213,5 +218,6 @@
             'element_text': 'Registrar_factura',
             'campaign_description': 'Budpass',
         });
+        console.log('Despues de btn_registrar_factura');
     });
 </script>

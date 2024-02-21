@@ -254,7 +254,7 @@
         const ageYesButton = document.getElementById('age-yes');
         const checkRecordar = document.getElementById('check_datos_recordados');
         ageYesButton.addEventListener('click', function() {
-
+            console.log('Antes de yes');
             dataLayer.push({
                 'event': 'GAEvent',
                 'event_category': 'Age Gate',
@@ -264,6 +264,7 @@
                 'component_name': 'Yes',
                 'element_text': 'Yes',
             });
+            console.log('Después de yes');
 
             document.querySelector('.age-confirmation-cont').style.display = 'none';
             localStorage.setItem('ageConfirmed', 'true'); // TODO: Cambiar la manera de validación
@@ -274,7 +275,7 @@
         });
 
         document.getElementById('age-no').addEventListener('click', function() {
-
+            console.log('Antes de no');
             dataLayer.push({
                 'event': 'GAEvent',
                 'event_category': 'Age Gate',
@@ -284,6 +285,7 @@
                 'component_name': 'No',
                 'element_text': 'No',
             });
+            console.log('Después de no');
             window.location.href = 'https://www.tapintoyourbeer.com/';
         });
 
@@ -431,6 +433,7 @@
                 confirmButtonText: 'ACEPTAR'
             }).then((result) => {
                 if (result.isConfirmed) {
+                    console.log('Antes de btn_validar_factura');
                     dataLayer.push({
                         'event': 'GAEvent',
                         'event_category': 'Content',
@@ -441,11 +444,13 @@
                         'element_text': 'buttonName', // nombre del botón
                         'campaign_description': 'Budpass',
                     });
+                    console.log('Después de btn_validar_factura');
                 }
             });
         @endif
 
         @if (session('session-success'))
+            console.log('Antes de Login_success');
             dataLayer.push({
                 'event': 'GAEvent',
                 'event_category': 'Login',
@@ -453,6 +458,7 @@
                 'event_label': 'Login_success',
                 'userUid': "{{ Auth::user()->name }}" // user id (string)
             });
+            console.log('Después de Login_success');
         @endif
 
         @if (session('success-redencion'))
@@ -462,6 +468,7 @@
                 confirmButtonText: 'ACEPTAR'
             }).then((result) => {
                 if (result.isConfirmed) {
+                    console.log('Antes de cerrar_redencion_proceso');
                     dataLayer.push({
                         'event': 'GAEvent',
                         'event_category': 'Content',
@@ -472,6 +479,7 @@
                         'element_text': 'cerrar',
                         'campaign_description': 'Budpass',
                     });
+                    console.log('Después de cerrar_redencion_proceso');
                 }
             });
         @endif
