@@ -139,8 +139,6 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: -180px;
-
 }
 
 .modal-title.custom-modal-title {
@@ -367,6 +365,7 @@
         margin-bottom: 20px;
         padding: 10px;
         overflow: hidden;
+        cursor: pointer;
     }
 
     .destacado-left img, .destacado-right img {
@@ -485,6 +484,11 @@
         color: var(--primary-blue);
         font-size: 30px;
         background: #fff;
+    }
+
+    .modal-dialog {
+        position: absolute;
+        top: 0;
     }
 
     .market-destacados {
