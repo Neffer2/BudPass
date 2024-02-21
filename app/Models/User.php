@@ -75,4 +75,9 @@ class User extends Authenticatable
 
         return $pendientes->sum('puntos_sumados');
     }
+
+    public function rank($id){
+        $user_rank = User::select('id', 'name', 'email', 'puntos')->where('puntos', '>', $id)->count();
+        return $user_rank;
+    }
 }
