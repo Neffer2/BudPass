@@ -494,6 +494,8 @@
 
         //TODO: 1) Funcionalidad de Camara para subir facturas y selfies
         // 2) Revisar funcionamiento de cookies
+        // 3) Agregar redes sociales
+        // 4) Eliminar console.logs de dataLayers
     </script>
 </body>
 
