@@ -27,15 +27,22 @@
                 <div class="registro-codigo-form" style="display: none;">
                     <livewire:dashboard.registro-codigos />
                 </div>
- 
-            </div> 
+
+            </div>
         </div>
         <div class="info-puntaje-cont">
             @include('puntaje')
             <div class="items-factura-contaner"><!-- Nombre puede cambiar -->
                 <div class="items-img-factura-cont">
                     @for ($i = 0; $i < 9; $i++)
-                        <div class="items-img-factura"></div>
+                        <div class="items-img-factura">
+                            @if ($i == 4)
+                                <img src="{{ asset('assets/budweiser/budpass-logo.jpg') }}" alt="Filler Image">
+                            @else
+                                <img src="{{ asset('assets/budweiser/budpass-ref' . ($i < 4 ? $i + 1 : $i) . '.jpg') }}"
+                                    alt="Dynamic Image">
+                            @endif
+                        </div>
                     @endfor
                 </div>
             </div>
