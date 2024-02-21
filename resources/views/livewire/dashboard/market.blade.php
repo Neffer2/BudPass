@@ -57,13 +57,42 @@
             <div class="carousel-desktop">
 
                 <div class="carousel-destacados-desk">
-                    <div class="destacado-left"></div>
-                    <div class="destacado-right"></div>
+                    @if ($destacados)
+                        <div class="destacado-left" data-id="{{ $destacados[0]->id }}"
+                            x-on:click="openModalDestacado({{ $destacados[0]->id }})">
+                            <img src='{{ asset("assets/premios/{$destacados[0]->foto}") }}' height="150"
+                                alt="">
+                        </div>
+                        <div class="destacado-right" data-id="{{ $destacados[1]->id }}"
+                            x-on:click="openModalDestacado({{ $destacados[1]->id }})">
+                            <img src='{{ asset("assets/premios/{$destacados[1]->foto}") }}' height="150"
+                                alt="">
+                        </div>
+                    @endif
                 </div>
 
-                @if ($destacados)
-                    
-                @endif
+                <div class="modal fade custom-modal" id="destacadoModal" tabindex="-1"
+                    aria-labelledby="destacadoModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body custom-modal-body">
+                                <h2 class="modal-title custom-modal-title" id="destacadoModalLabel"></h2>
+                                <button type="button" class="close custom-close" data-dismiss="modal"
+                                    aria-label="Close">
+                                    <img src="{{ asset('assets/budweiser/icono-cerrar-popup.svg') }}"
+                                        aria-hidden="true">
+                                </button>
+                                <div class="modal-img-custom">
+                                    <img id="destacadoModalImg" src="" alt="" class="custom-modal-img">
+                                </div>
+                                <p id="destacadoModalDesc" class="custom-modal-desc"></p>
+                                <button type="button" class="btn-modal-premios-close" id="destacado_cerrar"
+                                    data-dismiss="modal">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 @foreach ($premios->chunk(4) as $chunk)
                     <div class="carousel-page-desktop">
                         @foreach ($chunk as $premio)
@@ -74,8 +103,8 @@
                                 x-on:click="openModalDesktop({{ $premio->id }}); enviarDesktop('{{ $premio->descripcion }}')"
                                 x-on:mouseover="showDescription({{ $premio->id }})"
                                 x-on:mouseout="hideDescription({{ $premio->id }})">
-                                <img class="img-premio" src='{{ asset("assets/premios/$premio->foto") }}' height="200"
-                                    alt="">
+                                <img class="img-premio" src='{{ asset("assets/premios/$premio->foto") }}'
+                                    height="200" alt="">
                                 <div class="product-description" id="description-{{ $premio->id }}">
                                     {{ $premio->descripcion }}
                                 </div>
@@ -102,8 +131,8 @@
                                 <p id="premioModalDescDesktop" class="custom-modal-desc"></p>
                                 <p id="premioModalPuntosDesktop" class="custom-modal-puntos"></p>
                                 <div class="btn-modal-premios">
-                                    <button type="button" wire:loading.attr="disabled" class="btn-modal-premios-redimir"
-                                        id="premioModalBtnDesktop">Redimir</button>
+                                    <button type="button" wire:loading.attr="disabled"
+                                        class="btn-modal-premios-redimir" id="premioModalBtnDesktop">Redimir</button>
                                     <button type="button" class="btn-modal-premios-close" id="premio_cerrar_desktop"
                                         data-dismiss="modal">Cerrar</button>
                                 </div>
@@ -242,6 +271,15 @@
         }
 
         $('#premioModalDesktop').modal('show');
+    }
+
+    function openModalDestacado(id) {
+        const destacado = @json($destacados).find(d => d.id === id);
+        document.getElementById('destacadoModalLabel').textContent = destacado.nombre;
+        document.getElementById('destacadoModalImg').src = '{{ asset('assets/premios/') }}/' + destacado.foto;
+        document.getElementById('destacadoModalDesc').textContent = destacado.descripcion;
+
+        $('#destacadoModal').modal('show');
     }
 
 
@@ -452,7 +490,7 @@
             'interaction': 'true',
             'component_name': 'btn_confirmar_redencion_puntos',
             'element_text': tituloProductoMovil
-            .innerHTML, // variable dinámica que traiga el nombre del botón
+                .innerHTML, // variable dinámica que traiga el nombre del botón
             'campaign_description': 'Budpass',
         });
         console.log('Antes de btn_confirmar_redencion_puntos');

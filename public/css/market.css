@@ -361,9 +361,18 @@
         justify-content: center;
         height: 400px;
         width: 45%;
-        border: 3px solid var(--primary-blue);
         border-radius: 8px;
-        background-color: #D5D5D5;
+        border: 3px solid var(--primary-blue);
+        background-color: #fff;
+        margin-bottom: 20px;
+        padding: 10px;
+        overflow: hidden;
+    }
+
+    .destacado-left img, .destacado-right img {
+        height: 100%;
+        object-fit: cover;
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 1);
     }
 
     /* Premios escritorio */
