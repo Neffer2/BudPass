@@ -492,10 +492,8 @@
         //     });
         // @endif
 
-        //TODO: 1.) Terminar la lista de redenciones en marketplace y publicidad 
-        // 2.) Revisar popups de cookies y funcionamiento de cookies y verificación de mayor de edad
-        // 3.) Branding con assets de Budweiser
-        // 4) Funcionalidad de Camara para subir facturas y selfies
+        //TODO: 1) Funcionalidad de Camara para subir facturas y selfies
+        // 2) Revisar funcionamiento de cookies
     </script>
 </body>
 
