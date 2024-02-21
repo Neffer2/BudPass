@@ -39,7 +39,7 @@ class RegistroFacturas extends Component
     public function addProduct(){
         $this->validate([
             'producto' => 'required|numeric',
-            'cantidad' => 'required|numeric|max:20'
+            'cantidad' => 'required|numeric'
         ]);
 
         $producto = $this->canal->productos->find($this->producto);
@@ -129,9 +129,7 @@ class RegistroFacturas extends Component
         return redirect()->route('dashboard')->with([
             'title' => 'Registro exitoso.',
             'success' => 'Registro de factura exitoso.'
-        ]);
- 
-         
+        ]);          
     }
     
     // UPDATES    
@@ -280,7 +278,7 @@ class RegistroFacturas extends Component
 
             'cantidad.required' => 'Indica la cantidad de producto que compraste.',
             'cantidad.numeric' => 'Cantidad de producto inválida',
-            'cantidad.max' => 'Oops, exediste la cantidad máxima de producto por factura.',
+            // 'cantidad.max' => 'Oops, exediste la cantidad máxima de producto por factura.',
         ];
     }
 } 
