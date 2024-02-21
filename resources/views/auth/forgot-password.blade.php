@@ -1,6 +1,4 @@
-
 <link rel="stylesheet" href="{{ asset('css/recuperar.css') }}">
-
 
 <div class="recuperar-main-cont">
     <div class="recuperar-cont">
