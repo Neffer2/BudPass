@@ -138,7 +138,21 @@
         <button wire:click="store" id="registrar_usuario">Registrar</button>
     </div>
 </div>
-
+@if ($errors->any())
+    <script>
+        
+        // console.log('Hola');
+        dataLayer.push({
+            'event': 'GAEvent',
+            'event_category': 'Form',
+            'event_action': 'Error',
+            'event_label': $errors->all(), // descripción del error
+            'interaction': 'true',
+            'component_name': 'btn_error_form',
+            'campaign_description': 'Budpass',
+        });
+    </script>
+@endif 
 <script>
     document.getElementById('registrar_usuario').addEventListener('click', function() {
         dataLayer.push({
@@ -147,7 +161,5 @@
             'event_action': 'Submit',
             'event_label': 'Login_submit',
         });
-
-        console.log('Hola');
     });
 </script>
