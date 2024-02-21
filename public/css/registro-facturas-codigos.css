@@ -221,6 +221,10 @@
     cursor: pointer;
 }
 
+#modal_facturas {
+    margin-top: -50%;
+}
+
 .sel-producto-cont {
     display: flex;
     justify-content: center;

@@ -373,6 +373,7 @@
         "{{ asset('assets/budweiser/destacado-sabado.jpg') }}",
         "{{ asset('assets/budweiser/destacado-domingo.jpg') }}"
     ];
+
     let currentCarruselIndex = -1;
 
     function changeCarruselImage() {
@@ -393,8 +394,7 @@
     }
 
     changeCarruselImage();
-    setInterval(changeCarruselImage, 8000);
-
+    setInterval(changeCarruselImage, 7000);
 
 
     const tituloProductoDesk = document.getElementById('premioModalLabelDesktop');

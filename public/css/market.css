@@ -130,7 +130,7 @@
 
 .modal-dialog {
     position: absolute;
-    top: 20%;
+    top: 0;
 }
 
 .custom-modal-body {
@@ -484,11 +484,6 @@
         color: var(--primary-blue);
         font-size: 30px;
         background: #fff;
-    }
-
-    .modal-dialog {
-        position: absolute;
-        top: 0;
     }
 
     .market-destacados {
