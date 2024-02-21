@@ -384,6 +384,21 @@
         });
     });
 
+    document.querySelector('.premios-img-cont-desktop img').addEventListener('click', function() {
+        //TODO: Revisar
+        console.log('click desk');
+        dataLayer.push({
+            'event': 'GAEvent',
+            'event_category': 'Content',
+            'event_action': 'button',
+            'event_label': 'confirmar_redencion',
+            'interaction': 'true',
+            'component_name': 'btn_confirmar_redencion_puntos',
+            'element_text': tituloProductoDesk.innerHTML, // variable dinámica que traiga el nombre del botón
+            'campaign_description': 'Budpass',
+        });
+    });
+
     const tituloProductoMovil = document.getElementById('premioModalLabel');
 
     document.getElementById('premioModalBtn').addEventListener('click', function() {
@@ -411,4 +426,20 @@
             'campaign_description': 'Budpass',
         });
     });
+
+    document.querySelector('.premios-img-cont-movil').addEventListener('click', function() {
+        console.log('click movil');
+        dataLayer.push({
+            'event': 'GAEvent',
+            'event_category': 'Content',
+            'event_action': 'button',
+            'event_label': 'confirmar_redencion',
+            'interaction': 'true',
+            'component_name': 'btn_confirmar_redencion_puntos',
+            'element_text': tituloProductoMovil.innerHTML, // variable dinámica que traiga el nombre del botón
+            'campaign_description': 'Budpass',
+        });
+    });
+
+    
 </script>
