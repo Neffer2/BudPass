@@ -1,0 +1,186 @@
+@font-face {
+    font-family: 'BudweiserSerifDisplay';
+    src: url('../fonts/BudweiserSerif-Display.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BudweiserSerifDisplayItalic';
+    src: url('../fonts/BudweiserSerif-DisplayItalic.otf') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'BudweiserSerifRegular';
+    src: url('../fonts/BudweiserSerif-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BudweiserSerifRegularItalic';
+    src: url('../fonts/BudweiserSerif-RegularItalic.otf') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'BudBold';
+    src: url('../fonts/BudBold.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FranklinGothicBook';
+    src: url('../fonts/FranklinGothicBook-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --primary-red: #DC0019;
+    --primary-blue: #0A0541;
+    --primary-blue-gradient: linear-gradient(180deg, #080061, #0A0541);
+    --primary-red-gradient: linear-gradient(180deg, #DC0019 0%, #A50005 100%);
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.recuperar-main-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-red);
+    background: url('/assets/budweiser/budpass-ranking-bg.jpg');
+    background-color: var(--primary-red);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.recuperar-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 33%;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.recuperar-form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.recuperar-title {
+    font-family: 'BudweiserSerifDisplay';
+    text-align: center;
+    font-size: 65px;
+    margin-bottom: 20px;
+    color: var(--primary-blue);
+}
+
+.recuperar-input-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.recuperar-label {
+    display: block;
+    font-family: 'BudBold';
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.recuperar-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--primary-blue);
+    border-radius: 5px;
+    font-family: 'FranklinGothicBook';
+    margin-bottom: 20px;
+    height: 55px;
+}
+
+.recuperar-button {
+    width: 40%;
+    padding: 10px;
+    background-color: var(--primary-red);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'BudBold';
+    font-size: 30px;
+}
+
+.recuperar-button:hover {
+    background-color: #A50005;
+}
+
+.recuperar-status {
+    color: green;
+    margin-bottom: 10px;
+}
+
+.recuperar-error {
+    color: red;
+    margin-bottom: 10px;
+}
+
+@media (min-width: 1081px) {
+    .recuperar-cont {
+        width: 45%;
+        height: 350px;
+    }
+
+    .recuperar-label {
+        font-size: 15px;
+    }
+
+    .recuperar-title {
+
+        font-size: 60px;
+    }
+
+    .recuperar-input {
+        height: 40px;
+    }
+
+    .recuperar-button {
+        width: 40%;
+        padding: 10px;
+        background-color: var(--primary-red);
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: 'BudBold';
+        font-size: 16px;
+    }
+}
