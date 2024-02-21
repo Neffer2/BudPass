@@ -446,11 +446,13 @@
         @endif
 
         @if (session('session-success'))
-            // Swal.fire({
-            //     title: "{{ session('title') }}",
-            //     text: "{{ session('session-success') }}",
-            //     confirmButtonText: 'ACEPTAR'
-            // });
+            dataLayer.push({
+                'event': 'GAEvent',
+                'event_category': 'Login',
+                'event_action': 'Sucess',
+                'event_label': 'Login_success',
+                'userUid': "{{ Auth::user()->name }}" // user id (string)
+            });
         @endif
 
         @if (session('success-redencion'))
