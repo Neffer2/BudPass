@@ -52,24 +52,6 @@
                 <p>*No selecciones esta opción si compartes este computador con menores de edad</p>
             </div>
         </div>
-        <div class="cookies-info-cont">
-            <div class="cookies-info-text">
-                <p>En este sitio web se utilizan cookies y otras tecnologías de rastreo que se guardan en tu
-                    dispositivo, nos ayudan a mejorar la navegación del sitio web, analizar el uso del mismo y colaborar
-                    con nuestros estudios de marketing. Al hacer clic en Aceptar estas aceptando el uso de éstas. Conoce
-                    más en nuestro Aviso de Privacidad</p>
-            </div>
-            <div class="cookie-info-config">
-                <div class="cookie-btns">
-                    <button class="cookies-aceptar-btn">Aceptar cookies</button>
-                    <button class="cookies-rechazar-btn">Rechazar cookies</button>
-                </div>
-                <div class="cookie-configurar">
-                    <p>Configurar</p>
-                </div>
-            </div>
-
-        </div>
     </div>
     @auth
         <header class="bud-main-header">
@@ -271,15 +253,6 @@
 
         document.getElementById('age-no').addEventListener('click', function() {
             window.location.href = 'https://www.google.com'; // reemplace esto con la URL a la que desea redirigir
-        });
-
-        //Aceptar-rechazar cookies
-        document.querySelector('.cookies-aceptar-btn').addEventListener('click', function() {
-            document.querySelector('.cookies-info-cont').style.visibility = 'hidden';
-        });
-
-        document.querySelector('.cookies-rechazar-btn').addEventListener('click', function() {
-            document.querySelector('.cookies-info-cont').style.visibility = 'hidden';
         });
 
         //Menu hamburguesa
