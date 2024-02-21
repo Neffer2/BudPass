@@ -81,10 +81,9 @@ body {
     align-items: center;
     justify-content: center;
     width: 90%;
-    height: 33%;
     background-color: #fff;
     border-radius: 8px;
-    padding: 20px;
+    padding: 4rem;
 }
 
 .recuperar-form {
@@ -113,7 +112,7 @@ body {
 .recuperar-label {
     display: block;
     font-family: 'BudBold';
-    font-size: 25px;
+    font-size: 28px;
     margin-bottom: 5px;
 }
 
@@ -124,6 +123,7 @@ body {
     border-radius: 5px;
     font-family: 'FranklinGothicBook';
     margin-bottom: 20px;
+    font-size: 18px;
     height: 55px;
 }
 
@@ -136,7 +136,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-family: 'BudBold';
-    font-size: 30px;
+    font-size: 24px;
 }
 
 .recuperar-button:hover {
@@ -156,7 +156,6 @@ body {
 @media (min-width: 1081px) {
     .recuperar-cont {
         width: 45%;
-        height: 350px;
     }
 
     .recuperar-label {
