@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use App\Models\Premio;
 use App\Models\Redencion;
+use App\Models\bbdd_marketplace_general;
  
 class Market extends Component
 {
@@ -46,6 +47,13 @@ class Market extends Component
         // Stock premio
         $modelPremio->stock -= 1;
         $modelPremio->update();
+
+        // registro_budpass
+        $marketplace_general = new bbdd_marketplace_general;
+        $marketplace_general->nombre = $this->user->name;
+        $marketplace_general->correo = $this->user->email;
+        $marketplace_general->posicion_ranking = $this->user->rank($this->user->id);
+        $marketplace_general->save();
 
         return redirect()->route('market')->with([
             'title' => 'Redención exitosa.',
