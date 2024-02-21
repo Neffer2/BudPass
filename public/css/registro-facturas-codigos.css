@@ -38,7 +38,7 @@
 }
 
 #cantidad_producto {
-    top: 120%;
+    top: 130%;
     margin-bottom: 20px;
 }
 
@@ -700,7 +700,12 @@
     }
 
     .texto-consumo-cont p {
-        font-size: 0.62rem;
+        font-family: 'FranklinGothicBook';
+        font-size: 0.6vw;
+        color: var(--primary-blue);
+        margin-bottom: 10px;
+        white-space: nowrap;
+    
     }
 
 }
