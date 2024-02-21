@@ -154,6 +154,16 @@
     </script>
     @endscript
 @endif 
+
+{{-- dataLayer.push({
+    'event': 'GAEvent',
+    'event_category': 'Form',
+    'event_action': 'Success',
+    'event_label': 'Registro_exitoso',
+    'interaction': 'true',
+    'component_name': 'btn_success_form',
+    'campaign_description': 'Budpass',
+}); --}}
 <script>
     document.getElementById('registrar_usuario').addEventListener('click', function() {
         dataLayer.push({

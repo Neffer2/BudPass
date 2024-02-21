@@ -429,6 +429,19 @@
                 title: "{{ session('title') }}",
                 text: "{{ session('success') }}",
                 confirmButtonText: 'ACEPTAR'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    dataLayer.push({
+                        'event': 'GAEvent',
+                        'event_category': 'Content',
+                        'event_action': 'button',
+                        'event_label': 'Pop_up_validacion_facturas',
+                        'interaction': 'true',
+                        'component_name': 'btn_validar_factura',
+                        'element_text': 'buttonName', // nombre del botón
+                        'campaign_description': 'Budpass',
+                    });
+                }
             });
         @endif
 
@@ -438,6 +451,27 @@
             //     text: "{{ session('session-success') }}",
             //     confirmButtonText: 'ACEPTAR'
             // });
+        @endif
+
+        @if (session('success-redencion'))
+            Swal.fire({
+                title: "{{ session('title') }}",
+                text: "{{ session('success-redencion') }}",
+                confirmButtonText: 'ACEPTAR'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    dataLayer.push({
+                        'event': 'GAEvent',
+                        'event_category': 'Content',
+                        'event_action': 'button',
+                        'event_label': 'cerrar_redencion_proceso',
+                        'interaction': 'true',
+                        'component_name': 'btn_cerrar_proceso',
+                        'element_text': 'cerrar',
+                        'campaign_description': 'Budpass',
+                    });
+                }
+            });
         @endif
 
         // @if (session('register-success'))
