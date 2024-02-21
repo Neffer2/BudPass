@@ -82,8 +82,19 @@ class User extends Authenticatable
         return $user_rank;
     }
 
-    public function limite(){
-        $registros = Auth::user()->registrosFactura;
-        return $registros->where('created_at', '>=', '2024-02-21 00:00:00')->where('created_at', '<=', '2024-02-21 23:59:59')->sum('puntos_sumados');
+    public function limite($puntos_suamdos){
+        $registrosFactura = RegistroFactura::where([
+                            ['created_at', '>=', 'now() - INTERVAL 1 DAY'],
+                            ['estado_id', '!=', 0],
+                            ['user_id', Auth::user()->id],
+                        ])->sum('puntos_sumados');
+
+        $registrosCodigo = RegistroCodigo::where([
+                        ['created_at', '>=', 'now() - INTERVAL 1 DAY'],
+                        ['user_id', Auth::user()->id],
+                    ])->sum('puntos_sumados');
+                    
+        if (($registrosFactura + $registrosCodigo + $puntos_suamdos) > 220){ return false; }
+        return true;
     }
 }

@@ -30,6 +30,12 @@ class RegistroCodigos extends Component
         RateLimiter::hit('send-message:'.Auth::user()->id);
         
         $codigo = Codigo::where('codigo', 'LIKE', "%$this->codigo%")->first();
+        $user = Auth::user();
+        if(!($user->limite($codigo->referencia->puntos))){
+            $this->addError('limite-puntos', 'Opps, alcanzaste el límite de puntos diario (220 puntos).');
+            return redirect()->back();
+        } 
+
         if ($codigo && $codigo->estado_id){
             $registroCodigo = new RegistroCodigo;
             $registroCodigo->codigo_id = $codigo->id;
@@ -40,7 +46,7 @@ class RegistroCodigos extends Component
             $codigo->estado_id = 0;
             $codigo->update();
 
-            $user = User::find(Auth::user()->id);
+            // Update use puntos
             $user->puntos += $registroCodigo->puntos_sumados;
             $user->update();
 

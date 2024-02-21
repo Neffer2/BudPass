@@ -18,6 +18,12 @@ class Factura extends Component
         $messaje = ($estado) ? "Factura APROBADA con éxito." : "Factura RECHAZADA con éxito.";
         $this->registroFactura->estado_id = $estado;
 
+        // Update user puntos
+        if ($estado){
+            $this->registroFactura->shopper->puntos += $this->registroFactura->puntos_sumados;
+            $this->registroFactura->shopper->update();
+        }
+
         if ($this->registroFactura->update()){
             return redirect()->route('facturas')->with('success', $messaje);
         }

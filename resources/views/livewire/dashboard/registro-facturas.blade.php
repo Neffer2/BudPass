@@ -73,6 +73,11 @@
                             {{ $message }}
                         </div>
                     @enderror
+                    @error('cantidad')
+                        <div class="text-invalid-factura">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
                 <div class="agregar-producto-btn-cont">
                     <button x-on:click="$wire.addProduct()">Agregar productos</button>
@@ -163,7 +168,11 @@
             </div>
         </div>
     </div>
-
+    @error('limite-puntos')
+        <div class="text-danger">
+            {{ $message }}
+        </div>
+    @enderror
     <div class="registrar-factura-btn">
         <button x-on:click="$wire.storeFactura" id="registrar_factura">REGISTRAR FACTURA</button>
     </div>

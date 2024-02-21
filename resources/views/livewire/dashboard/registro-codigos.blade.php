@@ -13,6 +13,11 @@
                     {{ $message }}
                 </div>
             @enderror
+            @error('limite-puntos')
+                <div class="text-invalid-codigo">
+                    {{ $message }}
+                </div>
+            @enderror
         </div>
     </div>
     <div class="codigo-btn-cont">

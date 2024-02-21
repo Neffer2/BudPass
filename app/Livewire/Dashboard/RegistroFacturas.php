@@ -82,16 +82,17 @@ class RegistroFacturas extends Component
         |---------------------------------------
     */
     public function storeFactura(){
-        // $user = Auth::user();
-        // dd($user->limite());
-
-        // return $this->limiteDiario(Auth::user()->id);
-
+        $user = Auth::user();
+        if(!($user->limite($this->puntos))){
+            $this->addError('limite-puntos', 'Opps, alcanzaste el límite de puntos diario (220 puntos).');
+            return redirect()->back();
+        }
+        
         $this->validate([
             'num_factura' => ['required', 'alpha_num', 'max:20', new num_factura],
             'foto_factura' => 'required|mimes:jpg,jpeg,png,bmp,tiff|max:20000',
             'selfie_producto' => 'required|mimes:jpg,jpeg,png,bmp,tiff|max:20000'
-        ]);
+        ]);        
 
         if (!($this->canal)){$this->addError('nit', 'Este NIT no coincide con ningún canal');}
         
@@ -244,7 +245,7 @@ class RegistroFacturas extends Component
         $tdstatus = $this->__sendTD(
                 array(
                 "abi_name" => $name,
-                "abi_cpf" => $cpf,
+                "abi_cpf" => $cpf, //cedula
                 "abi_email" => $email,
                 "abi_city" => $city,
                 "abi_dayofbirth" => $dayofbirth,

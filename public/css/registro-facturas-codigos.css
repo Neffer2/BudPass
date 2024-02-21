@@ -36,6 +36,11 @@
     font-size: 12px;
 }
 
+.text-danger {
+    color: red !important;
+    font-size: 12px !important;
+}
+
 .paso-cont {
     display: flex;
     align-content: center;
