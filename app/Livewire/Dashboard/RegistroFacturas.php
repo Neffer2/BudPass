@@ -39,7 +39,7 @@ class RegistroFacturas extends Component
     public function addProduct(){
         $this->validate([
             'producto' => 'required|numeric',
-            'cantidad' => 'required|numeric'
+            'cantidad' => 'required|numeric|max:999'
         ]);
 
         $producto = $this->canal->productos->find($this->producto);
@@ -112,7 +112,6 @@ class RegistroFacturas extends Component
             $registroProductos->save();
         }
         
-
         // registro_budpass
         $user_budpass = Auth::user();
         $registro_budpass = new bbdd_registro_budpass;
@@ -131,7 +130,11 @@ class RegistroFacturas extends Component
             'success' => 'Registro de factura exitoso.'
         ]);          
     }
-    
+
+    public function limiteDiario(){
+        dd("HOla");
+    }
+
     // UPDATES    
     public function updatedNit(){
         $this->resetFields();
