@@ -102,7 +102,7 @@
                                 <p id="premioModalDescDesktop" class="custom-modal-desc"></p>
                                 <p id="premioModalPuntosDesktop" class="custom-modal-puntos"></p>
                                 <div class="btn-modal-premios">
-                                    <button type="button" class="btn-modal-premios-redimir"
+                                    <button type="button" wire:loading.attr="disabled" class="btn-modal-premios-redimir"
                                         id="premioModalBtnDesktop">Redimir</button>
                                     <button type="button" class="btn-modal-premios-close" id="premio_cerrar_desktop"
                                         data-dismiss="modal">Cerrar</button>
