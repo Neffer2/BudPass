@@ -21,7 +21,7 @@
                 @error('num_factura')
                     <div class="text-invalid-factura">
                         {{ $message }}
-                    </div> 
+                    </div>
                 @enderror
             </div>
 
@@ -62,7 +62,7 @@
                         {{ $message }}
                     </div>
                 @enderror
-            </div> 
+            </div>
 
             <div class="cantidad-agregar-cont">
                 <div class="cantidad-productos-cont">
@@ -98,7 +98,8 @@
                             <td class="productos-text">{{ $producto['descripcion'] }}</td>
                             <td class="productos-text">{{ $producto['cantidad'] }}</td>
                             <td><i class="fas fa-times-circle btn-eliminar-producto"
-                                    x-on:click="$wire.subsProduct({{ $key }})" style="cursor: pointer;"></i></td>
+                                    x-on:click="$wire.subsProduct({{ $key }})" style="cursor: pointer;"></i>
+                            </td>
                         </tr>
                     @endforeach
                 </table>
@@ -169,7 +170,48 @@
     </div>
 
     <div class="registrar-factura-btn">
-        <button x-on:click="$wire.storeFactura">REGISTRAR FACTURA</button>
-    </div>    
+        <button x-on:click="$wire.storeFactura" id="registrar_factura">REGISTRAR FACTURA</button>
+    </div>
 </div>
- 
+<script>
+    document.getElementById('foto_factura').addEventListener('click', function() {
+        dataLayer.push({
+            'event': 'GAEvent',
+            'event_category': 'Content',
+            'event_action': 'button',
+            'event_label': 'Subir_factura',
+            'interaction': 'true',
+            'component_name': 'btn_subir_factura',
+            'element_text': 'Subir_factura',
+            'campaign_description': 'Budpass',
+        });
+    });
+
+    document.getElementById('foto_selfie').addEventListener('click', function() {
+        dataLayer.push({
+            'event': 'GAEvent',
+            'event_category': 'Content',
+            'event_action': 'button',
+            'event_label': 'Subir_foto',
+            'interaction': 'true',
+            'component_name': 'btn_subir_foto',
+            'element_text': 'Subir_foto_selfie_producto',
+            'campaign_description': 'Budpass',
+        });
+    });
+
+    //registrar_factura
+
+    document.getElementById('registrar_factura').addEventListener('click', function() {
+        dataLayer.push({
+            'event': 'GAEvent',
+            'event_category': 'Content',
+            'event_action': 'button',
+            'event_label': 'Registrar_factura',
+            'interaction': 'true',
+            'component_name': 'btn_registrar_factura',
+            'element_text': 'Registrar_factura',
+            'campaign_description': 'Budpass',
+        });
+    });
+</script>

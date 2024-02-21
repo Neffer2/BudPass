@@ -42,7 +42,7 @@
                                 <div class="btn-modal-premios">
                                     <button type="button" class="btn-modal-premios-redimir"
                                         id="premioModalBtn">Redimir</button>
-                                    <button type="button" class="btn-modal-premios-close"
+                                    <button type="button" class="btn-modal-premios-close" id="premio_cerrar_movil"
                                         data-dismiss="modal">Cerrar</button>
                                 </div>
 
@@ -100,7 +100,7 @@
                                 <div class="btn-modal-premios">
                                     <button type="button" class="btn-modal-premios-redimir"
                                         id="premioModalBtnDesktop">Redimir</button>
-                                    <button type="button" class="btn-modal-premios-close"
+                                    <button type="button" class="btn-modal-premios-close" id="premio_cerrar_desktop"
                                         data-dismiss="modal">Cerrar</button>
                                 </div>
 
@@ -352,4 +352,63 @@
 
     changeCarruselImage();
     setInterval(changeCarruselImage, 8000);
+
+
+
+    const tituloProductoDesk = document.getElementById('premioModalLabelDesktop');
+
+    document.getElementById('premioModalBtnDesktop').addEventListener('click', function() {
+        dataLayer.push({
+            'event': 'GAEvent',
+            'event_category': 'Content',
+            'event_action': 'button',
+            'event_label': 'redimir_producto',
+            'interaction': 'true',
+            'component_name': 'btn_redimir_producto',
+            'element_text': tituloProductoMovil.innerHTML,
+            'campaign_description': 'Budpass',
+        });
+    });
+
+
+    document.getElementById('premio_cerrar_desktop').addEventListener('click', function() {
+        dataLayer.push({
+            'event': 'GAEvent',
+            'event_category': 'Content',
+            'event_action': 'button',
+            'event_label': 'cancelar_producto',
+            'interaction': 'true',
+            'component_name': 'btn_cancelar_producto',
+            'element_text': tituloProductoDesk.innerHTML,
+            'campaign_description': 'Budpass',
+        });
+    });
+
+    const tituloProductoMovil = document.getElementById('premioModalLabel');
+
+    document.getElementById('premioModalBtn').addEventListener('click', function() {
+        dataLayer.push({
+            'event': 'GAEvent',
+            'event_category': 'Content',
+            'event_action': 'button',
+            'event_label': 'redimir_producto',
+            'interaction': 'true',
+            'component_name': 'btn_redimir_producto',
+            'element_text': tituloProductoMovil.innerHTML,
+            'campaign_description': 'Budpass',
+        });
+    });
+
+    document.getElementById('premio_cerrar_movil').addEventListener('click', function() {
+        dataLayer.push({
+            'event': 'GAEvent',
+            'event_category': 'Content',
+            'event_action': 'button',
+            'event_label': 'cancelar_producto',
+            'interaction': 'true',
+            'component_name': 'btn_cancelar_producto',
+            'element_text': tituloProductoMovil.innerHTML,
+            'campaign_description': 'Budpass',
+        });
+    });
 </script>

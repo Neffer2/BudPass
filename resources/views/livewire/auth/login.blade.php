@@ -9,19 +9,30 @@
         <div class="input-login-form">
             <label for="password_login">Contraseña: </label>
             <input id="password_login" type="password" name="password" required>
-        </div>        
+        </div>
         @if ($errors->any())
             @foreach ($errors->all() as $error)
                 <div class="text-invalid-login">
                     {{ $error }}
                 </div>
             @endforeach
-        @endif 
+        @endif
         <div class="login-form-btn">
-            <button type="submit">Iniciar</button>
+            <button type="submit" id="submit_inicio">Iniciar</button>
         </div>
-        <div> 
+        <div>
             <a href="{{ route('password.request') }}">Recuperar Contraseña</a>
         </div>
     </form>
-</div> 
+</div>
+
+<script>
+    document.getElementById('submit_inicio').addEventListener('click', function() {
+        dataLayer.push({
+            'event': 'GAEvent',
+            'event_category': 'Login',
+            'event_action': 'Submit',
+            'event_label': 'Login_submit',
+        });
+    });
+</script>

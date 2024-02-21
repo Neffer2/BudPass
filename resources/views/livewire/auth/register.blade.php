@@ -113,8 +113,8 @@
 
     <div class="checkbox-cont">
         <input id="terminos" type="checkbox" class="checkbox-item" wire:model.change="terminos">
-        <a href="https://www.bavaria.co/t%C3%A9rminos-y-condiciones" target="_blank" rel="noopener noreferrer"><label for=""
-                class="checkbox-label">T&eacute;rminos y condiciones</label></a>
+        <a href="https://www.bavaria.co/t%C3%A9rminos-y-condiciones" target="_blank" rel="noopener noreferrer"><label
+                for="" class="checkbox-label">T&eacute;rminos y condiciones</label></a>
         @error('terminos')
             <div class="text-invalid-check">
                 {{ $message }}
@@ -135,6 +135,19 @@
     </div>
 
     <div class="btn-registrar">
-        <button wire:click="store">Registrar</button>
+        <button wire:click="store" id="registrar_usuario">Registrar</button>
     </div>
 </div>
+
+<script>
+    document.getElementById('registrar_usuario').addEventListener('click', function() {
+        dataLayer.push({
+            'event': 'GAEvent',
+            'event_category': 'Login',
+            'event_action': 'Submit',
+            'event_label': 'Login_submit',
+        });
+
+        console.log('Hola');
+    });
+</script>
