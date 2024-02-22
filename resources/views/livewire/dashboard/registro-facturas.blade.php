@@ -143,8 +143,8 @@
     <div class="facturas-selfie-foto-cont">
         <div class="foto-factura-cont">
             <label for="foto_factura">Foto factura:</label>
-            <input type="file" id="foto_factura" wire:model.live="foto_factura" accept="image/*"
-                style="display: none;">
+            <input type="file" id="foto_factura" wire:model.live="foto_factura"
+            accept="image/*" capture="user" style="display: none;">
             <label for="foto_factura" class="custom-file-upload" id="imagePreview"
                 style="{{ $foto_factura && !$errors->first('foto_factura') ? 'background-image: url(' . $foto_factura->temporaryUrl() . '); background-size: 75%;' : '' }}">
             </label>
@@ -159,8 +159,8 @@
         </div>
         <div class="foto-selfie-cont">
             <label for="foto_selfie">Selfie con producto:</label>
-            <input type="file" id="foto_selfie" wire:model.live="selfie_producto" accept="image/*"
-                style="display: none;">
+            <input type="file" id="foto_selfie" wire:model.live="selfie_producto"
+            accept="image/*" capture="user" style="display: none;">
             <label for="foto_selfie" class="custom-file-upload" id="imagePreview"
                 style="{{ $selfie_producto && !$errors->first('selfie_producto') ? 'background-image: url(' . $selfie_producto->temporaryUrl() . '); background-size: 75%;' : '' }}">
             </label>
