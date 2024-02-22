@@ -236,6 +236,7 @@
     margin-bottom: 20px;
     border: 3px solid var(--primary-red);
     border-radius: 10px;
+    overflow: hidden;
 }
 
 .factura-img-cont img {
@@ -591,6 +592,7 @@
         margin-bottom: 8px;
         border: 3px solid var(--primary-red);
         border-radius: 10px;
+        overflow: hidden;
     }
 
     .factura-img-cont-desk img {
