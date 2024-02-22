@@ -143,7 +143,7 @@
 
 .modal-title.custom-modal-title {
     /* Estilos para el título del modal */
-    font-family: 'BudweiserSerifDisplayItalic', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'BudweiserSerifDisplayItalic', 'BudweiserSerifDisplay', sans-serif;
     font-weight: 700;
     font-size: 32px;
     color: #fff;
@@ -232,7 +232,7 @@
 }
 
 .redenciones-premios-cont h2{
-    font-family: 'BudweiserSerifDisplayItalic', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'BudweiserSerifDisplayItalic', 'BudweiserSerifDisplay', sans-serif;
     font-weight: 700;
     font-size: 32px;
     color: var(--primary-blue);
@@ -241,7 +241,7 @@
 }
 
 .redenciones-premios-cont th {
-    font-family: 'BudweiserSerifDisplayItalic', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'BudweiserSerifDisplayItalic', 'BudweiserSerifDisplay', sans-serif;
     font-weight: 700;
     font-size: 24px;
     color: var(--primary-blue);

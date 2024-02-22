@@ -81,7 +81,7 @@ body {
 /* Cambiar el color del título */
 .swal2-title {
     color: #fff !important;
-    font-family: 'BudweiserSerifDisplayItalic', sans-serif;
+    font-family: 'BudweiserSerifDisplayItalic', 'BudweiserSerifDisplay', sans-serif;
     font-size: 48px !important;
     margin-top: 20px !important;
 }
@@ -425,7 +425,9 @@ footer {
     gap: 10px;
 }
 
-.terminos-right, .terminos-center, .terminos-left {
+.terminos-right,
+.terminos-center,
+.terminos-left {
     display: flex;
     width: 100%;
     justify-content: center;
@@ -433,6 +435,7 @@ footer {
     flex-direction: column;
     gap: 10px;
 }
+
 .terminos-right p,
 .terminos-center p,
 .terminos-left p {
@@ -721,7 +724,9 @@ footer {
         justify-content: space-around;
     }
 
-    .terminos-right, .terminos-center, .terminos-left {
+    .terminos-right,
+    .terminos-center,
+    .terminos-left {
         width: 33%;
         gap: 0;
     }
@@ -729,13 +734,15 @@ footer {
     .terminos-right {
         order: 1;
     }
+
     .terminos-left {
         order: 2;
     }
+
     .terminos-center {
         order: 3;
     }
-    
+
 
     .bud-line-compartas {
         height: 40px;
