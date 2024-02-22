@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -84,13 +85,13 @@ class User extends Authenticatable
 
     public function limite($puntos_suamdos){
         $registrosFactura = RegistroFactura::where([
-                            ['created_at', '>=', 'now() - INTERVAL 1 DAY'],
+                            ['created_at', '>=', Carbon::now()->subDay()],
                             ['estado_id', '!=', 0],
                             ['user_id', Auth::user()->id],
                         ])->sum('puntos_sumados');
 
         $registrosCodigo = RegistroCodigo::where([
-                        ['created_at', '>=', 'now() - INTERVAL 1 DAY'],
+                        ['created_at', '>=', Carbon::now()->subDay()],
                         ['user_id', Auth::user()->id],
                     ])->sum('puntos_sumados');
                     
