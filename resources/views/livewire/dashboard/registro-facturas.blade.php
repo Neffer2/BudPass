@@ -184,7 +184,6 @@
 @script
 <script>
     @if (session('register-success'))
-        console.log('Antes de btn_success_form');
         dataLayer.push({
             'event': 'GAEvent',
             'event_category': 'Form',
@@ -194,11 +193,9 @@
             'component_name': 'btn_success_form',
             'campaign_description': 'Budpass'
         });
-        console.log('Despues de btn_success_form');
     @endif
 
     document.getElementById('foto_factura').addEventListener('click', function() {
-        console.log('Antes de btn_subir_factura');
         dataLayer.push({
             'event': 'GAEvent',
             'event_category': 'Content',
@@ -209,11 +206,9 @@
             'element_text': 'Subir_factura',
             'campaign_description': 'Budpass',
         });
-        console.log('Despues de btn_subir_factura');
     });
 
     document.getElementById('foto_selfie').addEventListener('click', function() {
-        console.log('Antes de btn_subir_foto');
         dataLayer.push({
             'event': 'GAEvent',
             'event_category': 'Content',
@@ -224,13 +219,11 @@
             'element_text': 'Subir_foto_selfie_producto',
             'campaign_description': 'Budpass',
         });
-        console.log('Despues de btn_subir_foto');
     });
 
     //registrar_factura
 
     document.getElementById('registrar_factura').addEventListener('click', function() {
-        console.log('Antes de btn_registrar_factura');
         dataLayer.push({
             'event': 'GAEvent',
             'event_category': 'Content',
@@ -241,7 +234,6 @@
             'element_text': 'Registrar_factura',
             'campaign_description': 'Budpass',
         });
-        console.log('Despues de btn_registrar_factura');
     });
 
     const MAX_WIDTH = 720;
@@ -260,7 +252,7 @@
         img.onerror = function() {
             URL.revokeObjectURL(this.src);
             // Handle the failure properly
-            console.log("Cannot load image");
+            console.err("Cannot load image");
         };
         img.onload = function() {
             URL.revokeObjectURL(this.src);
@@ -287,7 +279,7 @@
         img.onerror = function() {
             URL.revokeObjectURL(this.src);
             // Handle the failure properly
-            console.log("Cannot load image");
+            console.err("Cannot load image");
         };
         img.onload = function() {
             URL.revokeObjectURL(this.src);

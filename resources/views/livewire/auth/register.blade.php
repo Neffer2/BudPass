@@ -140,7 +140,6 @@
 @if ($errors->any())
     @script
     <script>
-        console.log('Antes de btn_error_form');
         dataLayer.push({
             'event': 'GAEvent',
             'event_category': 'Form',
@@ -150,19 +149,16 @@
             'component_name': 'btn_error_form',
             'campaign_description': 'Budpass',
         });
-        console.log('Despues de btn_error_form');
     </script>
     @endscript
 @endif 
 <script>
     document.getElementById('registrar_usuario').addEventListener('click', function() {
-        console.log('Antes de Login_submit');
         dataLayer.push({
             'event': 'GAEvent',
             'event_category': 'Login',
             'event_action': 'Submit',
             'event_label': 'Login_submit',
         });
-        console.log('Despues de Login_submit');
     });
 </script>

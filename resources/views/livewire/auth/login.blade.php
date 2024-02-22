@@ -28,13 +28,11 @@
 
 <script>
     document.getElementById('submit_inicio').addEventListener('click', function() {
-        console.log('Antes de login_submit');
         dataLayer.push({
             'event': 'GAEvent',
             'event_category': 'Login',
             'event_action': 'Submit',
             'event_label': 'Login_submit',
         });
-        console.log('Despues de login_submit');
     });
 </script>

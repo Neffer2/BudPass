@@ -400,7 +400,6 @@
     const tituloProductoDesk = document.getElementById('premioModalLabelDesktop');
 
     document.getElementById('premioModalBtnDesktop').addEventListener('click', function() {
-        console.log('Antes de btn_redimir_producto');
         dataLayer.push({
             'event': 'GAEvent',
             'event_category': 'Content',
@@ -411,12 +410,10 @@
             'element_text': tituloProductoMovil.innerHTML,
             'campaign_description': 'Budpass',
         });
-        console.log('Después de btn_redimir_producto');
     });
 
 
     document.getElementById('premio_cerrar_desktop').addEventListener('click', function() {
-        console.log('Antes de btn_cancelar_producto');
         dataLayer.push({
             'event': 'GAEvent',
             'event_category': 'Content',
@@ -427,12 +424,10 @@
             'element_text': tituloProductoDesk.innerHTML,
             'campaign_description': 'Budpass',
         });
-        console.log('Después de btn_cancelar_producto');
     });
 
     function enviarDesktop(descripcion) {
         this.descripcionPremio = descripcion;
-        console.log('Antes de btn_confirmar_redencion_puntos');
         dataLayer.push({
             'event': 'GAEvent',
             'event_category': 'Content',
@@ -443,7 +438,6 @@
             'element_text': this.descripcionPremio,
             'campaign_description': 'Budpass',
         });
-        console.log('Antes de btn_confirmar_redencion_puntos');
     }
 
     // otras funciones...
@@ -451,7 +445,6 @@
     const tituloProductoMovil = document.getElementById('premioModalLabel');
 
     document.getElementById('premioModalBtn').addEventListener('click', function() {
-        console.log('Antes de btn_redimir_producto');
         dataLayer.push({
             'event': 'GAEvent',
             'event_category': 'Content',
@@ -462,11 +455,9 @@
             'element_text': tituloProductoMovil.innerHTML,
             'campaign_description': 'Budpass',
         });
-        console.log('Después de btn_redimir_producto');
     });
 
     document.getElementById('premio_cerrar_movil').addEventListener('click', function() {
-        console.log('Antes de btn_cancelar_producto');
         dataLayer.push({
             'event': 'GAEvent',
             'event_category': 'Content',
@@ -477,11 +468,9 @@
             'element_text': tituloProductoMovil.innerHTML,
             'campaign_description': 'Budpass',
         });
-        console.log('Después de btn_cancelar_producto');
     });
 
     document.querySelector('.premios-img-cont-movil').addEventListener('click', function() {
-        console.log('Antes de btn_confirmar_redencion_puntos');
         dataLayer.push({
             'event': 'GAEvent',
             'event_category': 'Content',
@@ -493,6 +482,5 @@
                 .innerHTML, // variable dinámica que traiga el nombre del botón
             'campaign_description': 'Budpass',
         });
-        console.log('Antes de btn_confirmar_redencion_puntos');
     });
 </script>
