@@ -38,14 +38,13 @@ class Register extends Component
     }
 
     public function store(){
-        // $this->welcome();
         $this->validate([
             'nombre' => 'required|string|max:250',
             'documento' => 'required|numeric|max_digits:10|unique:users',
             'telefono' => 'required|numeric|max_digits:10|unique:users',
             'ciudad' => 'required|numeric',
             'email' => 'required|email|max:250|unique:users',
-            'fecha_nacimiento' => 'required|date',
+            'fecha_nacimiento' => 'required|date|before:2006-01-01',
             'terminos' => 'required|accepted',
             'politicas' => 'required|accepted',
             'password' => ['required', 'same:confirm', Rules\Password::defaults()]
@@ -104,7 +103,7 @@ class Register extends Component
 
     public function updatedFechaNacimiento(){
         $this->validate([
-            'fecha_nacimiento' => 'required|date'
+            'fecha_nacimiento' => 'required|date|before:2006-01-01'
         ]);
     }
 
@@ -160,6 +159,7 @@ class Register extends Component
 
             'fecha_nacimiento.required' => "Oops, tu fecha de nacimiento es obligatoria.",
             'fecha_nacimiento.date' => "Formato no valido.",
+            'fecha_nacimiento.before' => "Opps, no puedes participar si eres menor de edad.",
 
             'terminos.required' => "Debes aceptar los términos y condiciones.",
             'terminos.accepted' => "Debes aceptar los términos y condiciones.",
