@@ -94,7 +94,7 @@ class User extends Authenticatable
                         ['created_at', '>=', Carbon::now()->subDay()],
                         ['user_id', Auth::user()->id],
                     ])->sum('puntos_sumados');
-            
+                    
         if (($registrosFactura + $registrosCodigo + $puntos_suamdos) > 220){ return false; }
         return true;
     }

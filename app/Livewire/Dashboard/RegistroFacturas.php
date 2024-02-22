@@ -117,18 +117,6 @@ class RegistroFacturas extends Component
             $registroProductos->save();
         }
         
-        // registro_budpass
-        $user_budpass = Auth::user();
-        $registro_budpass = new bbdd_registro_budpass;
-        $registro_budpass->nombre = $user_budpass->name;
-        $registro_budpass->correo = $user_budpass->email;
-        $registro_budpass->fecha_nacimiento = $user_budpass->fecha_nacimiento;
-        $registro_budpass->ciudad = $user_budpass->ciudad->descripcion;
-        $registro_budpass->numero_factura = $this->num_factura;
-        $registro_budpass->numero_nit = $this->canal->nit;
-        $registro_budpass->puntaje_acumulado = $this->puntos;
-        $registro_budpass->save();
-        
         $this->resetFields();
         return redirect()->route('dashboard')->with([
             'title' => 'Registro exitoso.',
