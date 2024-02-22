@@ -44,7 +44,7 @@
 
 .texto-consumo-cont {
     display: flex;
-    width: 90%;
+    width: 88%;
 }
 
 .texto-consumo-cont p {
@@ -692,6 +692,10 @@
         width: 100%; /* Asegura que la imagen cubra todo el ancho del contenedor */
         height: 100%; /* Asegura que la imagen cubra todo el alto del contenedor */
         object-fit: cover; /* Asegura que la imagen se ajuste al contenedor manteniendo su aspecto */
+    }
+
+    .texto-consumo-cont {
+        width: 90%;
     }
 
 }
