@@ -143,8 +143,7 @@
     <div class="facturas-selfie-foto-cont">
         <div class="foto-factura-cont">
             <label for="foto_factura">Foto factura:</label>
-            <input type="file" id="foto_factura" wire:model.live="foto_factura" accept="image/*" capture="user"
-                style="display: none;">
+            <input type="file" id="foto_factura" accept="image/*" capture="user" style="display: none;">
             <label for="foto_factura" class="custom-file-upload" id="imagePreview"
                 style="{{ $foto_factura && !$errors->first('foto_factura') ? 'background-image: url(' . $foto_factura->temporaryUrl() . '); background-size: 75%;' : '' }}">
             </label>
@@ -159,8 +158,7 @@
         </div>
         <div class="foto-selfie-cont">
             <label for="foto_selfie">Selfie con producto:</label>
-            <input type="file" id="foto_selfie" wire:model.live="selfie_producto" accept="image/*" capture="user"
-                style="display: none;">
+            <input type="file" id="foto_selfie" accept="image/*" capture="user" style="display: none;">
             <label for="foto_selfie" class="custom-file-upload" id="imagePreview"
                 style="{{ $selfie_producto && !$errors->first('selfie_producto') ? 'background-image: url(' . $selfie_producto->temporaryUrl() . '); background-size: 75%;' : '' }}">
             </label>
@@ -183,6 +181,7 @@
         <button x-on:click="$wire.storeFactura" id="registrar_factura">REGISTRAR FACTURA</button>
     </div>
 </div>
+@script
 <script>
     @if (session('register-success'))
         console.log('Antes de btn_success_form');
@@ -244,4 +243,95 @@
         });
         console.log('Despues de btn_registrar_factura');
     });
+
+    const MAX_WIDTH = 720;
+    const MAX_HEIGHT = 580;
+    const MIME_TYPE = "image/jpeg";
+    const QUALITY = .8;
+
+    const foto_factura = document.getElementById("foto_factura");
+    const foto_selfie = document.getElementById("foto_selfie");
+
+    foto_factura.onchange = function(ev) {
+        const file = ev.target.files[0]; // get the file
+        const blobURL = URL.createObjectURL(file);
+        const img = new Image();
+        img.src = blobURL;
+        img.onerror = function() {
+            URL.revokeObjectURL(this.src);
+            // Handle the failure properly
+            console.log("Cannot load image");
+        };
+        img.onload = function() {
+            URL.revokeObjectURL(this.src);
+            const [newWidth, newHeight] = calculateSize(img, MAX_WIDTH, MAX_HEIGHT);
+            const canvas = document.createElement("canvas");
+            canvas.width = newWidth;
+            canvas.height = newHeight;
+            const ctx = canvas.getContext("2d");
+            ctx.drawImage(img, 0, 0, newWidth, newHeight);
+            canvas.toBlob(
+                blob => {
+                    upload_foto_factura(blob);
+                },
+                MIME_TYPE,
+                QUALITY);
+        };
+    };
+
+    foto_selfie.onchange = function(ev) {
+        const file = ev.target.files[0]; // get the file
+        const blobURL = URL.createObjectURL(file);
+        const img = new Image();
+        img.src = blobURL;
+        img.onerror = function() {
+            URL.revokeObjectURL(this.src);
+            // Handle the failure properly
+            console.log("Cannot load image");
+        };
+        img.onload = function() {
+            URL.revokeObjectURL(this.src);
+            const [newWidth, newHeight] = calculateSize(img, MAX_WIDTH, MAX_HEIGHT);
+            const canvas = document.createElement("canvas");
+            canvas.width = newWidth;
+            canvas.height = newHeight;
+            const ctx = canvas.getContext("2d");
+            ctx.drawImage(img, 0, 0, newWidth, newHeight);
+            canvas.toBlob(
+                blob => {
+                    upload_foto_selfie(blob);
+                },
+                MIME_TYPE,
+                QUALITY);
+        };
+    };
+
+    function calculateSize(img, maxWidth, maxHeight) {
+        let width = img.width;
+        let height = img.height;
+
+        // calculate the width and height, constraining the proportions
+        if (width > height) {
+            if (width > maxWidth) {
+                height = Math.round(height * maxWidth / width);
+                width = maxWidth;
+            }
+        } else {
+            if (height > maxHeight) {
+                width = Math.round(width * maxHeight / height);
+                height = maxHeight;
+            }
+        }
+
+        return [width, height];
+    }
+
+    function upload_foto_factura(file) {
+        $wire.upload('foto_factura', file, (uploadedFilename) => {});
+    }
+
+    function upload_foto_selfie(file) {
+        $wire.upload('selfie_producto', file, (uploadedFilename) => {});
+    }
 </script>
+@endscript
