@@ -43,17 +43,14 @@
 /* Contenedor principal de forms */
 .page-forms-cont {
     background: url('/assets/budweiser/budpass-inicio-bg.png'); 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
     background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+    background-size: 150%;
     background-color: #DC0019;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: 100vh;
+    height: 100%;
+    min-height: auto;
     padding-bottom: 30px;
 }
 
@@ -340,7 +337,7 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        min-height: 160vh;
+        min-height: 150vh;
         padding-bottom: 30px;
     }
 
