@@ -82,14 +82,14 @@
                 <div class="agregar-producto-btn-cont">
                     <button x-on:click="$wire.addProduct()">Agregar productos</button>
                 </div>
-                
+
             </div>
 
             <div class="texto-consumo-cont">
                 <p>*Te invitamos a registrar la compra de productos de manera responsable</p>
             </div>
-            
-            
+
+
 
             <div class="lista-productos-cont">
                 <label for="">Listado de productos</label>
@@ -127,7 +127,7 @@
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>
 
         <div class="desk-right-cont">
             <div class="factura-img-cont-desk">
@@ -143,8 +143,8 @@
     <div class="facturas-selfie-foto-cont">
         <div class="foto-factura-cont">
             <label for="foto_factura">Foto factura:</label>
-            <input type="file" id="foto_factura" wire:model.live="foto_factura"
-            accept="image/*" capture="user" style="display: none;">
+            <input type="file" id="foto_factura" wire:model.live="foto_factura" accept="image/*" capture="user"
+                style="display: none;">
             <label for="foto_factura" class="custom-file-upload" id="imagePreview"
                 style="{{ $foto_factura && !$errors->first('foto_factura') ? 'background-image: url(' . $foto_factura->temporaryUrl() . '); background-size: 75%;' : '' }}">
             </label>
@@ -159,8 +159,8 @@
         </div>
         <div class="foto-selfie-cont">
             <label for="foto_selfie">Selfie con producto:</label>
-            <input type="file" id="foto_selfie" wire:model.live="selfie_producto"
-            accept="image/*" capture="user" style="display: none;">
+            <input type="file" id="foto_selfie" wire:model.live="selfie_producto" accept="image/*" capture="user"
+                style="display: none;">
             <label for="foto_selfie" class="custom-file-upload" id="imagePreview"
                 style="{{ $selfie_producto && !$errors->first('selfie_producto') ? 'background-image: url(' . $selfie_producto->temporaryUrl() . '); background-size: 75%;' : '' }}">
             </label>
@@ -181,15 +181,23 @@
     @enderror
     <div class="registrar-factura-btn">
         <button x-on:click="$wire.storeFactura" id="registrar_factura">REGISTRAR FACTURA</button>
-    </div> 
+    </div>
 </div>
 <script>
     @if (session('register-success'))
-        <h2>
-            <b>Bienvenido</b>
-        </h2>
+        console.log('Antes de btn_success_form');
+        dataLayer.push({
+            'event': 'GAEvent',
+            'event_category': 'Form',
+            'event_action': 'Success',
+            'event_label': 'Registro_exitoso',
+            'interaction': 'true',
+            'component_name': 'btn_success_form',
+            'campaign_description': 'Budpass'
+        });
+        console.log('Despues de btn_success_form');
     @endif
-    
+
     document.getElementById('foto_factura').addEventListener('click', function() {
         console.log('Antes de btn_subir_factura');
         dataLayer.push({
