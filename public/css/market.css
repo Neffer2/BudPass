@@ -128,11 +128,6 @@
 
 /* Modal Premio */
 
-.modal-dialog {
-    position: absolute;
-    top: 0;
-}
-
 .custom-modal-body {
     background: var(--primary-red-gradient);
     display: flex;

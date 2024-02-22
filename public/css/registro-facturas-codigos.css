@@ -78,7 +78,7 @@
     background: #fff;
 }
 
-.paso-facturas-movil img {
+.paso-facturas-movil-img {
     height: 90%;
     width: auto;
 }
@@ -242,12 +242,12 @@
     height: 200px;
 }
 
-#myImg {
-    cursor: pointer;
+.factura-img-cont-desk {
+    display: none;
 }
 
-#modal_facturas {
-    margin-top: -50%;
+#myImg {
+    cursor: pointer;
 }
 
 .sel-producto-cont {

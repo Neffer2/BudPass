@@ -238,8 +238,6 @@
                     });
                 }
             });
-
-
         });
         //Prueba confirmación de edad
         document.addEventListener('DOMContentLoaded', (event) => {
