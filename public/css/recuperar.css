@@ -96,7 +96,7 @@ body {
 .recuperar-title {
     font-family: 'BudweiserSerifDisplay','BudBold', sans-serif;
     text-align: center;
-    font-size: 75px;
+    font-size: 32px;
     margin-bottom: 20px;
     color: var(--primary-blue);
 }
