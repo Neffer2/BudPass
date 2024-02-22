@@ -22,7 +22,7 @@
 .text-puntaje-ac,
 .text-puntaje-ac span {
     font-family: 'BudweiserSerifDisplay', 'Arial Narrow', Arial, sans-serif;
-    font-weight: 700;
+    font-weight: lighter;
     color: var(--primary-blue);
     margin-bottom: 10px;
 }

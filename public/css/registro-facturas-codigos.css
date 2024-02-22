@@ -329,7 +329,7 @@
 
 .lista-productos-cont label {
     font-family: 'BudweiserSerifDisplay', 'Arial Narrow', Arial, sans-serif;
-    font-weight: 700;
+    font-weight: lighter;
     font-size: 25px;
     color: #fff;
     margin-bottom: 10px;
@@ -338,7 +338,7 @@
 
 .lista-productos-cont .lista-productos-subtitle {
     font-family: 'BudweiserSerifDisplay', 'Arial Narrow', Arial, sans-serif;
-    font-weight: 700;
+    font-weight: lighter;
     font-size: 18px;
     color: #fff;
     margin-bottom: 5px;

@@ -82,6 +82,7 @@ body {
 .swal2-title {
     color: #fff !important;
     font-family: 'BudweiserSerifDisplayItalic', 'BudweiserSerifDisplay', sans-serif;
+    font-weight: lighter !important;
     font-size: 48px !important;
     margin-top: 20px !important;
 }
@@ -156,7 +157,7 @@ body {
 .age-bud-text p {
     font-family: 'BudweiserSerifDisplay', sans-serif;
     font-size: 22px;
-    font-weight: 700;
+    font-weight: lighter;
 }
 
 .age-bud-text span {
@@ -183,7 +184,7 @@ body {
     color: #fff;
     font-family: 'BudweiserSerifDisplay', sans-serif;
     font-size: 30px;
-    font-weight: 700;
+    font-weight: lighter;
     cursor: pointer;
 }
 
