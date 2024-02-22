@@ -97,6 +97,7 @@ body {
     font-size: 32px;
     font-family: 'BudweiserSerifDisplay', sans-serif;
     margin-bottom: 15px;
+    font-weight: lighter;
 }
 
 .recuperar-input-group {
