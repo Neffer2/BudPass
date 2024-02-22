@@ -643,6 +643,7 @@ footer {
         width: 308px;
         height: 100%;
         cursor: pointer;
+        margin-left: 1%;
     }
 
     .menu-desk-item-puntos p {
