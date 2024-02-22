@@ -83,7 +83,7 @@
                             <a class="" href="{{ route('market') }}">Marketplace</a>
                         </div>
                         <div class="menu-desk-item {{ Route::currentRouteName() == 'dashboard' ? 'active' : '' }}">
-                            <a class="" href="{{ route('dashboard') }}">Registro</a>
+                            <a class="" href="{{ route('dashboard') }}">Registrar compra</a>
                         </div>
                     </div>
                     <div class="menu-desk-item-puntos" id="menu-toggle">
@@ -114,7 +114,7 @@
                     <a class="" href="{{ route('market') }}">Marketplace</a>
                 </div>
                 <div class="ham-item {{ Route::currentRouteName() == 'dashboard' ? 'active' : '' }}">
-                    <a class="" href="{{ route('dashboard') }}">Registro</a>
+                    <a class="" href="{{ route('dashboard') }}">Registrar compra</a>
                 </div>
                 <div class="ham-item">
                     <a href="#"

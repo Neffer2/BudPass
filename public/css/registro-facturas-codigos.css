@@ -178,7 +178,8 @@
 
 /* Inputs */
 .nit-label-cont input,
-.num-factura-cont input{
+.num-factura-cont input,
+.cantidad-productos-cont input {
     height: 40px;
     border: 1px solid var(--primary-blue);
     border-radius: 5px;
