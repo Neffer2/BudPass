@@ -97,7 +97,7 @@ body {
 .recuperar-title {
     font-family: 'BudweiserSerifDisplay';
     text-align: center;
-    font-size: 65px;
+    font-size: 75px;
     margin-bottom: 20px;
     color: var(--primary-blue);
 }
@@ -112,7 +112,7 @@ body {
 .recuperar-label {
     display: block;
     font-family: 'BudBold';
-    font-size: 28px;
+    font-size: 30px;
     margin-bottom: 5px;
 }
 
@@ -123,7 +123,7 @@ body {
     border-radius: 5px;
     font-family: 'FranklinGothicBook';
     margin-bottom: 20px;
-    font-size: 18px;
+    font-size: 28px;
     height: 55px;
 }
 
@@ -181,5 +181,11 @@ body {
         cursor: pointer;
         font-family: 'BudBold';
         font-size: 16px;
+    }
+
+    .recuperar-button:hover {
+        color: var(--primary-red);
+        background-color: #fff;
+        border: 1px solid var(--primary-red);
     }
 }
