@@ -3,10 +3,10 @@
     <div class="cont-main-registro-facturas-codigos">
         <div class="main-facturas-cont">
             <div class="paso-cont">
-                <div class="paso-facturas-movil">
+                {{-- <div class="paso-facturas-movil">
                     <img src="{{ asset('assets/budweiser/paso-a-paso-movil.svg') }}" alt="" srcset="">
-                </div>
-                {{-- <div class="paso-facturas-desk">
+                </div> --}}
+                <div class="paso-facturas-desk">
                     <img src="{{ asset('assets/budweiser/paso-a-paso1.svg') }}" alt="" srcset="">
                 </div>
                 <div class="paso-facturas-desk">
@@ -14,7 +14,7 @@
                 </div>
                 <div class="paso-facturas-desk">
                     <img src="{{ asset('assets/budweiser/paso-a-paso3.svg') }}" alt="" srcset="">
-                </div> --}}
+                </div>
             </div>
             <div class="facturas-codigos-cont">
                 <div class="form-facturas-btn">
