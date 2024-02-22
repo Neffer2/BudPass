@@ -6,15 +6,15 @@
                 <div class="paso-facturas-movil">
                     <img src="{{ asset('assets/budweiser/paso-a-paso-movil.svg') }}" alt="" srcset="">
                 </div>
-                <div class="paso-facturas-desk">
+                {{-- <div class="paso-facturas-desk">
                     <img src="{{ asset('assets/budweiser/paso-a-paso1.svg') }}" alt="" srcset="">
                 </div>
                 <div class="paso-facturas-desk">
                     <img src="{{ asset('assets/budweiser/paso-a-paso2.svg') }}" alt="" srcset="">
                 </div>
-                <dibv class="paso-facturas-desk">
+                <div class="paso-facturas-desk">
                     <img src="{{ asset('assets/budweiser/paso-a-paso3.svg') }}" alt="" srcset="">
-                </dibv>
+                </div> --}}
             </div>
             <div class="facturas-codigos-cont">
                 <div class="form-facturas-btn">
