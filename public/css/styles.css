@@ -605,7 +605,7 @@ footer {
     }
 
     .menu-desk {
-        width: 50%;
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: space-around;
@@ -630,7 +630,6 @@ footer {
     }
 
     .menu-desk-item.active a {
-
         text-decoration: underline;
     }
 
@@ -672,7 +671,6 @@ footer {
         align-content: center;
         width: 308px;
         height: 100%;
-        /* Agrega otros estilos como fondo, bordes, etc. según sea necesario */
     }
 
     #dropdown-menu a {
@@ -713,7 +711,7 @@ footer {
         flex-direction: row;
         font-size: 15px;
         justify-content: center;
-        font-weight: 700;
+        font-weight: bold;
         width: 100%;
         height: 100%;
     }
