@@ -46,14 +46,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        // return redirect()->intended(RouteServiceProvider::HOME)->with([
-        //     'title' => 'Bienvenido',
-        //     'register-success' => 'Ahora podrás acumular puntos con tus compras de Budweiser y redimirlos por entradas para experiencias, festivales, conciertos, producto o accesorios de la cerveza que enciende la noche y la fiesta en el mundo.'
-        // ]);
-
-        return redirect()->route('dashboard')->with([
-            'title' => 'Bienvenido',
-            'register-success' => 'Ahora podrás acumular puntos con tus compras de Budweiser y redimirlos por entradas para experiencias, festivales, conciertos, producto o accesorios de la cerveza que enciende la noche y la fiesta en el mundo.'
-        ]);
+        return redirect()->intended(RouteServiceProvider::HOME); 
     }
-}
+} 

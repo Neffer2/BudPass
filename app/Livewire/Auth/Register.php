@@ -65,7 +65,10 @@ class Register extends Component
 
         event(new Registered($user));
         Auth::login($user);
-        return redirect(RouteServiceProvider::HOME);
+        return redirect(RouteServiceProvider::HOME)->with([
+            'title' => 'Bienvenido',
+            'register-success' => 'Ahora podrás acumular puntos con tus compras de Budweiser y redimirlos por entradas para experiencias, festivales, conciertos, producto o accesorios de la cerveza que enciende la noche y la fiesta en el mundo.'
+        ]);
     }
 
     // UPDATES

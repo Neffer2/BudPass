@@ -248,6 +248,7 @@ class RegistroFacturas extends Component
                 "abi_cpf" => $cpf, //cedula
                 "abi_email" => $email,
                 "abi_city" => $city,
+                "abi_phone" => $phone,
                 "abi_dayofbirth" => $dayofbirth,
                 "abi_monthofbirth" => $monthofbirth,
                 "abi_yearofbirth" => $yearofbirth,

@@ -32,7 +32,7 @@ class AuthenticatedSessionController extends Controller
         return redirect()->intended(RouteServiceProvider::HOME)->with([
             'title' => 'Inicio exitoso',
             'session-success' => 'Iniciaste sesión'
-        ]);
+        ]);        
     }
 
     /**

@@ -181,9 +181,15 @@
     @enderror
     <div class="registrar-factura-btn">
         <button x-on:click="$wire.storeFactura" id="registrar_factura">REGISTRAR FACTURA</button>
-    </div>
+    </div> 
 </div>
 <script>
+    @if (session('register-success'))
+        <h2>
+            <b>Bienvenido</b>
+        </h2>
+    @endif
+    
     document.getElementById('foto_factura').addEventListener('click', function() {
         console.log('Antes de btn_subir_factura');
         dataLayer.push({
