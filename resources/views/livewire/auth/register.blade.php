@@ -114,7 +114,7 @@
     <div class="checkbox-cont">
         <input id="terminos" type="checkbox" class="checkbox-item" wire:model.change="terminos">
         <a href="https://www.bavaria.co/t%C3%A9rminos-y-condiciones" target="_blank" rel="noopener noreferrer"><label
-                for="" class="checkbox-label">T&eacute;rminos y condiciones</label></a>
+                for="" class="checkbox-label">He leído, entendido y acepto los Términos y condiciones del sitio web</label></a>
         @error('terminos')
             <div class="text-invalid-check">
                 {{ $message }}
@@ -125,8 +125,7 @@
     <div class="checkbox-cont">
         <input id="politicas" type="checkbox" class="checkbox-item" wire:model.change="politicas">
         <a href="https://www.bavaria.co/sites/g/files/seuoyk1666/files/2024-02/Aviso%20de%20Privacidad%20%28V.5%29.pdf"
-            target="_blank" rel="noopener noreferrer"><label for="" class="checkbox-label">Pol&iacute;ticas de
-                privacidad</label></a>
+            target="_blank" rel="noopener noreferrer"><label for="" class="checkbox-label">Declaro que soy mayor de edad y autorizo que mis datos personales sean recolectados y tratados en las condiciones que se explican en el siguiente Aviso de Privacidad y de Cookies.</label></a>
         @error('politicas')
             <div class="text-invalid-check">
                 {{ $message }}

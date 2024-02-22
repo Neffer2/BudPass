@@ -62,7 +62,6 @@
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 }
 
 .secundario-btn {
@@ -619,6 +618,7 @@ footer {
         align-items: center;
         justify-content: center;
         width: 100%;
+        text-align: center;
     }
 
     .menu-desk-item a {

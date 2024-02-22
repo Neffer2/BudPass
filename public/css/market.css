@@ -4,7 +4,6 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    min-height: 60vh;
     background: url('/assets/budweiser/budpass.registro-bg.jpg');
     background-color: var(--primary-red);
     background-position: 100% 10%;

@@ -5,8 +5,8 @@
     align-items: center;
     flex-direction: column;
     width: 100%;
+    height: 100%;
     margin-top: 40px;
-
 }
 
 .main-forms-logo {
@@ -246,8 +246,10 @@
     font-weight: 400;
     font-size: 14px;
     margin-left: 10px;
-    margin-top: 10px;
-    text-decoration: underline;
+    margin-top: 20px;
+    /* text-decoration: underline; */
+    text-align: left;
+    cursor: pointer;
 }
 
 .checkbox-item {
@@ -326,25 +328,24 @@
 /* Desktop */
 @media (min-width: 1081px) {
 
+    
+
     .page-forms-cont {
         background: url('/assets/budweiser/budpass-inicio-bg.png'); 
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
         background-repeat: no-repeat;
         background-size: cover;
-        background-color: var(--primary-red);
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        min-height: 150vh;
-        padding-bottom: 30px;
+        background-color: var(--primary-red);
+        min-height: 800px;
     }
 
     /* Registro - Login Desktop */
 
     .main-forms-cont {
         flex-direction: row;
+        margin-top: 0;
     }
 
     .main-forms-logo {
@@ -367,6 +368,7 @@
     .regs-form-cont {
         align-items: center;
         width: 100%;
+        margin-top: 40px;
     }
 
     .form-btn {

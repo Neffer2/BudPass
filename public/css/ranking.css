@@ -4,7 +4,6 @@
     align-items: center;
     flex-direction: column;
     width: 100%;
-    min-height: 57vh;
     background: url('/assets/budweiser/budpass-ranking-bg.jpg');
     background-color: var(--primary-red);
     background-size: cover;
@@ -100,7 +99,7 @@
 @media (min-width: 1081px) {
 
     .ranking-main-cont {
-        min-height: 80vh;
+        height: 100%;
         flex-direction: row;
     }
 
@@ -115,8 +114,8 @@
         display: flex;
         flex-direction: column;
         margin-top: 0;
-        margin-top: 20px;
-        margin-bottom: 20px;
+        margin-top: 50px;
+        margin-bottom: 50px;
         margin-left: 2%;
     }
 

@@ -640,7 +640,7 @@
     /* Registro codigos Desktop */
     .registro-codigo-form {
         width: 100%;
-        height: 80vh;
+        height: 100%;
         justify-content: center;
     }
 
