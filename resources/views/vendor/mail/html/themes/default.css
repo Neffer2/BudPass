@@ -232,12 +232,13 @@ img {
 
 .button-blue,
 .button-primary {
-    background-color: #2d3748;
-    border-bottom: 8px solid #2d3748;
-    border-left: 18px solid #2d3748;
-    border-right: 18px solid #2d3748;
-    border-top: 8px solid #2d3748;
+    background-color: #DC0019;
+    border-bottom: 8px solid #DC0019;
+    border-left: 18px solid #DC0019;
+    border-right: 18px solid #DC0019;
+    border-top: 8px solid #DC0019;
 }
+
 
 .button-green,
 .button-success {
@@ -250,11 +251,11 @@ img {
 
 .button-red,
 .button-error {
-    background-color: #e53e3e;
-    border-bottom: 8px solid #e53e3e;
-    border-left: 18px solid #e53e3e;
-    border-right: 18px solid #e53e3e;
-    border-top: 8px solid #e53e3e;
+    background-color: #d35400;
+    border-bottom: 8px solid #d35400;
+    border-left: 18px solid #d35400;
+    border-right: 18px solid #d35400;
+    border-top: 8px solid #d35400;
 }
 
 /* Panels */
