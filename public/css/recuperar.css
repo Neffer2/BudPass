@@ -93,11 +93,10 @@ body {
     align-items: center;
 }
 
-.recuperar-title {
-    font-family: 'BudweiserSerifDisplay', sans-serif;
-    text-align: center;
+.title-registro {
     font-size: 32px;
-    margin-bottom: 20px;
+    font-family: 'BudweiserSerifDisplay', sans-serif;
+    margin-bottom: 15px;
 }
 
 .recuperar-input-group {
