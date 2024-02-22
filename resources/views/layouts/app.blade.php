@@ -3,7 +3,7 @@
 
 <head>
     <!-- Google Tag Manager -->
-    {{-- <script>
+    <script>
         (function(w, d, s, l, i) {
             w[l] = w[l] || [];
             w[l].push({
@@ -18,7 +18,7 @@
                 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
             f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-WKTBXXNH');
-    </script> --}}
+    </script>
     <!-- End Google Tag Manager -->
 
     <meta charset="UTF-8">
@@ -31,15 +31,15 @@
     <link rel="stylesheet" href="{{ asset('css/puntaje.css') }}">
     <link rel="stylesheet" href="{{ asset('css/market.css') }}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
     <title>@yield('title')</title>
 </head>
 
 <body>
     <!-- Google Tag Manager (noscript) -->
-    {{-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WKTBXXNH" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript> --}}
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WKTBXXNH" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <div class="age-confirmation-cont">
         <div class="age-confirmation-info">

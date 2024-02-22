@@ -129,12 +129,6 @@ body {
     flex-direction: column;
     z-index: 1000;
     backdrop-filter: blur(10px);
-    /* background: url('/assets/budweiser/budpass-age-bg.svg'); 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-repeat: no-repeat;
-    background-size: cover; */
     color: #fff;
 }
 

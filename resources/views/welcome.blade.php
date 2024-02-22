@@ -5,8 +5,6 @@
         <div class="main-forms-cont">
             <div class="main-forms-logo">
                 <div class="big-logo-cont">
-                    <img src="{{ asset('assets/budweiser/logo-budweiser.svg') }}" alt="Logo Budweiser" class=""
-                        srcset="">
                 </div>
             </div>
             <div class="regs-form-cont">
