@@ -41,10 +41,11 @@
 }
 
 /* Contenedor principal de forms */
+
 .page-forms-cont {
-    background: url('/assets/budweiser/budpass-inicio-bg.png'); 
+    background: url('/assets/budweiser/budpass-inicio-bg-movil.png'); 
     background-repeat: no-repeat;
-    background-size: 150%;
+    background-size: 90%;
     background-color: #DC0019;
     display: flex;
     flex-direction: column;
@@ -325,6 +326,20 @@
 }
 
 
+@media (min-width: 600px) {
+    .page-forms-cont {
+        background: url('/assets/budweiser/budpass-inicio-bg.png'); 
+        background-repeat: no-repeat;
+        background-size: 150%;
+        background-color: #DC0019;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        min-height: auto;
+        padding-bottom: 30px;
+    }
+}
 /* Desktop */
 @media (min-width: 1081px) {
 
