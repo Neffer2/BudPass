@@ -79,8 +79,8 @@
 }
 
 .paso-facturas-movil-img {
-    height: 90%;
-    width: auto;
+    max-height: 90%;
+    max-width: 100%;
 }
 
 .paso-facturas-desk {
