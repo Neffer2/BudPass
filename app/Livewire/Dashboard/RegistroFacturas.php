@@ -3,11 +3,9 @@
 namespace App\Livewire\Dashboard; 
 
 use Livewire\Component;
-use App\Models\User;
 use App\Models\Canal;
 use App\Models\RegistroFactura;
 use App\Models\ProductoFactura;
-use App\Models\bbdd_registro_budpass;
 use Livewire\WithFileUploads;
 use App\Rules\num_factura;
 use Illuminate\Support\Facades\Auth;
