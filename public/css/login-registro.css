@@ -322,7 +322,7 @@
     background: #bbbbbb;
     color: var(--primary-red);
     border: 1px solid var(--primary-red);
-    cursor: not-allowed;
+    cursor: progress;
     
 }
 
