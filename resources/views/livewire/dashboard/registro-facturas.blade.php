@@ -236,8 +236,8 @@
         });
     });
 
-    const MAX_WIDTH = 920;
-    const MAX_HEIGHT = 780;
+    const MAX_WIDTH = 1020;
+    const MAX_HEIGHT = 980;
     const MIME_TYPE = "image/jpeg";
     const QUALITY = 0.9;
 
