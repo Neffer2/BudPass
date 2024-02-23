@@ -3,9 +3,11 @@
 namespace App\Livewire\Admin;
 
 use Livewire\Component;
+use App\Traits\Mail;
 
 class Factura extends Component
 {
+    use Mail;
     // Filled
     public $registroFactura;
 
@@ -25,6 +27,7 @@ class Factura extends Component
         }
 
         if ($this->registroFactura->update()){
+            $this->validated($this->registroFactura);
             return redirect()->route('facturas')->with('success', $messaje);
         }
 

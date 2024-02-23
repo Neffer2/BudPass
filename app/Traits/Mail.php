@@ -2,7 +2,7 @@
 
 namespace App\Traits;
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
+// use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 trait Mail 
@@ -18,6 +18,17 @@ trait Mail
 
         $this->sendMail($subject, $content, $altBody);
     }
+
+    // public function validated($regsitro){
+    //     $subject = "Tu factrua ha sido validada";
+    //     $content = [
+    //         'view' => 'mail.welcome',
+    //     ]; 
+
+    //     dd($regsitro);
+
+    //     $this->sendMail($subject, $content, $altBody);
+    // }
 
     public function sendMail($subject, $content, $altBody)
     { 
@@ -44,7 +55,7 @@ trait Mail
 
             // Activo condificacción utf-8
             $mail->CharSet = 'UTF-8';
-
+ 
             //Content
             $mail->isHTML(true);                                  //Set email format to HTML
             $mail->Subject = $subject;
@@ -53,9 +64,8 @@ trait Mail
             $mail->AltBody = $altBody;
 
             $mail->send();
-            echo 'Message has been sent';
         } catch (Exception $e) {
-            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+            return redirect()->back()->withErrors("Error: {$mail->ErrorInfo}");
         }
     }
 } 

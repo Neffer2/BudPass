@@ -11,7 +11,7 @@
                 {{ $message }}
             </div>
         @enderror
-    </div>
+    </div> 
 
     <div class="input-cont">
         <label for="documento">Documento: </label>
