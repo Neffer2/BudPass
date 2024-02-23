@@ -5,7 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>    
+<body>
+    <img src="{{ asset('assets/mailing/mailing-header.jpg') }}" alt="Mailing Header">
     {{ $body }}
+    <img src="{{ asset('assets/mailing/mailing-body.jpg') }}" alt="Mailing Image 2">
+    <img src="{{ asset('assets/mailing/mailing-footer.jpg') }}" alt="Mailing Image 3">
 </body>
 </html> 
