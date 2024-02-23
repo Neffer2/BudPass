@@ -64,7 +64,7 @@ class User extends Authenticatable
     public function redenciones(){
         return $this->hasMany(Redencion::class, 'user_id', 'id');
     }
-
+ 
     public function ciudad(){
         return $this->hasOne(Ciudad::class, 'id', 'ciudad_id');
     }

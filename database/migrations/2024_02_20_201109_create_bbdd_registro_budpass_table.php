@@ -17,12 +17,12 @@ return new class extends Migration
             $table->string('correo');
             $table->string('fecha_nacimiento');
             $table->string('ciudad');
-            $table->string('numero_factura');
-            $table->string('numero_nit');
-            $table->string('codigos_redimidos');
+            $table->longText('numero_factura');
+            $table->longText('numero_nit');
+            $table->longText('codigos_redimidos');
             $table->string('puntaje_acumulado');
-            $table->string('premios_redimidos');
-            $table->string('pusto_ranking');
+            $table->longText('premios_redimidos');
+            $table->string('puesto_ranking');
             $table->timestamps();
         });
     }

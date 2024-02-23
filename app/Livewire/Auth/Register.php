@@ -5,6 +5,7 @@ namespace App\Livewire\Auth;
 use Livewire\Component;
 use App\Models\User;
 use App\Models\Departamento;
+use App\Models\bbdd_registro_budpass;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
@@ -60,7 +61,7 @@ class Register extends Component
             'terminos' => $this->terminos,
             'politicas' => $this->politicas,
             'password' => Hash::make($this->password),
-        ]);
+        ]);        
 
         event(new Registered($user));
         Auth::login($user);
