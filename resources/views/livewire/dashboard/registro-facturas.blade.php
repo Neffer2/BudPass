@@ -236,10 +236,10 @@
         });
     });
 
-    const MAX_WIDTH = 720;
-    const MAX_HEIGHT = 580;
+    const MAX_WIDTH = 1020;
+    const MAX_HEIGHT = 980;
     const MIME_TYPE = "image/jpeg";
-    const QUALITY = .8;
+    const QUALITY = 0.9;
 
     const foto_factura = document.getElementById("foto_factura");
     const foto_selfie = document.getElementById("foto_selfie");
