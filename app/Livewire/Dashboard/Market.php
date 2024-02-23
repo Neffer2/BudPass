@@ -7,9 +7,11 @@ use Livewire\Component;
 use App\Models\Premio;
 use App\Models\Redencion;
 use App\Models\bbdd_registro_budpass;
+use App\Traits\Mail;
  
 class Market extends Component
 {
+    use Mail;
     // Useful vars 
     public $premios, $puntosUser, $user, $destacados;
 
@@ -84,6 +86,8 @@ class Market extends Component
         $registro->puesto_ranking = $this->user->rank($this->user->id);
         $registro->save();
         // 
+
+        $this->redencion($modelPremio, $this->user);
 
         return redirect()->route('market')->with([
             'title' => 'Redención exitosa.',

@@ -21,4 +21,4 @@ class ShopperController extends Controller
     public function mail(){
         $this->welcome(Auth::user());  
     }
-} 
+}
