@@ -16,7 +16,7 @@
                 <div
                     style="font-size: 14px; line-height: 1.5; height: 100%; margin: 0; padding: 40px; text-align: center; background-color: #f0f0f0; color: #0a0541;">
                     <h1
-                        style="font-size: 28px; font-family: Georgia, 'Times New Roman', Times, serif; font-style: italic; margin: 0; padding: 0;">
+                        style="font-size: 28px; font-family: 'Elephant', serif; font-style: normal; font-weight: 300; text-transform: uppercase; margin: 0; padding: 0;">
                         {{ $title }}</h1>
                     <p
                         style="font-size: 16px; font-family: Helvetica, Arial, sans-serif; margin: 0; margin-top: 20px; padding: 0;">
