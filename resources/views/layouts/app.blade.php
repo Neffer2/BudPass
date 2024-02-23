@@ -137,18 +137,18 @@
                     </div>
 
                     <div class="footer-socials">
-                        <a href="https://www.facebook.com/CervezaBudweiserColombia" target="_blank" aria-label="Facebook link"><i class="fab fa-facebook-f"
-                                alt="Logo Facebook"></i></a>
-                        <a href="https://twitter.com/BudweiserCo" target="_blank" aria-label="Twitter link"><i class="fab fa-twitter"
-                                alt="Logo Twitter"></i></a>
-                        <a href="https://www.instagram.com/budcolombia" target="_blank" aria-label="Instagram link"><i class="fab fa-instagram"
-                                alt="Logo Instagram"></i></a>
-                        <a href="https://www.youtube.com/BudweiserColombia" target="_blank" aria-label="YouTube link"><i class="fab fa-youtube"
-                                alt="Logo YouTube"></i></a>
-                        <a href="https://co.pinterest.com/Budweiser/" target="_blank" aria-label="Pinterest link"><i class="fab fa-pinterest"
-                                alt="Logo Pinterest"></i></a>
-                        <a href="https://www.tiktok.com/@budcolombia" target="_blank" aria-label="TikTok link"><i class="fab fa-tiktok"
-                                alt="Logo TikTok"></i></a>
+                        <a href="https://www.facebook.com/CervezaBudweiserColombia" target="_blank"
+                            aria-label="Facebook link"><i class="fab fa-facebook-f" alt="Logo Facebook"></i></a>
+                        <a href="https://twitter.com/BudweiserCo" target="_blank" aria-label="Twitter link"><i
+                                class="fab fa-twitter" alt="Logo Twitter"></i></a>
+                        <a href="https://www.instagram.com/budcolombia" target="_blank"
+                            aria-label="Instagram link"><i class="fab fa-instagram" alt="Logo Instagram"></i></a>
+                        <a href="https://www.youtube.com/BudweiserColombia" target="_blank"
+                            aria-label="YouTube link"><i class="fab fa-youtube" alt="Logo YouTube"></i></a>
+                        <a href="https://co.pinterest.com/Budweiser/" target="_blank" aria-label="Pinterest link"><i
+                                class="fab fa-pinterest" alt="Logo Pinterest"></i></a>
+                        <a href="https://www.tiktok.com/@budcolombia" target="_blank" aria-label="TikTok link"><i
+                                class="fab fa-tiktok" alt="Logo TikTok"></i></a>
                     </div>
                 </div>
                 <div class="footer-text">
@@ -263,7 +263,7 @@
             });
 
             document.querySelector('.age-confirmation-cont').style.display = 'none';
-            localStorage.setItem('ageConfirmed', 'true'); 
+            localStorage.setItem('ageConfirmed', 'true');
             if (checkRecordar.checked) {
                 localStorage.setItem('ageConfirmed', 'true');
             }
