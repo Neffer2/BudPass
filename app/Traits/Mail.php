@@ -33,15 +33,9 @@ trait Mail
     } 
  
     public function validated($regsitro, $estado){
-        $subject = "¡Budweiser te informa! ¡Tus puntos se registraron con éxito!";
-
+        
         if ($estado){
-            $content = [
-                'view' => 'mail.main',
-                'title' => "Soy un título de correo electrónico. Necesito Copies y Diseño :(",
-                'body' => "Hola {}, tu factura ha sido validada. Has ganado  puntos en el canal ."
-            ];
-
+            $subject = "¡Budweiser te informa! ¡Tus puntos se registraron con éxito!";
             $content = [
                 'view' => 'mail.main',
                 'title' => "¡Felicidades! Tus puntos Budweiser han sido registrados con éxito. ¡Descúbrelos ahora!",
@@ -64,6 +58,7 @@ trait Mail
             ];
             $altBody = "Registro de Factura Validado, haz ganado {$regsitro->puntos_sumados} puntos en el canal {$regsitro->canal->descripcion}."; 
         }else {
+            $subject = "¡Ups, tu factura fue rechazada!";
             $content = [
                 'view' => 'mail.main',
                 'title' => "No pierdas tu grandeza, en Budweiser creemos en las segundas oportunidades",
