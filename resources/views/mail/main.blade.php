@@ -8,7 +8,7 @@
 <body>
     <img src="{{ asset('assets/mailing/mailing-header.jpg') }}" alt="Mailing Header">
     {{ $body }}
-    <img src="{{ asset('assets/mailing/mailing-body.jpg') }}" alt="Mailing Image 2">
-    <img src="{{ asset('assets/mailing/mailing-footer.jpg') }}" alt="Mailing Image 3">
+    <img src="{{ asset('assets/mailing/mailing-body.jpg') }}" alt="Mailing Body">
+    <img src="{{ asset('assets/mailing/mailing-footer.jpg') }}" alt="Mailing Footer">
 </body>
 </html> 
