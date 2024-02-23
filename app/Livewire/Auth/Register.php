@@ -84,7 +84,7 @@ class Register extends Component
         'col', 'Budweiser',
         'BUDWEISER_BUDPASS_02_24', 'BUDWEISER_BUDPASS_02_24', false, false);
         
-        // $this->welcome();
+        $this->welcome();
          
         return redirect(RouteServiceProvider::HOME)->with([
             'title' => 'Bienvenido',

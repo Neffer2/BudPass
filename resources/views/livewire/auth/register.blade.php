@@ -134,7 +134,7 @@
     </div>
 
     <div class="btn-registrar">
-        <button wire:click="store" id="registrar_usuario">Registrar</button>
+        <button wire:click="store" id="registrar_usuario" wire:target="store" wire:loading.attr="disabled">Registrar</button>
     </div>
 </div>
 @if ($errors->any())
