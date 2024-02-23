@@ -229,6 +229,19 @@
                     title: '¡Bienvenido!',
                     text: 'Ahora podrás acumular puntos con tus compras de Budweiser y redimirlos por entradas para experiencias, festivales, conciertos, producto o accesorios de la cerveza que enciende la noche y la fiesta en el mundo.',
                     confirmButtonText: 'Continuar'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        dataLayer.push({
+                            'event': 'GAEvent',
+                            'event_category': 'Content',
+                            'event_action': 'button',
+                            'event_label': 'Pop_up_bienvenida',
+                            'interaction': 'true',
+                            'component_name': 'btn_popup_bienvenida',
+                            'element_text': 'btn_continuar_bienvenida' ,
+                            'campaign_description': 'Budpass'
+                        });
+                    }
                 });
 
                 sessionStorage.setItem('popupShowed', 'true');
