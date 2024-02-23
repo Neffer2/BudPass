@@ -89,7 +89,7 @@ body {
 /* Cambiar el color del texto */
 .swal2-html-container {
     color: #fff !important;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'FranklinGothicBook', sans-serif;
     font-size: 18px !important;
     text-align: center !important;
     margin: 30px;

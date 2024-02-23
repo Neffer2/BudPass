@@ -292,10 +292,10 @@
 
             document.querySelector('.age-confirmation-cont').style.display = 'none';
             localStorage.setItem('ageConfirmed', 'true');
-            verificarAgeConfirmation();
+            mostrarPopupBienvenida();
             if (checkRecordar.checked) {
                 localStorage.setItem('ageConfirmed', 'true');
-                verificarAgeConfirmation();
+                mostrarPopupBienvenida();
             }
         });
 
