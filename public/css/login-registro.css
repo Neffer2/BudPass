@@ -330,7 +330,7 @@
     .page-forms-cont {
         background: url('/assets/budweiser/budpass-inicio-bg.png'); 
         background-repeat: no-repeat;
-        background-size: 150%;
+        background-size: contain;
         background-color: #DC0019;
         display: flex;
         flex-direction: column;
