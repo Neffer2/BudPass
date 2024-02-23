@@ -8,7 +8,7 @@
 </head>
 
 <body style="font-family: Arial, sans-serif; color: #333; text-align: center;">
-    <table style="max-width: 600px; width: 100%; margin: auto;">
+    <table style="max-width: 1050px; width: 100%; margin: auto;">
         <tr>
             <td>
                 <img style="width: 100%; height: auto; display: block; margin: 0; padding: 0;"
@@ -19,7 +19,7 @@
                         style="font-size: 28px; font-family: 'Elephant', serif; font-style: normal; font-weight: 300; text-transform: uppercase; margin: 0; padding: 0;">
                         {!! $title !!}</h1>
                     <p
-                        style="font-size: 16px; font-family: Helvetica, Arial, sans-serif; margin: 0; margin-top: 20px; padding: 0;">
+                        style="font-size: 19px; font-family: Helvetica, Arial, sans-serif; margin: 0; margin-top: 20px; padding: 0;">
                         {!! $body !!}
                     </p>
                 </div>
