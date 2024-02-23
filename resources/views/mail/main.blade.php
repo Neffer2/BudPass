@@ -12,7 +12,7 @@
         <tr>
             <td>
                 <img style="width: 100%; height: auto; display: block; margin: 0; padding: 0;"
-                    src="https://dev.budpass.co/assets/mailing/mailing-header.jpg" alt="Mailing Header">
+                    src="{{ asset('assets/mailing/mailing-header.jpg') }}" alt="Mailing Header">
                 <div
                     style="font-size: 14px; line-height: 1.5; height: 100%; margin: 0; padding: 40px; text-align: center; background-color: #f0f0f0; color: #0a0541;">
                     <h1
@@ -25,9 +25,9 @@
                 </div>
                 <a href="http://budpass.co" target="_blank" rel="noopener noreferrer"><img
                         style="width: 100%; height: auto; display: block; margin: 0; padding: 0;"
-                        src="https://dev.budpass.co/assets/mailing/mailing-body.jpg" alt="Mailing Body"></a>
+                        src="{{ asset('assets/mailing/mailing-body.jpg') }}" alt="Mailing Body"></a>
                 <img style="width: 100%; height: auto; display: block; margin: 0; padding: 0;"
-                    src="https://dev.budpass.co/assets/mailing/mailing-footer.jpg" alt="Mailing Footer">
+                    src="{{ asset('assets/mailing/mailing-footer.jpg') }}" alt="Mailing Footer">
             </td>
         </tr>
     </table>
