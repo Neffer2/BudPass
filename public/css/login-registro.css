@@ -318,6 +318,14 @@
     text-transform: uppercase;
 }
 
+.btn-registrar button:disabled {
+    background: #bbbbbb;
+    color: var(--primary-red);
+    border: 1px solid var(--primary-red);
+    cursor: not-allowed;
+    
+}
+
 .btn-registrar button:hover, .login-form-btn button:hover {
     background: #fff;
     color: var(--primary-red);
