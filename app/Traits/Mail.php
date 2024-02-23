@@ -11,6 +11,7 @@ trait Mail
         $subject = "Bienvenido";
         $content = [
             'view' => 'mail.main',
+            'title' => "Soy un título de correo electrónico. Necesito Copies y Diseño :(",
             'body' => "Hola {$user->name}, Esta es mi canción de bienvenida. Soy un correo electrónico. Necesito Copies y Diseño :("
         ];
         $altBody = "Esta es mi canción de bienvenida"; 
@@ -24,12 +25,14 @@ trait Mail
         if ($estado){
             $content = [
                 'view' => 'mail.main',
+                'title' => "Soy un título de correo electrónico. Necesito Copies y Diseño :(",
                 'body' => "Hola {$regsitro->shopper->name}, tu factura ha sido validada. Has ganado {$regsitro->puntos_sumados} puntos en el canal {$regsitro->canal->descripcion}."
             ]; 
             $altBody = "Registro de Factura Validado, haz ganado {$regsitro->puntos_sumados} puntos en el canal {$regsitro->canal->descripcion}."; 
         }else {
             $content = [
                 'view' => 'mail.main',
+                'title' => "Soy un título de correo electrónico. Necesito Copies y Diseño :(",
                 'body' => "Hola {$regsitro->shopper->name}, tu factura ha sido rechazada."
             ]; 
             $altBody = "Registro de Factura Validado."; 
