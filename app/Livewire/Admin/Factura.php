@@ -8,7 +8,7 @@ use App\Traits\Mail;
 class Factura extends Component
 {
     use Mail;
-    // Filled
+    // Filled 
     public $registroFactura;
 
     public function render()
@@ -23,11 +23,13 @@ class Factura extends Component
         // Update user puntos
         if ($estado){
             $this->registroFactura->shopper->puntos += $this->registroFactura->puntos_sumados;
-            $this->registroFactura->shopper->update();
+            // $this->registroFactura->shopper->update();
         }
-
+        
+        $this->validated($this->registroFactura, $estado);
+        exit;
+        
         if ($this->registroFactura->update()){
-            $this->validated($this->registroFactura);
             return redirect()->route('facturas')->with('success', $messaje);
         }
 

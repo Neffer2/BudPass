@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="card mt-5">
+    <div class="card mt-5"> 
         <div class="row">
             <div class="col-md-12">
                 <div class="card-header">
@@ -82,8 +82,15 @@
             </div>
             <div class="col-md-12 px-2">
                 <div class="card-body">
-                    <button wire:click="cambioEstado(1)" wire:confirm="¿Estás seguro de APROBAR esta factura?" class="btn btn-success">Aprobar</button>
-                    <button wire:click="cambioEstado(0)" wire:confirm="¿Estás seguro de RECHAZAR esta factura?" class="btn btn-danger">Rechazar</button>
+                    <button wire:click="cambioEstado(1)"
+                    wire:target="cambioEstado" wire:loading.attr="disabled"
+                    wire:confirm="¿Estás seguro de APROBAR esta factura?"
+                    class="btn btn-success">Aprobar</button>
+
+                    <button wire:click="cambioEstado(0)"
+                    wire:target="cambioEstado" wire:loading.attr="disabled"
+                    wire:confirm="¿Estás seguro de RECHAZAR esta factura?"
+                    class="btn btn-danger">Rechazar</button>
                 </div>
             </div>
         </div>

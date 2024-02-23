@@ -10,25 +10,33 @@ trait Mail
     public function welcome(){
         $subject = "Bienvenido";
         $content = [
-            'view' => 'mail.welcome',
+            'view' => 'mail.main',
             'body' => "Esta es mi canción de bienvenida. Soy un correo electrónico. Necesito Copies y Diseño :("
         ];
-
         $altBody = "Esta es mi canción de bienvenida"; 
 
         $this->sendMail($subject, $content, $altBody);
+    } 
+
+    public function validated($regsitro, $estado){
+        $subject = "Registro de Factura Validado";        
+
+        if ($estado){
+            $content = [
+                'view' => 'mail.main',
+                'body' => "Hola {$regsitro->shopper->name}, tu factura ha sido validada. Has ganado {$regsitro->puntos_sumados} puntos en el canal {$regsitro->canal->descripcion}."
+            ]; 
+            $altBody = "Registro de Factura Validado, haz ganado {$regsitro->puntos_sumados} puntos en el canal {$regsitro->canal->descripcion}."; 
+        }else {
+            $content = [
+                'view' => 'mail.main',
+                'body' => "Hola {$regsitro->shopper->name}, tu factura ha sido rechazada."
+            ]; 
+            $altBody = "Registro de Factura Validado."; 
+        }
+
+        $this->sendMail($subject, $content, $altBody);
     }
-
-    // public function validated($regsitro){
-    //     $subject = "Tu factrua ha sido validada";
-    //     $content = [
-    //         'view' => 'mail.welcome',
-    //     ]; 
-
-    //     dd($regsitro);
-
-    //     $this->sendMail($subject, $content, $altBody);
-    // }
 
     public function sendMail($subject, $content, $altBody)
     { 
