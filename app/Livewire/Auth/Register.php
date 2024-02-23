@@ -38,53 +38,53 @@ class Register extends Component
     }
 
     public function store(){
-        // $this->validate([
-        //     'nombre' => 'required|string|max:250',
-        //     'documento' => 'required|numeric|max_digits:10|unique:users',
-        //     'telefono' => 'required|numeric|max_digits:10|unique:users',
-        //     'ciudad' => 'required|numeric',
-        //     'email' => 'required|email|max:250|unique:users',
-        //     'fecha_nacimiento' => 'required|date|before:2006-12-31',
-        //     'terminos' => 'required|accepted',
-        //     'politicas' => 'required|accepted',
-        //     'password' => ['required', 'same:confirm', Rules\Password::defaults()]
-        // ]);
+        $this->validate([
+            'nombre' => 'required|string|max:250',
+            'documento' => 'required|numeric|max_digits:10|unique:users',
+            'telefono' => 'required|numeric|max_digits:10|unique:users',
+            'ciudad' => 'required|numeric',
+            'email' => 'required|email|max:250|unique:users',
+            'fecha_nacimiento' => 'required|date|before:2006-12-31',
+            'terminos' => 'required|accepted',
+            'politicas' => 'required|accepted',
+            'password' => ['required', 'same:confirm', Rules\Password::defaults()]
+        ]);
 
-        // $user = User::create([ 
-        //     'name' => $this->nombre,
-        //     'documento' => $this->documento,
-        //     'telefono' => $this->telefono,
-        //     'ciudad_id' => $this->ciudad,
-        //     'fecha_nacimiento' => $this->fecha_nacimiento,
-        //     'email' => $this->email,
-        //     'terminos' => $this->terminos,
-        //     'politicas' => $this->politicas,
-        //     'password' => Hash::make($this->password),
-        // ]);        
+        $user = User::create([ 
+            'name' => $this->nombre,
+            'documento' => $this->documento,
+            'telefono' => $this->telefono,
+            'ciudad_id' => $this->ciudad,
+            'fecha_nacimiento' => $this->fecha_nacimiento,
+            'email' => $this->email,
+            'terminos' => $this->terminos,
+            'politicas' => $this->politicas,
+            'password' => Hash::make($this->password),
+        ]);        
 
-        // event(new Registered($user));
-        // Auth::login($user);
+        event(new Registered($user));
+        Auth::login($user);
 
-        // $user = Auth::user();
-        // $fecha_nacimiento = $user->fecha_nacimiento;
-        // $fecha = \DateTime::createFromFormat('Y-m-d', $fecha_nacimiento);
+        $user = Auth::user();
+        $fecha_nacimiento = $user->fecha_nacimiento;
+        $fecha = \DateTime::createFromFormat('Y-m-d', $fecha_nacimiento);
         
-        // $tdstatus = $this->__sendTD(array(
-        //     "abi_name" => $user->name,
-        //     "abi_cpf" => $user->documento,
-        //     "abi_email" => $user->email,
-        //     "abi_city" => $user->ciudad->descripcion,
-        //     "abi_phone" => "+57".$user->telefono,
-        //     "abi_dayofbirth" => $fecha->format('d'),
-        //     "abi_monthofbirth" => $fecha->format('m'),
-        //     "abi_yearofbirth" => $fecha->format('Y'),
-        //     "abi_interests" => ["TC-PP","MARKETING-ACTIVATION"],
-        //     "purpose_name" => ["Behavioral" => ["Loyalty" => ["Budweiser" => ["Puntos"]]]],
-        // ),
-        // 'col', 'Budweiser',
-        // 'BUDWEISER_BUDPASS_02_24', 'BUDWEISER_BUDPASS_02_24', false, false);
+        $tdstatus = $this->__sendTD(array(
+            "abi_name" => $user->name,
+            "abi_cpf" => $user->documento,
+            "abi_email" => $user->email,
+            "abi_city" => $user->ciudad->descripcion,
+            "abi_phone" => "+57".$user->telefono,
+            "abi_dayofbirth" => $fecha->format('d'),
+            "abi_monthofbirth" => $fecha->format('m'),
+            "abi_yearofbirth" => $fecha->format('Y'),
+            "abi_interests" => ["TC-PP","MARKETING-ACTIVATION"],
+            "purpose_name" => ["Behavioral" => ["Loyalty" => ["Budweiser" => ["Puntos"]]]],
+        ),
+        'col', 'Budweiser',
+        'BUDWEISER_BUDPASS_02_24', 'BUDWEISER_BUDPASS_02_24', false, false);
         
-        $this->welcome();
+        $this->welcome($user);
          
         return redirect(RouteServiceProvider::HOME)->with([
             'title' => 'Bienvenido',

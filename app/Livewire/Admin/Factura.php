@@ -23,11 +23,10 @@ class Factura extends Component
         // Update user puntos
         if ($estado){
             $this->registroFactura->shopper->puntos += $this->registroFactura->puntos_sumados;
-            // $this->registroFactura->shopper->update();
+            $this->registroFactura->shopper->update();
         }
         
         $this->validated($this->registroFactura, $estado);
-        exit;
         
         if ($this->registroFactura->update()){
             return redirect()->route('facturas')->with('success', $messaje);

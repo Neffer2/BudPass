@@ -35,6 +35,8 @@ Route::get('/marketplace', function () {
 Route::get('/ranking', [ShopperController::class, 'showRanking'])->middleware('auth')->middleware('descalificado')->name('ranking');
 Route::get('/trial', [ShopperController::class, 'mail']);
 
+Route::get('/trial', [ShopperController::class, 'mail']);
+
 /*
 |--------------------------------------------------------------------------
 | Admin routes

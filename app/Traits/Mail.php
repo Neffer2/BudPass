@@ -7,15 +7,15 @@ use PHPMailer\PHPMailer\Exception;
 
 trait Mail 
 {
-    public function welcome(){
+    public function welcome($user){   
         $subject = "Bienvenido";
         $content = [
             'view' => 'mail.main',
-            'body' => "Esta es mi canción de bienvenida. Soy un correo electrónico. Necesito Copies y Diseño :("
+            'body' => "Hola {$user->name}, Esta es mi canción de bienvenida. Soy un correo electrónico. Necesito Copies y Diseño :("
         ];
         $altBody = "Esta es mi canción de bienvenida"; 
 
-        $this->sendMail($subject, $content, $altBody);
+        $this->sendMail($subject, $content, $altBody, $user);
     } 
 
     public function validated($regsitro, $estado){
@@ -35,10 +35,10 @@ trait Mail
             $altBody = "Registro de Factura Validado."; 
         }
 
-        $this->sendMail($subject, $content, $altBody);
+        $this->sendMail($subject, $content, $altBody, $regsitro->shopper);
     }
 
-    public function sendMail($subject, $content, $altBody)
+    public function sendMail($subject, $content, $altBody, $user)
     { 
         require base_path("vendor/autoload.php");
         //Create an instance; passing `true` enables exceptions
@@ -56,9 +56,9 @@ trait Mail
             $mail->Port       = env('MAIL_PORT', 587);
 
             //Recipients
-            $mail->setFrom(env('MAIL_USERNAME'), 'BullMarketing'); 
+            $mail->setFrom(env('MAIL_USERNAME'), env('MAIL_USERNAME')); 
 
-            $mail->addAddress('neffer.barragan@bullmarketing.com.co', 'Neffer Barragan');
+            $mail->addAddress($user->email, $user->name);
             $mail->addReplyTo('noreply@noreply.com', 'noreply');
 
             // Activo condificacción utf-8
