@@ -223,6 +223,34 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 
     <script>
+        @if (request()->is('/'))
+            function mostrarPopupBienvenida() {
+                Swal.fire({
+                    title: '¡Bienvenido!',
+                    text: 'Ahora podrás acumular puntos con tus compras de Budweiser y redimirlos por entradas para experiencias, festivales, conciertos, producto o accesorios de la cerveza que enciende la noche y la fiesta en el mundo.',
+                    confirmButtonText: 'Continuar'
+                });
+
+                sessionStorage.setItem('popupShowed', 'true');
+            }
+
+            // Función para verificar el estado del age-confirmation
+            function verificarAgeConfirmation() {
+                // Obtén el estado del age-confirmation del localStorage
+                let ageConfirmed = localStorage.getItem('ageConfirmed');
+                let popupMostrado = sessionStorage.getItem('popupShowed');
+
+
+                // Si ageConfirmed es 'true', muestra el pop-up de bienvenida
+                if (ageConfirmed === 'true' && popupMostrado !== 'true') {
+                    mostrarPopupBienvenida();
+                }
+            }
+
+            // Llama a la función verificarAgeConfirmation cuando la página se carga
+            verificarAgeConfirmation();
+        @endif
+
         //Modal boostrap para factura
         document.addEventListener('DOMContentLoaded', function() {
             // Para #myImg y #myImgDesk
@@ -264,8 +292,10 @@
 
             document.querySelector('.age-confirmation-cont').style.display = 'none';
             localStorage.setItem('ageConfirmed', 'true');
+            verificarAgeConfirmation();
             if (checkRecordar.checked) {
                 localStorage.setItem('ageConfirmed', 'true');
+                verificarAgeConfirmation();
             }
         });
 
