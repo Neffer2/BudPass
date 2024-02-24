@@ -1,7 +1,7 @@
 <div class="registro-div-cont">
     <div class="title-registro-cont">
-        <h1 class="title-registro">Formulario de Registro</h1>
-        <p class="sub-title-registro">Completa los siguientes datos</p>
+        <h1 class="title-registro">Te damos la bienvenida a BudPass.</h1>
+        <p class="sub-title-registro">El pase a increíbles sorpresas y experiencias únicas acumulando puntos.</p>
     </div>
     <div class="input-cont">
         <label for="nombre">Nombre: </label>

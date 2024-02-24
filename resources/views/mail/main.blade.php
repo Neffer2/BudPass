@@ -8,7 +8,7 @@
 </head>
 
 <body style="font-family: Arial, sans-serif; color: #333; text-align: center;">
-    <table style="max-width: 1050px; width: 100%; margin: auto;">
+    <table style="max-width: 950px; width: 100%; margin: auto;">
         <tr>
             <td>
                 <img style="width: 100%; height: auto; display: block; margin: 0; padding: 0;"
