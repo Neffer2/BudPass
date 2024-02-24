@@ -103,8 +103,8 @@ class RegistroFacturas extends Component
         $registroFactura = new RegistroFactura;
         $registroFactura->num_factura = $this->num_factura;
         $registroFactura->canal_id = $this->canal->id;
-        $registroFactura->foto_selfie = $this->selfie_producto->store(path: '/public/selfies');;
-        $registroFactura->foto_factura = $this->foto_factura->store(path: '/public/facturas');;
+        $registroFactura->foto_selfie = $this->selfie_producto->store(path: 'public/selfies');;
+        $registroFactura->foto_factura = $this->foto_factura->store(path: 'public/facturas');;
         $registroFactura->user_id = Auth::user()->id;
         $registroFactura->puntos_sumados = $this->puntos;
         $registroFactura->save();
