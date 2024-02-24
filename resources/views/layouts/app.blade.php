@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <link rel="shortcut icon" href="https://www.budweiser.co/sites/g/files/seuoyk1191/files/favicon.ico" type="image/x-icon">
     <title>@yield('title')</title>
 </head>
 
