@@ -82,7 +82,7 @@ class Register extends Component
             "purpose_name" => ["Behavioral" => ["Loyalty" => ["Budweiser" => ["Puntos"]]]],
         ),
         'col', 'Budweiser',
-        'BUDWEISER_BUDPASS_02_24', 'BUDWEISER_BUDPASS_02_24', false, false);
+        'BUDWEISER_BUDPASS_02_24', 'BUDWEISER_BUDPASS_02_24', false, true);
         
         $this->welcome($user);
          
