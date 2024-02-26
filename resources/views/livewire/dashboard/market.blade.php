@@ -40,7 +40,7 @@
                                 <p id="premioModalDesc" class="custom-modal-desc"></p>
                                 <p id="premioModalPuntos" class="custom-modal-puntos"></p>
                                 <div class="btn-modal-premios">
-                                    <button type="button" class="btn-modal-premios-redimir"
+                                    <button type="button" wire:loading.attr="disabled" class="btn-modal-premios-redimir"
                                         id="premioModalBtn">Redimir</button>
                                     <button type="button" class="btn-modal-premios-close" id="premio_cerrar_movil"
                                         data-dismiss="modal">Cerrar</button>
@@ -100,9 +100,7 @@
                                 'premios-img-cont-desktop' => true,
                                 'disabled-premio' => $puntosUser < $premio->puntos,
                             ]) data-id="{{ $premio->id }}"
-                                x-on:click="openModalDesktop({{ $premio->id }}); enviarDesktop('{{ $premio->descripcion }}')"
-                                x-on:mouseover="showDescription({{ $premio->id }})"
-                                x-on:mouseout="hideDescription({{ $premio->id }})">
+                                x-on:click="openModalDesktop({{ $premio->id }})">
                                 <img class="img-premio" src='{{ asset("assets/premios/$premio->foto") }}'
                                     height="200" alt="">
                                 <div class="product-description" id="description-{{ $premio->id }}">
@@ -112,7 +110,6 @@
                         @endforeach
                     </div>
                 @endforeach
-
                 <div class="modal fade custom-modal" id="premioModalDesktop" tabindex="-1"
                     aria-labelledby="premioModalLabelDesktop" aria-hidden="true">
                     <div class="modal-dialog">
@@ -131,12 +128,11 @@
                                 <p id="premioModalDescDesktop" class="custom-modal-desc"></p>
                                 <p id="premioModalPuntosDesktop" class="custom-modal-puntos"></p>
                                 <div class="btn-modal-premios">
-                                    <button type="button" wire:loading.attr="disabled"
-                                        class="btn-modal-premios-redimir" id="premioModalBtnDesktop">Redimir</button>
+                                    <button type="button" wire:loading.attr="disabled" class="btn-modal-premios-redimir" 
+                                        id="premioModalBtnDesktop">Redimir</button>
                                     <button type="button" class="btn-modal-premios-close" id="premio_cerrar_desktop"
                                         data-dismiss="modal">Cerrar</button>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -267,7 +263,9 @@
         } else {
             premioModalBtnDesktop.textContent = 'Redimir';
             premioModalBtnDesktop.disabled = false;
-            premioModalBtnDesktop.setAttribute('wire:click', `redimir(${premio.id})`);
+            premioModalBtnDesktop.addEventListener('click', function() {
+                @this.call('redimir', premio.id);
+            });
         }
 
         $('#premioModalDesktop').modal('show');
