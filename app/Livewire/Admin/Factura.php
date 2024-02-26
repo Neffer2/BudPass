@@ -17,8 +17,13 @@ class Factura extends Component
     } 
 
     public function cambioEstado($estado){
+        // Validación estado factura
+        if ($this->validateFactura()){
+            return redirect()->route('facturas')->with('success', "Esta factura ya fue validada.");
+        }
+        
         $messaje = ($estado) ? "Factura APROBADA con éxito." : "Factura RECHAZADA con éxito.";
-        $this->registroFactura->estado_id = $estado;
+        $this->registroFactura->estado_id = $estado;        
 
         // Update user puntos
         if ($estado){
@@ -33,6 +38,14 @@ class Factura extends Component
         }
 
         return redirect()->route('facturas')->withErrors('Oops, algo salió mal.');
+    }
+
+    public function validateFactura(){
+        if ($this->registroFactura->estado_id != 2){
+            return true;
+        }
+
+        return false;
     }
 }
  
