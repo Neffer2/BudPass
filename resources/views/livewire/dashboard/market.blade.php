@@ -40,8 +40,8 @@
                                 <p id="premioModalDesc" class="custom-modal-desc"></p>
                                 <p id="premioModalPuntos" class="custom-modal-puntos"></p>
                                 <div class="btn-modal-premios">
-                                    <button type="button" wire:loading.attr="disabled" class="btn-modal-premios-redimir"
-                                        id="premioModalBtn">Redimir</button>
+                                    <button type="button" wire:loading.attr="disabled"
+                                        class="btn-modal-premios-redimir" id="premioModalBtn">Redimir</button>
                                     <button type="button" class="btn-modal-premios-close" id="premio_cerrar_movil"
                                         data-dismiss="modal">Cerrar</button>
                                 </div>
@@ -102,7 +102,7 @@
                             ]) data-id="{{ $premio->id }}"
                                 x-on:click="openModalDesktop({{ $premio->id }})"
                                 x-on:mouseover="showDescription({{ $premio->id }})"
-                                x-on:mouseout="hideDescription({{ $premio->id }})">>
+                                x-on:mouseout="hideDescription({{ $premio->id }})">
                                 <img class="img-premio" src='{{ asset("assets/premios/$premio->foto") }}'
                                     height="200" alt="">
                                 <div class="product-description" id="description-{{ $premio->id }}">
@@ -130,8 +130,8 @@
                                 <p id="premioModalDescDesktop" class="custom-modal-desc"></p>
                                 <p id="premioModalPuntosDesktop" class="custom-modal-puntos"></p>
                                 <div class="btn-modal-premios">
-                                    <button type="button" wire:loading.attr="disabled" class="btn-modal-premios-redimir" 
-                                        id="premioModalBtnDesktop">Redimir</button>
+                                    <button type="button" wire:loading.attr="disabled"
+                                        class="btn-modal-premios-redimir" id="premioModalBtnDesktop">Redimir</button>
                                     <button type="button" class="btn-modal-premios-close" id="premio_cerrar_desktop"
                                         data-dismiss="modal">Cerrar</button>
                                 </div>
