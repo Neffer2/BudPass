@@ -100,7 +100,9 @@
                                 'premios-img-cont-desktop' => true,
                                 'disabled-premio' => $puntosUser < $premio->puntos,
                             ]) data-id="{{ $premio->id }}"
-                                x-on:click="openModalDesktop({{ $premio->id }})">
+                                x-on:click="openModalDesktop({{ $premio->id }})"
+                                x-on:mouseover="showDescription({{ $premio->id }})"
+                                x-on:mouseout="hideDescription({{ $premio->id }})">>
                                 <img class="img-premio" src='{{ asset("assets/premios/$premio->foto") }}'
                                     height="200" alt="">
                                 <div class="product-description" id="description-{{ $premio->id }}">
