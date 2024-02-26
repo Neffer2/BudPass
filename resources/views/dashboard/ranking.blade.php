@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Ranking')
 @section('content')
     <div class="ranking-main-cont">
 

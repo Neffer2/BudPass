@@ -1,5 +1,5 @@
 @extends('layouts.app')
-    @section('content')
-        <livewire:dashboard.market/>     
-    @endsection
-    
+@section('title', 'Marketplace')
+@section('content')
+    <livewire:dashboard.market />
+@endsection

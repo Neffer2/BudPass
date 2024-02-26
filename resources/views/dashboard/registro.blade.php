@@ -1,4 +1,6 @@
 @extends('layouts.app')
+
+@section('title', 'Registro de facturas y códigos')
 @section('content')
     <div class="cont-main-registro-facturas-codigos">
         <div class="main-facturas-cont">
