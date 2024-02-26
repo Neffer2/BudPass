@@ -71,14 +71,14 @@
                             </thead>
                             <tbody>
                                 @php $acum = 0; @endphp
-                                @foreach ($registroFactura->productos as $productoFactura)
+                                @foreach ($registroFactura->productos as $key => $productoFactura)
                                     <tr>
                                         <td>{{ $productoFactura->producto->descripcion }}</td>
                                         <td>{{ $productoFactura->cantidad }}</td>
                                         <td>{{ $productoFactura->producto->referencia->puntos }}</td>
                                     </tr>
 
-                                    @php $acum += $productoFactura->producto->referencia->puntos; @endphp
+                                    @php $acum = ($productoFactura->producto->referencia->puntos * $productoFactura->cantidad); @endphp
                                 @endforeach
                             </tbody>
                             <tfoot>

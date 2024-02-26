@@ -14,7 +14,7 @@ class Factura extends Component
     public function render()
     {
         return view('livewire.admin.factura');
-    }
+    } 
 
     public function cambioEstado($estado){
         $messaje = ($estado) ? "Factura APROBADA con éxito." : "Factura RECHAZADA con éxito.";
