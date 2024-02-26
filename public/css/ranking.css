@@ -64,6 +64,7 @@
 .ranking-table-cont td {
     font-family: 'Franklin Gothic Medium', 'Arial', sans-serif;
     font-size: 14px;
+    text-transform: capitalize;
 }
 
 .ranking-puesto-cont {
