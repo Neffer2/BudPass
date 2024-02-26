@@ -106,7 +106,7 @@
                                 <img class="img-premio" src='{{ asset("assets/premios/$premio->foto") }}'
                                     height="200" alt="">
                                 <div class="product-description" id="description-{{ $premio->id }}">
-                                    {{ $premio->descripcion }}
+                                    {{ $premio->nombre }}
                                 </div>
                             </div>
                         @endforeach
