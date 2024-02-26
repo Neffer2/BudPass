@@ -81,7 +81,7 @@ trait Mail
             $mail->Port       = env('MAIL_PORT', 587);
 
             //Recipients
-            $mail->setFrom(env('MAIL_FROM_ADDRESS'), env('MAIL_USERNAME')); 
+            $mail->setFrom(config('mail.from.address'), config('mail.from.name')); 
 
             $mail->addAddress($user->email, $user->name);
             $mail->addReplyTo('noreply@noreply.com', 'noreply');
@@ -89,7 +89,7 @@ trait Mail
             // Activo condificacción utf-8
             $mail->CharSet = 'UTF-8';
  
-            //Content 
+            //Content
             $mail->isHTML(true);                                  //Set email format to HTML
             $mail->Subject = $subject;
             // $body
