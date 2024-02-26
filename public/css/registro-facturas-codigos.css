@@ -47,10 +47,14 @@
     width: 88%;
 }
 
-.texto-consumo-cont p {
+.texto-consumo-cont p, .texto-consumo-cont span{
     font-family: 'FranklinGothicBook';
     font-size: 14px;
     color: var(--primary-blue);
+}
+
+.texto-consumo-cont span {
+    display: block;
 }
 
 
