@@ -651,6 +651,7 @@ footer {
         color: var(--primary-blue);
         margin-top: 15px;
         text-align: center;
+        text-transform: capitalize;
     }
 
     .menu-desk-item-puntos p,
