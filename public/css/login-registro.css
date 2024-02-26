@@ -243,11 +243,11 @@
 .checkbox-cont label {
     color: var(--primary-blue);
     font-family: 'Franklin Gothic Book', 'Arial Narrow', Arial, sans-serif;
-    font-weight: 400;
+    font-weight: bold;
     font-size: 14px;
     margin-left: 20px;
     margin-top: 20px;
-    /* text-decoration: underline; */
+    text-decoration: underline;
     text-align: left;
     cursor: pointer;
 }
