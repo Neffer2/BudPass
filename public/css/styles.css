@@ -644,6 +644,7 @@ footer {
         height: 100%;
         cursor: pointer;
         margin-left: 1%;
+        
     }
 
     .menu-desk-item-puntos p {
@@ -652,6 +653,7 @@ footer {
         margin-top: 15px;
         text-align: center;
         text-transform: capitalize;
+        
     }
 
     .menu-desk-item-puntos p,
@@ -661,7 +663,7 @@ footer {
         font-weight: 400;
         font-size: 15px;
         text-decoration: none;
-        color: #000;
+        color: #000; 
     }
 
     #dropdown-menu {

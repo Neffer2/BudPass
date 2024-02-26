@@ -85,11 +85,11 @@
                             <a class="" href="{{ route('market') }}">Marketplace</a>
                         </div>
                         <div class="menu-desk-item {{ Route::currentRouteName() == 'dashboard' ? 'active' : '' }}">
-                            <a class="" href="{{ route('dashboard') }}">Registrar compra</a>
+                            <a class="" href="{{ route('dashboard') }}">Registrar Compra</a>
                         </div>
                     </div>
                     <div class="menu-desk-item-puntos" id="menu-toggle">
-                        <p>{{ Auth::user()->name }} <span class="puntos-header">Pts:
+                        <p class="menu-desk-usuario">{{ Auth::user()->name }} <span class="puntos-header">Pts:
                                 {{ number_format(Auth::user()->puntos) }}</span></p>
                         <div id="dropdown-menu" style="display: none;">
                             <p><a href="#"
@@ -116,7 +116,7 @@
                     <a class="" href="{{ route('market') }}">Marketplace</a>
                 </div>
                 <div class="ham-item {{ Route::currentRouteName() == 'dashboard' ? 'active' : '' }}">
-                    <a class="" href="{{ route('dashboard') }}">Registrar compra</a>
+                    <a class="" href="{{ route('dashboard') }}">Registrar Compra</a>
                 </div>
                 <div class="ham-item">
                     <a href="#"
@@ -225,6 +225,14 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 
     <script>
+        document.querySelectorAll('.menu-desk-usuario').forEach(function(el) {
+            el.innerText = el.innerText.toLowerCase();
+        });
+
+        document.querySelectorAll('.ranking-table-cont td').forEach(function(el) {
+            el.innerText = el.innerText.toLowerCase();
+        });
+
         @if (request()->is('/'))
             function mostrarPopupBienvenida() {
                 Swal.fire({
@@ -442,6 +450,7 @@
                 today.setFullYear(pastYear);
                 fechaNacimiento.max = today.toISOString().split("T")[0];
             }
+
         }
 
         let fechaNacimiento = document.getElementById('fecha_nacimiento');
