@@ -113,7 +113,7 @@
 
     <div class="checkbox-cont">
         <input id="terminos" type="checkbox" class="checkbox-item" wire:model.change="terminos">
-        <a href="https://www.bavaria.co/t%C3%A9rminos-y-condiciones" target="_blank" rel="noopener noreferrer"><label
+        <a href="{{ asset('assets/legal/tyc-budpass.pdf') }}" target="_blank" rel="noopener noreferrer"><label
                 for="" class="checkbox-label">He leído, entendido y acepto los Términos y condiciones del sitio web</label></a>
         @error('terminos')
             <div class="text-invalid-check">

@@ -170,7 +170,7 @@
                                 rel="noopener noreferrer">
                                 <p>Términos y condiciones</p>
                             </a>
-                            <a href="https://www.budweiser.co/terminos-generales" target="_blank"
+                            <a href="{{ asset('assets/legal/tyc-budpass.pdf') }}" target="_blank"
                                 rel="noopener noreferrer">
                                 <p>Términos y condiciones de la campaña</p>
                             </a>
