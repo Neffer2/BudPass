@@ -33,7 +33,6 @@
                 @endforeach
             @endif
             <div class="recuperar-cont-btn-cont">
-                <a href="{{ url('/') }}" class="recuperar-button">Volver</a>
                 <button type="submit" class="recuperar-button">Enviar</button>
             </div>
         </form>
