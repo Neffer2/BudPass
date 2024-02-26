@@ -26,13 +26,13 @@ class RegistroCodigos extends Component
 
         if (RateLimiter::tooManyAttempts('send-message:'.Auth::user()->id, $perMinute = 5)) {
             return $this->addError('codigo-bloqueado', 'Oops, demasiados intentos.');
-        }
+        } 
         RateLimiter::hit('send-message:'.Auth::user()->id);
         
         $codigo = Codigo::where('codigo', 'LIKE', "%$this->codigo%")->first();
         $user = Auth::user();
         if(!($user->limite($codigo->referencia->puntos))){
-            $this->addError('limite-puntos', 'Opps, alcanzaste el límite de puntos diario (220 puntos).');
+            $this->addError('limite-puntos', 'Opps, alcanzaste el límite de puntos diario (450 puntos).');
             return redirect()->back();
         } 
 

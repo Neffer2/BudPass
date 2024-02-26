@@ -82,7 +82,7 @@ class RegistroFacturas extends Component
     public function storeFactura(){
         $user = Auth::user();
         if(!($user->limite($this->puntos))){
-            $this->addError('limite-puntos', 'Opps, alcanzaste el límite de puntos diario (220 puntos).');
+            $this->addError('limite-puntos', 'Opps, alcanzaste el límite de puntos diario (450 puntos).');
             return redirect()->back();
         }
         
