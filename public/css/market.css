@@ -15,9 +15,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     width: 95%;
     margin-top: 20px;
+    height: 100%;
 }
 
 .market-btn-cont {
@@ -216,7 +217,6 @@
     display: none;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     width: 100%;
     background: #fff;
 }
@@ -243,7 +243,7 @@
     text-align: center;
     border-collapse: collapse;
     margin: auto;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .redenciones-premios-cont th, .redenciones-premios-cont td {
@@ -372,6 +372,7 @@
 
     .redenciones-premios-cont {
         width: 90%;
+        min-height: 775px;
     }
 
     .carousel-desktop {
