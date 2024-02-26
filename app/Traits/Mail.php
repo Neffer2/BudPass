@@ -78,10 +78,10 @@ trait Mail
             $mail->Username   = env('MAIL_USERNAME');
             $mail->Password   = env('MAIL_PASSWORD');
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-            $mail->Port       = env('MAIL_PORT', 465);
+            $mail->Port       = env('MAIL_PORT', 587);
 
             //Recipients
-            $mail->setFrom(env('MAIL_USERNAME'), env('MAIL_USERNAME')); 
+            $mail->setFrom(env('MAIL_FROM_ADDRESS'), env('MAIL_USERNAME')); 
 
             $mail->addAddress($user->email, $user->name);
             $mail->addReplyTo('noreply@noreply.com', 'noreply');
