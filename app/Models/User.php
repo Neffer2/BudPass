@@ -95,7 +95,7 @@ class User extends Authenticatable
                         ['user_id', Auth::user()->id],
                     ])->sum('puntos_sumados');
                     
-        if (($registrosFactura + $registrosCodigo + $puntos_suamdos) > 220){ return false; }
+        if (($registrosFactura + $registrosCodigo + $puntos_suamdos) > 450){ return false; }
         return true;
     }
 }
