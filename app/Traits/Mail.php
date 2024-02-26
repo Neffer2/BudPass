@@ -78,7 +78,7 @@ trait Mail
             $mail->Username   = env('MAIL_USERNAME');
             $mail->Password   = env('MAIL_PASSWORD');
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-            $mail->Port       = env('MAIL_PORT', 587);
+            $mail->Port       = env('MAIL_PORT', 465);
 
             //Recipients
             $mail->setFrom(env('MAIL_USERNAME'), env('MAIL_USERNAME')); 
@@ -89,7 +89,7 @@ trait Mail
             // Activo condificacción utf-8
             $mail->CharSet = 'UTF-8';
  
-            //Content
+            //Content 
             $mail->isHTML(true);                                  //Set email format to HTML
             $mail->Subject = $subject;
             // $body
