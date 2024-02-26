@@ -35,3 +35,4 @@ class Factura extends Component
         return redirect()->route('facturas')->withErrors('Oops, algo salió mal.');
     }
 }
+ 

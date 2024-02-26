@@ -1,6 +1,33 @@
 <div class="container">
     <div class="card mt-5"> 
-        <div class="row">
+        <div class="row">        
+            <div class="col-md-12">
+                <div class="card-header">
+                    <h4>Infromaci&oacute;n Usuario</h4>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead> 
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Documento</th>
+                                    <th>Tel&eacute;fono</th>
+                                    <th>Correo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{ $registroFactura->shopper->name }}</td>
+                                    <td>{{ $registroFactura->shopper->documento }}</td>
+                                    <td>{{ $registroFactura->shopper->telefono }}</td>
+                                    <td>{{ $registroFactura->shopper->email }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div> 
+            </div>
             <div class="col-md-12">
                 <div class="card-header">
                     <h4>Infromaci&oacute;n factura</h4>
@@ -19,7 +46,7 @@
                             <tbody>
                                 <tr>
                                     <td>{{ $registroFactura->num_factura }}</td>
-                                    <td>{{ $registroFactura->canal->descripcion }}</td>
+                                    <td>{{ $registroFactura->canal->nit }}</td>
                                     <td>{{ $registroFactura->puntos_sumados }}</td>
                                     <td>{{ $registroFactura->created_at }}</td>
                                 </tr>
@@ -79,7 +106,7 @@
                         <img src="{{ asset("storage/$foto_selfie") }}" class="card-img-top" height="200">
                     </div>
                 </div>
-            </div>
+            </div> 
             <div class="col-md-12 px-2">
                 <div class="card-body">
                     <button wire:click="cambioEstado(1)"
