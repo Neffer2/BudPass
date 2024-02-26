@@ -1,4 +1,3 @@
-
 <link rel="stylesheet" href="{{ asset('css/recuperar.css') }}">
 
 <div class="recuperar-main-cont">
@@ -10,17 +9,20 @@
 
             <div class="recuperar-input-group">
                 <label for="email" class="recuperar-label">Email: </label>
-                <input id="email" type="email" name="email" value="{{ old('email', $request->email) }}" required autofocus autocomplete="username" class="recuperar-input" />
+                <input id="email" type="email" name="email" value="{{ old('email', $request->email) }}" required
+                    autofocus autocomplete="username" class="recuperar-input" />
             </div>
 
             <div class="recuperar-input-group">
                 <label for="password" class="recuperar-label">Contraseña</label>
-                <input id="password" type="password" name="password" required autocomplete="new-password" class="recuperar-input" />
+                <input id="password" type="password" name="password" required autocomplete="new-password"
+                    class="recuperar-input" />
             </div>
 
             <div class="recuperar-input-group">
                 <label for="password_confirmation" class="recuperar-label">Confirmar contraseña: </label>
-                <input id="password_confirmation" type="password" name="password_confirmation" required autocomplete="new-password" class="recuperar-input" />
+                <input id="password_confirmation" type="password" name="password_confirmation" required
+                    autocomplete="new-password" class="recuperar-input" />
             </div>
 
             @if ($errors->any())
@@ -30,7 +32,10 @@
                     </div>
                 @endforeach
             @endif
-            <button type="submit" class="recuperar-button">Enviar</button>
+            <div class="recuperar-cont-btn-cont">
+                <a href="{{ url('/') }}" class="recuperar-button">Volver</a>
+                <button type="submit" class="recuperar-button">Enviar</button>
+            </div>
         </form>
     </div>
 </div>

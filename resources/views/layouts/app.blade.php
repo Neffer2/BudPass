@@ -35,7 +35,8 @@
     <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
     <link rel="shortcut icon" href="https://www.budweiser.co/sites/g/files/seuoyk1191/files/favicon.ico"
         type="image/x-icon">
-        <link rel="icon" href="https://www.budweiser.co/sites/g/files/seuoyk1191/files/favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="https://www.budweiser.co/sites/g/files/seuoyk1191/files/favicon.ico"
+        type="image/x-icon" />
     <title>@yield('title', 'BudPass')</title>
 </head>
 
@@ -171,8 +172,7 @@
                                 rel="noopener noreferrer">
                                 <p>Términos y condiciones</p>
                             </a>
-                            <a href="#" target="_blank"
-                                rel="noopener noreferrer">
+                            <a href="#" target="_blank" rel="noopener noreferrer">
                                 <p>Términos y condiciones de la campaña</p>
                             </a>
                         </div>

@@ -125,16 +125,40 @@ body {
     height: 55px;
 }
 
-.recuperar-button {
-    width: 40%;
+.recuperar-cont-btn-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 30px;
+
+}
+
+.recuperar-button, .recuperar-button-volver {
+    width: 33%;
     padding: 10px;
-    background-color: var(--primary-red);
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-family: 'BudBold';
     font-size: 24px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.recuperar-button {
+    background-color: var(--primary-red);
+
+}
+
+.recuperar-button-volver {
+    background-color: #505050;
+}
+
+.recuperar-button-volver:hover {
+    background-color: var(--primary-blue);
+    
 }
 
 .recuperar-button:hover {
@@ -169,11 +193,9 @@ body {
         height: 40px;
     }
 
-    .recuperar-button {
-        width: 40%;
+    .recuperar-button, .recuperar-button-volver {
+        width: 25%;
         padding: 10px;
-        background-color: var(--primary-red);
-        color: #fff;
         border: none;
         border-radius: 5px;
         cursor: pointer;

@@ -1,4 +1,3 @@
-
 <link rel="stylesheet" href="{{ asset('css/recuperar.css') }}">
 
 <div class="recuperar-main-cont">
@@ -8,7 +7,8 @@
             @csrf
             <div class="recuperar-input-group">
                 <label for="email" class="recuperar-label">Correo: </label>
-                <input id="email" type="email" name="email" value="{{ old('email') }}" required class="recuperar-input">
+                <input id="email" type="email" name="email" value="{{ old('email') }}" required
+                    class="recuperar-input">
             </div>
             @if (session('status'))
                 <div class="recuperar-status">
@@ -22,7 +22,11 @@
                     </div>
                 @endforeach
             @endif
-            <button type="submit" class="recuperar-button">Enviar</button>
+            <div class="recuperar-cont-btn-cont">
+                <a href="{{ url('/') }}" class="recuperar-button-volver">Volver</a>
+                <button type="submit" class="recuperar-button">Enviar</button>
+            </div>
+
         </form>
     </div>
 </div>
