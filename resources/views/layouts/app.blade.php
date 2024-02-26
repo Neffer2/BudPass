@@ -30,10 +30,11 @@
     <link rel="stylesheet" href="{{ asset('css/ranking.css') }}">
     <link rel="stylesheet" href="{{ asset('css/puntaje.css') }}">
     <link rel="stylesheet" href="{{ asset('css/market.css') }}">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
-    <link rel="shortcut icon" href="https://www.budweiser.co/sites/g/files/seuoyk1191/files/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="https://www.budweiser.co/sites/g/files/seuoyk1191/files/favicon.ico"
+        type="image/x-icon">
     <title>@yield('title', 'BudPass')</title>
 </head>
 
@@ -141,7 +142,7 @@
                         <a href="https://www.facebook.com/CervezaBudweiserColombia" target="_blank"
                             aria-label="Facebook link"><i class="fab fa-facebook-f" alt="Logo Facebook"></i></a>
                         <a href="https://twitter.com/BudweiserCo" target="_blank" aria-label="Twitter link"><i
-                                class="fab fa-twitter" alt="Logo Twitter"></i></a>
+                                class="fa-brands fa-x-twitter" alt="Logo Twitter"></i></a>
                         <a href="https://www.instagram.com/budcolombia" target="_blank"
                             aria-label="Instagram link"><i class="fab fa-instagram" alt="Logo Instagram"></i></a>
                         <a href="https://www.youtube.com/BudweiserColombia" target="_blank"
@@ -239,7 +240,7 @@
                             'event_label': 'Pop_up_bienvenida',
                             'interaction': 'true',
                             'component_name': 'btn_popup_bienvenida',
-                            'element_text': 'btn_continuar_bienvenida' ,
+                            'element_text': 'btn_continuar_bienvenida',
                             'campaign_description': 'Budpass'
                         });
                     }
