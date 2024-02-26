@@ -5,7 +5,7 @@
 @if (trim($slot) === 'BudPass')
 <img src="https://www.budpass.co/assets/budweiser/logo-budweiser.svg" class="logo" height="100" alt="Budweiser logo">
 @else
-{{ $slot }}
+<img src="https://www.budpass.co/assets/budweiser/logo-budweiser.svg" class="logo" height="100" alt="Budweiser logo">
 @endif
 </a>
 </td>
