@@ -30,7 +30,7 @@
 
 .text-invalid-factura {
     position: absolute;
-    width: 200%;
+    width: 100%;
     top: 100%;
     left: 0;
     color: red;
