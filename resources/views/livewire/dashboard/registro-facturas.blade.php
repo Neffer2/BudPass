@@ -4,8 +4,12 @@
             <label for="">NIT:</label>
             <input type="text" wire:model.live.debounce.500ms="nit">
         </div>
-        <div class="nit-img"><img
-                @if ($canal) src="{{ asset("assets/canales/$canal->logo") }}" @endif alt="">
+        <div class="nit-img-main-cont">
+            <label for="">Referencia canal:</label>
+            <div class="nit-img">
+                <img @if ($canal) src="{{ asset("assets/canales/$canal->logo") }}" @endif
+                    alt="">
+            </div>
         </div>
         @error('nit')
             <div class="text-invalid-factura">
@@ -41,10 +45,14 @@
                 </div>
             </div>
 
-            <div class="factura-img-cont">
-                <img id="myImg"
-                    @if ($canal) src="{{ asset("assets/facturas/$canal->ejemplo_factura") }}" @endif
-                    alt="">
+            <div class="factura-img-main-movil">
+                <label for="">Referencia factura:</label>
+                <div class="factura-img-cont">
+                    <img id="myImg"
+                        @if ($canal) src="{{ asset("assets/facturas/$canal->ejemplo_factura") }}" @endif
+                        alt="">
+                </div>
+
             </div>
 
             <div class="sel-producto-cont">
@@ -86,8 +94,9 @@
             </div>
 
             <div class="texto-consumo-cont">
-                <p>*Te invitamos a registrar la compra de productos de manera responsable. <span>Límite de puntos diario: 450 puntos.</span></p>
-                
+                <p>*Te invitamos a registrar la compra de productos de manera responsable. <span>Límite de puntos
+                        diario: 450 puntos.</span></p>
+
             </div>
 
 
@@ -131,10 +140,13 @@
         </div>
 
         <div class="desk-right-cont">
-            <div class="factura-img-cont-desk">
-                <img id="myImgDesk" wire:loading.class="disabled"
-                    @if ($canal) src="{{ asset("assets/facturas/$canal->ejemplo_factura") }}" @endif
-                    alt="">
+            <div class="factura-img-main-desk">
+                <label for="">Referencia factura:</label>
+                <div class="factura-img-cont-desk">
+                    <img id="myImgDesk" wire:loading.class="disabled"
+                        @if ($canal) src="{{ asset("assets/facturas/$canal->ejemplo_factura") }}" @endif
+                        alt="">
+                </div>
             </div>
         </div>
     </div>
@@ -183,148 +195,148 @@
     </div>
 </div>
 @script
-<script>
-    @if (session('register-success'))
-        dataLayer.push({
-            'event': 'GAEvent',
-            'event_category': 'Form',
-            'event_action': 'Success',
-            'event_label': 'Registro_exitoso',
-            'interaction': 'true',
-            'component_name': 'btn_success_form',
-            'campaign_description': 'Budpass'
+    <script>
+        @if (session('register-success'))
+            dataLayer.push({
+                'event': 'GAEvent',
+                'event_category': 'Form',
+                'event_action': 'Success',
+                'event_label': 'Registro_exitoso',
+                'interaction': 'true',
+                'component_name': 'btn_success_form',
+                'campaign_description': 'Budpass'
+            });
+        @endif
+
+        document.getElementById('foto_factura').addEventListener('click', function() {
+            dataLayer.push({
+                'event': 'GAEvent',
+                'event_category': 'Content',
+                'event_action': 'button',
+                'event_label': 'Subir_factura',
+                'interaction': 'true',
+                'component_name': 'btn_subir_factura',
+                'element_text': 'Subir_factura',
+                'campaign_description': 'Budpass',
+            });
         });
-    @endif
 
-    document.getElementById('foto_factura').addEventListener('click', function() {
-        dataLayer.push({
-            'event': 'GAEvent',
-            'event_category': 'Content',
-            'event_action': 'button',
-            'event_label': 'Subir_factura',
-            'interaction': 'true',
-            'component_name': 'btn_subir_factura',
-            'element_text': 'Subir_factura',
-            'campaign_description': 'Budpass',
+        document.getElementById('foto_selfie').addEventListener('click', function() {
+            dataLayer.push({
+                'event': 'GAEvent',
+                'event_category': 'Content',
+                'event_action': 'button',
+                'event_label': 'Subir_foto',
+                'interaction': 'true',
+                'component_name': 'btn_subir_foto',
+                'element_text': 'Subir_foto_selfie_producto',
+                'campaign_description': 'Budpass',
+            });
         });
-    });
 
-    document.getElementById('foto_selfie').addEventListener('click', function() {
-        dataLayer.push({
-            'event': 'GAEvent',
-            'event_category': 'Content',
-            'event_action': 'button',
-            'event_label': 'Subir_foto',
-            'interaction': 'true',
-            'component_name': 'btn_subir_foto',
-            'element_text': 'Subir_foto_selfie_producto',
-            'campaign_description': 'Budpass',
+        //registrar_factura
+
+        document.getElementById('registrar_factura').addEventListener('click', function() {
+            dataLayer.push({
+                'event': 'GAEvent',
+                'event_category': 'Content',
+                'event_action': 'button',
+                'event_label': 'Registrar_factura',
+                'interaction': 'true',
+                'component_name': 'btn_registrar_factura',
+                'element_text': 'Registrar_factura',
+                'campaign_description': 'Budpass',
+            });
         });
-    });
 
-    //registrar_factura
+        const MAX_WIDTH = 1020;
+        const MAX_HEIGHT = 980;
+        const MIME_TYPE = "image/jpeg";
+        const QUALITY = 0.9;
 
-    document.getElementById('registrar_factura').addEventListener('click', function() {
-        dataLayer.push({
-            'event': 'GAEvent',
-            'event_category': 'Content',
-            'event_action': 'button',
-            'event_label': 'Registrar_factura',
-            'interaction': 'true',
-            'component_name': 'btn_registrar_factura',
-            'element_text': 'Registrar_factura',
-            'campaign_description': 'Budpass',
-        });
-    });
+        const foto_factura = document.getElementById("foto_factura");
+        const foto_selfie = document.getElementById("foto_selfie");
 
-    const MAX_WIDTH = 1020;
-    const MAX_HEIGHT = 980;
-    const MIME_TYPE = "image/jpeg";
-    const QUALITY = 0.9;
-
-    const foto_factura = document.getElementById("foto_factura");
-    const foto_selfie = document.getElementById("foto_selfie");
-
-    foto_factura.onchange = function(ev) {
-        const file = ev.target.files[0]; // get the file
-        const blobURL = URL.createObjectURL(file);
-        const img = new Image();
-        img.src = blobURL;
-        img.onerror = function() {
-            URL.revokeObjectURL(this.src);
-            // Handle the failure properly
-            console.err("Cannot load image");
+        foto_factura.onchange = function(ev) {
+            const file = ev.target.files[0]; // get the file
+            const blobURL = URL.createObjectURL(file);
+            const img = new Image();
+            img.src = blobURL;
+            img.onerror = function() {
+                URL.revokeObjectURL(this.src);
+                // Handle the failure properly
+                console.err("Cannot load image");
+            };
+            img.onload = function() {
+                URL.revokeObjectURL(this.src);
+                const [newWidth, newHeight] = calculateSize(img, MAX_WIDTH, MAX_HEIGHT);
+                const canvas = document.createElement("canvas");
+                canvas.width = newWidth;
+                canvas.height = newHeight;
+                const ctx = canvas.getContext("2d");
+                ctx.drawImage(img, 0, 0, newWidth, newHeight);
+                canvas.toBlob(
+                    blob => {
+                        upload_foto_factura(blob);
+                    },
+                    MIME_TYPE,
+                    QUALITY);
+            };
         };
-        img.onload = function() {
-            URL.revokeObjectURL(this.src);
-            const [newWidth, newHeight] = calculateSize(img, MAX_WIDTH, MAX_HEIGHT);
-            const canvas = document.createElement("canvas");
-            canvas.width = newWidth;
-            canvas.height = newHeight;
-            const ctx = canvas.getContext("2d");
-            ctx.drawImage(img, 0, 0, newWidth, newHeight);
-            canvas.toBlob(
-                blob => {
-                    upload_foto_factura(blob);
-                },
-                MIME_TYPE,
-                QUALITY);
-        };
-    };
 
-    foto_selfie.onchange = function(ev) {
-        const file = ev.target.files[0]; // get the file
-        const blobURL = URL.createObjectURL(file);
-        const img = new Image();
-        img.src = blobURL;
-        img.onerror = function() {
-            URL.revokeObjectURL(this.src);
-            // Handle the failure properly
-            console.err("Cannot load image");
+        foto_selfie.onchange = function(ev) {
+            const file = ev.target.files[0]; // get the file
+            const blobURL = URL.createObjectURL(file);
+            const img = new Image();
+            img.src = blobURL;
+            img.onerror = function() {
+                URL.revokeObjectURL(this.src);
+                // Handle the failure properly
+                console.err("Cannot load image");
+            };
+            img.onload = function() {
+                URL.revokeObjectURL(this.src);
+                const [newWidth, newHeight] = calculateSize(img, MAX_WIDTH, MAX_HEIGHT);
+                const canvas = document.createElement("canvas");
+                canvas.width = newWidth;
+                canvas.height = newHeight;
+                const ctx = canvas.getContext("2d");
+                ctx.drawImage(img, 0, 0, newWidth, newHeight);
+                canvas.toBlob(
+                    blob => {
+                        upload_foto_selfie(blob);
+                    },
+                    MIME_TYPE,
+                    QUALITY);
+            };
         };
-        img.onload = function() {
-            URL.revokeObjectURL(this.src);
-            const [newWidth, newHeight] = calculateSize(img, MAX_WIDTH, MAX_HEIGHT);
-            const canvas = document.createElement("canvas");
-            canvas.width = newWidth;
-            canvas.height = newHeight;
-            const ctx = canvas.getContext("2d");
-            ctx.drawImage(img, 0, 0, newWidth, newHeight);
-            canvas.toBlob(
-                blob => {
-                    upload_foto_selfie(blob);
-                },
-                MIME_TYPE,
-                QUALITY);
-        };
-    };
 
-    function calculateSize(img, maxWidth, maxHeight) {
-        let width = img.width;
-        let height = img.height;
+        function calculateSize(img, maxWidth, maxHeight) {
+            let width = img.width;
+            let height = img.height;
 
-        // calculate the width and height, constraining the proportions
-        if (width > height) {
-            if (width > maxWidth) {
-                height = Math.round(height * maxWidth / width);
-                width = maxWidth;
+            // calculate the width and height, constraining the proportions
+            if (width > height) {
+                if (width > maxWidth) {
+                    height = Math.round(height * maxWidth / width);
+                    width = maxWidth;
+                }
+            } else {
+                if (height > maxHeight) {
+                    width = Math.round(width * maxHeight / height);
+                    height = maxHeight;
+                }
             }
-        } else {
-            if (height > maxHeight) {
-                width = Math.round(width * maxHeight / height);
-                height = maxHeight;
-            }
+
+            return [width, height];
         }
 
-        return [width, height];
-    }
+        function upload_foto_factura(file) {
+            $wire.upload('foto_factura', file, (uploadedFilename) => {});
+        }
 
-    function upload_foto_factura(file) {
-        $wire.upload('foto_factura', file, (uploadedFilename) => {});
-    }
-
-    function upload_foto_selfie(file) {
-        $wire.upload('selfie_producto', file, (uploadedFilename) => {});
-    }
-</script>
+        function upload_foto_selfie(file) {
+            $wire.upload('selfie_producto', file, (uploadedFilename) => {});
+        }
+    </script>
 @endscript
