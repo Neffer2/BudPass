@@ -77,12 +77,12 @@
                     <label for="">Cantidad: </label>
                     <input type="number" wire:model.change='cantidad'>
                     @error('productos')
-                        <div class="text-invalid-factura">
+                        <div class="text-invalid-factura" id="text_invalid_cantidad">
                             {{ $message }}
                         </div>
                     @enderror
                     @error('cantidad')
-                        <div class="text-invalid-factura">
+                        <div class="text-invalid-factura" id="text_invalid_cantidad">
                             {{ $message }}
                         </div>
                     @enderror

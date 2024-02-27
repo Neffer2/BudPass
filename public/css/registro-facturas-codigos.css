@@ -37,6 +37,10 @@
     font-size: 12px;
 }
 
+#text_invalid_cantidad {
+    width: 200%;
+}
+
 #cantidad_producto {
     top: 130%;
     margin-bottom: 20px;
@@ -45,6 +49,7 @@
 .texto-consumo-cont {
     display: flex;
     width: 88%;
+    margin-top: 5px;
 }
 
 .texto-consumo-cont p, .texto-consumo-cont span{
