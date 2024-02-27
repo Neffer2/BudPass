@@ -212,19 +212,23 @@
         if (diffX > diffY) {
             if (touchEndX < touchStartX) {
                 // Swipe izquierda
-                if (index + 1 < pages.length) {
+                if (index + 1 >= pages.length) {
+                    index = 0;
+                } else {
                     index++;
-                    showPage(index);
-                    updatePaginationDotsMovil();
                 }
+                showPage(index);
+                updatePaginationDotsMovil();
             }
             if (touchEndX > touchStartX) {
                 // Swipe derecha
-                if (index - 1 >= 0) {
+                if (index - 1 < 0) {
+                    index = pages.length - 1;
+                } else {
                     index--;
-                    showPage(index);
-                    updatePaginationDotsMovil();
                 }
+                showPage(index);
+                updatePaginationDotsMovil();
             }
         }
     }
@@ -292,13 +296,21 @@
     showPageDesktop(indexDesktop);
 
     document.getElementById('prev-carousel-desktop').addEventListener('click', () => {
-        indexDesktop = Math.max(0, indexDesktop - 1);
+        if (indexDesktop - 1 < 0) {
+            indexDesktop = pagesDesktop.length - 1;
+        } else {
+            indexDesktop--;
+        }
         showPageDesktop(indexDesktop);
         updatePaginationDots();
     });
 
     document.getElementById('next-carousel-desktop').addEventListener('click', () => {
-        indexDesktop = Math.min(pagesDesktop.length - 1, indexDesktop + 1);
+        if (indexDesktop + 1 >= pagesDesktop.length) {
+            indexDesktop = 0;
+        } else {
+            indexDesktop++;
+        }
         showPageDesktop(indexDesktop);
         updatePaginationDots();
     });
