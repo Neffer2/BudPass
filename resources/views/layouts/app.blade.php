@@ -38,6 +38,10 @@
     <link rel="icon" href="https://www.budweiser.co/sites/g/files/seuoyk1191/files/favicon.ico"
         type="image/x-icon" />
     <title>@yield('title', 'BudPass')</title>
+    <meta property="og:title" content="BudPass" />
+    <meta property="og:description" content="El pase a increíbles sorpresas y experiencias únicas acumulando puntos." />
+    <meta property="og:image" content="{{ asset('assets/budweiser/budpass-logo.jpg')}}" />
+    <meta property="og:url" content="https://budpass.co/" />
 </head>
 
 <body>
