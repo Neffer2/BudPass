@@ -492,7 +492,7 @@
                         'event_label': 'Pop_up_validacion_facturas',
                         'interaction': 'true',
                         'component_name': 'btn_validar_factura',
-                        'element_text': 'buttonName', // nombre del botón
+                        'element_text': 'btn_registro_factura',
                         'campaign_description': 'Budpass',
                     });
                 }
