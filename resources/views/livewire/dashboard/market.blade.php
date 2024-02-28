@@ -40,8 +40,14 @@
                                 <p id="premioModalDesc" class="custom-modal-desc"></p>
                                 <p id="premioModalPuntos" class="custom-modal-puntos"></p>
                                 <div class="btn-modal-premios">
-                                    <button type="button" wire:loading.attr="disabled"
-                                        class="btn-modal-premios-redimir" id="premioModalBtn">Redimir</button>
+                                    <button type="button" wire:loading.class="redencion-loading" wire:click="redimir"
+                                        wire:target="redimir" class="btn-modal-premios-redimir"
+                                        id="premioModalBtn"><span id="redimirText" wire:loading.remove
+                                            wire:target="redimir">Redimir</span>
+                                        <span id="cargandoText" style="display: none;" wire:loading
+                                            wire:target="redimir">Cargando...</span>
+                                        <span id="noDisponibleText" style="display: none;">No
+                                            disponible</span></button>
                                     <button type="button" class="btn-modal-premios-close" id="premio_cerrar_movil"
                                         data-dismiss="modal">Cerrar</button>
                                 </div>
@@ -130,8 +136,14 @@
                                 <p id="premioModalDescDesktop" class="custom-modal-desc"></p>
                                 <p id="premioModalPuntosDesktop" class="custom-modal-puntos"></p>
                                 <div class="btn-modal-premios">
-                                    <button type="button" wire:loading.attr="disabled"
-                                        class="btn-modal-premios-redimir" id="premioModalBtnDesktop">Redimir</button>
+                                    <button type="button" wire:loading.class="redencion-loading"
+                                        wire:click="redimir" wire:target="redimir" class="btn-modal-premios-redimir"
+                                        id="premioModalBtnDesktop"><span id="redimirText" wire:loading.remove
+                                            wire:target="redimir">Redimir</span>
+                                        <span id="cargandoText" style="display: none;" wire:loading
+                                            wire:target="redimir">Cargando...</span>
+                                        <span id="noDisponibleText" style="display: none;">No
+                                            disponible</span></button>
                                     <button type="button" class="btn-modal-premios-close" id="premio_cerrar_desktop"
                                         data-dismiss="modal">Cerrar</button>
                                 </div>
@@ -243,13 +255,21 @@
         document.getElementById('premioModalPuntos').textContent = `Puntos requeridos: ${premio.puntos}`;
 
         const premioModalBtn = document.getElementById('premioModalBtn');
+        const redimirText = document.getElementById('redimirText');
+        const cargandoText = document.getElementById('cargandoText');
+        const noDisponibleText = document.getElementById('noDisponibleText');
         if ({{ $puntosUser }} < premio.puntos) {
-            premioModalBtn.textContent = 'No disponible';
+            premioModalBtn.setAttribute('wire:click', '');
             premioModalBtn.disabled = true;
+            redimirText.style.display = 'none';
+            cargandoText.style.display = 'none';
+            noDisponibleText.style.display = 'inline';
         } else {
-            premioModalBtn.textContent = 'Redimir';
-            premioModalBtn.disabled = false;
             premioModalBtn.setAttribute('wire:click', `redimir(${premio.id})`);
+            premioModalBtn.disabled = false;
+            redimirText.style.display = 'inline';
+            cargandoText.style.display = 'none';
+            noDisponibleText.style.display = 'none';
         }
 
         $('#premioModal').modal('show');
@@ -257,23 +277,30 @@
 
     function openModalDesktop(id) {
         const premio = @json($premios).find(p => p.id === id);
+        const premioModalBtnDesktop = document.getElementById('premioModalBtnDesktop');
+        const redimirText = document.getElementById('redimirText');
+        const noDisponibleText = document.getElementById('noDisponibleText');
         document.getElementById('premioModalLabelDesktop').textContent = premio.nombre;
         document.getElementById('premioModalImgDesktop').src = '{{ asset('assets/premios/') }}/' + premio.foto;
         document.getElementById('premioModalDescDesktop').textContent = premio.descripcion;
         document.getElementById('premioModalPuntosDesktop').textContent = `Puntos requeridos: ${premio.puntos}`;
 
-        const premioModalBtnDesktop = document.getElementById('premioModalBtnDesktop');
+
         if ({{ $puntosUser }} < premio.puntos) {
-            premioModalBtnDesktop.textContent = 'No disponible';
+            premioModalBtnDesktop.setAttribute('wire:click', '');
             premioModalBtnDesktop.disabled = true;
+            redimirText.style.display = 'none';
+            noDisponibleText.style.display = 'inline';
         } else {
-            premioModalBtnDesktop.textContent = 'Redimir';
-            premioModalBtnDesktop.disabled = false;
             premioModalBtnDesktop.setAttribute('wire:click', `redimir(${premio.id})`);
+            premioModalBtnDesktop.disabled = false;
+            redimirText.style.display = 'inline';
+            noDisponibleText.style.display = 'none';
         }
 
         $('#premioModalDesktop').modal('show');
     }
+
 
     function openModalDestacado(id) {
         const destacado = @json($destacados).find(d => d.id === id);
@@ -417,7 +444,7 @@
             'event_label': 'redimir_producto',
             'interaction': 'true',
             'component_name': 'btn_redimir_producto',
-            'element_text': tituloProductoMovil.innerHTML,
+            'element_text': tituloProductoDesk.innerHTML,
             'campaign_description': 'Budpass',
         });
     });

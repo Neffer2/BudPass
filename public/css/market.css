@@ -157,7 +157,8 @@
     margin-bottom: 20px;
 }
 
-.custom-modal-desc, .custom-modal-puntos {
+.custom-modal-desc,
+.custom-modal-puntos {
     /* Estilos para la descripción del modal */
     font-family: 'BudBold', 'Arial Narrow', Arial, sans-serif;
     font-weight: lighter;
@@ -180,7 +181,9 @@
     margin-bottom: 20px;
 }
 
-.btn-modal-premios-redimir, .btn-modal-premios-close{
+.btn-modal-premios-redimir,
+.btn-modal-premios-close,
+.btn-modal-premios-redimir span {
     /* Estilos para el botón principal */
     border-style: none;
     width: 140px;
@@ -191,14 +194,26 @@
     text-transform: uppercase;
     background: #fff;
     color: var(--primary-blue);
-    
+
 }
 
-.btn-modal-premios-redimir[disabled] {
-    background: #D5D5D5;
-    color: #fff;
+#noDisponibleText {
+    color: #000;
     cursor: not-allowed;
 }
+
+#cargandoText {
+    vertical-align: middle;
+    padding: 12px 0; 
+}
+
+.redencion-loading,
+.redencion-loading span {
+    background-color: var(--primary-blue);
+    pointer-events: none;
+    color: #fff;
+}
+
 
 .carusel-btn-movil {
     display: flex;
@@ -221,7 +236,7 @@
     background: #fff;
 }
 
-.redenciones-premios-cont h2{
+.redenciones-premios-cont h2 {
     font-family: 'BudweiserSerifDisplayItalic', 'BudweiserSerifDisplay', sans-serif;
     font-weight: lighter;
     font-size: 32px;
@@ -246,7 +261,8 @@
     margin-bottom: 30px;
 }
 
-.redenciones-premios-cont th, .redenciones-premios-cont td {
+.redenciones-premios-cont th,
+.redenciones-premios-cont td {
     width: 33%;
     border-right: 1px solid var(--primary-red);
 }
@@ -285,7 +301,7 @@
     justify-content: center;
 }
 
-#publicidad-cont{
+#publicidad-cont {
     display: flex;
     position: relative;
     flex-direction: column;
@@ -314,7 +330,7 @@
     opacity: 0;
 }
 
-@media (min-width: 1081px) { 
+@media (min-width: 1081px) {
 
     .market-main-cont {
         flex-direction: row;
@@ -343,7 +359,8 @@
         margin-top: 20px;
     }
 
-    .destacado-left, .destacado-right {
+    .destacado-left,
+    .destacado-right {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -358,7 +375,8 @@
         cursor: pointer;
     }
 
-    .destacado-left img, .destacado-right img {
+    .destacado-left img,
+    .destacado-right img {
         height: 100%;
         object-fit: cover;
         box-shadow: 0px 5px 15px rgba(0, 0, 0, 1);
@@ -457,7 +475,7 @@
         display: inline-block;
         margin: 0 2px;
     }
-    
+
     .pagination-dot.active {
         background-color: var(--primary-red);
     }
@@ -470,7 +488,8 @@
     }
 
 
-    #prev-carousel-desktop, #next-carousel-desktop {
+    #prev-carousel-desktop,
+    #next-carousel-desktop {
         border-style: none;
         color: var(--primary-blue);
         font-size: 30px;
@@ -485,7 +504,7 @@
         background-color: var(--primary-red) !important;
     }
 
-    #publicidad-cont{
+    #publicidad-cont {
         width: 75%;
     }
 
@@ -496,6 +515,5 @@
         position: absolute;
         transition: opacity 3s;
     }
-    
-}
 
+}
