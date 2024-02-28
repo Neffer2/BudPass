@@ -370,7 +370,6 @@
         width: 45%;
         border-radius: 8px;
         background-color: #fff;
-        margin-bottom: 20px;
         padding: 10px;
         cursor: pointer;
     }
@@ -390,7 +389,7 @@
 
     .redenciones-premios-cont {
         width: 90%;
-        min-height: 825px;
+        min-height: 805px;
     }
 
     .carousel-desktop {
