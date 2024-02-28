@@ -159,9 +159,9 @@
 
 .custom-modal-desc, .custom-modal-puntos {
     /* Estilos para la descripción del modal */
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: 400;
-    font-size: 16px;
+    font-family: 'BudBold', 'Arial Narrow', Arial, sans-serif;
+    font-weight: lighter;
+    font-size: 15px;
     color: #fff;
     text-align: center;
 }
