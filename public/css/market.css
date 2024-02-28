@@ -16,7 +16,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    width: 95%;
+    width: 90%;
     height: 100%;
     margin-bottom: 40px;
 }
@@ -283,7 +283,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 90%;
     margin-top: 20px;
 }
 
@@ -309,7 +309,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 95%;
+    width: 100%;
     height: 300px;
     overflow: hidden;
 }
@@ -331,6 +331,7 @@
     opacity: 0;
 }
 
+
 @media (min-width: 1081px) {
 
     .market-main-cont {
@@ -343,7 +344,7 @@
     .market-destacados {
         order: 2;
     }
-    
+
     .main-premios-redenciones-cont {
         order: 1;
     }
@@ -363,9 +364,9 @@
     .carousel-destacados-desk {
         width: 90%;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         margin-top: 20px;
-        margin-bottom: 20px; 
+        margin-bottom: 20px;
     }
 
     .destacado-left,
@@ -373,18 +374,15 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 500px;
-        width: 45%;
+        max-height: 430px;
+        width: 48%;
         cursor: pointer;
-        overflow: hidden;
-        border: 3px solid var(--primary-blue);
         border-radius: 8px;
     }
 
     .destacado-left img,
     .destacado-right img {
         height: 100%;
-        object-fit: cover;
         filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 1));
     }
 
