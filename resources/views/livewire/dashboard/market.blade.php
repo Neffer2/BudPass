@@ -1,5 +1,14 @@
 <div class="market-main-cont">
 
+    <div class="market-destacados">
+        @include('puntaje')
+
+        <div id="publicidad-cont">
+            <img id="carousel-image-publicidad-current" src="{{ asset('assets/budweiser/destacado-jueves.jpg') }}">
+            <img id="carousel-image-publicidad-next" class="hidden">
+        </div>
+    </div>
+
     <div class="main-premios-redenciones-cont">
 
         <div class="market-btn-cont">
@@ -170,14 +179,7 @@
         </div>
     </div>
 
-    <div class="market-destacados">
-        @include('puntaje')
-
-        <div id="publicidad-cont">
-            <img id="carousel-image-publicidad-current" src="{{ asset('assets/budweiser/destacado-jueves.jpg') }}">
-            <img id="carousel-image-publicidad-next" class="hidden">
-        </div>
-    </div>
+    
 
 </div>
 

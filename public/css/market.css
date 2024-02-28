@@ -17,8 +17,8 @@
     align-items: center;
     justify-content: flex-start;
     width: 95%;
-    margin-top: 20px;
     height: 100%;
+    margin-bottom: 40px;
 }
 
 .market-btn-cont {
@@ -310,9 +310,8 @@
     align-items: center;
     justify-content: center;
     width: 95%;
-    height: 330px;
+    height: 300px;
     overflow: hidden;
-    margin-bottom: 20px;
 }
 
 #publicidad-cont img {
@@ -341,6 +340,14 @@
         background-size: 50%;
     }
 
+    .market-destacados {
+        order: 2;
+    }
+    
+    .main-premios-redenciones-cont {
+        order: 1;
+    }
+
     .main-premios-redenciones-cont {
         width: 60%;
         margin-bottom: 40px;
@@ -353,12 +360,11 @@
     /* Destacados escritorio */
 
     .carousel-destacados-desk {
-        width: 100%;
+        width: 90%;
         display: flex;
-        align-content: center;
-        justify-content: center;
-        gap: 20px;
+        justify-content: space-around;
         margin-top: 20px;
+        margin-bottom: 20px; 
     }
 
     .destacado-left,
@@ -366,12 +372,12 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 450px;
+        height: 500px;
         width: 45%;
-        border-radius: 8px;
-        background-color: #fff;
-        padding: 10px;
         cursor: pointer;
+        overflow: hidden;
+        border: 3px solid var(--primary-blue);
+        border-radius: 8px;
     }
 
     .destacado-left img,
@@ -409,9 +415,8 @@
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        width: 100%;
+        width: 90%;
         gap: 20px;
-        padding: 30px;
     }
 
     .premios-img-cont-desktop {
