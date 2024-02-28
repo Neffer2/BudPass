@@ -197,14 +197,16 @@
 
 }
 
-#noDisponibleText, #noDisponibleTextDesk {
+#noDisponibleText,
+#noDisponibleTextDesk {
     color: #000;
     cursor: not-allowed;
 }
 
-#cargandoText, #cargandoTextDesk {
+#cargandoText,
+#cargandoTextDesk {
     vertical-align: middle;
-    padding: 12px 0; 
+    padding: 12px 0;
 }
 
 .redencion-loading,
@@ -370,7 +372,6 @@
         background-color: #fff;
         margin-bottom: 20px;
         padding: 10px;
-        overflow: hidden;
         cursor: pointer;
     }
 
@@ -378,7 +379,7 @@
     .destacado-right img {
         height: 100%;
         object-fit: cover;
-        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+        filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 1));
     }
 
     /* Premios escritorio */
