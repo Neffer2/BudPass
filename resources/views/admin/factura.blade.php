@@ -1,6 +1,6 @@
 @extends('layouts.admin')
     @section('title')
-        {{ $user->name }}
+        {{ Auth::user()->name }}
     @endsection
     @section('content')
         @livewire('admin.factura', ['registroFactura' => $registroFactura])

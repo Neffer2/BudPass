@@ -36,7 +36,6 @@ Route::get('/ranking', [ShopperController::class, 'showRanking'])->middleware('a
 Route::get('/trial', [ShopperController::class, 'mail']);
 
 Route::get('/trial', [ShopperController::class, 'mail']);
-
 /*
 |--------------------------------------------------------------------------
 | Admin routes
@@ -44,5 +43,6 @@ Route::get('/trial', [ShopperController::class, 'mail']);
 */
 Route::get('/facturas', [AdminController::class, 'index'])->middleware('admin')->middleware('auth')->name('facturas');
 Route::get('/factura/{id}', [AdminController::class, 'factura'])->middleware('admin')->middleware('auth')->name('factura'); 
+Route::get('/redencion/{id}', [AdminController::class, 'redencion'])->middleware('admin')->middleware('auth')->name('redencion'); 
 
 require __DIR__.'/auth.php';

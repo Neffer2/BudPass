@@ -13,4 +13,9 @@ class Redencion extends Model
     public function premio(){
         return $this->hasOne(Premio::class, 'id', 'premio_id');
     }
+
+    public function shopper(){
+        return $this->hasOne(User::class, 'id', 'user_id');
+    }
 }
+ 
