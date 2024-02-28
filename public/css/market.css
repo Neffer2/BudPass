@@ -364,7 +364,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 400px;
+        height: 450px;
         width: 45%;
         border-radius: 8px;
         background-color: #fff;
@@ -378,7 +378,7 @@
     .destacado-right img {
         height: 100%;
         object-fit: cover;
-        box-shadow: 0px 5px 15px rgba(0, 0, 0, 1);
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
     }
 
     /* Premios escritorio */
@@ -389,7 +389,7 @@
 
     .redenciones-premios-cont {
         width: 90%;
-        min-height: 775px;
+        min-height: 825px;
     }
 
     .carousel-desktop {
