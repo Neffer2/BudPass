@@ -364,7 +364,7 @@
     .carousel-destacados-desk {
         width: 90%;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         margin-top: 20px;
         margin-bottom: 20px;
     }
@@ -374,8 +374,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        max-height: 430px;
-        width: 48%;
+        max-height: 400px;
+        width: 45%;
         cursor: pointer;
         border-radius: 8px;
     }
