@@ -269,9 +269,7 @@
         } else {
             premioModalBtnDesktop.textContent = 'Redimir';
             premioModalBtnDesktop.disabled = false;
-            premioModalBtnDesktop.addEventListener('click', function() {
-                @this.call('redimir', premio.id);
-            });
+            premioModalBtnDesktop.setAttribute('wire:click', `redimir(${premio.id})`);
         }
 
         $('#premioModalDesktop').modal('show');
