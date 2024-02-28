@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="{{ asset('css/recuperar.css') }}">
+<link rel="stylesheet" href="{{ asset('css/recuperar.css') }}?v={{ time() }}">
 
 <div class="recuperar-main-cont">
     <div class="recuperar-cont">

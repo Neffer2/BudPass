@@ -24,12 +24,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/login-registro.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/registro-facturas-codigos.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/ranking.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/puntaje.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/market.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}?v={{ time() }}">
+    <link rel="stylesheet" href="{{ asset('css/login-registro.css') }}?v={{ time() }}">
+    <link rel="stylesheet" href="{{ asset('css/registro-facturas-codigos.css') }}?v={{ time() }}">
+    <link rel="stylesheet" href="{{ asset('css/ranking.css') }}?v={{ time() }}">
+    <link rel="stylesheet" href="{{ asset('css/puntaje.css') }}?v={{ time() }}">
+    <link rel="stylesheet" href="{{ asset('css/market.css') }}?v={{ time() }}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
@@ -40,7 +40,7 @@
     <title>@yield('title', 'BudPass')</title>
     <meta property="og:title" content="BudPass" />
     <meta property="og:description" content="El pase a increíbles sorpresas y experiencias únicas acumulando puntos." />
-    <meta property="og:image" content="{{ asset('assets/budweiser/budpass-logo.jpg')}}" />
+    <meta property="og:image" content="{{ asset('assets/budweiser/budpass-logo.jpg') }}" />
     <meta property="og:url" content="https://budpass.co/" />
 </head>
 
@@ -126,7 +126,8 @@
                 </div>
                 <div class="ham-item">
                     <a href="#"
-                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar sesión</a>
+                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar
+                        sesión</a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>
@@ -176,7 +177,8 @@
                                 rel="noopener noreferrer">
                                 <p>Términos y condiciones</p>
                             </a>
-                            <a href="{{ asset('assets/legal/tyc-budpass.pdf')}}" target="_blank" rel="noopener noreferrer">
+                            <a href="{{ asset('assets/legal/tyc-budpass.pdf') }}" target="_blank"
+                                rel="noopener noreferrer">
                                 <p>Términos y condiciones de la campaña</p>
                             </a>
                         </div>
