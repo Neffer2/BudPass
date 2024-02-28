@@ -173,8 +173,11 @@
 }
 
 .title-registro-cont {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     width: 100%;
     padding: 0;
 }
@@ -187,14 +190,17 @@
 .title-registro {
     font-size: 32px;
     font-family: 'BudweiserSerifDisplay', sans-serif;
+    font-weight: lighter;
     margin-bottom: 40px;
 }
 
 .sub-title-registro {
     font-size: 16px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: 400;
-    margin-top: -15px;
+    font-family: 'BudBold', 'Arial Narrow', Arial, sans-serif;
+    font-weight: lighter;
+    margin-top: -8px;
+    text-align: left;
+    width: 80%;
 }
 
 .input-cont {

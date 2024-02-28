@@ -1,7 +1,16 @@
 <div class="registro-div-cont">
     <div class="title-registro-cont">
-        <h1 class="title-registro">Te damos la bienvenida a BudPass.</h1>
-        <p class="sub-title-registro">El pase a increíbles sorpresas y experiencias únicas acumulando puntos.</p>
+        <h1 class="title-registro">BIENVENIDO A BUDPASS</h1>
+        <p class="sub-title-registro">La plataforma que premia a los amantes de la música y de la cerveza.</p>
+        <p class="sub-title-registro">Tu entrada a las mejores experiencias de la música, donde participar es muy fácil.
+        </p>
+        <p class="sub-title-registro">
+            1. Crea tu cuenta.
+        </p>
+        <p class="sub-title-registro">2. Registra tus compras de Budweiser.</p>
+        <p class="sub-title-registro">3. Acumula puntos.</p>
+        <p class="sub-title-registro"> 4. Redime tus puntos por entradas, producto, prendas y accesorios exclusivos de la
+            marca.</p>
     </div>
     <div class="input-cont">
         <label for="nombre">Nombre: </label>
@@ -11,7 +20,7 @@
                 {{ $message }}
             </div>
         @enderror
-    </div> 
+    </div>
 
     <div class="input-cont">
         <label for="documento">Documento: </label>
@@ -113,8 +122,8 @@
 
     <div class="checkbox-cont">
         <input id="terminos" type="checkbox" class="checkbox-item" wire:model.change="terminos">
-        <a href="#" target="_blank" rel="noopener noreferrer"><label
-                for="" class="checkbox-label">He leído, entendido y acepto los Términos y condiciones del sitio web</label></a>
+        <a href="{{ asset('assets/legal/tyc-budpass.pdf')}}" target="_blank" rel="noopener noreferrer"><label for="" class="checkbox-label">He
+                leído, entendido y acepto los Términos y condiciones del sitio web</label></a>
         @error('terminos')
             <div class="text-invalid-check">
                 {{ $message }}
@@ -125,7 +134,9 @@
     <div class="checkbox-cont">
         <input id="politicas" type="checkbox" class="checkbox-item" wire:model.change="politicas">
         <a href="https://www.bavaria.co/sites/g/files/seuoyk1666/files/2024-02/Aviso%20de%20Privacidad%20%28V.5%29.pdf"
-            target="_blank" rel="noopener noreferrer"><label for="" class="checkbox-label">Declaro que soy mayor de edad y autorizo que mis datos personales sean recolectados y tratados en las condiciones que se explican en el siguiente Aviso de Privacidad y de Cookies.</label></a>
+            target="_blank" rel="noopener noreferrer"><label for="" class="checkbox-label">Declaro que soy mayor
+                de edad y autorizo que mis datos personales sean recolectados y tratados en las condiciones que se
+                explican en el siguiente Aviso de Privacidad y de Cookies.</label></a>
         @error('politicas')
             <div class="text-invalid-check">
                 {{ $message }}
@@ -134,24 +145,25 @@
     </div>
 
     <div class="btn-registrar">
-        <button wire:click="store" id="registrar_usuario" wire:target="store" wire:loading.attr="disabled">Registrar</button>
+        <button wire:click="store" id="registrar_usuario" wire:target="store"
+            wire:loading.attr="disabled">Registrar</button>
     </div>
 </div>
 @if ($errors->any())
     @script
-    <script>
-        dataLayer.push({
-            'event': 'GAEvent',
-            'event_category': 'Form',
-            'event_action': 'Error',
-            'event_label': {!! json_encode($errors->all()) !!}, // descripción del error
-            'interaction': 'true',
-            'component_name': 'btn_error_form',
-            'campaign_description': 'Budpass',
-        });
-    </script>
+        <script>
+            dataLayer.push({
+                'event': 'GAEvent',
+                'event_category': 'Form',
+                'event_action': 'Error',
+                'event_label': {!! json_encode($errors->all()) !!}, // descripción del error
+                'interaction': 'true',
+                'component_name': 'btn_error_form',
+                'campaign_description': 'Budpass',
+            });
+        </script>
     @endscript
-@endif 
+@endif
 <script>
     document.getElementById('registrar_usuario').addEventListener('click', function() {
         dataLayer.push({
