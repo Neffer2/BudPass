@@ -138,11 +138,11 @@
                                 <div class="btn-modal-premios">
                                     <button type="button" wire:loading.class="redencion-loading"
                                         wire:click="redimir" wire:target="redimir" class="btn-modal-premios-redimir"
-                                        id="premioModalBtnDesktop"><span id="redimirText" wire:loading.remove
+                                        id="premioModalBtnDesktop"><span id="redimirTextDesk" wire:loading.remove
                                             wire:target="redimir">Redimir</span>
-                                        <span id="cargandoText" style="display: none;" wire:loading
+                                        <span id="cargandoTextDesk" style="display: none;" wire:loading
                                             wire:target="redimir">Cargando...</span>
-                                        <span id="noDisponibleText" style="display: none;">No
+                                        <span id="noDisponibleTextDesk" style="display: none;">No
                                             disponible</span></button>
                                     <button type="button" class="btn-modal-premios-close" id="premio_cerrar_desktop"
                                         data-dismiss="modal">Cerrar</button>
@@ -256,19 +256,16 @@
 
         const premioModalBtn = document.getElementById('premioModalBtn');
         const redimirText = document.getElementById('redimirText');
-        const cargandoText = document.getElementById('cargandoText');
         const noDisponibleText = document.getElementById('noDisponibleText');
         if ({{ $puntosUser }} < premio.puntos) {
             premioModalBtn.setAttribute('wire:click', '');
             premioModalBtn.disabled = true;
             redimirText.style.display = 'none';
-            cargandoText.style.display = 'none';
             noDisponibleText.style.display = 'inline';
         } else {
             premioModalBtn.setAttribute('wire:click', `redimir(${premio.id})`);
             premioModalBtn.disabled = false;
             redimirText.style.display = 'inline';
-            cargandoText.style.display = 'none';
             noDisponibleText.style.display = 'none';
         }
 
@@ -278,8 +275,8 @@
     function openModalDesktop(id) {
         const premio = @json($premios).find(p => p.id === id);
         const premioModalBtnDesktop = document.getElementById('premioModalBtnDesktop');
-        const redimirText = document.getElementById('redimirText');
-        const noDisponibleText = document.getElementById('noDisponibleText');
+        const redimirTextDesk = document.getElementById('redimirTextDesk');
+        const noDisponibleTextDesk = document.getElementById('noDisponibleTextDesk');
         document.getElementById('premioModalLabelDesktop').textContent = premio.nombre;
         document.getElementById('premioModalImgDesktop').src = '{{ asset('assets/premios/') }}/' + premio.foto;
         document.getElementById('premioModalDescDesktop').textContent = premio.descripcion;
@@ -289,13 +286,13 @@
         if ({{ $puntosUser }} < premio.puntos) {
             premioModalBtnDesktop.setAttribute('wire:click', '');
             premioModalBtnDesktop.disabled = true;
-            redimirText.style.display = 'none';
-            noDisponibleText.style.display = 'inline';
+            redimirTextDesk.style.display = 'none';
+            noDisponibleTextDesk.style.display = 'inline';
         } else {
             premioModalBtnDesktop.setAttribute('wire:click', `redimir(${premio.id})`);
             premioModalBtnDesktop.disabled = false;
-            redimirText.style.display = 'inline';
-            noDisponibleText.style.display = 'none';
+            redimirTextDesk.style.display = 'inline';
+            noDisponibleTextDesk.style.display = 'none';
         }
 
         $('#premioModalDesktop').modal('show');
