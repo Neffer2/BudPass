@@ -37,16 +37,17 @@
                     $items = $interleavedItems->concat($remainingPremios)->filter();
                 @endphp
 
-@foreach ($items->chunk(2) as $chunk)
-<div class="carousel-page-movil">
-    @foreach ($chunk as $item)
-        <div class="premios-img-cont-movil" data-id="{{ $item->id }}"
-            x-on:click="{{ $item->type === 'destacado' ? 'openModalDestacadoMovil' : 'openModal' }}({{ $item->id }})">
-            <img class="{{ $item->type === 'destacado' ? 'img-destacado-movil' : '' }}" src='{{ asset("assets/premios/$item->foto") }}' height="200" alt="">
-        </div>
-    @endforeach
-</div>
-@endforeach
+                @foreach ($items->chunk(2) as $chunk)
+                    <div class="carousel-page-movil">
+                        @foreach ($chunk as $item)
+                            <div class="premios-img-cont-movil" data-id="{{ $item->id }}"
+                                x-on:click="{{ $item->type === 'destacado' ? 'openModalDestacadoMovil' : 'openModal' }}({{ $item->id }})">
+                                <img class="{{ $item->type === 'destacado' ? 'img-destacado-movil' : '' }}"
+                                    src='{{ asset("assets/premios/$item->foto") }}' height="200" alt="">
+                            </div>
+                        @endforeach
+                    </div>
+                @endforeach
 
                 <div class="modal fade custom-modal" id="premioModal" tabindex="-1" aria-labelledby="premioModalLabel"
                     aria-hidden="true">
@@ -112,25 +113,17 @@
 
                 <div class="carousel-destacados-desk">
                     @if ($destacados)
-                        <div class="destacados-cont-desk" data-id="{{ $destacados[0]->id }}"
-                            x-on:click="openModalDestacado({{ $destacados[0]->id }})">
-                            <img src='{{ asset('assets/premios/destacado-boleta-jueves-desk.jpg') }}' height="150"
-                                alt="">
+                        <div class="destacados-cont-desk" x-on:click="openModalDestacado({{ $destacados[0]->id }})">
+                            <img src='{{ asset('assets/premios/destacado-jueves-desk.jpg') }}' alt="">
                         </div>
-                        <div class="destacados-cont-desk" data-id="{{ $destacados[0]->id }}"
-                            x-on:click="openModalDestacado({{ $destacados[1]->id }})">
-                            <img src='{{ asset('assets/premios/destacado-boleta-viernes-desk.jpg') }}' height="150"
-                                alt="">
+                        <div class="destacados-cont-desk" x-on:click="openModalDestacado({{ $destacados[1]->id }})">
+                            <img src='{{ asset('assets/premios/destacado-viernes-desk.jpg') }}' alt="">
                         </div>
-                        <div class="destacados-cont-desk" data-id="{{ $destacados[0]->id }}"
-                            x-on:click="openModalDestacado({{ $destacados[2]->id }})">
-                            <img src='{{ asset('assets/premios/destacado-boleta-sabado-desk.jpg') }}' height="150"
-                                alt="">
+                        <div class="destacados-cont-desk" x-on:click="openModalDestacado({{ $destacados[2]->id }})">
+                            <img src='{{ asset('assets/premios/destacado-sabado-desk.jpg') }}' alt="">
                         </div>
-                        <div class="destacados-cont-desk" data-id="{{ $destacados[0]->id }}"
-                            x-on:click="openModalDestacado({{ $destacados[3]->id }})">
-                            <img src='{{ asset('assets/premios/destacado-boleta-domingo-desk.jpg') }}' height="150"
-                                alt="">
+                        <div class="destacados-cont-desk" x-on:click="openModalDestacado({{ $destacados[3]->id }})">
+                            <img src='{{ asset('assets/premios/destacado-domingo-desk.jpg') }}' alt="">
                         </div>
                     @endif
                 </div>
@@ -363,7 +356,8 @@
     function openModalDestacadoMovil(id) {
         const destacadoMovil = @json($destacados).find(d => d.id === id);
         document.getElementById('destacadoModalLabelMovil').textContent = destacadoMovil.nombre;
-        document.getElementById('destacadoModalImgMovil').src = '{{ asset('assets/premios/') }}/' + destacadoMovil.foto;
+        document.getElementById('destacadoModalImgMovil').src = '{{ asset('assets/premios/') }}/' + destacadoMovil
+            .foto;
         document.getElementById('destacadoModalDescMovil').textContent = destacadoMovil.descripcion;
 
         $('#destacadoModalMovil').modal('show');
