@@ -76,6 +76,9 @@
     margin-top: 20px;
     width: 100%;
 }
+.img-destacado-movil {
+    height: 100%;
+}
 
 .premios-img-cont-movil {
     display: flex;

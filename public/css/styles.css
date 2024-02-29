@@ -239,7 +239,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 64px;
+    height: 70px;
     z-index: 100;
     background: var(--primary-blue);
 }
