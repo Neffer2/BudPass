@@ -62,6 +62,22 @@
     display: block;
 }
 
+.texto-consumo-cont-codigos {
+    display: flex;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.texto-consumo-cont-codigos p, .texto-consumo-cont-codigos span{
+    font-family: 'FranklinGothicBook';
+    font-size: 14px;
+    color: var(--primary-blue);
+}
+
+.texto-consumo-cont-codigos span {
+    display: block;
+}
+
 
 
 .text-danger {
@@ -495,7 +511,7 @@
     justify-content: center;
     flex-direction: column;
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .codigo-text input {
@@ -508,7 +524,7 @@
 
 .text-invalid-codigo {
     position: absolute;
-    top: 100%;
+    top: 90%;
     left: 0;
     color: red;
     font-size: 14px;
