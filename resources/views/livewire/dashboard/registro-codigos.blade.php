@@ -19,7 +19,7 @@
                 </div>
             @enderror
             <div class="texto-consumo-cont-codigos">
-                <p>*Te invitamos a registrar la compra de productos de manera responsable. <span>Límite de puntos
+                <p>*Te invitamos a registrar tus puntos de manera responsable. <span>Límite de puntos
                         diario: 450 puntos.</span></p>
 
             </div>
