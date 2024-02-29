@@ -393,13 +393,13 @@
     /* Premios escritorio */
     .premios-cont {
         width: 90%;
-        min-height: 870px;
+        min-height: 500px;
 
     }
 
     .redenciones-premios-cont {
         width: 90%;
-        min-height: 870px;
+        min-height: 500px;
     }
 
     .carousel-desktop {
