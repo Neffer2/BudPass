@@ -477,6 +477,19 @@
                 title: "¡Código redimido!",
                 text: "{{ session('success-registro-codigo') }}",
                 confirmButtonText: 'ACEPTAR'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    dataLayer.push({
+                        'event': 'GAEvent',
+                        'event_category': 'Content',
+                        'event_action': 'button',
+                        'event_label': 'Pup_up_Canje_codigos_Success',
+                        'interaction': 'true',
+                        'component_name': 'btn_aceptar_Canje_codigos_Success',
+                        'element_text': 'Aceptar',
+                        'campaign_description': 'Budpass',
+                    });
+                }
             });
         @endif
 

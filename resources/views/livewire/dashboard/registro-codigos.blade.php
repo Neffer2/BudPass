@@ -32,3 +32,23 @@
             wire:target="storePuntos">Canjear</button>
     </div>
 </div>
+
+<script>
+    const btnCodigo = document.querySelector('.codigo-btn-cont button');
+    const inputCodigo = document.querySelector('.codigo-text input');
+
+    btnCodigo.addEventListener('click', () => {
+        const valorCodigo = inputCodigo.value;
+
+        dataLayer.push({
+            'event': 'GAEvent',
+            'event_category': 'Content',
+            'event_action': 'button',
+            'event_label': valorCodigo,
+            'interaction': 'true',
+            'component_name': 'btn_canjear_codigos',
+            'element_text': 'cerrar',
+            'campaign_description': 'Budpass',
+        });
+    });
+</script>
