@@ -31,7 +31,7 @@ class RegistroCodigos extends Component
         
         $codigo = Codigo::where('codigo', 'LIKE', "%$this->codigo%")->first();
         $user = Auth::user();
-        if(!($user->limite($codigo->referencia->puntos))){
+        if($codigo && !($user->limite($codigo->referencia->puntos))){
             $this->addError('limite-puntos', 'Opps, alcanzaste el límite de puntos diario (450 puntos).');
             return redirect()->back();
         } 
