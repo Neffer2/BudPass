@@ -73,14 +73,24 @@
 
                 <div class="carousel-destacados-desk">
                     @if ($destacados)
-                        <div class="destacado-left" data-id="{{ $destacados[0]->id }}"
+                        <div class="destacados-cont-desk" data-id="{{ $destacados[0]->id }}"
                             x-on:click="openModalDestacado({{ $destacados[0]->id }})">
-                            <img src='{{ asset("assets/premios/{$destacados[0]->foto}") }}' height="150"
+                            <img src='{{ asset("assets/premios/destacado-boleta-jueves.jpg") }}' height="150"
                                 alt="">
                         </div>
-                        <div class="destacado-right" data-id="{{ $destacados[1]->id }}"
+                        <div class="destacados-cont-desk" data-id="{{ $destacados[0]->id }}"
+                            x-on:click="openModalDestacado({{ $destacados[0]->id }})">
+                            <img src='{{ asset("assets/premios/destacado-boleta-viernes.jpg") }}' height="150"
+                                alt="">
+                        </div>
+                        <div class="destacados-cont-desk" data-id="{{ $destacados[0]->id }}"
                             x-on:click="openModalDestacado({{ $destacados[1]->id }})">
-                            <img src='{{ asset("assets/premios/{$destacados[1]->foto}") }}' height="150"
+                            <img src='{{ asset("assets/premios/destacado-boleta-sabado.jpg") }}' height="150"
+                                alt="">
+                        </div>
+                        <div class="destacados-cont-desk" data-id="{{ $destacados[0]->id }}"
+                            x-on:click="openModalDestacado({{ $destacados[1]->id }})">
+                            <img src='{{ asset("assets/premios/destacado-boleta-domingo.jpg") }}' height="150"
                                 alt="">
                         </div>
                     @endif
@@ -98,7 +108,8 @@
                                         aria-hidden="true">
                                 </button>
                                 <div class="modal-img-custom">
-                                    <img id="destacadoModalImg" src="" alt="" class="custom-modal-img">
+                                    <img id="destacadoModalImg" src="" alt=""
+                                        class="custom-modal-img">
                                 </div>
                                 <p id="destacadoModalDesc" class="custom-modal-desc"></p>
                                 <button type="button" class="btn-modal-premios-close" id="destacado_cerrar"
@@ -179,7 +190,7 @@
         </div>
     </div>
 
-    
+
 
 </div>
 
@@ -431,7 +442,6 @@
 
     changeCarruselImage();
     setInterval(changeCarruselImage, 7000);
-
 
     const tituloProductoDesk = document.getElementById('premioModalLabelDesktop');
 
