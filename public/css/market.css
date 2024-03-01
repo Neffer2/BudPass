@@ -399,7 +399,7 @@
 
     .redenciones-premios-cont {
         width: 90%;
-        min-height: 500px;
+        min-height: 600px;
     }
 
     .carousel-desktop {
@@ -513,13 +513,12 @@
     }
 
     #publicidad-cont {
-        width: 75%;
+        width: 80%;
     }
 
     #publicidad-cont img {
         width: 100%;
         object-fit: contain;
-        border-radius: 8px;
         position: absolute;
         transition: opacity 3s;
     }
