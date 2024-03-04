@@ -232,7 +232,6 @@ body {
 
 .bud-main-header {
     width: auto;
-    background: #ffffff;
     position: sticky;
     top: 0;
     display: flex;
@@ -241,7 +240,7 @@ body {
     flex-direction: column;
     height: 70px;
     z-index: 100;
-    background: var(--primary-blue);
+    background-color: var(--primary-blue);
 }
 
 
@@ -268,7 +267,7 @@ body {
 
 .ham-menu-list {
     position: fixed;
-    top: 56px;
+    top: 70px;
     left: 0;
     width: 100%;
     background: #fff;
