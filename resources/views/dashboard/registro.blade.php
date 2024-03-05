@@ -31,7 +31,6 @@
                     <livewire:dashboard.registro-codigos />
                 </div>
                 <div class="main-historial-registros-form" style="display: none;">
-                    
                 </div>
 
             </div>
