@@ -22,12 +22,16 @@
                 <div class="form-facturas-btn">
                     <button id="show-facturas-btn" class="facturas-codigos-btn">Registrar facturas</button>
                     <button id="show-codigo-btn" class="facturas-codigos-btn secundario-btn">Registrar códigos</button>
+                    <button id="show-historial-registros-btn" class="facturas-codigos-btn secundario-btn">Historial registros</button>
                 </div>
                 <div class="registro-factura-form">
                     <livewire:dashboard.registro-facturas />
                 </div>
                 <div class="registro-codigo-form" style="display: none;">
                     <livewire:dashboard.registro-codigos />
+                </div>
+                <div class="main-historial-registros-form" style="display: none;">
+                    
                 </div>
 
             </div>

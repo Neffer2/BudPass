@@ -404,25 +404,41 @@
             });
         }
 
-        // Registro de códigos y facturas
+        // Registro de códigos, facturas e historial de registros
         const showFacturasBtn = document.getElementById('show-facturas-btn');
         const showCodigoBtn = document.getElementById('show-codigo-btn');
+        const showHistorialBtn = document.getElementById('show-historial-registros-btn');
         const registroFacturaForm = document.querySelector('.registro-factura-form');
         const registroCodigoForm = document.querySelector('.registro-codigo-form');
+        const historialRegistrosForm = document.querySelector('.main-historial-registros-form');
 
-        if (showFacturasBtn && showCodigoBtn && registroFacturaForm && registroCodigoForm) {
+        if (showFacturasBtn && showCodigoBtn && showHistorialBtn && registroFacturaForm && registroCodigoForm &&
+            historialRegistrosForm) {
             showFacturasBtn.addEventListener('click', function() {
                 registroFacturaForm.style.display = 'flex';
                 registroCodigoForm.style.display = 'none';
+                historialRegistrosForm.style.display = 'none';
                 this.classList.remove('secundario-btn');
                 showCodigoBtn.classList.add('secundario-btn');
+                showHistorialBtn.classList.add('secundario-btn');
             });
 
             showCodigoBtn.addEventListener('click', function() {
                 registroFacturaForm.style.display = 'none';
                 registroCodigoForm.style.display = 'flex';
+                historialRegistrosForm.style.display = 'none';
                 this.classList.remove('secundario-btn');
                 showFacturasBtn.classList.add('secundario-btn');
+                showHistorialBtn.classList.add('secundario-btn');
+            });
+
+            showHistorialBtn.addEventListener('click', function() {
+                registroFacturaForm.style.display = 'none';
+                registroCodigoForm.style.display = 'none';
+                historialRegistrosForm.style.display = 'flex';
+                this.classList.remove('secundario-btn');
+                showFacturasBtn.classList.add('secundario-btn');
+                showCodigoBtn.classList.add('secundario-btn');
             });
         }
 
