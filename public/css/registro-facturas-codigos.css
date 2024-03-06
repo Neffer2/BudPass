@@ -850,4 +850,8 @@
         font-size: 16px;
     }
 
+    .main-historial-registros-form {
+        min-height: 400px;
+    }
+
 }
