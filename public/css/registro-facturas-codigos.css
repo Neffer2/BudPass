@@ -675,6 +675,15 @@
         height: 100%;
     }
 
+    .form-facturas-btn {
+        justify-content: flex-start;
+        gap: 10px;
+    }
+
+    .facturas-codigos-btn {
+        width: 20%;
+    }
+
     .nit-label-cont {
         width: 50%;
     }
