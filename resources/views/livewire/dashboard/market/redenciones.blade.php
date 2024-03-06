@@ -17,4 +17,3 @@
 
     {{ $redenciones->links() }}
 </div>
- 

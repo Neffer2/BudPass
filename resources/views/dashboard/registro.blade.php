@@ -31,11 +31,8 @@
                     <livewire:dashboard.registro-codigos />
                 </div>
                 <div class="main-historial-registros-form" style="display: none;">
-                    <div>
-                        <livewire:dashboard.registro.historial-registros-factura />
-                        <br>
-                        <livewire:dashboard.registro.historial-registros-codigo />
-                    </div>
+                        {{-- <livewire:dashboard.registro.historial-registros-factura />
+                        <livewire:dashboard.registro.historial-registros-codigo /> --}}
                 </div> 
 
             </div>
