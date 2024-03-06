@@ -4,7 +4,7 @@
             <label for="">Codigos: </label>
             <input type="text" wire:model="codigo">
             {{--  --}}
-            <select name="" id=""></select>
+            {{-- <select name="" id=""></select> --}}
             {{--  --}} 
             @error('codigo')
                 <div class="text-invalid-codigo">
