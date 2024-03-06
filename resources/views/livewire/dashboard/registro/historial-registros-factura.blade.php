@@ -1,6 +1,6 @@
 <div class="registros-historial-container">
     <h1>Facturas registradas</h1>
-    @if($registrosFactura->isEmpty())
+    @if ($registrosFactura->isEmpty())
         <p>No hay facturas registradas.</p>
     @else
         <table>
@@ -16,7 +16,24 @@
                         <td>{{ $registroFactura->num_factura }}</td>
                         <td>{{ $registroFactura->canal->descripcion }}</td>
                         <td>{{ $registroFactura->puntos_sumados }}</td>
-                        <td>{{ $registroFactura->estado_id }}</td>
+                        <td>
+                            @switch($registroFactura->estado_id)
+                                @case(0)
+                                    Rechazado
+                                @break
+
+                                @case(1)
+                                    Aprobado
+                                @break
+
+                                @case(2)
+                                    En revisión
+                                @break
+
+                                @default
+                                    Desconocido
+                            @endswitch
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
