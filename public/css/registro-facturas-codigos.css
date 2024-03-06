@@ -602,10 +602,6 @@
     margin-bottom: 40px;
 }
 
-.codigos-historial-container table {
-    margin-top: 20px;
-}
-
 .registros-historial-container table, .codigos-historial-container table{
     width: 100%;
     border-collapse: collapse;
