@@ -589,7 +589,7 @@
 .registros-historial-container h1, .codigos-historial-container h1 {
     font-family: 'BudweiserSerifDisplayItalic', 'BudweiserSerifDisplay', sans-serif;
     color: var(--primary-blue);
-    font-size: 31px;
+    font-size: 30px;
     margin-top: 25px;
     margin-bottom: 25px;
 }
@@ -599,7 +599,6 @@
     margin-bottom: 40px;
 }
 .codigos-historial-container {
-    border-top: 1px solid var(--primary-red);
     margin-bottom: 40px;
 }
 
