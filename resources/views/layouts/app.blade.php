@@ -229,6 +229,8 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
 
     <script>
         document.querySelectorAll('.menu-desk-usuario').forEach(function(el) {
@@ -304,6 +306,15 @@
                 document.querySelector('.age-confirmation-cont').style.display = 'none';
             }
         });
+
+        const tds = document.querySelectorAll('.registros-historial-container td');
+
+        for (let i = 0; i < tds.length; i++) {
+            let td = tds[i];
+            tippy(td, {
+                content: td.innerText,
+            });
+        }
 
         //Prueba confirmación de edad
         const ageYesButton = document.getElementById('age-yes');
@@ -462,6 +473,8 @@
                 premiosBtn.classList.add('secundario-btn');
             });
         }
+
+
 
         // Validación de fecha de nacimiento mayor de 18 años
         window.onload = function() {

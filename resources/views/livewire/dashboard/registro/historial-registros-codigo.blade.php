@@ -1,5 +1,6 @@
-<div class="table-responsive">
-    <table class="table">
+<div class="codigos-historial-container">
+    <h1>Códigos registrados</h1>
+    <table>
         <thead>
             <th>C&oacute;digo</th>
             <th>Puntos</th>

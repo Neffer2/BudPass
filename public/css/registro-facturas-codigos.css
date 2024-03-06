@@ -126,6 +126,9 @@
 
 
 .form-facturas-btn {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
     width: 100%;
     height: auto;
 }
@@ -138,7 +141,7 @@
     border-top-right-radius: 10px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 400;
-    font-size: 15px;
+    font-size: 16px;
     color: var(--primary-blue);
     cursor: pointer;
     background: #fff;
@@ -574,30 +577,64 @@
     background-color: #fff;
 }
 
-.registros-historial-container {
+.registros-historial-container, .codigos-historial-container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 95%;
     overflow-x: auto;
-
 }
 
-.registros-historial-container table {
+.registros-historial-container h1, .codigos-historial-container h1 {
+    font-family: 'BudweiserSerifDisplayItalic', 'BudweiserSerifDisplay', sans-serif;
+    color: var(--primary-blue);
+    font-size: 31px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.registros-historial-container {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.codigos-historial-container {
+    border-top: 1px solid var(--primary-red);
+    margin-bottom: 40px;
+}
+
+.codigos-historial-container table {
+    margin-top: 20px;
+}
+
+.registros-historial-container table, .codigos-historial-container table{
     width: 100%;
     border-collapse: collapse;
     table-layout: fixed;
 }
 
 
-.registros-historial-container th, .registros-historial-container td {
+.registros-historial-container th,
+.registros-historial-container td {
     padding: 0.75rem;
     width: 25%;
     text-align: center;
 }
 
-.registros-historial-container td {
+.codigos-historial-container th, .codigos-historial-container td {
+    padding: 0.75rem;
+    width: 50%;
+    text-align: center;
+
+}
+
+.registros-historial-container th, .codigos-historial-container th {
+    font-family: 'BudweiserSerifDisplayItalic', 'BudweiserSerifDisplay', sans-serif;
+    color: var(--primary-blue);
+    font-size: 24px;
+}
+
+.registros-historial-container td, .codigos-historial-container td {
     font-size: 14px;
     text-align: center;
     vertical-align: middle;

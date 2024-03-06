@@ -1,4 +1,5 @@
 <div class="registros-historial-container">
+    <h1>Facturas registradas</h1>
     <table>
         <thead>
             <th>Factura</th>
@@ -19,3 +20,7 @@
     </table>
     {{ $registrosFactura->links() }}
 </div>
+
+<script>
+    
+</script>
