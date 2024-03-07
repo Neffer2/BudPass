@@ -17,7 +17,7 @@
             </select>
 
             @error('punto_entrega')
-                <div class="text-invalid-codigo">
+                <div class="error-punto-entrega">
                     {{ $message }}
                 </div>
             @enderror

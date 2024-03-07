@@ -542,6 +542,15 @@
     font-size: 14px;
 }
 
+.error-punto-entrega {
+    position: absolute;
+    top: 98%;
+    left: 0;
+    color: red;
+    font-size: 14px;
+
+}
+
 .codigo-btn-cont {
     display: flex;
     justify-content: center;
