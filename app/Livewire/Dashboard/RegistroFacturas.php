@@ -176,6 +176,7 @@ class RegistroFacturas extends Component
     {
         return [
             'nit.required' => 'El número NIT es obligatorio.',
+            'nit.alpha_dash' => 'El NIT no puede contener carácteres especiales.',
 
             'num_factura.required' => 'El número de factura es obligatorio.',
             'num_factura.numeric' => 'No puedes utilizar letras ni carácteres especiales en el número de factura.',        
