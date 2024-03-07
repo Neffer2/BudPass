@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('codigo_id');
             $table->foreign('codigo_id')->references('id')->on('codigos');
             $table->string('puntos_sumados');
+            $table->string('punto_entrega')->nullable();
             $table->foreignId('user_id');
             $table->timestamps();
         });

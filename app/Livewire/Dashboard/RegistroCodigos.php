@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\RateLimiter;
 class RegistroCodigos extends Component
 {
     // Models
-    public $codigo;
+    public $codigo, $punto_entrega;
 
     public function render()
     {
@@ -21,7 +21,8 @@ class RegistroCodigos extends Component
 
     public function storePuntos(){        
         $this->validate([
-            'codigo' => 'required|alpha_num:ascii'
+            'codigo' => 'required|alpha_num:ascii',
+            'punto_entrega' => 'required|string'
         ]);
 
         if (RateLimiter::tooManyAttempts('send-message:'.Auth::user()->id, $perMinute = 5)) {
@@ -29,7 +30,7 @@ class RegistroCodigos extends Component
         } 
         RateLimiter::hit('send-message:'.Auth::user()->id);
         
-        $codigo = Codigo::where('codigo', 'LIKE', "%$this->codigo%")->first();
+        $codigo = Codigo::where('codigo', 'LIKE', "$this->codigo")->first();
         $user = Auth::user();
         if($codigo && !($user->limite($codigo->referencia->puntos))){
             $this->addError('limite-puntos', 'Opps, alcanzaste el límite de puntos diario (450 puntos).');
@@ -40,11 +41,12 @@ class RegistroCodigos extends Component
             $registroCodigo = new RegistroCodigo;
             $registroCodigo->codigo_id = $codigo->id;
             $registroCodigo->puntos_sumados = $codigo->referencia->puntos;
-            $registroCodigo->user_id = Auth::user()->id;
+            $registroCodigo->punto_entrega = $this->punto_entrega; 
+            $registroCodigo->user_id = Auth::user()->id; 
             $registroCodigo->save();
             
             $codigo->estado_id = 0;
-            $codigo->update();
+            $codigo->update(); 
 
             // Update use puntos
             $user->puntos += $registroCodigo->puntos_sumados;
@@ -61,6 +63,9 @@ class RegistroCodigos extends Component
         return [
             'codigo.required' => 'Oops, este código no existe.',
             'codigo.alpha_num' => 'Oops, este código no existe.',
+
+            'punto_entrega.required' => 'Oops, el punto de entrega es obligatorio.',
+            'punto_entrega.string' => 'Oops, este punto de entrega no es válido.'
         ]; 
     }
 }

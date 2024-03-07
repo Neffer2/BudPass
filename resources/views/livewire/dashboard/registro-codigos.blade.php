@@ -2,10 +2,25 @@
     <div class="codigo-cont">
         <div class="codigo-text">
             <label for="">Codigos: </label>
-            <input type="text" wire:model="codigo">
-            {{--  --}}
-            {{-- <select name="" id=""></select> --}}
-            {{--  --}} 
+            <input type="text" wire:model="codigo" class="mb-3">
+            
+            <label for="#punto_entrega">¿D&oacute;nde obtuviste tu c&oacute;digo?</label>
+            <select id="punto_entrega" wire:model="punto_entrega" class="mt-0"> 
+                <option value="">Selecciona una opción</option>
+                <option value="Tienda de Barrio">Tienda de Barrio</option>
+                <option value="LicoExpress">LicoExpress</option>
+                <option value="Licorera">Licorera</option>
+                <option value="Restaurante">Restaurante</option>
+                <option value="TADA">TADA</option>
+                <option value="Influencer">Influencer</option> 
+                <option value="Otro">Otro</option>
+            </select>
+
+            @error('punto_entrega')
+                <div class="text-invalid-codigo">
+                    {{ $message }}
+                </div>
+            @enderror
             @error('codigo')
                 <div class="text-invalid-codigo">
                     {{ $message }}
@@ -27,7 +42,7 @@
 
             </div>
         </div>
-
+ 
     </div>
 
     <div class="codigo-btn-cont">
