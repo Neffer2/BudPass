@@ -313,35 +313,35 @@
     justify-content: center;
 }
 
-#publicidad-cont {
+.publicidad-cont {
     display: flex;
     position: relative;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 300px;
+    height: 200px;
     overflow: hidden;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-#publicidad-cont img {
-    width: 100%;
-    height: 75%;
+.publicidad-cont img {
+    height: 100%;
     object-fit: contain;
-    border-radius: 8px;
     position: absolute;
     transition: opacity 3s;
 }
 
-#publicidad-cont .fade-out {
+.publicidad-cont .fade-out {
     opacity: 0;
 }
 
-#publicidad-cont .hidden {
+.publicidad-cont .hidden {
     opacity: 0;
 }
 
-@media screen and (min-width: 690px) and (max-width: 1079px) { 
+@media screen and (min-width: 720px) and (max-width: 1080px) { 
 
     .premios-img-cont-movil {
         height: 500px;
@@ -354,9 +354,15 @@
         width: auto !important;
     }
 
-    #publicidad-cont {
+    .publicidad-cont {
         height: 500px;
     }
+
+    .publicidad-cont img {
+        height: 85%;
+    }
+
+
 }
 
 
@@ -543,11 +549,12 @@
     
     }
 
-    #publicidad-cont {
+    .publicidad-cont {
+        height: 400px;
         width: 80%;
     }
 
-    #publicidad-cont img {
+    .publicidad-cont img {
         width: 100%;
         object-fit: contain;
         position: absolute;

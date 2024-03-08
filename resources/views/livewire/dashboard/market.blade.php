@@ -2,8 +2,7 @@
 
     <div class="market-destacados">
         @include('puntaje')
-
-        <div id="publicidad-cont">
+        <div class="publicidad-cont">
             <img id="carousel-image-publicidad-current" src="{{ asset('assets/budweiser/destacado-jueves.jpg') }}">
             <img id="carousel-image-publicidad-next" class="hidden">
         </div>
@@ -195,8 +194,9 @@
                                     x-on:click="openModalDesktop({{ $premio->id }})"
                                     x-on:mouseover="showDescription({{ $premio->id }})"
                                     x-on:mouseout="hideDescription({{ $premio->id }})">
-                                    <img class="img-premio" class="premio-img" src='{{ asset("assets/premios/$premio->foto") }}'
-                                        height="200" alt="">
+                                    <img class="img-premio" class="premio-img"
+                                        src='{{ asset("assets/premios/$premio->foto") }}' height="200"
+                                        alt="">
                                     <div class="product-description" id="description-{{ $premio->id }}">
                                         {{ $premio->nombre }}
                                     </div>
