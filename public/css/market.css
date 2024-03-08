@@ -92,8 +92,15 @@
     overflow: hidden;
 }
 
-.premios-img-cont-movil img {
+.premio-img {
     cursor: pointer;
+}
+
+.no-premio-img {
+
+    width: 50% !important;
+    background: #fff;
+    cursor: default !important;
 }
 
 .pagination-dots-movil {
@@ -527,6 +534,11 @@
 
     .page-item.active .page-link {
         background-color: var(--primary-red) !important;
+    }
+
+    .no-premio-img {
+        width: 100% !important;
+    
     }
 
     #publicidad-cont {

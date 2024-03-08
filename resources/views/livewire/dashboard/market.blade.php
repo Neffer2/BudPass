@@ -35,16 +35,30 @@
                     }
                     $remainingPremios = $premios->slice($destacados->count());
                     $items = $interleavedItems->concat($remainingPremios)->filter();
+
+                    $itemsCount = count($items);
+                    $remainder = $itemsCount % 2;
+                    if ($remainder !== 0) {
+                        $padAmount = 2 - $remainder;
+                        $items = $items->pad($itemsCount + $padAmount, null);
+                    }
                 @endphp
 
                 @foreach ($items->chunk(2) as $chunk)
                     <div class="carousel-page-movil">
                         @foreach ($chunk as $item)
-                            <div class="premios-img-cont-movil" data-id="{{ $item->id }}"
-                                x-on:click="{{ $item->type === 'destacado' ? 'openModalDestacadoMovil' : 'openModal' }}({{ $item->id }})">
-                                <img class="{{ $item->type === 'destacado' ? 'img-destacado-movil' : '' }}"
-                                    src='{{ asset("assets/premios/$item->foto") }}' height="200" alt="">
-                            </div>
+                            @if ($item)
+                                <div class="premios-img-cont-movil" data-id="{{ $item->id }}"
+                                    x-on:click="{{ $item->type === 'destacado' ? 'openModalDestacadoMovil' : 'openModal' }}({{ $item->id }})">
+                                    <img class="{{ $item->type === 'destacado' ? 'img-destacado-movil' : '' }}"
+                                        src='{{ asset("assets/premios/$item->foto") }}' height="200" alt="">
+                                </div>
+                            @else
+                                <div class="premios-img-cont-movil">
+                                    <img class="no-premio-img" src="{{ asset('assets/budweiser/budpass-logo.jpg') }}"
+                                        alt="">
+                                </div>
+                            @endif
                         @endforeach
                     </div>
                 @endforeach
@@ -161,22 +175,36 @@
                     </div>
                 </div>
 
+                @php
+                    $premiosCount = count($premios);
+                    $remainder = $premiosCount % 4;
+                    if ($remainder !== 0) {
+                        $padAmount = 4 - $remainder;
+                        $premios = $premios->pad($premiosCount + $padAmount, null);
+                    }
+                @endphp
+
                 @foreach ($premios->chunk(4) as $chunk)
                     <div class="carousel-page-desktop">
                         @foreach ($chunk as $premio)
-                            <div id="premios_img_cont" @class([
-                                'premios-img-cont-desktop' => true,
-                                'disabled-premio' => $puntosUser < $premio->puntos,
-                            ]) data-id="{{ $premio->id }}"
-                                x-on:click="openModalDesktop({{ $premio->id }})"
-                                x-on:mouseover="showDescription({{ $premio->id }})"
-                                x-on:mouseout="hideDescription({{ $premio->id }})">
-                                <img class="img-premio" src='{{ asset("assets/premios/$premio->foto") }}'
-                                    height="200" alt="">
-                                <div class="product-description" id="description-{{ $premio->id }}">
-                                    {{ $premio->nombre }}
+                            @if ($premio)
+                                <div id="premios_img_cont" @class([
+                                    'premios-img-cont-desktop' => true,
+                                    'disabled-premio' => $puntosUser < $premio->puntos,
+                                ]) data-id="{{ $premio->id }}"
+                                    x-on:click="openModalDesktop({{ $premio->id }})"
+                                    x-on:mouseover="showDescription({{ $premio->id }})"
+                                    x-on:mouseout="hideDescription({{ $premio->id }})">
+                                    <img class="img-premio" class="premio-img" src='{{ asset("assets/premios/$premio->foto") }}'
+                                        height="200" alt="">
+                                    <div class="product-description" id="description-{{ $premio->id }}">
+                                        {{ $premio->nombre }}
+                                    </div>
                                 </div>
-                            </div>
+                            @else
+                                <div class="premios-img-cont-desktop"><img class="no-premio-img"
+                                        src="{{ asset('assets/budweiser/budpass-logo.jpg') }}" alt=""></div>
+                            @endif
                         @endforeach
                     </div>
                 @endforeach
