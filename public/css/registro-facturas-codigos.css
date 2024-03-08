@@ -586,7 +586,8 @@
     background-color: #fff;
 }
 
-.registros-historial-container, .codigos-historial-container {
+.registros-historial-container,
+.codigos-historial-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -595,7 +596,8 @@
     overflow-x: auto;
 }
 
-.registros-historial-container h1, .codigos-historial-container h1 {
+.registros-historial-container h1,
+.codigos-historial-container h1 {
     font-family: 'BudweiserSerifDisplayItalic', 'BudweiserSerifDisplay', sans-serif;
     color: var(--primary-blue);
     font-size: 30px;
@@ -607,11 +609,13 @@
     margin-top: 40px;
     margin-bottom: 40px;
 }
+
 .codigos-historial-container {
     margin-bottom: 40px;
 }
 
-.registros-historial-container table, .codigos-historial-container table{
+.registros-historial-container table,
+.codigos-historial-container table {
     width: 100%;
     border-collapse: collapse;
     table-layout: fixed;
@@ -625,26 +629,46 @@
     text-align: center;
 }
 
-.codigos-historial-container th, .codigos-historial-container td {
+.codigos-historial-container th,
+.codigos-historial-container td {
     padding: 0.75rem;
     width: 50%;
     text-align: center;
 
 }
 
-.registros-historial-container th, .codigos-historial-container th {
+.registros-historial-container th,
+.codigos-historial-container th {
     font-family: 'BudweiserSerifDisplay', 'BudweiserSerifDisplay', sans-serif;
     color: var(--primary-blue);
     font-size: 24px;
 }
 
-.registros-historial-container td, .codigos-historial-container td {
+.registros-historial-container td,
+.codigos-historial-container td {
     font-size: 14px;
     text-align: center;
     vertical-align: middle;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+
+    .paso-facturas-movil {
+        height: 300px;
+    }
+
+
+    .paso-facturas-movil-img {
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+    .codigo-btn-cont button {
+        margin-bottom: 40px;
+    }
 }
 
 @media (min-width: 1081px) {
@@ -864,7 +888,8 @@
         width: 90%;
     }
 
-    .registros-historial-container td, .codigos-historial-container td {
+    .registros-historial-container td,
+    .codigos-historial-container td {
         font-size: 16px;
     }
 
