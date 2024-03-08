@@ -338,7 +338,7 @@
 }
 
 
-@media screen and (min-width: 720px) and (max-width: 1079px) { 
+@media screen and (min-width: 690px) and (max-width: 1079px) { 
 
     .page-forms-cont {
         background: url('/assets/budweiser/budpass-inicio-bg.png'); 

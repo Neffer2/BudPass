@@ -341,7 +341,7 @@
     opacity: 0;
 }
 
-@media screen and (min-width: 720px) and (max-width: 1079px) { 
+@media screen and (min-width: 690px) and (max-width: 1079px) { 
 
     .premios-img-cont-movil {
         height: 500px;
