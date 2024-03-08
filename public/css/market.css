@@ -344,7 +344,9 @@
     }
 
     #publicidad-cont {
-        height: 450px;
+        height: 530px;
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 }
 
