@@ -334,6 +334,20 @@
     opacity: 0;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1079px) { 
+
+    .premios-img-cont-movil {
+        height: 500px;
+    }
+    .premios-img-cont-movil img {
+        height: 100%;
+    }
+
+    #publicidad-cont {
+        height: 450px;
+    }
+}
+
 
 @media (min-width: 1081px) {
 
