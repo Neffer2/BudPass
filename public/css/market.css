@@ -350,6 +350,10 @@
         height: 100%;
     }
 
+    .no-premio-img {
+        width: 80% !important;
+    }
+
     #publicidad-cont {
         height: 530px;
         margin-top: 20px;
