@@ -12,6 +12,7 @@
                 <option value="Licorera">Licorera</option>
                 <option value="Restaurante">Restaurante</option>
                 <option value="TADA">TADA</option>
+                <option value="RAPPI">RAPPI</option>
                 <option value="Influencer">Influencer</option> 
                 <option value="Otro">Otro</option>
             </select>
