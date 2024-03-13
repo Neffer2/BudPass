@@ -1,11 +1,11 @@
 <div class="registro-facturas-cont">
     <div class="nit-cont">
         <div class="nit-label-cont">
-            <label for="">NIT:</label>
-            <input type="text" wire:model.live.debounce.500ms="nit">
+            <label for="numNit">NIT:</label>
+            <input type="text" wire:model.live.debounce.500ms="nit" id="numNit">
         </div>
         <div class="nit-img-main-cont">
-            <label for="">Referencia canal:</label>
+            <h2>Referencia canal:</h2>
             <div class="nit-img">
                 <img @if ($canal) src="{{ asset("assets/canales/$canal->logo") }}" @endif
                     alt="">
@@ -19,14 +19,29 @@
     </div>
     <div class="desk-factura-cont">
         <div class="desk-left-cont">
+
+            <div class="tada-check">
+                <input type="checkbox" id="tadaCheckbox">
+                <label for="tadaCheckbox">Selecciona si tu código viene de TaDa.</label>
+            </div>
+
             <div class="num-factura-cont">
-                <label for="">Número de factura:</label>
-                <input type="text" wire:model.change="num_factura">
+                <label for="numFactura">Número de factura:</label>
+                <input type="text" wire:model.change="num_factura" id="numFactura">
                 @error('num_factura')
                     <div class="text-invalid-factura">
                         {{ $message }}
                     </div>
                 @enderror
+            </div>
+
+            <div class="factura-img-main-movil">
+                <h2>Referencia factura:</h2>
+                <div class="factura-img-cont">
+                    <img id="myImg"
+                        @if ($canal) src="{{ asset("assets/facturas/$canal->ejemplo_factura") }}" @endif
+                        alt="">
+                </div>
             </div>
 
             <div class="modal fade" id="myModal">
@@ -45,19 +60,9 @@
                 </div>
             </div>
 
-            <div class="factura-img-main-movil">
-                <label for="">Referencia factura:</label>
-                <div class="factura-img-cont">
-                    <img id="myImg"
-                        @if ($canal) src="{{ asset("assets/facturas/$canal->ejemplo_factura") }}" @endif
-                        alt="">
-                </div>
-
-            </div>
-
             <div class="sel-producto-cont">
-                <label for="">Producto:</label>
-                <select wire:model.change="producto">
+                <label for="selProducto">Producto:</label>
+                <select wire:model.change="producto" id="selProducto">
                     <option value="">Seleccionar</option>
                     @if ($canal)
                         @foreach ($this->canal->productos as $producto)
@@ -74,8 +79,8 @@
 
             <div class="cantidad-agregar-cont">
                 <div class="cantidad-productos-cont">
-                    <label for="">Cantidad: </label>
-                    <input type="number" wire:model.change='cantidad'>
+                    <label for="cantidadProducto">Cantidad: </label>
+                    <input type="number" min="1" wire:model.change='cantidad' id="cantidadProducto">
                     @error('productos')
                         <div class="text-invalid-factura" id="text_invalid_cantidad">
                             {{ $message }}
@@ -102,7 +107,7 @@
 
 
             <div class="lista-productos-cont">
-                <label for="">Listado de productos</label>
+                <h2>Listado de productos</h2>
                 <table>
                     <tr>
                         <td class="lista-productos-subtitle">Producto</td>
@@ -141,7 +146,7 @@
 
         <div class="desk-right-cont">
             <div class="factura-img-main-desk">
-                <label for="">Referencia factura:</label>
+                <h2>Referencia factura:</h2>
                 <div class="factura-img-cont-desk">
                     <img id="myImgDesk" wire:loading.class="disabled"
                         @if ($canal) src="{{ asset("assets/facturas/$canal->ejemplo_factura") }}" @endif

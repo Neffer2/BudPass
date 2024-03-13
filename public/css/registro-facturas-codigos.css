@@ -135,13 +135,14 @@
 
 .facturas-codigos-btn {
     border-style: none;
-    width: 32%;
-    height: 48px;
+    width: 30%;
+    height: 55px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 400;
     font-size: 16px;
+    padding: 2px;
     color: var(--primary-blue);
     cursor: pointer;
     background: #fff;
@@ -228,9 +229,15 @@
 .foto-factura-cont label,
 .foto-selfie-cont label,
 .codigo-text label,
-.factura-img-main-desk label,
-.factura-img-main-movil label,
-.nit-img-main-cont label {
+.tada-check label {
+    font-family: 'FranklinGothicBook';
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: var(--primary-blue);
+}
+
+.factura-img-main-movil h2, .nit-img-main-cont h2, .factura-img-main-desk h2 {
     font-family: 'FranklinGothicBook';
     font-weight: bold;
     font-size: 14px;
@@ -259,12 +266,59 @@
     max-height: 40px;
 }
 
+.tada-check {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.tada-check input[type="checkbox"] {
+    display: none;
+}
+
+.tada-check label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+}
+
+.tada-check label:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--primary-blue); 
+    border-radius: 2px;
+    background: #fff;
+}
+
+.tada-check input[type="checkbox"]:checked + label:before {
+    background: var(--primary-red-gradient); 
+}
+
+.tada-check input[type="checkbox"]:checked + label::after {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 3px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
 .num-factura-cont {
     width: 90%;
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
 }
+
+
 
 .factura-img-main-movil {
     display: flex;
@@ -386,7 +440,7 @@
     text-align: center;
 }
 
-.lista-productos-cont label {
+.lista-productos-cont h2 {
     font-family: 'BudweiserSerifDisplay', 'Arial Narrow', Arial, sans-serif;
     font-weight: lighter;
     font-size: 25px;

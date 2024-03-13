@@ -1,10 +1,10 @@
 <div class="registro-codigo-form">
     <div class="codigo-cont">
         <div class="codigo-text">
-            <label for="">Codigos: </label>
-            <input type="text" wire:model="codigo" class="mb-3">
+            <label for="inputCodigos">Codigos: </label>
+            <input type="text" wire:model="codigo" class="mb-3" id="inputCodigos">
             
-            <label for="#punto_entrega">¿D&oacute;nde obtuviste tu c&oacute;digo?</label>
+            <label for="punto_entrega">¿D&oacute;nde obtuviste tu c&oacute;digo?</label>
             <select id="punto_entrega" wire:model="punto_entrega" class="mt-0"> 
                 <option value="">Selecciona una opción</option>
                 <option value="Tienda de Barrio">Tienda de Barrio</option>
