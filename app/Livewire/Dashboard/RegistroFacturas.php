@@ -23,11 +23,6 @@ class RegistroFacturas extends Component
     public function render()
     {
         $this->getPuntos();
-        if ($this->tada_check){
-            $this->nit = '830094751-7';
-            $this->updatedNit();
-        }
-
         return view('livewire.dashboard.registro-facturas');
     }
 
@@ -130,8 +125,15 @@ class RegistroFacturas extends Component
     }
 
     // UPDATES
+    public function updatedTadaCheck(){
+        if ($this->tada_check){
+            $this->nit = '830094751-7';
+            $this->updatedNit();
+        }
+    }
+
     public function updatedNit(){
-        $this->resetFields();
+        $this->resetFields(); 
         $this->validate([
             'nit' => 'required|alpha_dash' 
         ]);

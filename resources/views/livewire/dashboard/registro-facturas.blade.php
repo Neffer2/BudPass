@@ -18,7 +18,7 @@
             </div>
         @enderror
     </div>
-    <div class="desk-factura-cont">
+    <div class="desk-factura-cont"> 
         <div class="desk-left-cont">
 
             <div class="tada-check"> 
