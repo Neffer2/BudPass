@@ -112,11 +112,12 @@
                                         class="custom-modal-img">
                                 </div>
                                 <p id="destacadoModalDescMovil" class="custom-modal-desc"></p>
-                                <p class="custom-modal-desc">Para redimir este premio participa en el Ranking top 20 de
-                                    usuarios con más puntos finalizando el corte al 14 de marzo de 2024 a las 11:59 pm.
+                                <p class="custom-modal-desc">Para redimir este premio, deberás estar ubicado en el top
+                                    58 de participantes con la mayor cantidad de puntos acumulados en nuestro ranking
+                                    final. El corte se realizará el 14 de marzo de 2024 a las 11:59 p. m.
                                 </p>
                                 <p class="custom-modal-desc">El orden del ranking define la selección de la boletería.
-                                    ¡únete al evento más importante del año!</p>
+                                    ¡Únete al evento más importante del año!</p>
                                 <button type="button" class="btn-modal-premios-close" id="destacado_cerrar"
                                     data-dismiss="modal">Cerrar</button>
                             </div>
@@ -162,11 +163,12 @@
                                         class="custom-modal-img">
                                 </div>
                                 <p id="destacadoModalDesc" class="custom-modal-desc"></p>
-                                <p class="custom-modal-desc">Para redimir este premio participa en el Ranking top 20 de
-                                    usuarios con más puntos finalizando el corte al 14 de marzo de 2024 a las 11:59 pm.
+                                <p class="custom-modal-desc">Para redimir este premio, deberás estar ubicado en el top
+                                    58 de participantes con la mayor cantidad de puntos acumulados en nuestro ranking
+                                    final. El corte se realizará el 14 de marzo de 2024 a las 11:59 p. m.
                                 </p>
                                 <p class="custom-modal-desc">El orden del ranking define la selección de la boletería.
-                                    ¡únete al evento más importante del año!</p>
+                                    ¡Únete al evento más importante del año!</p>
                                 <button type="button" class="btn-modal-premios-close" id="destacado_cerrar"
                                     data-dismiss="modal">Cerrar</button>
                             </div>
