@@ -15,7 +15,7 @@ class RegistroFacturas extends Component
     use WithFileUploads;
 
     // Models
-    public $nit, $num_factura, $producto, $cantidad, $puntos = 0, $foto_factura, $selfie_producto;
+    public $nit, $num_factura, $producto, $cantidad, $puntos = 0, $foto_factura, $selfie_producto, $tada_check = false;
  
     // Useful vars
     public $canal, $productos, $user;
@@ -23,6 +23,11 @@ class RegistroFacturas extends Component
     public function render()
     {
         $this->getPuntos();
+        if ($this->tada_check){
+            $this->nit = '830094751-7';
+            $this->updatedNit();
+        }
+
         return view('livewire.dashboard.registro-facturas');
     }
 
@@ -124,7 +129,7 @@ class RegistroFacturas extends Component
         ]);          
     }
 
-    // UPDATES    
+    // UPDATES
     public function updatedNit(){
         $this->resetFields();
         $this->validate([

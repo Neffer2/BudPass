@@ -2,7 +2,8 @@
     <div class="nit-cont">
         <div class="nit-label-cont">
             <label for="numNit">NIT:</label>
-            <input type="text" wire:model.live.debounce.500ms="nit" id="numNit">
+            <input id="numNit" type="text" wire:model.live.debounce.500ms="nit"
+            @if ($tada_check) disabled @endif>
         </div>
         <div class="nit-img-main-cont">
             <h2>Referencia canal:</h2>
@@ -20,9 +21,9 @@
     <div class="desk-factura-cont">
         <div class="desk-left-cont">
 
-            <div class="tada-check">
-                <input type="checkbox" id="tadaCheckbox">
-                <label for="tadaCheckbox">Selecciona si tu código viene de TaDa.</label>
+            <div class="tada-check"> 
+                <input type="checkbox" id="tadaCheckbox" wire:model.change="tada_check">
+                <label for="tadaCheckbox">Selecciona si compraste en TaDa.</label>
             </div>
 
             <div class="num-factura-cont">
