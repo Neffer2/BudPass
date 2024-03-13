@@ -835,7 +835,8 @@
 
     .factura-img-cont-desk img {
         cursor: pointer;
-        height: 490px;
+        height: 500px;
+        margin-top: 20px;
     }
 
     .factura-img-main-movil {
