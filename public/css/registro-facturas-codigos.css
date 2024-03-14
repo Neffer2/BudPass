@@ -590,7 +590,7 @@
 
 .text-invalid-codigo {
     position: absolute;
-    top: 100%;
+    top: 45%;
     left: 0;
     color: red;
     font-size: 14px;
