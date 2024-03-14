@@ -99,7 +99,7 @@
 
             </div>
 
-            <div class="texto-consumo-cont">
+            <div class="texto-consumo-cont" style="display: none;">
                 <p>*Te invitamos a registrar la compra de productos de manera responsable. <span>Límite de puntos
                         diario: 450 puntos.</span></p>
 

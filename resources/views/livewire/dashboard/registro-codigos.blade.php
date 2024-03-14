@@ -37,7 +37,7 @@
                     {{ $message }}
                 </div>
             @enderror
-            <div class="texto-consumo-cont-codigos">
+            <div class="texto-consumo-cont-codigos" style="display: none;">
                 <p>*Te invitamos a registrar tus puntos de manera responsable. <span>Límite de puntos
                         diario: 450 puntos.</span></p>
 
