@@ -84,6 +84,7 @@ class User extends Authenticatable
     }
 
     public function limite($puntos_suamdos){
+        return true;
         $registrosFactura = RegistroFactura::where([
                             ['created_at', '>=', Carbon::now()->subDay()],
                             ['estado_id', '!=', 0],
