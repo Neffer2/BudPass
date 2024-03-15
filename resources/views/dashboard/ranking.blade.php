@@ -11,10 +11,7 @@
                     <i class="fas fa-info-circle" id="infoRankingFinal"></i>
                 </h1>
             </div>
-
-            <script>
-                
-            </script>
+            <div class="scrollable-table">
             <table>
                 <thead>
                     <tr>
@@ -43,6 +40,7 @@
                     @endif --}}
                 </tbody>
             </table>
+            </div>
         </div>
         <div class="ranking-puntaje-acum">
             @include('puntaje')

@@ -64,6 +64,9 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    position: sticky;
+    top: 0;
+    background-color: white;
 }
 
 .ranking-table-cont td {
@@ -79,6 +82,12 @@
     width: 100%;
     margin-bottom: 20px;
 
+}
+
+.scrollable-table {
+    max-height: 400px; /* Ajusta este valor según tus necesidades */
+    width: 100%;
+    overflow-y: auto;
 }
 
 /* .ranking-usuario-table {
