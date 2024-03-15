@@ -13,7 +13,7 @@
                         <th>Puesto</th>
                         <th>Nombre</th>
                         <th>Puntuación</th>
-                        <th>Ultima Carga</th>
+                        <th>Última Carga</th>
                     </tr>
                 </thead>
                 <tbody>
