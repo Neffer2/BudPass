@@ -76,7 +76,7 @@
 
 }
 
-.ranking-usuario-table {
+/* .ranking-usuario-table {
     background: var(--primary-red);
     color: #fff;
     margin-top: 20px;
@@ -88,7 +88,7 @@
 
 .ranking-usuario-table td:last-child {
     border-right: 1px solid var(--primary-red);
-}
+} */
 
 .ranking-puntaje-acum {
     display: flex;
