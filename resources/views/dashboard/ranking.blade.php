@@ -28,9 +28,9 @@
                     @foreach ($ranking as $key => $participante)
                         <tr>
                             <td>{{ $key += 1 }}</td>
-                            <td> - </td>
-                            <td> - </td>
-                            <td> - </td>
+                            <td> Juan Sebastian Camargo Prieto </td>
+                            <td> 3300 </td>
+                            <td> 2020-10-10 1000000 </td>
                         </tr>
                     @endforeach
                     {{-- @if (Auth::user()->estado_id == 1)

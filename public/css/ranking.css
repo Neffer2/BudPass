@@ -58,7 +58,7 @@
 .ranking-table-cont th {
     font-family: 'BudweiserSerifDisplayItalic','BudweiserSerifDisplay', sans-serif;
     color: var(--primary-blue);
-    font-size: 24px;
+    font-size: 16px;
     padding: 10px;
     width: 25%;
     overflow: hidden;
@@ -68,7 +68,7 @@
 
 .ranking-table-cont td {
     font-family: 'Franklin Gothic Medium', 'Arial', sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     text-transform: capitalize;
 }
 
@@ -128,5 +128,14 @@
 
     .ranking-puntaje-acum {
         width: 40%;
+    }
+
+    .ranking-table-cont th {
+        font-size: 24px;
+        width: 25%;
+    }
+
+    .ranking-table-cont td {
+        font-size: 14px;
     }
 }
