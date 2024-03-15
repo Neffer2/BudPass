@@ -22,11 +22,11 @@
 .ranking-title h1 {
     font-family: 'BudweiserSerifDisplayItalic', 'BudweiserSerifDisplay', sans-serif;
     color: var(--primary-blue);
-    font-size: 32px;
+    font-size: 28px;
 }
 
 .ranking-title i {
-    font-size: 20px;
+    font-size: 16px;
     color: var(--primary-blue);
 }
 
@@ -107,6 +107,7 @@
 
     .ranking-main-cont {
         height: 100%;
+        min-height: 677px;
         flex-direction: row;
     }
 
@@ -115,6 +116,13 @@
         margin-top: 15px;
     }
 
+    .ranking-title h1 {
+        font-size: 32px;
+    }
+
+    .ranking-title i {
+        font-size: 20px;
+    }
 
     .ranking-table-cont {
         width: 60%;
