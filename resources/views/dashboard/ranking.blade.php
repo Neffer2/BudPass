@@ -77,13 +77,13 @@
                             <td>-</td>
                             <td>-</td>
                         </tr>
-                        
+
                     @if (Auth::user()->estado_id == 1)
                         <tr class="ranking-usuario-table">
                             <td> - </td>
                             <td>{{ Auth::user()->name }}</td>
                             <td>{{ Auth::user()->puntos }}</td>
-                            <td>2021-10-10</td>
+                            <td>-</td>
                         </tr>
                     @endif
                 </tbody>
