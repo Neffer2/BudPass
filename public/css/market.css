@@ -78,6 +78,7 @@
 }
 .img-destacado-movil {
     height: 100%;
+    filter: grayscale(100%);
 }
 
 .premios-img-cont-movil {
@@ -419,7 +420,7 @@
         height: auto;
         min-height: 270px;
         max-height: 100%;
-        filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 1));
+        filter: grayscale(100%);
     }
 
     /* Premios escritorio */
