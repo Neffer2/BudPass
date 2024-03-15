@@ -316,6 +316,15 @@
             });
         }
 
+        //Información de ranking final
+
+        const rankingInfo = document.getElementById('infoRankingFinal');
+
+        tippy(rankingInfo, {
+            content: 'Ranking correspondiente al período que finalizó el día 14/03/2024 a las 11:59 PM',
+        });
+    
+
         //Prueba confirmación de edad
         const ageYesButton = document.getElementById('age-yes');
         const checkRecordar = document.getElementById('check_datos_recordados');

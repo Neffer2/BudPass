@@ -1,12 +1,20 @@
 @extends('layouts.app')
 @section('title', 'Ranking')
 @section('content')
+
     <div class="ranking-main-cont">
 
         <div class="ranking-table-cont">
             <div class="ranking-title">
-                <h1>Ranking Final</h1>
+                <h1>
+                    Ranking Final
+                    <i class="fas fa-info-circle" id="infoRankingFinal"></i>
+                </h1>
             </div>
+
+            <script>
+                
+            </script>
             <table>
                 <thead>
                     <tr>

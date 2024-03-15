@@ -25,6 +25,11 @@
     font-size: 32px;
 }
 
+.ranking-title i {
+    font-size: 20px;
+    color: var(--primary-blue);
+}
+
 .ranking-table-cont {
     width: 95%;
     display: flex;
