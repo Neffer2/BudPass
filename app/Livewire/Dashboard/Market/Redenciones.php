@@ -20,4 +20,4 @@ class Redenciones extends Component
         return view('livewire.dashboard.market.redenciones', ['redenciones' => $redenciones]);
     }
 }
-  
+   
