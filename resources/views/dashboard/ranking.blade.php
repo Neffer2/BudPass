@@ -13,21 +13,77 @@
                         <th>Puesto</th>
                         <th>Nombre</th>
                         <th>Puntuación</th>
+                        <th>Ultima Carga</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($ranking as $key => $participante)
                         <tr>
-                            <td>{{ $key += 1 }}</td>
-                            <td>{{ $participante->name }}</td>
-                            <td>{{ $participante->puntos }}</td>
+                            <td>1</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
                         </tr>
-                    @endforeach
+                        <tr>
+                            <td>2</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                        </tr>
+                        
                     @if (Auth::user()->estado_id == 1)
                         <tr class="ranking-usuario-table">
-                            <td>{{ $user_rank }}</td>
+                            <td> - </td>
                             <td>{{ Auth::user()->name }}</td>
                             <td>{{ Auth::user()->puntos }}</td>
+                            <td>2021-10-10</td>
                         </tr>
                     @endif
                 </tbody>
