@@ -33,10 +33,8 @@ Route::get('/marketplace', function () {
     return view('dashboard.marketPlace');
 })->middleware('shopper')->middleware('auth')->middleware('descalificado')->name('market');
 
-// Route::get('/ranking', [ShopperController::class, 'showRanking'])->middleware('auth')->middleware('descalificado')->name('ranking');
-Route::get('/ranking', function () {
-    return redirect()->route('market');
-})->name('ranking');
+Route::get('/ranking', [ShopperController::class, 'showRanking'])->middleware('auth')->middleware('descalificado')->name('ranking');
+
 Route::get('/trial', [ShopperController::class, 'mail']);
 
 Route::get('/trial', [ShopperController::class, 'mail']);
