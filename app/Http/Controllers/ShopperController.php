@@ -13,7 +13,7 @@ class ShopperController extends Controller
     use Mail; 
 
     public function showRanking(){
-        $ranking = RankingFinal::select('id', 'name', 'email', 'puntos', 'updated_at')->where('estado_id', 1)->orderBy('puntos', 'desc')->limit(58)->get();
+        $ranking = RankingFinal::select('id', 'name', 'email', 'puntos', 'updated_at')->where('estado_id', 1)->orderBy('puntos', 'desc')->limit(58)->paginate(10);
         $user_rank = User::select('id', 'name', 'email', 'puntos')->where('puntos', '>', Auth::user()->puntos)->count();
 
         return view('dashboard.ranking', ['ranking' => $ranking, 'user_rank' => $user_rank+=1]);
